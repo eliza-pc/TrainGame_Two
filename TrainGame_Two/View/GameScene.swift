@@ -15,6 +15,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var graphs = [String : GKGraph]()
     var entityManager: EntityManager!
     
+    
     private var lastUpdateTime : TimeInterval = 0
     private var label : SKLabelNode?
     private var spinnyNode : SKShapeNode?
@@ -55,8 +56,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         let personagemPrincipal = Player(imageName: "test2", gameScene: self)
       
-        
-        
         if let spriteComponent = personagemPrincipal.component(ofType: SpriteComponent.self){
             
             moveJoystick.on(.begin) { [unowned self] _ in

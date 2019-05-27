@@ -12,13 +12,11 @@ import GameplayKit
 
 class Player: GKEntity{
     
+    
+    
     init(imageName: String, gameScene: GameScene){
         super.init()
-        
-        
-        
-        
-        
+       
         let spriteComponent = SpriteComponent(texture: SKTexture(imageNamed: imageName), gameScene: gameScene)
         spriteComponent.node.texture = SKTexture.init(imageNamed: imageName)
         spriteComponent.node.size = CGSize(width: 100, height: 100)
