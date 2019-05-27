@@ -53,19 +53,24 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         entityManager = EntityManager(scene: self)
         
         
-        let personagemPrincipal = Player(imageName: "test", gameScene: self)
+        let personagemPrincipal = Player(imageName: "test2", gameScene: self)
+      
         
         
-        if let spriteComponent = personagemPrincipal.component(ofType: SpriteComponent.self) {
+        if let spriteComponent = personagemPrincipal.component(ofType: SpriteComponent.self){
             
             moveJoystick.on(.begin) { [unowned self] _ in
                 //print("pegou1")
-                let actions = [
-                    SKAction.scale(to: 1, duration: 0.5),
-                    SKAction.scale(to: 1, duration: 0.5)
-                ]
+              //  let actions = [
+//                    SKAction.scale(to: 1, duration: 0.5),
+//                    SKAction.scale(to: 1, duration: 0.5)
+                    
+//                    SKAction.scale(to: 1, duration: 0.5),
+//                    SKAction.scale(to: 1, duration: 0.5)
+
+               // ]
                 
-                spriteComponent.node.run(SKAction.sequence(actions))
+               // spriteComponent.node.run(SKAction.sequence(actions))
             }
             
             moveJoystick.on(.move) { [unowned self] joystick in
@@ -92,12 +97,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             moveJoystick.on(.end) { [unowned self] _ in
                 
-                let actions = [
-                    SKAction.scale(to: 1, duration: 0.5),
-                    SKAction.scale(to: 1, duration: 0.5)
-                ]
-                
-                spriteComponent.node.run(SKAction.sequence(actions))
+//                let actions = [
+//                    SKAction.scale(to: 1, duration: 0.5),
+//                    SKAction.scale(to: 1, duration: 0.5)
+//                ]
+//
+//                spriteComponent.node.run(SKAction.sequence(actions))
             }
         }
         
