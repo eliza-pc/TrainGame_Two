@@ -25,9 +25,6 @@ class EntityManager {
     func add(_ entity: GKEntity) {
         entities.insert(entity)
         
-        //        if let spriteNode = entity.component(ofType: SpriteComponent.self)?.node {
-        //            scene.addChild(spriteNode)
-        //        }
     }
     
     
@@ -41,10 +38,9 @@ class EntityManager {
     
     func update(dt: TimeInterval) {
         for entity in entities {
-            if let cameraComponent = entity.component(ofType: CameraComponent.self), let spriteNode = entity.component(ofType: SpriteComponent.self)?.node {
-                // print("pegouFLC")
-               // cameraComponent.followPlayer(player: spriteNode)
-            }
+//            if let cameraComponent = entity.component(ofType: CameraComponent.self), let spriteNode = entity.component(ofType: SpriteComponent.self)?.node {
+//
+//            }
             entity.update(deltaTime: dt)
         }
     }

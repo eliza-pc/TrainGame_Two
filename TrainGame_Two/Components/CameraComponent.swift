@@ -1,40 +1,3 @@
-//
-//  CameraComponent.swift
-//  TrainGame_Two
-//
-//  Created by Eliza Maria Porto de Carvalho on 27/05/19.
-//  Copyright © 2019 Academy. All rights reserved.
-//
-
-//import Foundation
-//import GameplayKit
-//
-//
-//class CameraComponent: GKComponent {
-//
-//    let cam: SKCameraNode
-//
-//    init(scene: SKScene){
-//
-//        cam = (scene.childNode(withName: "camera") as? SKCameraNode)!
-//        cam.position = CGPoint.init(x: 0, y: 0)
-//        scene.camera = cam
-//        super.init()
-//
-//    }
-//
-//    func followPlayer (player: SKSpriteNode) {
-//        //print("\(player.position)")
-//        cam.position = player.position
-//    }
-//
-//    required init?(coder aDecoder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
-//
-//
-//}
-
 import Foundation
 import GameKit
 
@@ -49,7 +12,6 @@ class CameraComponent: GKComponent{
         self.parentNode = parentNode
         
         camera.position = CGPoint(x: 0, y: 0)
-        
         super.init()
         
     }
@@ -63,14 +25,19 @@ class CameraComponent: GKComponent{
         
         let followConstraint = SKConstraint.distance(SKRange.init(upperLimit: 100), to: node)
         let fixedXConstraint = SKConstraint.positionX(SKRange.init(lowerLimit: 10))
-        let fixedYConstraint = SKConstraint.positionX(SKRange.init(lowerLimit: 0))
         
-        camera.constraints = [followConstraint, fixedXConstraint, fixedYConstraint]
+        let fixedYConstraint = SKConstraint.positionY(SKRange.init(upperLimit: 0))
+        
+        let lowerYConstraint = SKConstraint.positionY(SKRange.init(lowerLimit: 0))
+        
+        camera.constraints = [followConstraint, fixedXConstraint, fixedYConstraint, lowerYConstraint]
         
         guard let cena = parentNode as? SKScene else { return }
  
         
         cena.camera = camera
+//        cena.camera!.position.y = node.position.y + 10
+        
         if let gameScene = cena as? GameScene {
             gameScene.moveJoystickHiddenArea?.removeFromParent()
             guard let joystick = gameScene.moveJoystickHiddenArea else {return}

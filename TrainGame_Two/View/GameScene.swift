@@ -54,12 +54,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         entityManager = EntityManager(scene: self)
         
         
-        let personagemPrincipal = Player(imageName: "test2", gameScene: self)
+        let personagemPrincipal = Player(imageName: "Evil", gameScene: self)
       
-        if let spriteComponent = personagemPrincipal.component(ofType: SpriteComponent.self){
+        if personagemPrincipal.component(ofType: SpriteComponent.self) != nil{
             
             moveJoystick.on(.begin) { [unowned self] _ in
-                //print("pegou1")
+             
               //  let actions = [
 //                    SKAction.scale(to: 1, duration: 0.5),
 //                    SKAction.scale(to: 1, duration: 0.5)
@@ -73,7 +73,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             }
             
             moveJoystick.on(.move) { [unowned self] joystick in
-                // print("pegou2")
+                
                 guard let spriteComponent = personagemPrincipal.component(ofType: SpriteComponent.self) else {
                     return
                 }
