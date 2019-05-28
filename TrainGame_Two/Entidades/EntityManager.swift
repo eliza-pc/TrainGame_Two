@@ -45,5 +45,18 @@ class EntityManager {
         }
     }
     
+    
+    
+    func getEntitys(component: GKComponent.Type) -> [GKEntity] {
+        var entitys: [GKEntity] = []
+        for entity in entities {
+            if (entity.component(ofType: component.self) != nil) {
+                entitys.append(entity)
+            }
+        }
+        return entitys
+    }
+    
+    
 }
 

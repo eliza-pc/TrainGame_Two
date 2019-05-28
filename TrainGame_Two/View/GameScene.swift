@@ -60,6 +60,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             moveJoystick.on(.begin) { [unowned self] _ in
              
+                self.control?.directionCommand = UserControl.idle
+                
               //  let actions = [
 //                    SKAction.scale(to: 1, duration: 0.5),
 //                    SKAction.scale(to: 1, duration: 0.5)
@@ -83,8 +85,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 
                 if self.control?.directionCommand == UserControl.jump {
                     // MARK: Move for Physics
-                    spriteComponent.node.position = CGPoint(x: spriteComponent.node.position.x + (pVelocity.x * speed), y: spriteComponent.node.position.y + 40)
-                    
+                    spriteComponent.node.position = CGPoint(x: spriteComponent.node.position.x + (pVelocity.x * speed), y: spriteComponent.node.position.y + (100 * speed))
+
                     
                 } else {
                     
