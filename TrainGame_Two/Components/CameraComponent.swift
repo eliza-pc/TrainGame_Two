@@ -63,9 +63,10 @@ class CameraComponent: GKComponent{
         
         let followConstraint = SKConstraint.distance(SKRange.init(upperLimit: 100), to: node)
         let fixedXConstraint = SKConstraint.positionX(SKRange.init(lowerLimit: 10))
-        let fixedYConstraint = SKConstraint.positionX(SKRange.init(lowerLimit: 0))
+       
+//        let fixedYConstraint = SKConstraint.positionX(SKRange.init(lowerLimit: 0))
         
-        camera.constraints = [followConstraint, fixedXConstraint, fixedYConstraint]
+        camera.constraints = [followConstraint, fixedXConstraint]
         
         guard let cena = parentNode as? SKScene else { return }
  

@@ -90,6 +90,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     
                     // MARK: Move for Physics
                     spriteComponent.node.position = CGPoint(x: spriteComponent.node.position.x + (pVelocity.x * speed), y: spriteComponent.node.position.y)
+                    
                 }
                 
             }
@@ -111,7 +112,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func didBegin(_ contact: SKPhysicsContact) {
-        print("FOIII!😎")
+        //print("FOIII!😎")
         
         control?.directionCommand =  UserControl.idle
         
@@ -121,7 +122,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         self.lastUpdateTime = 0
         // Instanciar os objetos
-        
         
     }
     
