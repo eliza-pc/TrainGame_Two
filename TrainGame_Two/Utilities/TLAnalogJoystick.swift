@@ -14,6 +14,7 @@ public typealias TLAnalogJoystickEventHandler = (TLAnalogJoystick) -> Void
 public typealias TLAnalogJoystickHandlerID = String
 public typealias TLAnalogJoystickEventHandlers = [TLAnalogJoystickHandlerID: TLAnalogJoystickEventHandler]
 
+
 public enum TLAnalogJoystickEventType {
     case begin
     case move
