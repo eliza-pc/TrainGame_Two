@@ -29,11 +29,16 @@ class CameraComponent: GKComponent{
         
         let followConstraint = SKConstraint.distance(SKRange.init(upperLimit: 100), to: node)
         
+        //Limite de camera para esquerda
         let fixedXConstraint = SKConstraint.positionX(SKRange.init(lowerLimit: 10))
+        
+        //Limite de camera para direita
+        let fixedXConstraint_upper = SKConstraint.positionX(SKRange.init(upperLimit: 1282))
+        
         let fixedYConstraint = SKConstraint.positionY(SKRange.init(upperLimit: 0))
         let lowerYConstraint = SKConstraint.positionY(SKRange.init(lowerLimit: 0))
         
-        camera.constraints = [followConstraint, fixedXConstraint, fixedYConstraint, lowerYConstraint]
+        camera.constraints = [followConstraint, fixedXConstraint, fixedYConstraint, lowerYConstraint,fixedXConstraint_upper]
         
         guard let cena = parentNode as? SKScene else { return }
  
@@ -42,10 +47,12 @@ class CameraComponent: GKComponent{
         
         
         if let gameScene = cena as? GameScene {
+            
             gameScene.moveJoystickHiddenArea?.removeFromParent()
             guard let joystick = gameScene.moveJoystickHiddenArea else {return}
             camera.addChild(joystick)
             gameScene.moveJoystickHiddenArea?.zPosition = 4
+            
         }
         
         parentNode.addChild(camera)
