@@ -40,9 +40,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     //#MARK: DidMove_FUNC
     override func didMove(to view: SKView) {
-<<<<<<< HEAD
-        
-        
+//<<<<<<< HEAD
+//
+//
         //Parallax Stuff
         self.camera?.addChild(childNode(withName: "layer1")!)
 
@@ -53,10 +53,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             components.prepareWith(camera: camera)
         }
         
-        control = Control(view: self.view!)
-=======
+//        control = Control(view: self.view!)
+//=======
         control = Control(view: self.view!, gameScene: self)
->>>>>>> Developer
+//>>>>>>> Developer
         
         //Para add physicsbody
         physicsWorld.contactDelegate = self
