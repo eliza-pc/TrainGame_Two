@@ -7,11 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1F0E2E80229EDCA6003E546D /* Idle_anim in Resources */ = {isa = PBXBuildFile; fileRef = 1F0E2E7F229EDCA6003E546D /* Idle_anim */; };
-		1F0E2E82229EDD49003E546D /* Walk_anim in Resources */ = {isa = PBXBuildFile; fileRef = 1F0E2E81229EDD49003E546D /* Walk_anim */; };
-		1F0E2E85229EDDA5003E546D /* AnimationsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F0E2E84229EDDA5003E546D /* AnimationsExtension.swift */; };
 		1F97BED7229D694000796D5F /* ParallaxComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F97BED6229D694000796D5F /* ParallaxComponent.swift */; };
-		1FF3FDA2229EE0E200F85AF1 /* AnimationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF3FDA1229EE0E200F85AF1 /* AnimationExtension.swift */; };
+		1FE5D663229EE795008E1287 /* AnimationsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE5D662229EE794008E1287 /* AnimationsExtension.swift */; };
 		1FF45043229C2434009B7DF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF45042229C2434009B7DF7 /* AppDelegate.swift */; };
 		1FF45045229C2434009B7DF7 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1FF45044229C2434009B7DF7 /* GameScene.sks */; };
 		1FF45047229C2434009B7DF7 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1FF45046229C2434009B7DF7 /* Actions.sks */; };
@@ -27,17 +24,11 @@
 		1FF45068229C2826009B7DF7 /* Control.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF45067229C2826009B7DF7 /* Control.swift */; };
 		1FF4506A229C2D34009B7DF7 /* CameraComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF45069229C2D34009B7DF7 /* CameraComponent.swift */; };
 		5E886703229ED3B60008D4B0 /* MoveCharacterComponet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E886702229ED3B60008D4B0 /* MoveCharacterComponet.swift */; };
-		5E88670B229ED84A0008D4B0 /* Jump Start in Resources */ = {isa = PBXBuildFile; fileRef = 5E886706229ED84A0008D4B0 /* Jump Start */; };
-		5E88670C229ED84A0008D4B0 /* Jump Loop in Resources */ = {isa = PBXBuildFile; fileRef = 5E886707229ED84A0008D4B0 /* Jump Loop */; };
-		5E88670E229ED84A0008D4B0 /* Dying in Resources */ = {isa = PBXBuildFile; fileRef = 5E886709229ED84A0008D4B0 /* Dying */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1F0E2E7F229EDCA6003E546D /* Idle_anim */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Idle_anim; path = "../../../../Downloads/craftpix-991117-free-fallen-angel-chibi-2d-game-sprites/Fallen_Angels_3/PNG/PNG Sequences/Idle_anim"; sourceTree = "<group>"; };
-		1F0E2E81229EDD49003E546D /* Walk_anim */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Walk_anim; path = "../../../../Downloads/craftpix-991117-free-fallen-angel-chibi-2d-game-sprites/Fallen_Angels_3/PNG/PNG Sequences/Walk_anim"; sourceTree = "<group>"; };
-		1F0E2E84229EDDA5003E546D /* AnimationsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationsExtension.swift; sourceTree = "<group>"; };
 		1F97BED6229D694000796D5F /* ParallaxComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParallaxComponent.swift; sourceTree = "<group>"; };
-		1FF3FDA1229EE0E200F85AF1 /* AnimationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationExtension.swift; sourceTree = "<group>"; };
+		1FE5D662229EE794008E1287 /* AnimationsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationsExtension.swift; sourceTree = "<group>"; };
 		1FF4503F229C2434009B7DF7 /* TrainGame_Two.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrainGame_Two.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FF45042229C2434009B7DF7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1FF45044229C2434009B7DF7 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -55,9 +46,6 @@
 		1FF45067229C2826009B7DF7 /* Control.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Control.swift; sourceTree = "<group>"; };
 		1FF45069229C2D34009B7DF7 /* CameraComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraComponent.swift; sourceTree = "<group>"; };
 		5E886702229ED3B60008D4B0 /* MoveCharacterComponet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveCharacterComponet.swift; sourceTree = "<group>"; };
-		5E886706229ED84A0008D4B0 /* Jump Start */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Jump Start"; sourceTree = "<group>"; };
-		5E886707229ED84A0008D4B0 /* Jump Loop */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Jump Loop"; sourceTree = "<group>"; };
-		5E886709229ED84A0008D4B0 /* Dying */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Dying; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,21 +59,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-<<<<<<< HEAD
-		1FF3FDA0229EE0B400F85AF1 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				1FF3FDA1229EE0E200F85AF1 /* AnimationExtension.swift */,
-			);
-			path = Extensions;
-=======
 		1F0E2E83229EDD8A003E546D /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				1F0E2E84229EDDA5003E546D /* AnimationsExtension.swift */,
+				1FE5D662229EE794008E1287 /* AnimationsExtension.swift */,
 			);
 			path = Extension;
->>>>>>> Developer
 			sourceTree = "<group>";
 		};
 		1FF45036229C2434009B7DF7 = {
@@ -107,12 +86,7 @@
 		1FF45041229C2434009B7DF7 /* TrainGame_Two */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
-				1FF3FDA0229EE0B400F85AF1 /* Extensions */,
-=======
 				1F0E2E83229EDD8A003E546D /* Extension */,
->>>>>>> Developer
-				5E886704229ED8220008D4B0 /* Assets */,
 				1FF45064229C2809009B7DF7 /* Utilities */,
 				1FF4505A229C26F0009B7DF7 /* Entidades */,
 				1FF4505B229C26FF009B7DF7 /* Components */,
@@ -174,18 +148,6 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
-		5E886704229ED8220008D4B0 /* Assets */ = {
-			isa = PBXGroup;
-			children = (
-				1F0E2E81229EDD49003E546D /* Walk_anim */,
-				1F0E2E7F229EDCA6003E546D /* Idle_anim */,
-				5E886709229ED84A0008D4B0 /* Dying */,
-				5E886707229ED84A0008D4B0 /* Jump Loop */,
-				5E886706229ED84A0008D4B0 /* Jump Start */,
-			);
-			path = Assets;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -244,16 +206,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E88670E229ED84A0008D4B0 /* Dying in Resources */,
-				1F0E2E80229EDCA6003E546D /* Idle_anim in Resources */,
 				1FF4504E229C2434009B7DF7 /* Main.storyboard in Resources */,
 				1FF45045229C2434009B7DF7 /* GameScene.sks in Resources */,
-				5E88670B229ED84A0008D4B0 /* Jump Start in Resources */,
 				1FF45050229C2435009B7DF7 /* Assets.xcassets in Resources */,
-				1F0E2E82229EDD49003E546D /* Walk_anim in Resources */,
 				1FF45053229C2435009B7DF7 /* LaunchScreen.storyboard in Resources */,
 				1FF45047229C2434009B7DF7 /* Actions.sks in Resources */,
-				5E88670C229ED84A0008D4B0 /* Jump Loop in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,7 +221,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1FF3FDA2229EE0E200F85AF1 /* AnimationExtension.swift in Sources */,
 				1F97BED7229D694000796D5F /* ParallaxComponent.swift in Sources */,
 				1FF45049229C2434009B7DF7 /* GameScene.swift in Sources */,
 				1FF45068229C2826009B7DF7 /* Control.swift in Sources */,
@@ -273,7 +229,7 @@
 				1FF45063229C27B6009B7DF7 /* EntityManager.swift in Sources */,
 				1FF4505F229C278E009B7DF7 /* SpriteComponent.swift in Sources */,
 				1FF45066229C281B009B7DF7 /* TLAnalogJoystick.swift in Sources */,
-				1F0E2E85229EDDA5003E546D /* AnimationsExtension.swift in Sources */,
+				1FE5D663229EE795008E1287 /* AnimationsExtension.swift in Sources */,
 				1FF45061229C27A1009B7DF7 /* Player.swift in Sources */,
 				1FF45043229C2434009B7DF7 /* AppDelegate.swift in Sources */,
 				1FF4506A229C2D34009B7DF7 /* CameraComponent.swift in Sources */,
