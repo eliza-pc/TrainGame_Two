@@ -39,7 +39,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     //#MARK: DidMove_FUNC
     override func didMove(to view: SKView) {
-        control = Control(view: self.view!)
+        control = Control(view: self.view!, gameScene: self)
         
         //Para add physicsbody
         physicsWorld.contactDelegate = self
@@ -80,13 +80,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     return
                 }
                 
+//                print (self.moveJoystick)
                 let pVelocity = joystick.velocity;
                 let speed = CGFloat(0.12)
                 
                 if self.control?.directionCommand == UserControl.jump {
                     // MARK: Move for Physics
-                    spriteComponent.node.position = CGPoint(x: spriteComponent.node.position.x + (pVelocity.x * speed), y: spriteComponent.node.position.y + (100 * speed))
-
+                    spriteComponent.node.position = CGPoint(x: spriteComponent.node.position.x + (pVelocity.x * speed), y: spriteComponent.node.position.y)
+// + (100 * speed)
                     
                 } else {
                     

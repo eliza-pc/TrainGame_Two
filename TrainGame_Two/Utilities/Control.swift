@@ -24,9 +24,11 @@ class Control {
     
     private var touchInitialLocation: CGPoint?
     var directionCommand: UserControl?
+    var gameScene: GameScene
+    var entityNode: SKNode? = nil
     
-    init(view: UIView){
-        
+    init(view: UIView, gameScene: GameScene){
+        self.gameScene = gameScene
         addSwiperRecognizer(view: view)
     }
     
@@ -46,11 +48,12 @@ class Control {
         if let gesture = gesture as? UISwipeGestureRecognizer {
             switch gesture.direction{
             case .up:
-                directionCommand = UserControl.jump
-                print("up")
+                let entitys = gameScene.entityManager.getEntitys(component: SpriteComponent.self)
+                self.entityNode = entitys[0].component(ofType: SpriteComponent.self)?.node
+                directionCommand = UserControl.jump             
+                entityNode?.run(SKAction.moveTo(y: entityNode!.position.y + (100 * 1.2), duration: 0.25))
             case .down:
                 directionCommand = UserControl.down
-                print("down")
             default:
                 print("don't have swipe")
                 
@@ -64,19 +67,19 @@ class Control {
     // Controlls in game
     
     func touchBegan(_ touch: UITouch, in scene: SKScene) {
-        
+        print("pegouSWPBG")
     }
     
     func touchMoved(_ touch: UITouch, in scene: SKScene) {
-        
+        print("pegouSWPMOVE")
     }
     
     func touchEnded(_ touch: UITouch, in scene: SKScene) {
-        
+        print("pegouSWPENDED")
     }
     
     func touchCancelled(_ touch: UITouch, in scene: SKScene) {
-        
+        print("pegouSWPCANCEL")
     }
     
     
