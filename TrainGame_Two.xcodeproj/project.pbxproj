@@ -23,6 +23,11 @@
 		1FF45068229C2826009B7DF7 /* Control.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF45067229C2826009B7DF7 /* Control.swift */; };
 		1FF4506A229C2D34009B7DF7 /* CameraComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF45069229C2D34009B7DF7 /* CameraComponent.swift */; };
 		5E886703229ED3B60008D4B0 /* MoveCharacterComponet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E886702229ED3B60008D4B0 /* MoveCharacterComponet.swift */; };
+		5E88670A229ED84A0008D4B0 /* Walking in Resources */ = {isa = PBXBuildFile; fileRef = 5E886705229ED84A0008D4B0 /* Walking */; };
+		5E88670B229ED84A0008D4B0 /* Jump Start in Resources */ = {isa = PBXBuildFile; fileRef = 5E886706229ED84A0008D4B0 /* Jump Start */; };
+		5E88670C229ED84A0008D4B0 /* Jump Loop in Resources */ = {isa = PBXBuildFile; fileRef = 5E886707229ED84A0008D4B0 /* Jump Loop */; };
+		5E88670D229ED84A0008D4B0 /* Idle in Resources */ = {isa = PBXBuildFile; fileRef = 5E886708229ED84A0008D4B0 /* Idle */; };
+		5E88670E229ED84A0008D4B0 /* Dying in Resources */ = {isa = PBXBuildFile; fileRef = 5E886709229ED84A0008D4B0 /* Dying */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +49,11 @@
 		1FF45067229C2826009B7DF7 /* Control.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Control.swift; sourceTree = "<group>"; };
 		1FF45069229C2D34009B7DF7 /* CameraComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraComponent.swift; sourceTree = "<group>"; };
 		5E886702229ED3B60008D4B0 /* MoveCharacterComponet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveCharacterComponet.swift; sourceTree = "<group>"; };
+		5E886705229ED84A0008D4B0 /* Walking */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Walking; sourceTree = "<group>"; };
+		5E886706229ED84A0008D4B0 /* Jump Start */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Jump Start"; sourceTree = "<group>"; };
+		5E886707229ED84A0008D4B0 /* Jump Loop */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Jump Loop"; sourceTree = "<group>"; };
+		5E886708229ED84A0008D4B0 /* Idle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Idle; sourceTree = "<group>"; };
+		5E886709229ED84A0008D4B0 /* Dying */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Dying; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +86,7 @@
 		1FF45041229C2434009B7DF7 /* TrainGame_Two */ = {
 			isa = PBXGroup;
 			children = (
+				5E886704229ED8220008D4B0 /* Assets */,
 				1FF45064229C2809009B7DF7 /* Utilities */,
 				1FF4505A229C26F0009B7DF7 /* Entidades */,
 				1FF4505B229C26FF009B7DF7 /* Components */,
@@ -137,6 +148,18 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		5E886704229ED8220008D4B0 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				5E886709229ED84A0008D4B0 /* Dying */,
+				5E886708229ED84A0008D4B0 /* Idle */,
+				5E886707229ED84A0008D4B0 /* Jump Loop */,
+				5E886706229ED84A0008D4B0 /* Jump Start */,
+				5E886705229ED84A0008D4B0 /* Walking */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -195,11 +218,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E88670A229ED84A0008D4B0 /* Walking in Resources */,
+				5E88670D229ED84A0008D4B0 /* Idle in Resources */,
+				5E88670E229ED84A0008D4B0 /* Dying in Resources */,
 				1FF4504E229C2434009B7DF7 /* Main.storyboard in Resources */,
 				1FF45045229C2434009B7DF7 /* GameScene.sks in Resources */,
+				5E88670B229ED84A0008D4B0 /* Jump Start in Resources */,
 				1FF45050229C2435009B7DF7 /* Assets.xcassets in Resources */,
 				1FF45053229C2435009B7DF7 /* LaunchScreen.storyboard in Resources */,
 				1FF45047229C2434009B7DF7 /* Actions.sks in Resources */,
+				5E88670C229ED84A0008D4B0 /* Jump Loop in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,7 +395,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 97WB89LRXA;
+				DEVELOPMENT_TEAM = 2CW963BG8P;
 				INFOPLIST_FILE = TrainGame_Two/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -385,7 +413,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 97WB89LRXA;
+				DEVELOPMENT_TEAM = 2CW963BG8P;
 				INFOPLIST_FILE = TrainGame_Two/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
