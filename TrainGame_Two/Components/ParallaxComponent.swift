@@ -56,5 +56,18 @@ class ParallaxComponent: GKComponent{
         }
     }
     
+    override func update(deltaTime seconds: TimeInterval) {
+        super.update(deltaTime: seconds)
+        
+        let difX = ((camera?.position.x)! - (previousPosition?.x)!) / dX
+        let difY = ((camera?.position.y)! - (previousPosition?.y)!) / dX
+        
+        node?.position = CGPoint(x:(node?.position.x)! + difX, y: (node?.position.y)! + difY)
+        print(difX)
+        print(difY)
+        previousPosition = camera?.position
+        
+        print("entrou aqui")
+    }
     
 }

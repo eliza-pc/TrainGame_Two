@@ -15,6 +15,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var graphs = [String : GKGraph]()
     var entityManager: EntityManager!
     
+    var parallaxComponentSystem: GKComponentSystem<ParallaxComponent>?
     
     private var lastUpdateTime : TimeInterval = 0
     private var label : SKLabelNode?
@@ -39,6 +40,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     //#MARK: DidMove_FUNC
     override func didMove(to view: SKView) {
+        
+        
+        //Parallax Stuff
+        self.camera?.addChild(childNode(withName: "layer1")!)
+
+        parallaxComponentSystem = GKComponentSystem.init(componentClass: ParallaxComponent.self)
+        
+        
+        for components in (parallaxComponentSystem?.components)!{
+            components.prepareWith(camera: camera)
+        }
+        
         control = Control(view: self.view!)
         
         //Para add physicsbody
@@ -52,7 +65,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.camera?.addChild(hiddenJoystick)
         
         entityManager = EntityManager(scene: self)
-        
         
         let personagemPrincipal = Player(imageName: "Evil", gameScene: self)
       
@@ -109,6 +121,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         entityManager.add(personagemPrincipal)
         view.isMultipleTouchEnabled = false
         
+        for entity in self.entityManager.entities {
+            print(entity)
+            parallaxComponentSystem?.addComponent(foundIn: entity)
+        }
+        
     }
     
     func didBegin(_ contact: SKPhysicsContact) {
@@ -134,11 +151,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             self.lastUpdateTime = currentTime
         }
         
+        
         // Calculate time since last update
         let dt = currentTime - self.lastUpdateTime
         
         entityManager.update(dt: dt)
+        
         self.lastUpdateTime = currentTime
+        
+       
     }
+    
+    
+    
     
 }
