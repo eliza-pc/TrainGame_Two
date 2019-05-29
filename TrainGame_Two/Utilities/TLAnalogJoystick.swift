@@ -239,6 +239,9 @@ open class TLAnalogJoystick: SKNode {
         return -atan2(velocity.x, velocity.y)
     }
     
+    var userControl: UserControl? = nil
+    
+    
     public var disabled: Bool {
         get {
             return !isUserInteractionEnabled
@@ -347,10 +350,14 @@ open class TLAnalogJoystick: SKNode {
     }
     
     convenience init(withDiameter diameter: CGFloat, handleRatio: CGFloat = 0.6) {
+<<<<<<< HEAD
         
         let base = TLAnalogJoystickComponent(diameter: diameter, color: .clear)
+=======
+        let base = TLAnalogJoystickComponent(diameter: diameter, color: .white)
+>>>>>>> Developer
         let handleDiameter = getDiameter(fromDiameter: diameter, withRatio: handleRatio)
-        let handle = TLAnalogJoystickComponent(diameter: handleDiameter, color: .clear)
+        let handle = TLAnalogJoystickComponent(diameter: handleDiameter, color: .black)
         self.init(withBase: base, handle: handle)
         
     }
@@ -434,6 +441,19 @@ open class TLAnalogJoystick: SKNode {
         } else {
             handle.position = location
         }
+//        print("11 - \(location.x)")
+//        print("12 - \(location.y)")
+        
+        if location.x > 0 {
+            userControl = UserControl.right
+        }
+        
+        if location.x < 0 {
+            userControl = UserControl.left
+        }
+        
+        print(userControl)
+        
     }
     
     open override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
