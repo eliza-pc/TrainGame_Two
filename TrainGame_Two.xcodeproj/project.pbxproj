@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1F97BED7229D694000796D5F /* ParallaxComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F97BED6229D694000796D5F /* ParallaxComponent.swift */; };
+		1FF3FDA2229EE0E200F85AF1 /* AnimationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF3FDA1229EE0E200F85AF1 /* AnimationExtension.swift */; };
 		1FF45043229C2434009B7DF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF45042229C2434009B7DF7 /* AppDelegate.swift */; };
 		1FF45045229C2434009B7DF7 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1FF45044229C2434009B7DF7 /* GameScene.sks */; };
 		1FF45047229C2434009B7DF7 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1FF45046229C2434009B7DF7 /* Actions.sks */; };
@@ -32,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		1F97BED6229D694000796D5F /* ParallaxComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParallaxComponent.swift; sourceTree = "<group>"; };
+		1FF3FDA1229EE0E200F85AF1 /* AnimationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationExtension.swift; sourceTree = "<group>"; };
 		1FF4503F229C2434009B7DF7 /* TrainGame_Two.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrainGame_Two.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FF45042229C2434009B7DF7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1FF45044229C2434009B7DF7 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -67,6 +69,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1FF3FDA0229EE0B400F85AF1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1FF3FDA1229EE0E200F85AF1 /* AnimationExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		1FF45036229C2434009B7DF7 = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +96,7 @@
 		1FF45041229C2434009B7DF7 /* TrainGame_Two */ = {
 			isa = PBXGroup;
 			children = (
+				1FF3FDA0229EE0B400F85AF1 /* Extensions */,
 				5E886704229ED8220008D4B0 /* Assets */,
 				1FF45064229C2809009B7DF7 /* Utilities */,
 				1FF4505A229C26F0009B7DF7 /* Entidades */,
@@ -238,6 +249,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FF3FDA2229EE0E200F85AF1 /* AnimationExtension.swift in Sources */,
 				1F97BED7229D694000796D5F /* ParallaxComponent.swift in Sources */,
 				1FF45049229C2434009B7DF7 /* GameScene.swift in Sources */,
 				1FF45068229C2826009B7DF7 /* Control.swift in Sources */,
