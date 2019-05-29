@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1F97BED7229D694000796D5F /* ParallaxComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F97BED6229D694000796D5F /* ParallaxComponent.swift */; };
 		1FE5D663229EE795008E1287 /* AnimationsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE5D662229EE794008E1287 /* AnimationsExtension.swift */; };
+		1FE5D666229F42A3008E1287 /* Walking in Resources */ = {isa = PBXBuildFile; fileRef = 1FE5D665229F42A3008E1287 /* Walking */; };
+		1FE5D67B229F42DC008E1287 /* Idle in Resources */ = {isa = PBXBuildFile; fileRef = 1FE5D67A229F42DC008E1287 /* Idle */; };
 		1FF45043229C2434009B7DF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF45042229C2434009B7DF7 /* AppDelegate.swift */; };
 		1FF45045229C2434009B7DF7 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1FF45044229C2434009B7DF7 /* GameScene.sks */; };
 		1FF45047229C2434009B7DF7 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1FF45046229C2434009B7DF7 /* Actions.sks */; };
@@ -29,6 +31,8 @@
 /* Begin PBXFileReference section */
 		1F97BED6229D694000796D5F /* ParallaxComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParallaxComponent.swift; sourceTree = "<group>"; };
 		1FE5D662229EE794008E1287 /* AnimationsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationsExtension.swift; sourceTree = "<group>"; };
+		1FE5D665229F42A3008E1287 /* Walking */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Walking; sourceTree = "<group>"; };
+		1FE5D67A229F42DC008E1287 /* Idle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Idle; sourceTree = "<group>"; };
 		1FF4503F229C2434009B7DF7 /* TrainGame_Two.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrainGame_Two.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FF45042229C2434009B7DF7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1FF45044229C2434009B7DF7 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -67,6 +71,15 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		1FE5D664229F4293008E1287 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				1FE5D67A229F42DC008E1287 /* Idle */,
+				1FE5D665229F42A3008E1287 /* Walking */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		1FF45036229C2434009B7DF7 = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +99,7 @@
 		1FF45041229C2434009B7DF7 /* TrainGame_Two */ = {
 			isa = PBXGroup;
 			children = (
+				1FE5D664229F4293008E1287 /* Assets */,
 				1F0E2E83229EDD8A003E546D /* Extension */,
 				1FF45064229C2809009B7DF7 /* Utilities */,
 				1FF4505A229C26F0009B7DF7 /* Entidades */,
@@ -206,8 +220,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FE5D666229F42A3008E1287 /* Walking in Resources */,
 				1FF4504E229C2434009B7DF7 /* Main.storyboard in Resources */,
 				1FF45045229C2434009B7DF7 /* GameScene.sks in Resources */,
+				1FE5D67B229F42DC008E1287 /* Idle in Resources */,
 				1FF45050229C2435009B7DF7 /* Assets.xcassets in Resources */,
 				1FF45053229C2435009B7DF7 /* LaunchScreen.storyboard in Resources */,
 				1FF45047229C2434009B7DF7 /* Actions.sks in Resources */,
