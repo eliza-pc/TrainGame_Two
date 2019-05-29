@@ -45,6 +45,7 @@ class CameraComponent: GKComponent{
             gameScene.moveJoystickHiddenArea?.removeFromParent()
             guard let joystick = gameScene.moveJoystickHiddenArea else {return}
             camera.addChild(joystick)
+            gameScene.moveJoystickHiddenArea?.zPosition = 4
         }
         
         parentNode.addChild(camera)
