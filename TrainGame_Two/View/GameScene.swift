@@ -60,7 +60,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         //Animação de walk no player!!!
         player = self.childNode(withName: "player") as? SKSpriteNode
-        player!.run(SKAction.repeatForever(SKAction.animate(with: Array.dicTextures["walk"]!, timePerFrame: 0.1)))
+        player!.run(SKAction.repeatForever(SKAction.animate(with: Array.dicTextures["idle"]!, timePerFrame: 0.1)))
         
         control = Control(view: self.view!, gameScene: self)
         
