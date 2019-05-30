@@ -46,6 +46,25 @@ class MovingCharacterComponent: GKComponent {
         }
     }
     
+    func updatePressedButtons(control: UserControl?, dt: Double) {
+        
+        if (control == UserControl.jump) {
+            print("upent")
+        }
+        if (control == UserControl.down) {
+            print("downent")
+        }
+        if (control == UserControl.left) {
+            print("leftent")
+        }
+        if (control == UserControl.right) {
+            print("rigthent")
+        }
+        
+    }
+    
+    
+    
     private class IdleState: GKState, OnGround, CanControlHorizontalMovement {
         override func isValidNextState(_ stateClass: AnyClass) -> Bool {
             return stateClass is WalkingState.Type || stateClass is PreJumpingState.Type || stateClass is DyingState.Type

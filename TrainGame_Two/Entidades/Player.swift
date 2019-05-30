@@ -23,7 +23,7 @@ class Player: GKEntity{
         
         addComponent(spriteComponent)
        // spriteComponent.node.zPosition = -3
-        
+        addComponent(MovingCharacterComponent())
         addComponent(spriteComponent)
         addComponent(CameraComponent.init(parentNode: gameScene))
     }
