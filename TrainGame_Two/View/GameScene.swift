@@ -62,6 +62,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         //Para add physicsbody
         physicsWorld.contactDelegate = self
+        self.physicsWorld.gravity = CGVector(dx: 0, dy: -5)
         moveJoystickHiddenArea = TLAnalogJoystickHiddenArea(rect: CGRect(x: -(frame.width/2), y:  -(frame.height/2), width: frame.width, height: frame.height))
 
         guard let hiddenJoystick = self.moveJoystickHiddenArea else {return}
