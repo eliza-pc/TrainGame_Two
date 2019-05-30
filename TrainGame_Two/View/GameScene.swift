@@ -110,9 +110,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     // MARK: Move for Physics
                     spriteComponent.node.position = CGPoint(x: spriteComponent.node.position.x + (pVelocity.x * speed), y: spriteComponent.node.position.y)
 // + (100 * speed)
+                    print(self.control?.directionCommand ?? "")
                     
                 } else {
-                    
+                    self.control?.directionCommand = self.moveJoystick.userControl
+                    print(self.control?.directionCommand ?? "")
                     // MARK: Move for Physics
                     spriteComponent.node.position = CGPoint(x: spriteComponent.node.position.x + (pVelocity.x * speed), y: spriteComponent.node.position.y)
                     
