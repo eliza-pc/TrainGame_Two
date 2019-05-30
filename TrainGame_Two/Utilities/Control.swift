@@ -56,20 +56,15 @@ class Control {
     
     @objc func handleRecognize(gesture: UIGestureRecognizer){
         if let gesture = gesture as? UISwipeGestureRecognizer {
+
             switch gesture.direction{
             case .up:
 //                print(swipeActive)
                 if directionCommand != UserControl.jump && swipeActive == false  {
-                    print("swipe")
+           //         print("swipe")
                     directionCommand = UserControl.jump
                     swipeActive = true
-                    //Mark: Control Entities
-                    let entitys = gameScene.entityManager.getEntitys(component: PlayerComponent.self)
-                    self.entityNode = entitys[0].component(ofType: SpriteComponent.self)?.node
-                    entityNode?.run(SKAction.moveTo(y: 20, duration: 0.25))
-                    
-//                    entityNode?.run(SKAction.moveTo(y: entityNode!.position.y + (100 * 1.2), duration: 0.25))
-                    
+                    jump()
                 }
 //                print(directionCommand)
             case .down:
@@ -86,7 +81,15 @@ class Control {
         }
     }
     
-    
+    func jump() {
+        //Mark: Control Entities
+        let entitys = gameScene.entityManager.getEntitys(component: PlayerComponent.self)
+        self.entityNode = entitys[0].component(ofType: SpriteComponent.self)?.node
+        entityNode?.run(SKAction.moveTo(y: 20, duration: 0.25))
+        
+        //                    entityNode?.run(SKAction.moveTo(y: entityNode!.position.y + (100 * 1.2), duration: 0.25))
+        
+    }
     
     // Controlls in game
     

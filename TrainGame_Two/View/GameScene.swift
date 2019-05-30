@@ -141,7 +141,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func didBegin(_ contact: SKPhysicsContact) {
-        print("FOIII!😎")
+//        print("FOIII!😎")
         control?.directionCommand =  UserControl.idle
         control?.swipeActive =  false
 //        print(control?.directionCommand)
