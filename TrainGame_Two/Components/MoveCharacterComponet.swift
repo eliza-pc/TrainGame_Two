@@ -15,7 +15,6 @@ fileprivate protocol OnGround { }
 
 fileprivate protocol CanControlHorizontalMovement { }
 
-
 /**
  Represents the visuals and physics of a character that can (potentially) stand still, run left or right, jump, fall, attack, and die.
  */

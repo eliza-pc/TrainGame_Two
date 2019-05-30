@@ -14,7 +14,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     //#MARK: Variables
     var graphs = [String : GKGraph]()
     var entityManager: EntityManager!
-    
     var parallaxComponentSystem: GKComponentSystem<ParallaxComponent>?
     
     private var lastUpdateTime : TimeInterval = 0
@@ -30,9 +29,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     let moveJoystick = 🕹(withDiameter: 100)
     let rotateJoystick = TLAnalogJoystick(withDiameter: 100)
-    
     var joystickStickImageEnabled = true
-    
     var joystickSubstrateImageEnabled = true
     
     
@@ -56,7 +53,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 //
 ////        control = Control(view: self.view!)
 ////=======
-        
         
         //Animação de walk no player!!!
         player = self.childNode(withName: "player") as? SKSpriteNode
