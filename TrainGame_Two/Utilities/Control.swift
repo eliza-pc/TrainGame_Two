@@ -30,6 +30,7 @@ class Control {
     init(view: UIView, gameScene: GameScene){
         self.gameScene = gameScene
         addSwiperRecognizer(view: view)
+        addTapRecognizer(view: view)
     }
     
     //Mark: Gestures of the User
@@ -37,19 +38,28 @@ class Control {
     func addSwiperRecognizer(view: UIView) {
         let gesturesDirections: [UISwipeGestureRecognizer.Direction] = [.up,.down]
         for gesturesDirection in gesturesDirections {
-            let gestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe))
+            let gestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(handleRecognize))
             gestureRecognizer.direction = gesturesDirection
+           
             view.addGestureRecognizer(gestureRecognizer)
         }
         
     }
     
-    @objc func handleSwipe(gesture: UIGestureRecognizer){
+    func addTapRecognizer(view: UIView) {
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleRecognize))
+        view.addGestureRecognizer(gestureRecognizer)
+    }
+    
+    
+    
+    @objc func handleRecognize(gesture: UIGestureRecognizer){
         if let gesture = gesture as? UISwipeGestureRecognizer {
             switch gesture.direction{
             case .up:
-                 directionCommand = UserControl.jump 
-                let entitys = gameScene.entityManager.getEntitys(component: SpriteComponent.self)
+                 directionCommand = UserControl.jump
+                 //Mark: Control Entities
+                let entitys = gameScene.entityManager.getEntitys(component: PlayerComponent.self)
                 self.entityNode = entitys[0].component(ofType: SpriteComponent.self)?.node
                 entityNode?.run(SKAction.moveTo(y: entityNode!.position.y + (100 * 1.2), duration: 0.25))
             case .down:
@@ -59,6 +69,10 @@ class Control {
                 
             }
             
+        }
+        
+        if let gesture = gesture as? UITapGestureRecognizer {
+            print("TapOK")
         }
     }
     

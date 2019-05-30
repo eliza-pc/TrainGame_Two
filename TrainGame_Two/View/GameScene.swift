@@ -14,7 +14,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     //#MARK: Variables
     var graphs = [String : GKGraph]()
     var entityManager: EntityManager!
-    
     var parallaxComponentSystem: GKComponentSystem<ParallaxComponent>?
     
     private var lastUpdateTime : TimeInterval = 0
@@ -30,9 +29,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     let moveJoystick = 🕹(withDiameter: 100)
     let rotateJoystick = TLAnalogJoystick(withDiameter: 100)
-    
     var joystickStickImageEnabled = true
-    
     var joystickSubstrateImageEnabled = true
     
     
@@ -57,10 +54,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 ////        control = Control(view: self.view!)
 ////=======
         
-        
         //Animação de walk no player!!!
-        player = self.childNode(withName: "player") as? SKSpriteNode
-        player!.run(SKAction.repeatForever(SKAction.animate(with: Array.dicTextures["idle"]!, timePerFrame: 0.1)))
+//        player = self.childNode(withName: "player") as? SKSpriteNode
+//        player!.run(SKAction.repeatForever(SKAction.animate(with: Array.dicTextures["idle"]!, timePerFrame: 0.1)))
         
         control = Control(view: self.view!, gameScene: self)
         
@@ -76,9 +72,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         entityManager = EntityManager(scene: self)
         
-        let personagemPrincipal = Player(imageName: "test3", gameScene: self)
+        let personagemPrincipal = Player(imageName: "Mocinha", gameScene: self)
       
-        if personagemPrincipal.component(ofType: SpriteComponent.self) != nil{
+        if personagemPrincipal.component(ofType: PlayerComponent.self) != nil {
             
             moveJoystick.on(.begin) { [unowned self] _ in
              
@@ -110,11 +106,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     // MARK: Move for Physics
                     spriteComponent.node.position = CGPoint(x: spriteComponent.node.position.x + (pVelocity.x * speed), y: spriteComponent.node.position.y)
 // + (100 * speed)
-                    print(self.control?.directionCommand ?? "")
+                //    print(self.control?.directionCommand ?? "")
                     
                 } else {
                     self.control?.directionCommand = self.moveJoystick.userControl
-                    print(self.control?.directionCommand ?? "")
+                //    print(self.control?.directionCommand ?? "")
                     // MARK: Move for Physics
                     spriteComponent.node.position = CGPoint(x: spriteComponent.node.position.x + (pVelocity.x * speed), y: spriteComponent.node.position.y)
                     
@@ -169,6 +165,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         // Calculate time since last update
         let dt = currentTime - self.lastUpdateTime
+        
+        
+        //get entity para update da control e moving component
+        
+        let entitys = self.entityManager.getEntitys(component: MovingCharacterComponent.self)
+        let movingComponent = entitys[0].component(ofType: MovingCharacterComponent.self)!
+        movingComponent.updatePressedButtons(control: self.control?.directionCommand, dt: dt)
         
         entityManager.update(dt: dt)
         

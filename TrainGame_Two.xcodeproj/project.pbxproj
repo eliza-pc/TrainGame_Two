@@ -1,4 +1,4 @@
-
+// !$*UTF8*$!
 {
 	archiveVersion = 1;
 	classes = {
@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1DA672E322A018C40007B49B /* (null) in Sources */ = {isa = PBXBuildFile; };
+		1DA672E522A01D280007B49B /* PlayerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA672E422A01D280007B49B /* PlayerComponent.swift */; };
+		1F5DF38622A01934000D04CF /* (null) in Sources */ = {isa = PBXBuildFile; };
 		1F97BED7229D694000796D5F /* ParallaxComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F97BED6229D694000796D5F /* ParallaxComponent.swift */; };
 		1FE5D663229EE795008E1287 /* AnimationsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE5D662229EE794008E1287 /* AnimationsExtension.swift */; };
 		1FE5D666229F42A3008E1287 /* Walking in Resources */ = {isa = PBXBuildFile; fileRef = 1FE5D665229F42A3008E1287 /* Walking */; };
@@ -29,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1DA672E422A01D280007B49B /* PlayerComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerComponent.swift; sourceTree = "<group>"; };
 		1F97BED6229D694000796D5F /* ParallaxComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParallaxComponent.swift; sourceTree = "<group>"; };
 		1FE5D662229EE794008E1287 /* AnimationsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationsExtension.swift; sourceTree = "<group>"; };
 		1FE5D665229F42A3008E1287 /* Walking */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Walking; sourceTree = "<group>"; };
@@ -124,6 +128,7 @@
 		1FF4505B229C26FF009B7DF7 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				1DA672E422A01D280007B49B /* PlayerComponent.swift */,
 				1FF4505E229C278E009B7DF7 /* SpriteComponent.swift */,
 				1FF45069229C2D34009B7DF7 /* CameraComponent.swift */,
 				1F97BED6229D694000796D5F /* ParallaxComponent.swift */,
@@ -238,6 +243,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F97BED7229D694000796D5F /* ParallaxComponent.swift in Sources */,
+				1DA672E522A01D280007B49B /* PlayerComponent.swift in Sources */,
 				1FF45049229C2434009B7DF7 /* GameScene.swift in Sources */,
 				1FF45068229C2826009B7DF7 /* Control.swift in Sources */,
 				5E886703229ED3B60008D4B0 /* MoveCharacterComponet.swift in Sources */,
@@ -245,9 +251,11 @@
 				1FF45063229C27B6009B7DF7 /* EntityManager.swift in Sources */,
 				1FF4505F229C278E009B7DF7 /* SpriteComponent.swift in Sources */,
 				1FF45066229C281B009B7DF7 /* TLAnalogJoystick.swift in Sources */,
+				1F5DF38622A01934000D04CF /* (null) in Sources */,
 				1FE5D663229EE795008E1287 /* AnimationsExtension.swift in Sources */,
 				1FF45061229C27A1009B7DF7 /* Player.swift in Sources */,
 				1FF45043229C2434009B7DF7 /* AppDelegate.swift in Sources */,
+				1DA672E322A018C40007B49B /* (null) in Sources */,
 				1FF4506A229C2D34009B7DF7 /* CameraComponent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -395,7 +403,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2CW963BG8P;
 				DEVELOPMENT_TEAM = 97WB89LRXA;
 				INFOPLIST_FILE = TrainGame_Two/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -414,7 +421,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2CW963BG8P;
 				DEVELOPMENT_TEAM = 97WB89LRXA;
 				INFOPLIST_FILE = TrainGame_Two/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

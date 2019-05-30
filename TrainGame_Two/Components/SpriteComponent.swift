@@ -14,9 +14,9 @@ class SpriteComponent: GKComponent {
     
     var node: SKSpriteNode
     
-    init(texture: SKTexture, gameScene: GameScene) {
+    init(texture: SKTexture, gameScene: GameScene, nodeName: String) {
         node = SKSpriteNode(texture: texture, color: .white, size: texture.size())
-        node = (gameScene.childNode(withName: "player") as? SKSpriteNode)!
+        node = (gameScene.childNode(withName: nodeName) as? SKSpriteNode)!
         super.init()
     }
     
