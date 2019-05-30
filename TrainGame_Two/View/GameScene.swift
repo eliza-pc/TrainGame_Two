@@ -59,8 +59,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         
         //Animação de walk no player!!!
-        player = self.childNode(withName: "player") as? SKSpriteNode
-        player!.run(SKAction.repeatForever(SKAction.animate(with: Array.dicTextures["idle"]!, timePerFrame: 0.1)))
+//        player = self.childNode(withName: "player") as? SKSpriteNode
+//        player!.run(SKAction.repeatForever(SKAction.animate(with: Array.dicTextures["idle"]!, timePerFrame: 0.1)))
         
         control = Control(view: self.view!, gameScene: self)
         
@@ -78,7 +78,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         let personagemPrincipal = Player(imageName: "test3", gameScene: self)
       
-        if personagemPrincipal.component(ofType: SpriteComponent.self) != nil{
+        if personagemPrincipal.component(ofType: PlayerComponent.self) != nil {
             
             moveJoystick.on(.begin) { [unowned self] _ in
              
