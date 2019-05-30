@@ -40,23 +40,29 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     //#MARK: DidMove_FUNC
     override func didMove(to view: SKView) {
-//<<<<<<< HEAD
+        
+////<<<<<<< HEAD
+////
+////
+//        //Parallax Stuff
+//        self.camera?.addChild(childNode(withName: "layer1")!)
+//
+//        parallaxComponentSystem = GKComponentSystem.init(componentClass: ParallaxComponent.self)
 //
 //
-        //Parallax Stuff
-        self.camera?.addChild(childNode(withName: "layer1")!)
-
-        parallaxComponentSystem = GKComponentSystem.init(componentClass: ParallaxComponent.self)
+//        for components in (parallaxComponentSystem?.components)!{
+//            components.prepareWith(camera: camera)
+//        }
+//
+////        control = Control(view: self.view!)
+////=======
         
         
-        for components in (parallaxComponentSystem?.components)!{
-            components.prepareWith(camera: camera)
-        }
+        //Animação de walk no player!!!
+        player = self.childNode(withName: "player") as? SKSpriteNode
+        player!.run(SKAction.repeatForever(SKAction.animate(with: Array.dicTextures["idle"]!, timePerFrame: 0.1)))
         
-//        control = Control(view: self.view!)
-//=======
         control = Control(view: self.view!, gameScene: self)
-//>>>>>>> Developer
         
         //Para add physicsbody
         physicsWorld.contactDelegate = self
@@ -70,7 +76,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         entityManager = EntityManager(scene: self)
         
-        let personagemPrincipal = Player(imageName: "Evil", gameScene: self)
+        let personagemPrincipal = Player(imageName: "test3", gameScene: self)
       
         if personagemPrincipal.component(ofType: SpriteComponent.self) != nil{
             
