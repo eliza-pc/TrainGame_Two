@@ -21,11 +21,14 @@ class Player: GKEntity{
         spriteComponent.node.texture = SKTexture.init(imageNamed: imageName)
         spriteComponent.node.size = CGSize(width: 200, height: 200)
         
+        
         addComponent(spriteComponent)
        // spriteComponent.node.zPosition = -3
         
         addComponent(spriteComponent)
         addComponent(CameraComponent.init(parentNode: gameScene))
+        addComponent(MovingCharacterComponent())
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
