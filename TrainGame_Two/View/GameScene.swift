@@ -78,7 +78,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             moveJoystick.on(.begin) { [unowned self] _ in
              
-                self.control?.directionCommand = UserControl.idle
+//                self.control?.directionCommand = UserControl.idle
                 
               //  let actions = [
 //                    SKAction.scale(to: 1, duration: 0.5),
@@ -119,13 +119,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             }
             
             moveJoystick.on(.end) { [unowned self] _ in
-                
+              //  print("ta acabando")
 //                let actions = [
 //                    SKAction.scale(to: 1, duration: 0.5),
 //                    SKAction.scale(to: 1, duration: 0.5)
 //                ]
 //
 //                spriteComponent.node.run(SKAction.sequence(actions))
+//                 self.control?.directionCommand = UserControl.idle
             }
         }
         
@@ -133,17 +134,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         view.isMultipleTouchEnabled = false
         
         for entity in self.entityManager.entities {
-            print(entity)
             parallaxComponentSystem?.addComponent(foundIn: entity)
         }
         
     }
     
     func didBegin(_ contact: SKPhysicsContact) {
-        //print("FOIII!😎")
-        
+        print("FOIII!😎")
         control?.directionCommand =  UserControl.idle
-        
+        control?.swipeActive =  false
+//        print(control?.directionCommand)
     }
     
     override func sceneDidLoad() {
