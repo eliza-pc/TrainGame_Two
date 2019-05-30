@@ -40,6 +40,7 @@ class Control {
         for gesturesDirection in gesturesDirections {
             let gestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(handleRecognize))
             gestureRecognizer.direction = gesturesDirection
+           
             view.addGestureRecognizer(gestureRecognizer)
         }
         
