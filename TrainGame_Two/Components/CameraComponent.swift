@@ -35,7 +35,10 @@ class CameraComponent: GKComponent{
         //Limite de camera para direita
         let fixedXConstraint_upper = SKConstraint.positionX(SKRange.init(upperLimit: 1282))
         
+        //Fixar camera no eixo Y
+        //Upper limit = Limite maximo para cima -- tipo se pular o quanto ela se move!!
         let fixedYConstraint = SKConstraint.positionY(SKRange.init(upperLimit: 0))
+        //Lower limit = Limite maximo para baixo
         let lowerYConstraint = SKConstraint.positionY(SKRange.init(lowerLimit: 0))
         
         camera.constraints = [followConstraint, fixedXConstraint, fixedYConstraint, lowerYConstraint,fixedXConstraint_upper]

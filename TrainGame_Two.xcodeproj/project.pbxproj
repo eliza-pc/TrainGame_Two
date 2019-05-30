@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F5DF38622A01934000D04CF /* Obstacle_Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5DF38522A01934000D04CF /* Obstacle_Box.swift */; };
 		1F97BED7229D694000796D5F /* ParallaxComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F97BED6229D694000796D5F /* ParallaxComponent.swift */; };
 		1FE5D663229EE795008E1287 /* AnimationsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE5D662229EE794008E1287 /* AnimationsExtension.swift */; };
 		1FE5D666229F42A3008E1287 /* Walking in Resources */ = {isa = PBXBuildFile; fileRef = 1FE5D665229F42A3008E1287 /* Walking */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F5DF38522A01934000D04CF /* Obstacle_Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Obstacle_Box.swift; sourceTree = "<group>"; };
 		1F97BED6229D694000796D5F /* ParallaxComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParallaxComponent.swift; sourceTree = "<group>"; };
 		1FE5D662229EE794008E1287 /* AnimationsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationsExtension.swift; sourceTree = "<group>"; };
 		1FE5D665229F42A3008E1287 /* Walking */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Walking; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 			children = (
 				1FF45060229C27A1009B7DF7 /* Player.swift */,
 				1FF45062229C27B6009B7DF7 /* EntityManager.swift */,
+				1F5DF38522A01934000D04CF /* Obstacle_Box.swift */,
 			);
 			path = Entidades;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 				1FF45063229C27B6009B7DF7 /* EntityManager.swift in Sources */,
 				1FF4505F229C278E009B7DF7 /* SpriteComponent.swift in Sources */,
 				1FF45066229C281B009B7DF7 /* TLAnalogJoystick.swift in Sources */,
+				1F5DF38622A01934000D04CF /* Obstacle_Box.swift in Sources */,
 				1FE5D663229EE795008E1287 /* AnimationsExtension.swift in Sources */,
 				1FF45061229C27A1009B7DF7 /* Player.swift in Sources */,
 				1FF45043229C2434009B7DF7 /* AppDelegate.swift in Sources */,
