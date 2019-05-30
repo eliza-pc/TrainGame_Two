@@ -48,9 +48,9 @@ class Control {
         if let gesture = gesture as? UISwipeGestureRecognizer {
             switch gesture.direction{
             case .up:
+                 directionCommand = UserControl.jump 
                 let entitys = gameScene.entityManager.getEntitys(component: SpriteComponent.self)
                 self.entityNode = entitys[0].component(ofType: SpriteComponent.self)?.node
-                directionCommand = UserControl.jump             
                 entityNode?.run(SKAction.moveTo(y: entityNode!.position.y + (100 * 1.2), duration: 0.25))
             case .down:
                 directionCommand = UserControl.down

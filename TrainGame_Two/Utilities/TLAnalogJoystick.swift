@@ -453,7 +453,7 @@ open class TLAnalogJoystick: SKNode {
             userControl = UserControl.left
         }
         
-        print(userControl)
+       // print(userControl)
         
     }
     
