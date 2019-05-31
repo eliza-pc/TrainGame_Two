@@ -25,7 +25,7 @@ class CameraComponent: GKComponent{
         
         guard let nodeComponent = entity.component(ofType: SpriteComponent.self) else{ return }
         
-        let node = nodeComponent.node
+        let node = nodeComponent.nodePhysic
         
         let followConstraint = SKConstraint.distance(SKRange.init(upperLimit: 100), to: node)
         

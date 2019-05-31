@@ -105,7 +105,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 
                 if self.control?.directionCommand == UserControl.jump {
                     // MARK: Move for Physics
-                    spriteComponent.node.position = CGPoint(x: spriteComponent.node.position.x + (pVelocity.x * speed), y: spriteComponent.node.position.y)
+                    spriteComponent.nodePhysic.position = CGPoint(x: spriteComponent.nodePhysic.position.x + (pVelocity.x * speed), y: spriteComponent.nodePhysic.position.y)
 // + (100 * speed)
                 //    print(self.control?.directionCommand ?? "")
                     
@@ -113,7 +113,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     self.control?.directionCommand = self.moveJoystick.userControl
                 //    print(self.control?.directionCommand ?? "")
                     // MARK: Move for Physics
-                    spriteComponent.node.position = CGPoint(x: spriteComponent.node.position.x + (pVelocity.x * speed), y: spriteComponent.node.position.y)
+                    spriteComponent.nodePhysic.position = CGPoint(x: spriteComponent.nodePhysic.position.x + (pVelocity.x * speed), y: spriteComponent.nodePhysic.position.y)
                     
                 }
                 
