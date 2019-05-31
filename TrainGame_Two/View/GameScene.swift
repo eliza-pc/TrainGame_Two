@@ -111,6 +111,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     
                 } else {
                     self.control?.directionCommand = self.moveJoystick.userControl
+                    //Mark: Trecho do código que faz o personagem virar. OBS: FAZER O PERSONAGEM VIRADO PARA A DIREITA (PADRÃO DE PROJETO)
+                    if self.control?.directionCommand == UserControl.right {
+                         spriteComponent.nodeTexture.xScale = abs(spriteComponent.nodeTexture.xScale) * -1.0
+                    } else {
+                        spriteComponent.nodeTexture.xScale = abs(spriteComponent.nodeTexture.xScale) * 1.0
+                    }
                 //    print(self.control?.directionCommand ?? "")
                     // MARK: Move for Physics
                     spriteComponent.nodePhysic.position = CGPoint(x: spriteComponent.nodePhysic.position.x + (pVelocity.x * speed), y: spriteComponent.nodePhysic.position.y)
