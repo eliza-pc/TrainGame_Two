@@ -29,6 +29,7 @@ class EntityManager {
     
     
     func remove(_ entity: GKEntity) {
+        
         if let spriteNode = entity.component(ofType: SpriteComponent.self)?.nodePhysic {
             spriteNode.removeFromParent()
         }

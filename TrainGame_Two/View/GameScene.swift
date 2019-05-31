@@ -73,7 +73,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         entityManager = EntityManager(scene: self)
         
-        let personagemPrincipal = Player(imageName: "Mocinha", gameScene: self)
+        let personagemPrincipal = Player(imageName: "adventurer-idle-0", gameScene: self)
       
         if personagemPrincipal.component(ofType: PlayerComponent.self) != nil {
             
@@ -99,10 +99,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     return
                 }
                 
+                
+                
 //                print (self.moveJoystick)
                 let pVelocity = joystick.velocity;
                 let speed = CGFloat(0.12)
-                
+
                 if self.control?.directionCommand == UserControl.jump {
                     // MARK: Move for Physics
                     spriteComponent.nodePhysic.position = CGPoint(x: spriteComponent.nodePhysic.position.x + (pVelocity.x * speed), y: spriteComponent.nodePhysic.position.y)
@@ -110,16 +112,26 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 //    print(self.control?.directionCommand ?? "")
                     
                 } else {
+                    
                     self.control?.directionCommand = self.moveJoystick.userControl
                     //Mark: Trecho do código que faz o personagem virar. OBS: FAZER O PERSONAGEM VIRADO PARA A DIREITA (PADRÃO DE PROJETO)
+                    
                     if self.control?.directionCommand == UserControl.right {
                          spriteComponent.nodeTexture.xScale = abs(spriteComponent.nodeTexture.xScale) * -1.0
+                        
+                      
+                        
                     } else {
+                        
                         spriteComponent.nodeTexture.xScale = abs(spriteComponent.nodeTexture.xScale) * 1.0
+                   
+                        
                     }
                 //    print(self.control?.directionCommand ?? "")
                     // MARK: Move for Physics
                     spriteComponent.nodePhysic.position = CGPoint(x: spriteComponent.nodePhysic.position.x + (pVelocity.x * speed), y: spriteComponent.nodePhysic.position.y)
+                    
+               
                     
                 }
                 
@@ -133,7 +145,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 //                ]
 //
 //                spriteComponent.node.run(SKAction.sequence(actions))
-//                 self.control?.directionCommand = UserControl.idle
+                 self.control?.directionCommand = UserControl.idle
             }
         }
         
@@ -147,9 +159,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func didBegin(_ contact: SKPhysicsContact) {
-//        print("FOIII!😎")
+        print("FOIII!😎")
         control?.directionCommand =  UserControl.idle
         control?.swipeActive =  false
+        
 //        print(control?.directionCommand)
     }
     
@@ -176,9 +189,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         //get entity para update da control e moving component
         
-        let entitys = self.entityManager.getEntitys(component: MovingCharacterComponent.self)
-        let movingComponent = entitys[0].component(ofType: MovingCharacterComponent.self)!
-        movingComponent.updatePressedButtons(control: self.control?.directionCommand, dt: dt)
+        
+        //comentei!!!!
+//        let entitys = self.entityManager.getEntitys(component: MovingCharacterComponent.self)
+//        let movingComponent = entitys[0].component(ofType: MovingCharacterComponent.self)!
+//        movingComponent.updatePressedButtons(control: self.control?.directionCommand, dt: dt)
+//
+        control?.updatePressedButtons(control: self.control?.directionCommand, dt: dt)
         
         entityManager.update(dt: dt)
         

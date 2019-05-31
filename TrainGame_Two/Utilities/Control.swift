@@ -30,8 +30,12 @@ class Control {
     
     init(view: UIView, gameScene: GameScene){
         self.gameScene = gameScene
-        addSwiperRecognizer(view: view)
-        addTapRecognizer(view: view)
+        self.addSwiperRecognizer(view: view)
+        self.addTapRecognizer(view: view)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     //Mark: Gestures of the User
@@ -91,24 +95,54 @@ class Control {
         
     }
     
-    // Controlls in game
+        func updatePressedButtons(control: UserControl?, dt: Double) {
     
-    func touchBegan(_ touch: UITouch, in scene: SKScene) {
-        print("pegouSWPBG")
+            if (control == UserControl.jump) {
+
+                print("upent")
+        
+            }else if (control == UserControl.down) {
+                
+                print("downent")
+                
+            }else if (control == UserControl.left) {
+                
+                print("leftent")
+                stateWalk()
+                
+            }else if (control == UserControl.right) {
+                
+                print("rigthent")
+                stateWalk()
+               
+                
+            }else if (control == UserControl.idle){
+                stateIdle()
+            }
+                
+            
+    
+        }
+    
+    func stateIdle(){
+        let entitys = gameScene.entityManager.getEntitys(component: PlayerComponent.self)
+        let entity = entitys[0]
+        guard let state = entity.component(ofType: StateMachineComponent.self) else{
+            print("miou")
+            return
+        }
+        state.stateMachine.enter(IdleState.self)
     }
     
-    func touchMoved(_ touch: UITouch, in scene: SKScene) {
-        print("pegouSWPMOVE")
+    func stateWalk(){
+        let entitys = gameScene.entityManager.getEntitys(component: PlayerComponent.self)
+        let entity = entitys[0]
+        guard let state = entity.component(ofType: StateMachineComponent.self) else{
+            print("miou")
+            return
+        }
+        state.stateMachine.enter(WalkState.self)
     }
-    
-    func touchEnded(_ touch: UITouch, in scene: SKScene) {
-        print("pegouSWPENDED")
-    }
-    
-    func touchCancelled(_ touch: UITouch, in scene: SKScene) {
-        print("pegouSWPCANCEL")
-    }
-    
     
 }
 
