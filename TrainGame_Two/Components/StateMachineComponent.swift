@@ -26,14 +26,14 @@ class AnimatedState: GKState{
     }
     
     override func didEnter(from previousState: GKState?) {
-        guard let node = component?.entity?.component(ofType:  SpriteComponent.self)?.nodeTexture as? SKSpriteNode else {
+        guard let node = component?.entity?.component(ofType:  SpriteComponent.self)?.nodeTexture else {
                 return
         }
         activateNode(node)
     }
     
     override func willExit(to nextState: GKState) {
-        guard let node = component?.entity?.component(ofType: SpriteComponent.self)?.nodeTexture as? SKSpriteNode else {
+        guard let node = component?.entity?.component(ofType: SpriteComponent.self)?.nodeTexture else {
             return
         }
         deactivateNode(node)
