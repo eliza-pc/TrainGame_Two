@@ -100,6 +100,7 @@ class Control {
             if (control == UserControl.jump) {
 
                 print("upent")
+                stateJump()
         
             }else if (control == UserControl.down) {
                 
@@ -123,25 +124,32 @@ class Control {
             
     
         }
-    
     func stateIdle(){
         let entitys = gameScene.entityManager.getEntitys(component: PlayerComponent.self)
         let entity = entitys[0]
         guard let state = entity.component(ofType: StateMachineComponent.self) else{
-            print("miou")
+            print("idlo")
             return
         }
         state.stateMachine.enter(IdleState.self)
     }
-    
     func stateWalk(){
         let entitys = gameScene.entityManager.getEntitys(component: PlayerComponent.self)
         let entity = entitys[0]
         guard let state = entity.component(ofType: StateMachineComponent.self) else{
-            print("miou")
+            print("walko")
             return
         }
         state.stateMachine.enter(WalkState.self)
+    }
+    func stateJump(){
+        let entitys = gameScene.entityManager.getEntitys(component: PlayerComponent.self)
+        let entity = entitys[0]
+        guard let state = entity.component(ofType: StateMachineComponent.self) else{
+            print("jumpo")
+            return
+        }
+        state.stateMachine.enter(JumpState.self)
     }
     
 }
