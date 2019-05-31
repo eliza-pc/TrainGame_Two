@@ -9,17 +9,26 @@
 import Foundation
 import GameplayKit
 
-
 fileprivate protocol OnGround { }
 
 
 fileprivate protocol CanControlHorizontalMovement { }
 
+
 /**
  Represents the visuals and physics of a character that can (potentially) stand still, run left or right, jump, fall, attack, and die.
  */
 class MovingCharacterComponent: GKComponent {
-    enum InitialState {
+    
+
+    var idleAnimation = SKAction.repeatForever(SKAction.animate(with: Array.dicTextures["idle"]!, timePerFrame: 0.1))
+    
+    var walkAnimation = SKAction.repeatForever(SKAction.animate(with: Array.dicTextures["Walking"]!, timePerFrame: 0.1))
+
+    
+    private let stateMachine = GKStateMachine.self
+    
+        enum InitialState {
         case idle
     }
     
@@ -70,7 +79,7 @@ class MovingCharacterComponent: GKComponent {
         }
     }
     
-    private class PreJumpingState: GKState, OnGround, CanControlHorizontalMovement {
+   private  class PreJumpingState: GKState, OnGround {
         override func isValidNextState(_ stateClass: AnyClass) -> Bool {
             return stateClass is JumpingState.Type || stateClass is DyingState.Type
         }

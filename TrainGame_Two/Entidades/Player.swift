@@ -27,6 +27,8 @@ class Player: GKEntity{
         addComponent(MovingCharacterComponent())
         addComponent(spriteComponent)
         addComponent(CameraComponent.init(parentNode: gameScene))
+        addComponent(MovingCharacterComponent())
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
