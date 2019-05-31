@@ -9,7 +9,10 @@
 import Foundation
 import GameplayKit
 
+fileprivate protocol OnGround { }
 
+
+fileprivate protocol CanControlHorizontalMovement { }
 
 
 /**
@@ -76,19 +79,19 @@ class MovingCharacterComponent: GKComponent {
         }
     }
     
-   private  class PreJumpingState: GKState {
+   private  class PreJumpingState: GKState, OnGround {
         override func isValidNextState(_ stateClass: AnyClass) -> Bool {
             return stateClass is JumpingState.Type || stateClass is DyingState.Type
         }
     }
     
-    private class WalkingState: GKState {
+    private class WalkingState: GKState, OnGround, CanControlHorizontalMovement {
         override func isValidNextState(_ stateClass: AnyClass) -> Bool {
             return stateClass is IdleState.Type || stateClass is PreJumpingState.Type
         }
     }
     
-    private class JumpingState: GKState {
+    private class JumpingState: GKState, CanControlHorizontalMovement {
         override func isValidNextState(_ stateClass: AnyClass) -> Bool {
             return stateClass is IdleState.Type
         }
