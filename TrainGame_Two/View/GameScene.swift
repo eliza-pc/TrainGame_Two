@@ -73,7 +73,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         entityManager = EntityManager(scene: self)
         
-        let personagemPrincipal = Player(imageName: "adventurer-idle-0", gameScene: self)
+        let personagemPrincipal = Player(imageName: "idle1", gameScene: self)
       
         if personagemPrincipal.component(ofType: PlayerComponent.self) != nil {
             

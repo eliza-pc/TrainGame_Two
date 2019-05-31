@@ -42,36 +42,51 @@ class AnimatedState: GKState{
 }
 
 class IdleState: AnimatedState{
-    private let action = SKAction.repeatForever(SKAction.animate(with: .init(withFormat: "adventurer-idle-%d", range: 0...3), timePerFrame: 0.3))
+    private let action = SKAction.repeatForever(SKAction.animate(with: .init(withFormat: "normal-%d", range: 2...9), timePerFrame: 0.3))
     
     override func isValidNextState(_ stateClass: AnyClass) -> Bool {
-        return stateClass is WalkState.Type
+        return stateClass is WalkState.Type || stateClass is JumpState.Type
     }
     
     override func activateNode(_ node: SKSpriteNode) {
-        node.run(action, withKey: "idle")
+        node.run(action, withKey: "normal")
     }
     override func deactivateNode(_ node: SKSpriteNode) {
-        node.removeAction(forKey: "idle")
+        node.removeAction(forKey: "normal")
     }
 }
 
 class WalkState: AnimatedState{
-    private let action = SKAction.repeatForever(SKAction.animate(with: .init(withFormat: "adventurer-run-%d", range: 0...5), timePerFrame: 0.3))
+    private let action = SKAction.repeatForever(SKAction.animate(with: .init(withFormat: "walk%d", range: 1...8), timePerFrame: 0.3))
     
     override func isValidNextState(_ stateClass: AnyClass) -> Bool {
-        return stateClass is IdleState.Type
+        return stateClass is IdleState.Type || stateClass is JumpState.Type
     }
     
     override func activateNode(_ node: SKSpriteNode) {
-        node.run(action, withKey: "run")
+        node.run(action, withKey: "walk")
     }
     override func deactivateNode(_ node: SKSpriteNode) {
-        node.removeAction(forKey: "run")
+        node.removeAction(forKey: "walk")
     }
     
 }
 
+class JumpState: AnimatedState{
+    private let action = SKAction.repeatForever(SKAction.animate(with: .init(withFormat: "jump%d", range: 1...6), timePerFrame: 0.3))
+    
+    override func isValidNextState(_ stateClass: AnyClass) -> Bool {
+        return stateClass is IdleState.Type || stateClass is IdleState.Type || stateClass is WalkState.Type
+    }
+    
+    override func activateNode(_ node: SKSpriteNode) {
+        node.run(action, withKey: "jump")
+    }
+    override func deactivateNode(_ node: SKSpriteNode) {
+        node.removeAction(forKey: "jump")
+    }
+    
+}
 
 class StateMachineComponent: GKComponent {
     
