@@ -12,11 +12,12 @@ import GameplayKit
 
 class SpriteComponent: GKComponent {
     
-    var node: SKSpriteNode
-    
-    init(texture: SKTexture, gameScene: GameScene, nodeName: String) {
-        node = SKSpriteNode(texture: texture, color: .white, size: texture.size())
-        node = (gameScene.childNode(withName: nodeName) as? SKSpriteNode)!
+    var nodePhysic: SKSpriteNode
+    var nodeTexture: SKSpriteNode
+    init(texture: SKTexture, gameScene: GameScene, nodeName: String, textureNodeName: String) {
+//        node = SKSpriteNode(texture: texture, color: .white, size: texture.size())
+        nodePhysic = (gameScene.childNode(withName: nodeName) as? SKSpriteNode)!
+        nodeTexture = nodePhysic.childNode(withName: textureNodeName) as! SKSpriteNode
         super.init()
     }
     

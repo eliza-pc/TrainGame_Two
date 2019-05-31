@@ -26,6 +26,7 @@ class Control {
     var directionCommand: UserControl?
     var gameScene: GameScene
     var entityNode: SKNode? = nil
+    var swipeActive: Bool = false
     
     init(view: UIView, gameScene: GameScene){
         self.gameScene = gameScene
@@ -40,7 +41,7 @@ class Control {
         for gesturesDirection in gesturesDirections {
             let gestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(handleRecognize))
             gestureRecognizer.direction = gesturesDirection
-           
+            gestureRecognizer.numberOfTouchesRequired = 1
             view.addGestureRecognizer(gestureRecognizer)
         }
         
@@ -55,13 +56,17 @@ class Control {
     
     @objc func handleRecognize(gesture: UIGestureRecognizer){
         if let gesture = gesture as? UISwipeGestureRecognizer {
+
             switch gesture.direction{
             case .up:
-                 directionCommand = UserControl.jump
-                 //Mark: Control Entities
-                let entitys = gameScene.entityManager.getEntitys(component: PlayerComponent.self)
-                self.entityNode = entitys[0].component(ofType: SpriteComponent.self)?.node
-                entityNode?.run(SKAction.moveTo(y: entityNode!.position.y + (100 * 1.2), duration: 0.25))
+//                print(swipeActive)
+                if directionCommand != UserControl.jump && swipeActive == false  {
+           //         print("swipe")
+                    directionCommand = UserControl.jump
+                    swipeActive = true
+                    jump()
+                }
+//                print(directionCommand)
             case .down:
                 directionCommand = UserControl.down
             default:
@@ -76,7 +81,15 @@ class Control {
         }
     }
     
-    
+    func jump() {
+        //Mark: Control Entities
+        let entitys = gameScene.entityManager.getEntitys(component: PlayerComponent.self)
+        self.entityNode = entitys[0].component(ofType: SpriteComponent.self)?.nodePhysic
+        entityNode?.run(SKAction.moveTo(y: 20, duration: 0.25))
+        
+        //                    entityNode?.run(SKAction.moveTo(y: entityNode!.position.y + (100 * 1.2), duration: 0.25))
+        
+    }
     
     // Controlls in game
     

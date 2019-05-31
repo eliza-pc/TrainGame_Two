@@ -62,6 +62,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         //Para add physicsbody
         physicsWorld.contactDelegate = self
+        self.physicsWorld.gravity = CGVector(dx: 0, dy: -5)
         moveJoystickHiddenArea = TLAnalogJoystickHiddenArea(rect: CGRect(x: -(frame.width/2), y:  -(frame.height/2), width: frame.width, height: frame.height))
 
         guard let hiddenJoystick = self.moveJoystickHiddenArea else {return}
@@ -78,7 +79,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             moveJoystick.on(.begin) { [unowned self] _ in
              
-                self.control?.directionCommand = UserControl.idle
+//                self.control?.directionCommand = UserControl.idle
                 
               //  let actions = [
 //                    SKAction.scale(to: 1, duration: 0.5),
@@ -104,28 +105,35 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 
                 if self.control?.directionCommand == UserControl.jump {
                     // MARK: Move for Physics
-                    spriteComponent.node.position = CGPoint(x: spriteComponent.node.position.x + (pVelocity.x * speed), y: spriteComponent.node.position.y)
+                    spriteComponent.nodePhysic.position = CGPoint(x: spriteComponent.nodePhysic.position.x + (pVelocity.x * speed), y: spriteComponent.nodePhysic.position.y)
 // + (100 * speed)
                 //    print(self.control?.directionCommand ?? "")
                     
                 } else {
                     self.control?.directionCommand = self.moveJoystick.userControl
+                    //Mark: Trecho do código que faz o personagem virar. OBS: FAZER O PERSONAGEM VIRADO PARA A DIREITA (PADRÃO DE PROJETO)
+                    if self.control?.directionCommand == UserControl.right {
+                         spriteComponent.nodeTexture.xScale = abs(spriteComponent.nodeTexture.xScale) * -1.0
+                    } else {
+                        spriteComponent.nodeTexture.xScale = abs(spriteComponent.nodeTexture.xScale) * 1.0
+                    }
                 //    print(self.control?.directionCommand ?? "")
                     // MARK: Move for Physics
-                    spriteComponent.node.position = CGPoint(x: spriteComponent.node.position.x + (pVelocity.x * speed), y: spriteComponent.node.position.y)
+                    spriteComponent.nodePhysic.position = CGPoint(x: spriteComponent.nodePhysic.position.x + (pVelocity.x * speed), y: spriteComponent.nodePhysic.position.y)
                     
                 }
                 
             }
             
             moveJoystick.on(.end) { [unowned self] _ in
-                
+              //  print("ta acabando")
 //                let actions = [
 //                    SKAction.scale(to: 1, duration: 0.5),
 //                    SKAction.scale(to: 1, duration: 0.5)
 //                ]
 //
 //                spriteComponent.node.run(SKAction.sequence(actions))
+//                 self.control?.directionCommand = UserControl.idle
             }
         }
         
@@ -133,17 +141,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         view.isMultipleTouchEnabled = false
         
         for entity in self.entityManager.entities {
-            print(entity)
             parallaxComponentSystem?.addComponent(foundIn: entity)
         }
         
     }
     
     func didBegin(_ contact: SKPhysicsContact) {
-        //print("FOIII!😎")
-        
+//        print("FOIII!😎")
         control?.directionCommand =  UserControl.idle
-        
+        control?.swipeActive =  false
+//        print(control?.directionCommand)
     }
     
     override func sceneDidLoad() {

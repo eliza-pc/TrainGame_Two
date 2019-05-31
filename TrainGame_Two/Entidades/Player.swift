@@ -15,13 +15,13 @@ class Player: GKEntity{
     init(imageName: String, gameScene: GameScene){
         super.init()
        
-        let spriteComponent = SpriteComponent(texture: SKTexture(imageNamed: imageName), gameScene: gameScene, nodeName: "player")
-//       let texturePlayer = SKTexture.init(imageNamed: imageName)
+        let spriteComponent = SpriteComponent(texture: SKTexture(imageNamed: imageName), gameScene: gameScene, nodeName: "player", textureNodeName: "texturePlayer")
+       let texturePlayer = SKTexture.init(imageNamed: imageName)
 //       texturePlayer.size().equalTo(CGSize(width: 200, height: 200))
-//        spriteComponent.node.texture = texturePlayer
 //        spriteComponent.node.texture = SKTexture.init(imageNamed: imageName)
-        spriteComponent.node.size = CGSize(width: 87.75, height: 116)
 //      spriteComponent.node.zPosition = -3
+        spriteComponent.nodeTexture.texture = texturePlayer
+        spriteComponent.nodePhysic.size = CGSize(width: 87.75, height: 116)
         addComponent(PlayerComponent())
         addComponent(spriteComponent)
         addComponent(MovingCharacterComponent())
