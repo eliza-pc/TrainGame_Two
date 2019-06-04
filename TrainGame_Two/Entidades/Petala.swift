@@ -17,9 +17,11 @@ class Petala: GKEntity{
         super.init()
         
         let spriteComponent = SpriteComponent(texture: SKTexture(imageNamed: imageName), gameScene: gameScene, nodeName: "player", textureNodeName: "texturePlayer")
-        
-        
+
         let texturePlayer = SKTexture.init(imageNamed: imageName)
+        spriteComponent.nodeTexture.texture = texturePlayer
+        
+        addComponent(CollectableComponent())
         
     }
     

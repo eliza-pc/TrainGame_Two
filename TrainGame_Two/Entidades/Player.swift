@@ -22,14 +22,14 @@ class Player: GKEntity{
 //       texturePlayer.size().equalTo(CGSize(width: 200, height: 200))
 //        spriteComponent.node.texture = SKTexture.init(imageNamed: imageName)
 //      spriteComponent.node.zPosition = -3
+        
         spriteComponent.nodeTexture.texture = texturePlayer
         spriteComponent.nodePhysic.size = CGSize(width: 87.75, height: 116)
         addComponent(PlayerComponent())
         addComponent(spriteComponent)
-       // addComponent(MovingCharacterComponent())
-        addComponent(spriteComponent)
+
         addComponent(CameraComponent.init(parentNode: gameScene))
-      //  addComponent(MovingCharacterComponent())
+   
         
         let stateMachineComponent = StateMachineComponent()
         addComponent(stateMachineComponent)

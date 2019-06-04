@@ -38,25 +38,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     //#MARK: DidMove_FUNC
     override func didMove(to view: SKView) {
         
-////<<<<<<< HEAD
-////
-////
-//        //Parallax Stuff
-//        self.camera?.addChild(childNode(withName: "layer1")!)
-//
-//        parallaxComponentSystem = GKComponentSystem.init(componentClass: ParallaxComponent.self)
-//
-//
-//        for components in (parallaxComponentSystem?.components)!{
-//            components.prepareWith(camera: camera)
-//        }
-//
-////        control = Control(view: self.view!)
-////=======
-        
-        //Animação de walk no player!!!
-//        player = self.childNode(withName: "player") as? SKSpriteNode
-//        player!.run(SKAction.repeatForever(SKAction.animate(with: Array.dicTextures["idle"]!, timePerFrame: 0.1)))
+        let personagemPrincipal = Player(imageName: "idle1", gameScene: self)
         
         control = Control(view: self.view!, gameScene: self)
         
@@ -73,8 +55,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         entityManager = EntityManager(scene: self)
         
-        let personagemPrincipal = Player(imageName: "idle1", gameScene: self)
-      
+        
         if personagemPrincipal.component(ofType: PlayerComponent.self) != nil {
             
             moveJoystick.on(.begin) { [unowned self] _ in
@@ -130,9 +111,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 //    print(self.control?.directionCommand ?? "")
                     // MARK: Move for Physics
                     spriteComponent.nodePhysic.position = CGPoint(x: spriteComponent.nodePhysic.position.x + (pVelocity.x * speed), y: spriteComponent.nodePhysic.position.y)
-                    
-               
-                    
+            
                 }
                 
             }
@@ -161,8 +140,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func didBegin(_ contact: SKPhysicsContact) {
-        print("FOIII!😎")
+        print("Houve Contato😎")
         
+        let petala = Petala(imageName: "RosePetal", gameScene: self)
+
         control?.directionCommand =  UserControl.idle
         control?.swipeActive =  false
         
@@ -205,20 +186,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if (self.lastUpdateTime == 0) {
             self.lastUpdateTime = currentTime
         }
-        
-        
+    
         // Calculate time since last update
         let dt = currentTime - self.lastUpdateTime
         
         
         //get entity para update da control e moving component
-        
-        
-        //comentei!!!!
-//        let entitys = self.entityManager.getEntitys(component: MovingCharacterComponent.self)
-//        let movingComponent = entitys[0].component(ofType: MovingCharacterComponent.self)!
-//        movingComponent.updatePressedButtons(control: self.control?.directionCommand, dt: dt)
-//
+
         control?.updatePressedButtons(control: self.control?.directionCommand, dt: dt)
         
         entityManager.update(dt: dt)
