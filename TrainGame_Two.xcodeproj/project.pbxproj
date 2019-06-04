@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1DA672E322A018C40007B49B /* (null) in Sources */ = {isa = PBXBuildFile; };
 		1DA672E522A01D280007B49B /* PlayerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA672E422A01D280007B49B /* PlayerComponent.swift */; };
+		1DDEBC6B22A6A4C300262156 /* Petala.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDEBC6A22A6A4C300262156 /* Petala.swift */; };
+		1DDEBC6D22A6A6A500262156 /* CollectableComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDEBC6C22A6A6A500262156 /* CollectableComponent.swift */; };
 		1F5DF38622A01934000D04CF /* (null) in Sources */ = {isa = PBXBuildFile; };
 		1F5DF38A22A1631F000D04CF /* StateMachineComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5DF38922A1631F000D04CF /* StateMachineComponent.swift */; };
 		1F5DF38C22A16805000D04CF /* VilarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5DF38B22A16805000D04CF /* VilarExtension.swift */; };
@@ -35,6 +37,8 @@
 
 /* Begin PBXFileReference section */
 		1DA672E422A01D280007B49B /* PlayerComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerComponent.swift; sourceTree = "<group>"; };
+		1DDEBC6A22A6A4C300262156 /* Petala.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Petala.swift; sourceTree = "<group>"; };
+		1DDEBC6C22A6A6A500262156 /* CollectableComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectableComponent.swift; sourceTree = "<group>"; };
 		1F5DF38922A1631F000D04CF /* StateMachineComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateMachineComponent.swift; sourceTree = "<group>"; };
 		1F5DF38B22A16805000D04CF /* VilarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VilarExtension.swift; sourceTree = "<group>"; };
 		1F97BED6229D694000796D5F /* ParallaxComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParallaxComponent.swift; sourceTree = "<group>"; };
@@ -126,6 +130,7 @@
 			children = (
 				1FF45060229C27A1009B7DF7 /* Player.swift */,
 				1FF45062229C27B6009B7DF7 /* EntityManager.swift */,
+				1DDEBC6A22A6A4C300262156 /* Petala.swift */,
 			);
 			path = Entidades;
 			sourceTree = "<group>";
@@ -139,6 +144,7 @@
 				1F97BED6229D694000796D5F /* ParallaxComponent.swift */,
 				5E886702229ED3B60008D4B0 /* MoveCharacterComponet.swift */,
 				1F5DF38922A1631F000D04CF /* StateMachineComponent.swift */,
+				1DDEBC6C22A6A6A500262156 /* CollectableComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -248,6 +254,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DDEBC6B22A6A4C300262156 /* Petala.swift in Sources */,
 				1F97BED7229D694000796D5F /* ParallaxComponent.swift in Sources */,
 				1DA672E522A01D280007B49B /* PlayerComponent.swift in Sources */,
 				1FF45049229C2434009B7DF7 /* GameScene.swift in Sources */,
@@ -264,6 +271,7 @@
 				1FF45043229C2434009B7DF7 /* AppDelegate.swift in Sources */,
 				1DA672E322A018C40007B49B /* (null) in Sources */,
 				1FF4506A229C2D34009B7DF7 /* CameraComponent.swift in Sources */,
+				1DDEBC6D22A6A6A500262156 /* CollectableComponent.swift in Sources */,
 				1F5DF38A22A1631F000D04CF /* StateMachineComponent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
