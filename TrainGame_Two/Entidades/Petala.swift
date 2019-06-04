@@ -15,8 +15,6 @@ class Petala: GKEntity{
     
     init(imageName: String, gameScene: GameScene){
         super.init()
-        
-        
     }
     
     required init?(coder aDecoder: NSCoder) {
