@@ -14,11 +14,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     //#MARK: Variables
     var graphs = [String : GKGraph]()
     var entityManager: EntityManager!
-    var parallaxComponentSystem: GKComponentSystem<ParallaxComponent>?
     
     private var lastUpdateTime : TimeInterval = 0
-    private var label : SKLabelNode?
-    private var spinnyNode : SKShapeNode?
     private var control: Control?
     var moveJoystickHiddenArea: TLAnalogJoystickHiddenArea? = nil
     
@@ -32,8 +29,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var joystickStickImageEnabled = true
     var joystickSubstrateImageEnabled = true
     
-    
-    var player: SKSpriteNode?
     
     //#MARK: DidMove_FUNC
     override func didMove(to view: SKView) {
@@ -135,10 +130,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         entityManager.add(petala)
         view.isMultipleTouchEnabled = false
         
-        for entity in self.entityManager.entities {
-            parallaxComponentSystem?.addComponent(foundIn: entity)
-        }
-        
     }
     
     func didBegin(_ contact: SKPhysicsContact) {
@@ -150,22 +141,25 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         control?.swipeActive =  false
         
         //Verifica contato entre player e a petala
-        guard let nodePetala = contact.bodyA.node, let nodePlayer = contact.bodyB.node else {
-            return
-        }
-        guard let entityOfPlayer = nodePetala.entity, let entityOfPetal = nodePlayer.entity else {
+        guard let nodeA = contact.bodyA.node, let nodeB = contact.bodyB.node else {
+            print("1")
             return
         }
         
-        print("Contato: \(entityOfPlayer) com \(entityOfPetal)")
+        guard let entityA = nodeA.entity, let entityB = nodeB.entity else {
+            print("2")
+            return
+        }
         
-        if let _ = entityOfPlayer.component(ofType: PlayerComponent.self), let _ = entityOfPetal.component(ofType: CollectableComponent.self) {
+        print("Contato: \(entityA) com \(entityB)")
+        
+        if let _ = entityA.component(ofType: PlayerComponent.self), let _ = entityB.component(ofType: CollectableComponent.self) {
            print("faz alguma coisa!")
         }
         
         //Remove entidade da petala da cena
-        if let _ = entityOfPlayer.component(ofType: DestroyOnContactComponent.self) {
-            if let index = self.entityManager.entities.firstIndex(of: entityOfPetal) {
+        if let _ = entityA.component(ofType: DestroyOnContactComponent.self) {
+            if let index = self.entityManager.entities.firstIndex(of: entityA) {
                 self.entityManager.entities.remove(at: index)
             }
         }

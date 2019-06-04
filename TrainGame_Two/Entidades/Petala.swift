@@ -20,7 +20,7 @@ class Petala: GKEntity{
       
         let spriteComponent = SpriteComponent(texture: SKTexture(imageNamed: imageName), gameScene: gameScene, nodeName: "nodePetal", textureNodeName: "texturePetal")
         
-        spriteComponent.nodePhysic.size = CGSize(width: 87.75, height: 116)
+//        spriteComponent.nodePhysic.size = CGSize(width: 87.75, height: 116)
     
         addComponent(spriteComponent)
         addComponent(CollectableComponent())

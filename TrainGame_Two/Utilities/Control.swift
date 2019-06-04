@@ -102,21 +102,17 @@ class Control {
     
             if (control == UserControl.jump) {
 
-                print("upent")
                 stateJump()
         
             }else if (control == UserControl.down) {
-                
-                print("downent")
+              
                 
             }else if (control == UserControl.left) {
-                
-                print("leftent")
+           
                 stateWalk()
                 
             }else if (control == UserControl.right) {
-                
-                print("rigthent")
+          
                 stateWalk()
                
                 
