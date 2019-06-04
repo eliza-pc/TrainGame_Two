@@ -34,6 +34,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     
     var player: SKSpriteNode?
+    var Souls: SKAudioNode?
     
     //#MARK: DidMove_FUNC
     override func didMove(to view: SKView) {
