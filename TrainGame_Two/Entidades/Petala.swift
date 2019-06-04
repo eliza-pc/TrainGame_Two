@@ -15,6 +15,12 @@ class Petala: GKEntity{
     
     init(imageName: String, gameScene: GameScene){
         super.init()
+        
+        let spriteComponent = SpriteComponent(texture: SKTexture(imageNamed: imageName), gameScene: gameScene, nodeName: "player", textureNodeName: "texturePlayer")
+        
+        
+        let texturePlayer = SKTexture.init(imageNamed: imageName)
+        
     }
     
     required init?(coder aDecoder: NSCoder) {

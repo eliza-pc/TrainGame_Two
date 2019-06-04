@@ -187,7 +187,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             }
         }
     
-        
 
     }
     
