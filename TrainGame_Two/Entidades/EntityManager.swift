@@ -24,9 +24,7 @@ class EntityManager {
     
     func add(_ entity: GKEntity) {
         entities.insert(entity)
-        for entity in entities {
-            print(entity)
-        }
+       
     }
     
     
@@ -52,11 +50,13 @@ class EntityManager {
     
     func getEntitys(component: GKComponent.Type) -> [GKEntity] {
         var entitys: [GKEntity] = []
+        
         for entity in entities {
             if (entity.component(ofType: component.self) != nil) {
                 entitys.append(entity)
             }
         }
+        
         return entitys
     }
     
