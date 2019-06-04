@@ -132,6 +132,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         
         entityManager.add(personagemPrincipal)
+        entityManager.add(petala)
         view.isMultipleTouchEnabled = false
         
         for entity in self.entityManager.entities {
@@ -143,7 +144,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func didBegin(_ contact: SKPhysicsContact) {
         print("Houve Contato😎")
         
-        let petala = Petala(imageName: "RosePetal", gameScene: self)
+ //       let petala = Petala(imageName: "RosePetal", gameScene: self)
 
         control?.directionCommand =  UserControl.idle
         control?.swipeActive =  false
