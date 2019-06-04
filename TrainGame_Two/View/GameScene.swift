@@ -163,10 +163,32 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func didBegin(_ contact: SKPhysicsContact) {
         print("FOIII!😎")
+        
         control?.directionCommand =  UserControl.idle
         control?.swipeActive =  false
         
-//        print(control?.directionCommand)
+        //Verifica contato entre player e a petala
+        guard let nodePetala = contact.bodyA.node, let nodePlayer = contact.bodyB.node else {
+            return
+        }
+        guard let entityOfPlayer = nodePetala.entity, let entityOfPetal = nodePlayer.entity else {
+            return
+        }
+        
+        print("Contato: \(entityOfPlayer) com \(entityOfPetal)")
+        
+        if let _ = entityOfPlayer.component(ofType: PlayerComponent.self), let _ = entityOfPetal.component(ofType: CollectableComponent.self) {
+           print("faz alguma coisa!")
+        }
+        
+        //Remove entidade da petala da cena
+        if let _ = entityOfPlayer.component(ofType: DestroyOnContactComponent.self) {
+            if let index = self.entityManager.entities.firstIndex(of: entityOfPetal) {
+                self.entityManager.entities.remove(at: index)
+            }
+        }
+    
+
     }
     
     override func sceneDidLoad() {
