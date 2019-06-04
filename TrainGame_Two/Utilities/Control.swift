@@ -27,6 +27,7 @@ class Control {
     var gameScene: GameScene
     var entityNode: SKNode? = nil
     var swipeActive: Bool = false
+    var collectableActive: Bool = false
     
     init(view: UIView, gameScene: GameScene){
         self.gameScene = gameScene
@@ -80,8 +81,10 @@ class Control {
             
         }
         
-        if let gesture = gesture as? UITapGestureRecognizer {
-            print("TapOK")
+        if gesture is UITapGestureRecognizer {
+            if collectableActive == true {
+                print("TapOK")
+            }
         }
     }
     
