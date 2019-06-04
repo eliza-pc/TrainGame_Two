@@ -16,10 +16,13 @@ class Petala: GKEntity{
     init(imageName: String, gameScene: GameScene){
         super.init()
         
-        let spriteComponent = SpriteComponent(texture: SKTexture(imageNamed: imageName), gameScene: gameScene, nodeName: "player", textureNodeName: "texturePlayer")
+    let texturePetal = SKTexture.init(imageNamed: imageName)
+      
+        let spriteComponent = SpriteComponent(texture: SKTexture(imageNamed: imageName), gameScene: gameScene, nodeName: "nodePetal", textureNodeName: "texturePetal")
         
-        
-        let texturePlayer = SKTexture.init(imageNamed: imageName)
+        spriteComponent.nodePhysic.size = CGSize(width: 87.75, height: 116)
+    
+        addComponent(spriteComponent)
         
     }
     
