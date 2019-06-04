@@ -15,8 +15,6 @@
 		1F5DF38622A01934000D04CF /* (null) in Sources */ = {isa = PBXBuildFile; };
 		1F5DF38A22A1631F000D04CF /* StateMachineComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5DF38922A1631F000D04CF /* StateMachineComponent.swift */; };
 		1F5DF38C22A16805000D04CF /* VilarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5DF38B22A16805000D04CF /* VilarExtension.swift */; };
-		1F97BED7229D694000796D5F /* ParallaxComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F97BED6229D694000796D5F /* ParallaxComponent.swift */; };
-		1FE5D663229EE795008E1287 /* AnimationsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE5D662229EE794008E1287 /* AnimationsExtension.swift */; };
 		1FE5D666229F42A3008E1287 /* Walking in Resources */ = {isa = PBXBuildFile; fileRef = 1FE5D665229F42A3008E1287 /* Walking */; };
 		1FE5D67B229F42DC008E1287 /* Idle in Resources */ = {isa = PBXBuildFile; fileRef = 1FE5D67A229F42DC008E1287 /* Idle */; };
 		1FF45043229C2434009B7DF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF45042229C2434009B7DF7 /* AppDelegate.swift */; };
@@ -45,8 +43,6 @@
 		1F399AFE22A6A9AB0096B59E /* DestroyContactComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestroyContactComponent.swift; sourceTree = "<group>"; };
 		1F5DF38922A1631F000D04CF /* StateMachineComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateMachineComponent.swift; sourceTree = "<group>"; };
 		1F5DF38B22A16805000D04CF /* VilarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VilarExtension.swift; sourceTree = "<group>"; };
-		1F97BED6229D694000796D5F /* ParallaxComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParallaxComponent.swift; sourceTree = "<group>"; };
-		1FE5D662229EE794008E1287 /* AnimationsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationsExtension.swift; sourceTree = "<group>"; };
 		1FE5D665229F42A3008E1287 /* Walking */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Walking; sourceTree = "<group>"; };
 		1FE5D67A229F42DC008E1287 /* Idle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Idle; sourceTree = "<group>"; };
 		1FF4503F229C2434009B7DF7 /* TrainGame_Two.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrainGame_Two.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,7 +80,6 @@
 		1F0E2E83229EDD8A003E546D /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				1FE5D662229EE794008E1287 /* AnimationsExtension.swift */,
 				1F5DF38B22A16805000D04CF /* VilarExtension.swift */,
 			);
 			path = Extension;
@@ -148,8 +143,6 @@
 				1DA672E422A01D280007B49B /* PlayerComponent.swift */,
 				1FF4505E229C278E009B7DF7 /* SpriteComponent.swift */,
 				1FF45069229C2D34009B7DF7 /* CameraComponent.swift */,
-				1F97BED6229D694000796D5F /* ParallaxComponent.swift */,
-				5E886702229ED3B60008D4B0 /* MoveCharacterComponet.swift */,
 				1F5DF38922A1631F000D04CF /* StateMachineComponent.swift */,
 				1DDEBC6C22A6A6A500262156 /* CollectableComponent.swift */,
 				1F399AFE22A6A9AB0096B59E /* DestroyContactComponent.swift */,
@@ -265,12 +258,10 @@
 			files = (
 				5E88671022A6ABBF0008D4B0 /* Souls.swift in Sources */,
 				1DDEBC6B22A6A4C300262156 /* Petala.swift in Sources */,
-				1F97BED7229D694000796D5F /* ParallaxComponent.swift in Sources */,
 				1DA672E522A01D280007B49B /* PlayerComponent.swift in Sources */,
 				1FF45049229C2434009B7DF7 /* GameScene.swift in Sources */,
 				1FF45068229C2826009B7DF7 /* Control.swift in Sources */,
 				1F399AFF22A6A9AB0096B59E /* DestroyContactComponent.swift in Sources */,
-				5E886703229ED3B60008D4B0 /* MoveCharacterComponet.swift in Sources */,
 				1FF4504B229C2434009B7DF7 /* GameViewController.swift in Sources */,
 				1FF45063229C27B6009B7DF7 /* EntityManager.swift in Sources */,
 				1FF4505F229C278E009B7DF7 /* SpriteComponent.swift in Sources */,
@@ -278,7 +269,6 @@
 				1F5DF38C22A16805000D04CF /* VilarExtension.swift in Sources */,
 				1FF45066229C281B009B7DF7 /* TLAnalogJoystick.swift in Sources */,
 				1F5DF38622A01934000D04CF /* (null) in Sources */,
-				1FE5D663229EE795008E1287 /* AnimationsExtension.swift in Sources */,
 				1FF45061229C27A1009B7DF7 /* Player.swift in Sources */,
 				1FF45043229C2434009B7DF7 /* AppDelegate.swift in Sources */,
 				1DA672E322A018C40007B49B /* (null) in Sources */,

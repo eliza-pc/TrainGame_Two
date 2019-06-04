@@ -14,11 +14,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     //#MARK: Variables
     var graphs = [String : GKGraph]()
     var entityManager: EntityManager!
-    var parallaxComponentSystem: GKComponentSystem<ParallaxComponent>?
     
     private var lastUpdateTime : TimeInterval = 0
-    private var label : SKLabelNode?
-    private var spinnyNode : SKShapeNode?
     private var control: Control?
     var moveJoystickHiddenArea: TLAnalogJoystickHiddenArea? = nil
     
@@ -39,25 +36,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     //#MARK: DidMove_FUNC
     override func didMove(to view: SKView) {
         
-////<<<<<<< HEAD
-////
-////
-//        //Parallax Stuff
-//        self.camera?.addChild(childNode(withName: "layer1")!)
-//
-//        parallaxComponentSystem = GKComponentSystem.init(componentClass: ParallaxComponent.self)
-//
-//
-//        for components in (parallaxComponentSystem?.components)!{
-//            components.prepareWith(camera: camera)
-//        }
-//
-////        control = Control(view: self.view!)
-////=======
-        
-        //Animação de walk no player!!!
-//        player = self.childNode(withName: "player") as? SKSpriteNode
-//        player!.run(SKAction.repeatForever(SKAction.animate(with: Array.dicTextures["idle"]!, timePerFrame: 0.1)))
         
         control = Control(view: self.view!, gameScene: self)
         
@@ -75,6 +53,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         entityManager = EntityManager(scene: self)
         
         let personagemPrincipal = Player(imageName: "idle1", gameScene: self)
+        let petala = Petala(imageName: "RosePetal", gameScene: self)
       
         if personagemPrincipal.component(ofType: PlayerComponent.self) != nil {
             
@@ -131,9 +110,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 //    print(self.control?.directionCommand ?? "")
                     // MARK: Move for Physics
                     spriteComponent.nodePhysic.position = CGPoint(x: spriteComponent.nodePhysic.position.x + (pVelocity.x * speed), y: spriteComponent.nodePhysic.position.y)
-                    
-               
-                    
+            
                 }
                 
             }
@@ -153,37 +130,39 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         
         entityManager.add(personagemPrincipal)
+        entityManager.add(petala)
         view.isMultipleTouchEnabled = false
-        
-        for entity in self.entityManager.entities {
-            parallaxComponentSystem?.addComponent(foundIn: entity)
-        }
         
     }
     
     func didBegin(_ contact: SKPhysicsContact) {
-        print("FOIII!😎")
+        print("Houve Contato😎")
         
+ //       let petala = Petala(imageName: "RosePetal", gameScene: self)
+
         control?.directionCommand =  UserControl.idle
         control?.swipeActive =  false
         
         //Verifica contato entre player e a petala
-        guard let nodePetala = contact.bodyA.node, let nodePlayer = contact.bodyB.node else {
-            return
-        }
-        guard let entityOfPlayer = nodePetala.entity, let entityOfPetal = nodePlayer.entity else {
+        guard let nodeA = contact.bodyA.node, let nodeB = contact.bodyB.node else {
+            print("1")
             return
         }
         
-        print("Contato: \(entityOfPlayer) com \(entityOfPetal)")
+        guard let entityA = nodeA.entity, let entityB = nodeB.entity else {
+            print("2")
+            return
+        }
         
-        if let _ = entityOfPlayer.component(ofType: PlayerComponent.self), let _ = entityOfPetal.component(ofType: CollectableComponent.self) {
+        print("Contato: \(entityA) com \(entityB)")
+        
+        if let _ = entityA.component(ofType: PlayerComponent.self), let _ = entityB.component(ofType: CollectableComponent.self) {
            print("faz alguma coisa!")
         }
         
         //Remove entidade da petala da cena
-        if let _ = entityOfPlayer.component(ofType: DestroyOnContactComponent.self) {
-            if let index = self.entityManager.entities.firstIndex(of: entityOfPetal) {
+        if let _ = entityA.component(ofType: DestroyOnContactComponent.self) {
+            if let index = self.entityManager.entities.firstIndex(of: entityA) {
                 self.entityManager.entities.remove(at: index)
             }
         }
@@ -206,20 +185,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if (self.lastUpdateTime == 0) {
             self.lastUpdateTime = currentTime
         }
-        
-        
+    
         // Calculate time since last update
         let dt = currentTime - self.lastUpdateTime
         
         
         //get entity para update da control e moving component
-        
-        
-        //comentei!!!!
-//        let entitys = self.entityManager.getEntitys(component: MovingCharacterComponent.self)
-//        let movingComponent = entitys[0].component(ofType: MovingCharacterComponent.self)!
-//        movingComponent.updatePressedButtons(control: self.control?.directionCommand, dt: dt)
-//
+
         control?.updatePressedButtons(control: self.control?.directionCommand, dt: dt)
         
         entityManager.update(dt: dt)
