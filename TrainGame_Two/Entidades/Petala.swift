@@ -20,12 +20,12 @@ class Petala: GKEntity{
       
         let spriteComponent = SpriteComponent(texture: SKTexture(imageNamed: imageName), gameScene: gameScene, nodeName: "nodePetal", textureNodeName: "texturePetal")
     
-        // Quem sou eu?
-        spriteComponent.nodePhysic.physicsBody?.categoryBitMask    = 0b0010
-        // De quem eu recebo colisões?
-        spriteComponent.nodePhysic.physicsBody?.collisionBitMask   = 0b0000
-        // De quem eu recebo contato?
-        spriteComponent.nodePhysic.physicsBody?.contactTestBitMask = 0b0001
+//        // Quem sou eu?
+//        spriteComponent.nodePhysic.physicsBody?.categoryBitMask    = 0b0010
+//        // De quem eu recebo colisões?
+//        spriteComponent.nodePhysic.physicsBody?.collisionBitMask   = 0b0000
+//        // De quem eu recebo contato?
+//        spriteComponent.nodePhysic.physicsBody?.contactTestBitMask = 0b0001
         
         spriteComponent.nodePhysic.entity = self
         

@@ -27,12 +27,12 @@ class Player: GKEntity{
         spriteComponent.nodeTexture.texture = texturePlayer
         spriteComponent.nodePhysic.size = CGSize(width: 87.75, height: 116)
         
-        // Quem sou eu?
-        spriteComponent.nodePhysic.physicsBody?.categoryBitMask    = 0b0001
-        // De quem eu recebo colisões?
-        spriteComponent.nodePhysic.physicsBody?.collisionBitMask   = 0b0111
-        // De quem eu recebo contato?
-        spriteComponent.nodePhysic.physicsBody?.contactTestBitMask = 0b0001
+//        // Quem sou eu?
+//        spriteComponent.nodePhysic.physicsBody?.categoryBitMask    = 0b0001
+//        // De quem eu recebo colisões?
+//        spriteComponent.nodePhysic.physicsBody?.collisionBitMask   = 0b0111
+//        // De quem eu recebo contato?
+//        spriteComponent.nodePhysic.physicsBody?.contactTestBitMask = 0b0001
         
         
         spriteComponent.nodePhysic.entity = self
