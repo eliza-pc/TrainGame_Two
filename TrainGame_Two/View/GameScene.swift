@@ -145,9 +145,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         //Verifica contato entre player e a petala
         guard let nodeA = contact.bodyA.node, let nodeB = contact.bodyB.node else {
-            print("1")
             return
         }
+        
+        
         
         guard let entityA = nodeA.entity, let entityB = nodeB.entity else {
             print("2")
