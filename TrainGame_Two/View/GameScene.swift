@@ -38,7 +38,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     //#MARK: DidMove_FUNC
     override func didMove(to view: SKView) {
         
-        let personagemPrincipal = Player(imageName: "idle1", gameScene: self)
         
         control = Control(view: self.view!, gameScene: self)
         
