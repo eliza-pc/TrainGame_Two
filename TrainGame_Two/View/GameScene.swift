@@ -30,6 +30,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var joystickSubstrateImageEnabled = true
     
     
+    var player: SKSpriteNode?
+    var Souls: SKAudioNode?
+    
     //#MARK: DidMove_FUNC
     override func didMove(to view: SKView) {
         

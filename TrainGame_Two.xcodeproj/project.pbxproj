@@ -31,6 +31,9 @@
 		1FF45066229C281B009B7DF7 /* TLAnalogJoystick.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF45065229C281B009B7DF7 /* TLAnalogJoystick.swift */; };
 		1FF45068229C2826009B7DF7 /* Control.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF45067229C2826009B7DF7 /* Control.swift */; };
 		1FF4506A229C2D34009B7DF7 /* CameraComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF45069229C2D34009B7DF7 /* CameraComponent.swift */; };
+		5E886703229ED3B60008D4B0 /* MoveCharacterComponet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E886702229ED3B60008D4B0 /* MoveCharacterComponet.swift */; };
+		5E88671022A6ABBF0008D4B0 /* Souls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E88670F22A6ABBF0008D4B0 /* Souls.swift */; };
+		5E88671322A6B61F0008D4B0 /* AttackRegionComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E88671222A6B61F0008D4B0 /* AttackRegionComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +61,9 @@
 		1FF45065229C281B009B7DF7 /* TLAnalogJoystick.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLAnalogJoystick.swift; sourceTree = "<group>"; };
 		1FF45067229C2826009B7DF7 /* Control.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Control.swift; sourceTree = "<group>"; };
 		1FF45069229C2D34009B7DF7 /* CameraComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraComponent.swift; sourceTree = "<group>"; };
+		5E886702229ED3B60008D4B0 /* MoveCharacterComponet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveCharacterComponet.swift; sourceTree = "<group>"; };
+		5E88670F22A6ABBF0008D4B0 /* Souls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Souls.swift; sourceTree = "<group>"; };
+		5E88671222A6B61F0008D4B0 /* AttackRegionComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttackRegionComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +132,7 @@
 				1FF45060229C27A1009B7DF7 /* Player.swift */,
 				1FF45062229C27B6009B7DF7 /* EntityManager.swift */,
 				1DDEBC6A22A6A4C300262156 /* Petala.swift */,
+				5E88670F22A6ABBF0008D4B0 /* Souls.swift */,
 			);
 			path = Entidades;
 			sourceTree = "<group>";
@@ -139,6 +146,7 @@
 				1F5DF38922A1631F000D04CF /* StateMachineComponent.swift */,
 				1DDEBC6C22A6A6A500262156 /* CollectableComponent.swift */,
 				1F399AFE22A6A9AB0096B59E /* DestroyContactComponent.swift */,
+				5E88671222A6B61F0008D4B0 /* AttackRegionComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -248,6 +256,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E88671022A6ABBF0008D4B0 /* Souls.swift in Sources */,
 				1DDEBC6B22A6A4C300262156 /* Petala.swift in Sources */,
 				1DA672E522A01D280007B49B /* PlayerComponent.swift in Sources */,
 				1FF45049229C2434009B7DF7 /* GameScene.swift in Sources */,
@@ -256,6 +265,7 @@
 				1FF4504B229C2434009B7DF7 /* GameViewController.swift in Sources */,
 				1FF45063229C27B6009B7DF7 /* EntityManager.swift in Sources */,
 				1FF4505F229C278E009B7DF7 /* SpriteComponent.swift in Sources */,
+				5E88671322A6B61F0008D4B0 /* AttackRegionComponent.swift in Sources */,
 				1F5DF38C22A16805000D04CF /* VilarExtension.swift in Sources */,
 				1FF45066229C281B009B7DF7 /* TLAnalogJoystick.swift in Sources */,
 				1F5DF38622A01934000D04CF /* (null) in Sources */,
@@ -411,7 +421,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 97WB89LRXA;
+				DEVELOPMENT_TEAM = 2CW963BG8P;
 				INFOPLIST_FILE = TrainGame_Two/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -429,7 +439,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 97WB89LRXA;
+				DEVELOPMENT_TEAM = 2CW963BG8P;
 				INFOPLIST_FILE = TrainGame_Two/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
