@@ -145,7 +145,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 //                ]
 //
 //                spriteComponent.node.run(SKAction.sequence(actions))
-                 self.control?.directionCommand = UserControl.idle
+                if self.control?.directionCommand != UserControl.jump {
+                    self.control?.directionCommand = UserControl.idle
+                }
             }
         }
         
