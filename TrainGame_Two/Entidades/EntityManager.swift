@@ -16,6 +16,7 @@ class EntityManager {
     var entities = Set<GKEntity>()
     let scene: SKScene
     var entityInContact: GKEntity? = nil
+    var contactObjects: Bool = false
     
     init(scene: SKScene) {
         self.scene = scene
@@ -44,9 +45,9 @@ class EntityManager {
     
     func update(dt: TimeInterval) {
         for entity in entities {
-//            if let cameraComponent = entity.component(ofType: CameraComponent.self), let spriteNode = entity.component(ofType: SpriteComponent.self)?.node {
-//
-//            }
+            if let balloonComponent = entity.component(ofType: BalloonComponent.self), !contactObjects {
+                balloonComponent.isNotVisible()
+            }
             entity.update(deltaTime: dt)
         }
     }

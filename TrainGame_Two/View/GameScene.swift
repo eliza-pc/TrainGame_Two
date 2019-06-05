@@ -149,6 +149,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
     }
     
+    
+    
     func didBegin(_ contact: SKPhysicsContact) {
         print("Houve Contato😎")
         
@@ -159,25 +161,39 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         //Verifica contato entre player e a petala
         guard let nodeA = contact.bodyA.node, let nodeB = contact.bodyB.node else {
+            self.entityManager.contactObjects = false
             return
         }
         
         
-        
         guard let entityA = nodeA.entity, let entityB = nodeB.entity else {
             print("2")
+            self.entityManager.contactObjects = false
             return
         }
         
         print("Contato: \(entityA) com \(entityB)")
         
         if let _ = entityA.component(ofType: PlayerComponent.self), let _ = entityB.component(ofType: CollectableComponent.self) {
+            self.entityManager.contactObjects = true
+            
+            entityB.component(ofType: BalloonComponent.self)!.isVisible()
+            
             self.control?.collectableActive = true
             self.entityManager.setObjectInContact(entity: entityB)
+            
         } else if let _ = entityB.component(ofType: PlayerComponent.self), let _ = entityA.component(ofType: CollectableComponent.self) {
+            self.entityManager.contactObjects = true
+            
+            entityA.component(ofType: BalloonComponent.self)!.isVisible()
             self.control?.collectableActive = true
             self.entityManager.setObjectInContact(entity: entityA)
-        } else {return}
+            
+        } else {
+            
+            return
+            
+        }
         
 //        //Remove entidade da petala da cena
 //        if let _ = entityA.component(ofType: DestroyOnContactComponent.self) {
