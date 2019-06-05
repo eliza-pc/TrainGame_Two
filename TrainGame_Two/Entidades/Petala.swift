@@ -19,6 +19,8 @@ class Petala: GKEntity{
 //    let texturePetal = SKTexture.init(imageNamed: imageName)
       
         let spriteComponent = SpriteComponent(texture: SKTexture(imageNamed: imageName), gameScene: gameScene, nodeName: "nodePetal", textureNodeName: "texturePetal")
+        
+       
     
 //        // Quem sou eu?
 //        spriteComponent.nodePhysic.physicsBody?.categoryBitMask    = 0b0010
@@ -27,8 +29,11 @@ class Petala: GKEntity{
 //        // De quem eu recebo contato?
 //        spriteComponent.nodePhysic.physicsBody?.contactTestBitMask = 0b0001
         
+       
         spriteComponent.nodePhysic.entity = self
+        let balloonComponent = BalloonComponent(parentNode: spriteComponent.nodePhysic, balloonNodeName: "textureBalao")
         
+        addComponent(balloonComponent)
         addComponent(spriteComponent)
         addComponent(CollectableComponent())
         addComponent(DestroyOnContactComponent())

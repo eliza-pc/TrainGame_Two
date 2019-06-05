@@ -32,6 +32,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var player: SKSpriteNode?
     var Souls: SKAudioNode?
+ 
+    
     
     //#MARK: DidMove_FUNC
     override func didMove(to view: SKView) {
@@ -54,6 +56,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         let personagemPrincipal = Player(imageName: "idle1", gameScene: self)
         let petala = Petala(imageName: "RosePetal", gameScene: self)
+        //let balao = Petala(imageName: "balao2", gameScene: self)
       
         if personagemPrincipal.component(ofType: PlayerComponent.self) != nil {
             
