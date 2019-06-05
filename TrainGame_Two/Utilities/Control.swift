@@ -29,9 +29,9 @@ class Control {
     var swipeActive: Bool = false
     var collectableActive: Bool = false
     var incrementJump: Int = 0
+    var pushBox: Bool = false
     
-    
-    init(view: UIView, gameScene: GameScene){
+    init(view: UIView, gameScene: GameScene) {
         self.gameScene = gameScene
         self.addSwiperRecognizer(view: view)
         self.addTapRecognizer(view: view)
@@ -88,7 +88,10 @@ class Control {
                 print("TapOK")
                 if let removeObject = self.gameScene.entityManager.getObjectInContact() {
                     self.gameScene.entityManager.remove(removeObject)
+                    self.collectableActive = false
                 }
+            } else if pushBox == true {
+                print("ENTROU")
             }
         }
     }
@@ -124,7 +127,7 @@ class Control {
             }else if (control == UserControl.idle){
                 stateIdle()
             }
-                
+            
             
     
         }
