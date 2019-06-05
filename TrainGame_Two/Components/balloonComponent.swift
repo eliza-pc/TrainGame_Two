@@ -28,6 +28,12 @@ class BalloonComponent: GKComponent {
         
     }
     
+    func isNotVisible(){
+        
+        self.balloon.alpha = 0
+        
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

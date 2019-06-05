@@ -149,6 +149,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
     }
     
+    
+    
     func didBegin(_ contact: SKPhysicsContact) {
         print("Houve Contato😎")
         
@@ -163,9 +165,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         
         
-        
         guard let entityA = nodeA.entity, let entityB = nodeB.entity else {
-            print("2")
+            
             return
         }
         
