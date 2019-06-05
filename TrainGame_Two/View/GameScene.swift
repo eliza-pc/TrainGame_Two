@@ -174,16 +174,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         print("Contato: \(entityA) com \(entityB)")
         
         if let _ = entityA.component(ofType: PlayerComponent.self), let _ = entityB.component(ofType: CollectableComponent.self) {
+            
             self.entityManager.contactObjects = true
-            
             entityB.component(ofType: BalloonComponent.self)!.isVisible()
-            
             self.control?.collectableActive = true
             self.entityManager.setObjectInContact(entity: entityB)
             
         } else if let _ = entityB.component(ofType: PlayerComponent.self), let _ = entityA.component(ofType: CollectableComponent.self) {
-            self.entityManager.contactObjects = true
             
+            self.entityManager.contactObjects = true
             entityA.component(ofType: BalloonComponent.self)!.isVisible()
             self.control?.collectableActive = true
             self.entityManager.setObjectInContact(entity: entityA)
@@ -193,23 +192,35 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             return
             
         }
-        
-//        //Remove entidade da petala da cena
-//        if let _ = entityA.component(ofType: DestroyOnContactComponent.self) {
-//            self.entityManager.remove(entityA)
-//
-//        } else if let _ = entityB.component(ofType: DestroyOnContactComponent.self) {
-//            self.entityManager.remove(entityB)
-//
-//        }
 
     }
     
     func didEnd(_ contact: SKPhysicsContact) {
-        if (self.entityManager.contactObjects == true)
-        {
-            self.entityManager.contactObjects = false
+        
+        //Verifica contato entre player e a petala
+        guard let nodeA = contact.bodyA.node, let nodeB = contact.bodyB.node else {
+            
+            return
         }
+        
+        
+        guard let entityA = nodeA.entity, let entityB = nodeB.entity else {
+            
+            return
+        }
+        
+        print("DesContato: \(entityA) com \(entityB)")
+        if let _ = entityA.component(ofType: PlayerComponent.self), let _ = entityB.component(ofType: CollectableComponent.self) {
+            if (self.entityManager.contactObjects == true)
+            {
+                self.entityManager.contactObjects = false
+            }
+        } else if let _ = entityB.component(ofType: PlayerComponent.self), let _ = entityA.component(ofType: CollectableComponent.self) {
+            if (self.entityManager.contactObjects == true)
+            {
+                self.entityManager.contactObjects = false
+            }
+        } else { return }
         
     }
     
