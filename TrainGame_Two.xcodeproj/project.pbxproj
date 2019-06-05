@@ -31,7 +31,6 @@
 		1FF45066229C281B009B7DF7 /* TLAnalogJoystick.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF45065229C281B009B7DF7 /* TLAnalogJoystick.swift */; };
 		1FF45068229C2826009B7DF7 /* Control.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF45067229C2826009B7DF7 /* Control.swift */; };
 		1FF4506A229C2D34009B7DF7 /* CameraComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF45069229C2D34009B7DF7 /* CameraComponent.swift */; };
-		5E886703229ED3B60008D4B0 /* MoveCharacterComponet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E886702229ED3B60008D4B0 /* MoveCharacterComponet.swift */; };
 		5E88671022A6ABBF0008D4B0 /* Souls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E88670F22A6ABBF0008D4B0 /* Souls.swift */; };
 		5E88671322A6B61F0008D4B0 /* AttackRegionComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E88671222A6B61F0008D4B0 /* AttackRegionComponent.swift */; };
 /* End PBXBuildFile section */
@@ -61,7 +60,6 @@
 		1FF45065229C281B009B7DF7 /* TLAnalogJoystick.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLAnalogJoystick.swift; sourceTree = "<group>"; };
 		1FF45067229C2826009B7DF7 /* Control.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Control.swift; sourceTree = "<group>"; };
 		1FF45069229C2D34009B7DF7 /* CameraComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraComponent.swift; sourceTree = "<group>"; };
-		5E886702229ED3B60008D4B0 /* MoveCharacterComponet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveCharacterComponet.swift; sourceTree = "<group>"; };
 		5E88670F22A6ABBF0008D4B0 /* Souls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Souls.swift; sourceTree = "<group>"; };
 		5E88671222A6B61F0008D4B0 /* AttackRegionComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttackRegionComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -421,7 +419,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2CW963BG8P;
+				DEVELOPMENT_TEAM = 97WB89LRXA;
 				INFOPLIST_FILE = TrainGame_Two/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -439,7 +437,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2CW963BG8P;
+				DEVELOPMENT_TEAM = 97WB89LRXA;
 				INFOPLIST_FILE = TrainGame_Two/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
