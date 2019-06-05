@@ -161,14 +161,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         //Verifica contato entre player e a petala
         guard let nodeA = contact.bodyA.node, let nodeB = contact.bodyB.node else {
-            self.entityManager.contactObjects = false
+            
             return
         }
         
         
         guard let entityA = nodeA.entity, let entityB = nodeB.entity else {
-            print("2")
-            self.entityManager.contactObjects = false
+            
             return
         }
         
@@ -204,6 +203,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 //
 //        }
 
+    }
+    
+    func didEnd(_ contact: SKPhysicsContact) {
+        if (self.entityManager.contactObjects == true)
+        {
+            self.entityManager.contactObjects = false
+        }
+        
     }
     
     override func sceneDidLoad() {
