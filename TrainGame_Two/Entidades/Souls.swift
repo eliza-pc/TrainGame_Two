@@ -15,10 +15,10 @@ class Souls: GKEntity{
     init(imageName: String, gameScene: GameScene){
         super.init()
         
-//        let spriteComponent = SpriteComponent(texture: SKTexture(imageNamed: imageName), gameScene: gameScene, nodeName: "Souls", textureNodeName: "???")
-//
-//        let attackAction = SKAction.repeatForever(SKAction.animate(with: .init(withFormat: "Hand Left Down", range: <#T##ClosedRange<Int>#>), timePerFrame: <#T##TimeInterval#>))
-//        
+        let spriteComponent = SpriteComponent(texture: SKTexture(imageNamed: imageName), gameScene: gameScene, nodeName: "Souls", textureNodeName: "???")
+
+        let AnimationAction = SKAction.repeatForever(SKAction.animate(with: .init(withFormat: "Hand-Left-Down-%d", range: 1...3), timePerFrame: 0.3))
+        
         
 //        let texturePlayer = SKTexture.init(imageNamed: imageName)
 //
