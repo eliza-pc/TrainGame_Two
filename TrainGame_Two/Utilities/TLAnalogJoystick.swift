@@ -442,14 +442,13 @@ open class TLAnalogJoystick: SKNode {
         } else {
             handle.position = location
         }
-//        print("11 - \(location.x)")
-//        print("12 - \(location.y)")
+
         
-        if location.x > 1 {
+        if location.x > 10 {
             userControl = UserControl.right
         }
         
-        if location.x < -1 {
+        if location.x < -10 {
             userControl = UserControl.left
         }
         

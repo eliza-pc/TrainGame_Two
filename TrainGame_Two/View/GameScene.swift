@@ -90,6 +90,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     spriteComponent.nodePhysic.position = CGPoint(x: spriteComponent.nodePhysic.position.x + (pVelocity.x * speed), y: spriteComponent.nodePhysic.position.y)
 // + (100 * speed)
                 //    print(self.control?.directionCommand ?? "")
+                    if self.control?.directionCommand == UserControl.right {
+                        spriteComponent.nodeTexture.xScale = abs(spriteComponent.nodeTexture.xScale) * 1.0
+                        
+                        
+                        
+                    } else {
+                        
+                        spriteComponent.nodeTexture.xScale = abs(spriteComponent.nodeTexture.xScale) * -1.0
+                        
+                        
+                    }
                     
                 } else {
                     
