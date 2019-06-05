@@ -86,7 +86,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 
 //                print (self.moveJoystick)
                 let pVelocity = joystick.velocity;
-                let speed = CGFloat(0.12)
+                let speed = CGFloat(0.05)
 
                 if self.control?.directionCommand == UserControl.jump {
                     // MARK: Move for Physics
