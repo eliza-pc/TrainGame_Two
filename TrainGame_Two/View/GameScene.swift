@@ -56,8 +56,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         let personagemPrincipal = Player(imageName: "idle1", gameScene: self)
         let petala = Petala(imageName: "RosePetal", gameScene: self)
-        //let balao = Petala(imageName: "balao2", gameScene: self)
-      
+        let boxBig = BoxObstacle(imageName: "Luggage", gameScene: self)
+        
         if personagemPrincipal.component(ofType: PlayerComponent.self) != nil {
             
             moveJoystick.on(.begin) { [unowned self] _ in
@@ -145,6 +145,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         entityManager.add(personagemPrincipal)
         entityManager.add(petala)
+        entityManager.add(boxBig)
         view.isMultipleTouchEnabled = false
         
     }

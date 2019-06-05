@@ -28,6 +28,8 @@ class Control {
     var entityNode: SKNode? = nil
     var swipeActive: Bool = false
     var collectableActive: Bool = false
+    var incrementJump: Int = 0
+    
     
     init(view: UIView, gameScene: GameScene){
         self.gameScene = gameScene
@@ -95,7 +97,7 @@ class Control {
         //Mark: Control Entities
         let entitys = gameScene.entityManager.getEntitys(component: PlayerComponent.self)
         self.entityNode = entitys[0].component(ofType: SpriteComponent.self)?.nodePhysic
-        entityNode?.run(SKAction.moveTo(y: 20, duration: 0.25))
+        entityNode?.run(SKAction.moveTo(y: CGFloat(20 + incrementJump), duration: 0.25))
         
         //                    entityNode?.run(SKAction.moveTo(y: entityNode!.position.y + (100 * 1.2), duration: 0.25))
         
