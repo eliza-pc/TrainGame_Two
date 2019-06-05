@@ -32,6 +32,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var player: SKSpriteNode?
     var Souls: SKAudioNode?
+ 
+    
     
     //#MARK: DidMove_FUNC
     override func didMove(to view: SKView) {
@@ -54,6 +56,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         let personagemPrincipal = Player(imageName: "idle1", gameScene: self)
         let petala = Petala(imageName: "RosePetal", gameScene: self)
+        //let balao = Petala(imageName: "balao2", gameScene: self)
       
         if personagemPrincipal.component(ofType: PlayerComponent.self) != nil {
             
@@ -169,16 +172,21 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         print("Contato: \(entityA) com \(entityB)")
         
         if let _ = entityA.component(ofType: PlayerComponent.self), let _ = entityB.component(ofType: CollectableComponent.self) {
-           print("faz alguma coisa!")
-        }
+            self.control?.collectableActive = true
+            self.entityManager.setObjectInContact(entity: entityB)
+        } else if let _ = entityB.component(ofType: PlayerComponent.self), let _ = entityA.component(ofType: CollectableComponent.self) {
+            self.control?.collectableActive = true
+            self.entityManager.setObjectInContact(entity: entityA)
+        } else {return}
         
-        //Remove entidade da petala da cena
-        if let _ = entityA.component(ofType: DestroyOnContactComponent.self) {
-            if let index = self.entityManager.entities.firstIndex(of: entityA) {
-                self.entityManager.entities.remove(at: index)
-            }
-        }
-    
+//        //Remove entidade da petala da cena
+//        if let _ = entityA.component(ofType: DestroyOnContactComponent.self) {
+//            self.entityManager.remove(entityA)
+//
+//        } else if let _ = entityB.component(ofType: DestroyOnContactComponent.self) {
+//            self.entityManager.remove(entityB)
+//
+//        }
 
     }
     
