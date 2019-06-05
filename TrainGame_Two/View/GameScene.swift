@@ -159,6 +159,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         //Verifica contato entre player e a petala
         guard let nodeA = contact.bodyA.node, let nodeB = contact.bodyB.node else {
+//            self.entityManager.contactObjects = false
             return
         }
         
@@ -166,15 +167,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         guard let entityA = nodeA.entity, let entityB = nodeB.entity else {
             print("2")
+//            self.entityManager.contactObjects = false
             return
         }
         
         print("Contato: \(entityA) com \(entityB)")
         
         if let _ = entityA.component(ofType: PlayerComponent.self), let _ = entityB.component(ofType: CollectableComponent.self) {
+            self.entityManager.contactObjects = true
             self.control?.collectableActive = true
             self.entityManager.setObjectInContact(entity: entityB)
         } else if let _ = entityB.component(ofType: PlayerComponent.self), let _ = entityA.component(ofType: CollectableComponent.self) {
+            self.entityManager.contactObjects = true
             self.control?.collectableActive = true
             self.entityManager.setObjectInContact(entity: entityA)
         } else {return}
