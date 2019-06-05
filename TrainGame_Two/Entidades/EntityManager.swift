@@ -15,7 +15,7 @@ class EntityManager {
     
     var entities = Set<GKEntity>()
     let scene: SKScene
-    
+    var entityInContact: GKEntity? = nil
     
     init(scene: SKScene) {
         self.scene = scene
@@ -35,6 +35,11 @@ class EntityManager {
         }
         
         entities.remove(entity)
+        for entity in entities {
+            print("entity: \(entity)")
+        }
+        print("tamanho: \(entities.count)")
+        
     }
     
     func update(dt: TimeInterval) {
@@ -60,6 +65,14 @@ class EntityManager {
         return entitys
     }
     
+    func setObjectInContact(entity: GKEntity ){
+        self.entityInContact = entity
+    }
+    
+    func getObjectInContact() -> GKEntity? {
+        let entityContact = self.entityInContact
+        return entityContact
+    }
     
 }
 

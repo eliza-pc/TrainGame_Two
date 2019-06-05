@@ -11,7 +11,7 @@ import GameplayKit
 
 
 enum UserControl {
-    case down
+    case take
     case left
     case right
     case jump
@@ -73,10 +73,10 @@ class Control {
                 }
 //                print(directionCommand)
             case .down:
-                directionCommand = UserControl.down
+                directionCommand = UserControl.take
             default:
                 print("don't have swipe")
-                
+               // self.gameScene.entityManager.remove(entityB)
             }
             
         }
@@ -84,6 +84,9 @@ class Control {
         if gesture is UITapGestureRecognizer {
             if collectableActive == true {
                 print("TapOK")
+                if let removeObject = self.gameScene.entityManager.getObjectInContact() {
+                    self.gameScene.entityManager.remove(removeObject)
+                }
             }
         }
     }
@@ -104,7 +107,7 @@ class Control {
 
                 stateJump()
         
-            }else if (control == UserControl.down) {
+            }else if (control == UserControl.take) {
               
                 
             }else if (control == UserControl.left) {

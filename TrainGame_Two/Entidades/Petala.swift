@@ -31,6 +31,7 @@ class Petala: GKEntity{
         
         addComponent(spriteComponent)
         addComponent(CollectableComponent())
+        addComponent(DestroyOnContactComponent())
     }
     
     required init?(coder aDecoder: NSCoder) {
