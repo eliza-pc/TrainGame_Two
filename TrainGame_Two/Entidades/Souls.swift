@@ -9,13 +9,16 @@
 import SpriteKit
 import GameplayKit
 
+
 class Souls: GKEntity{
     
     init(imageName: String, gameScene: GameScene){
         super.init()
         
-        let spriteComponent = SpriteComponent(texture: SKTexture(imageNamed: imageName), gameScene: gameScene, nodeName: "Souls", textureNodeName: "???")
-        
+//        let spriteComponent = SpriteComponent(texture: SKTexture(imageNamed: imageName), gameScene: gameScene, nodeName: "Souls", textureNodeName: "???")
+//
+//        let attackAction = SKAction.repeatForever(SKAction.animate(with: .init(withFormat: "Hand Left Down", range: <#T##ClosedRange<Int>#>), timePerFrame: <#T##TimeInterval#>))
+//        
         
 //        let texturePlayer = SKTexture.init(imageNamed: imageName)
 //
@@ -30,6 +33,8 @@ class Souls: GKEntity{
 //        let stateMachineComponent = StateMachineComponent()
 //        addComponent(stateMachineComponent)
 //        stateMachineComponent.stateMachine.enter(IdleState.self)
+        
+        
         
     }
     
