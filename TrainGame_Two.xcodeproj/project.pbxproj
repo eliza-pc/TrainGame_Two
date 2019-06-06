@@ -22,6 +22,7 @@
 		1FD727C722A952C20085172F /* BackgroundSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1FD727C622A952C20085172F /* BackgroundSound.wav */; };
 		1FD727CA22A956550085172F /* TrainSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1FD727C922A956540085172F /* TrainSound.wav */; };
 		1FD727CC22A95AC50085172F /* SoundPlayerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD727CB22A95AC50085172F /* SoundPlayerComponent.swift */; };
+		1FD727CE22A9667A0085172F /* jump.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1FD727CD22A9667A0085172F /* jump.wav */; };
 		1FE5D666229F42A3008E1287 /* Walking in Resources */ = {isa = PBXBuildFile; fileRef = 1FE5D665229F42A3008E1287 /* Walking */; };
 		1FE5D67B229F42DC008E1287 /* Idle in Resources */ = {isa = PBXBuildFile; fileRef = 1FE5D67A229F42DC008E1287 /* Idle */; };
 		1FF45043229C2434009B7DF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF45042229C2434009B7DF7 /* AppDelegate.swift */; };
@@ -56,6 +57,7 @@
 		1FD727C622A952C20085172F /* BackgroundSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = BackgroundSound.wav; sourceTree = "<group>"; };
 		1FD727C922A956540085172F /* TrainSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = TrainSound.wav; sourceTree = "<group>"; };
 		1FD727CB22A95AC50085172F /* SoundPlayerComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPlayerComponent.swift; sourceTree = "<group>"; };
+		1FD727CD22A9667A0085172F /* jump.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = jump.wav; sourceTree = "<group>"; };
 		1FE5D665229F42A3008E1287 /* Walking */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Walking; sourceTree = "<group>"; };
 		1FE5D67A229F42DC008E1287 /* Idle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Idle; sourceTree = "<group>"; };
 		1FF4503F229C2434009B7DF7 /* TrainGame_Two.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrainGame_Two.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,6 +102,7 @@
 		1FD727C522A9523C0085172F /* SoundEffects */ = {
 			isa = PBXGroup;
 			children = (
+				1FD727CD22A9667A0085172F /* jump.wav */,
 				1FD727C922A956540085172F /* TrainSound.wav */,
 				1FD727C622A952C20085172F /* BackgroundSound.wav */,
 			);
@@ -266,6 +269,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FD727CE22A9667A0085172F /* jump.wav in Resources */,
 				1FD727CA22A956550085172F /* TrainSound.wav in Resources */,
 				1FD727C722A952C20085172F /* BackgroundSound.wav in Resources */,
 				1FE5D666229F42A3008E1287 /* Walking in Resources */,
