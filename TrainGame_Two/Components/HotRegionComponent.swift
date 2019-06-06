@@ -9,4 +9,10 @@
 import Foundation
 import GameplayKit
 
-class AttackRegionComonent: GKComponent { }
+class HotRegionComonent: GKComponent {
+    
+    enum InvasionDirection{
+        case entering
+        case exiting
+    }
+}
