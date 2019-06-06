@@ -113,6 +113,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 }
             }
         }
+        
         entityManager.add(hotArea)
         entityManager.add(soulEnemy1)
         entityManager.add(personagemPrincipal)
@@ -160,9 +161,25 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             self.control?.collectableActive = true
             self.entityManager.setObjectInContact(entity: entityA)
             
-        } else {
+        }
+        
+        
+        if let _ = entityA.component(ofType: PlayerComponent.self), let _ = entityB.component(ofType: HotRegionComponent.self) {
             
-            return
+            let entities = self.entityManager.getEntitys(component: EnemyComponente.self)
+            
+            let entityEnemyNode = entities[0].component(ofType: SpriteComponent.self)?.nodePhysic
+            
+            entities[0].component(ofType: EnemyComponente.self)?.ataque(alvo: nodeA as! SKSpriteNode, autor: entityEnemyNode!)
+            
+        } else if let _ = entityB.component(ofType: PlayerComponent.self), let _ = entityA.component(ofType: HotRegionComponent.self) {
+            
+        
+            let entities = self.entityManager.getEntitys(component: EnemyComponente.self)
+            
+            let entityEnemyNode = entities[0].component(ofType: SpriteComponent.self)?.nodePhysic
+            
+            entities[0].component(ofType: EnemyComponente.self)?.ataque(alvo: nodeB as! SKSpriteNode, autor: entityEnemyNode!)
             
         }
 
@@ -193,7 +210,26 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             {
                 self.entityManager.contactObjects = false
             }
-        } else { return }
+        }
+        
+        if let _ = entityA.component(ofType: PlayerComponent.self), let _ = entityB.component(ofType: HotRegionComponent.self) {
+            
+            let entities = self.entityManager.getEntitys(component: EnemyComponente.self)
+            
+            let entityEnemyNode = entities[0].component(ofType: SpriteComponent.self)?.nodePhysic
+            
+            entities[0].component(ofType: EnemyComponente.self)?.vigiar(autor: entityEnemyNode!)
+            
+        } else if let _ = entityB.component(ofType: PlayerComponent.self), let _ = entityA.component(ofType: HotRegionComponent.self) {
+            
+            
+            let entities = self.entityManager.getEntitys(component: EnemyComponente.self)
+            
+            let entityEnemyNode = entities[0].component(ofType: SpriteComponent.self)?.nodePhysic
+            
+            entities[0].component(ofType: EnemyComponente.self)?.vigiar(autor: entityEnemyNode!)
+            
+        }
         
     }
     

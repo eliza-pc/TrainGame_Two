@@ -18,10 +18,12 @@ class EnemyComponente: GKComponent{
     
     let leftLimit: CGFloat
     let rightLimit: CGFloat
+    let initialPosition: CGPoint
     
-    init(minX: CGFloat, maxX: CGFloat, nodePhysic: SKSpriteNode) {
+    init(minX: CGFloat, maxX: CGFloat, nodePhysic: SKSpriteNode, initialPoint: CGPoint) {
         self.leftLimit = minX
         self.rightLimit = maxX
+        self.initialPosition = initialPoint
         
         super.init()
         
@@ -40,7 +42,7 @@ class EnemyComponente: GKComponent{
         
         let positionAtaque = alvo.position
         
-        let moveAtaque = SKAction.repeatForever(SKAction.move(to: positionAtaque, duration: 0.5))
+        let moveAtaque = SKAction.repeatForever(SKAction.move(to: positionAtaque, duration: 4.0))
         
         autor.run(moveAtaque)
         
@@ -48,13 +50,13 @@ class EnemyComponente: GKComponent{
     
     func vigiar(autor: SKSpriteNode) {
         autor.removeAllActions()
-        
+        autor.run(SKAction.move(to: self.initialPosition, duration: 3.0))
+        autor.removeAllActions()
         let leftAction = SKAction.moveTo(x: self.leftLimit, duration: 1.0)
         let dropForRight = SKAction.scaleX(to: autor.xScale * 1.0, duration: 0.1)
         let rightAction = SKAction.moveTo(x: self.rightLimit, duration: 1.0)
         let dropForleft = SKAction.scaleX(to: autor.xScale * -1.0, duration: 0.1)
         let sequence = SKAction.repeatForever(SKAction.sequence([leftAction, dropForRight, rightAction, dropForleft]))
-        
         autor.run(sequence)
         
     }
