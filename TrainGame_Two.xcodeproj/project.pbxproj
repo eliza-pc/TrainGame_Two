@@ -35,8 +35,10 @@
 		1FF45066229C281B009B7DF7 /* TLAnalogJoystick.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF45065229C281B009B7DF7 /* TLAnalogJoystick.swift */; };
 		1FF45068229C2826009B7DF7 /* Control.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF45067229C2826009B7DF7 /* Control.swift */; };
 		1FF4506A229C2D34009B7DF7 /* CameraComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF45069229C2D34009B7DF7 /* CameraComponent.swift */; };
+		5E1282EB22A94DD9000784FB /* DangerArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1282EA22A94DD9000784FB /* DangerArea.swift */; };
+		5E1282ED22A95176000784FB /* EnemyComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1282EC22A95176000784FB /* EnemyComponent.swift */; };
 		5E88671022A6ABBF0008D4B0 /* Souls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E88670F22A6ABBF0008D4B0 /* Souls.swift */; };
-		5E88671322A6B61F0008D4B0 /* AttackRegionComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E88671222A6B61F0008D4B0 /* AttackRegionComponent.swift */; };
+		5E88671322A6B61F0008D4B0 /* HotRegionComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E88671222A6B61F0008D4B0 /* HotRegionComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,8 +70,10 @@
 		1FF45065229C281B009B7DF7 /* TLAnalogJoystick.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLAnalogJoystick.swift; sourceTree = "<group>"; };
 		1FF45067229C2826009B7DF7 /* Control.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Control.swift; sourceTree = "<group>"; };
 		1FF45069229C2D34009B7DF7 /* CameraComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraComponent.swift; sourceTree = "<group>"; };
+		5E1282EA22A94DD9000784FB /* DangerArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DangerArea.swift; sourceTree = "<group>"; };
+		5E1282EC22A95176000784FB /* EnemyComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnemyComponent.swift; sourceTree = "<group>"; };
 		5E88670F22A6ABBF0008D4B0 /* Souls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Souls.swift; sourceTree = "<group>"; };
-		5E88671222A6B61F0008D4B0 /* AttackRegionComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttackRegionComponent.swift; sourceTree = "<group>"; };
+		5E88671222A6B61F0008D4B0 /* HotRegionComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotRegionComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +145,7 @@
 				5E88670F22A6ABBF0008D4B0 /* Souls.swift */,
 				1DC4EB0822A8153000245A79 /* BoxObstacles.swift */,
 				1FD727C322A93F240085172F /* SoundBox.swift */,
+				5E1282EA22A94DD9000784FB /* DangerArea.swift */,
 			);
 			path = Entidades;
 			sourceTree = "<group>";
@@ -157,6 +162,7 @@
 				5E88671222A6B61F0008D4B0 /* AttackRegionComponent.swift */,
 				1F22A1F122A7FC5F00335135 /* BalloonComponent.swift */,
 				1DC4EB0A22A8189500245A79 /* MovingObjectComponent.swift */,
+				5E1282EC22A95176000784FB /* EnemyComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -271,13 +277,14 @@
 				1DA672E522A01D280007B49B /* PlayerComponent.swift in Sources */,
 				1F22A1F222A7FC5F00335135 /* BalloonComponent.swift in Sources */,
 				1FF45049229C2434009B7DF7 /* GameScene.swift in Sources */,
+				5E1282EB22A94DD9000784FB /* DangerArea.swift in Sources */,
 				1FF45068229C2826009B7DF7 /* Control.swift in Sources */,
 				1F399AFF22A6A9AB0096B59E /* DestroyContactComponent.swift in Sources */,
 				1FF4504B229C2434009B7DF7 /* GameViewController.swift in Sources */,
 				1FF45063229C27B6009B7DF7 /* EntityManager.swift in Sources */,
 				1DC4EB0922A8153000245A79 /* BoxObstacles.swift in Sources */,
 				1FF4505F229C278E009B7DF7 /* SpriteComponent.swift in Sources */,
-				5E88671322A6B61F0008D4B0 /* AttackRegionComponent.swift in Sources */,
+				5E88671322A6B61F0008D4B0 /* HotRegionComponent.swift in Sources */,
 				1F5DF38C22A16805000D04CF /* VilarExtension.swift in Sources */,
 				1FF45066229C281B009B7DF7 /* TLAnalogJoystick.swift in Sources */,
 				1F5DF38622A01934000D04CF /* (null) in Sources */,
@@ -289,6 +296,7 @@
 				1FD727C422A93F240085172F /* SoundBox.swift in Sources */,
 				1DDEBC6D22A6A6A500262156 /* CollectableComponent.swift in Sources */,
 				1F5DF38A22A1631F000D04CF /* StateMachineComponent.swift in Sources */,
+				5E1282ED22A95176000784FB /* EnemyComponent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
