@@ -57,6 +57,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let personagemPrincipal = Player(imageName: "idle1", gameScene: self, sound: "BackgroundSound")
         let petala = Petala(imageName: "RosePetal", gameScene: self)
         let boxBig = BoxObstacle(imageName: "Luggage", gameScene: self)
+        let soulEnemy1 = SoulEnemy(imageName: "", gameScene: self)
+        
+        
         
         if personagemPrincipal.component(ofType: PlayerComponent.self) != nil {
             
@@ -91,19 +94,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 if self.control?.directionCommand == UserControl.jump {
                     // MARK: Move for Physics
                     spriteComponent.nodePhysic.position = CGPoint(x: spriteComponent.nodePhysic.position.x + (pVelocity.x * speed), y: spriteComponent.nodePhysic.position.y)
-// + (100 * speed)
-                //    print(self.control?.directionCommand ?? "")
-                    if self.control?.directionCommand == UserControl.right {
-                        spriteComponent.nodeTexture.xScale = abs(spriteComponent.nodeTexture.xScale) * 1.0
-                        
-                        
-                        
-                    } else {
-                        
-                        spriteComponent.nodeTexture.xScale = abs(spriteComponent.nodeTexture.xScale) * -1.0
-                        
-                        
-                    }
+
+//                    if self.control?.directionCommand == UserControl.right {
+//                        spriteComponent.nodeTexture.xScale = abs(spriteComponent.nodeTexture.xScale) * 1.0
+//
+//                    } else {
+//
+//                        spriteComponent.nodeTexture.xScale = abs(spriteComponent.nodeTexture.xScale) * -1.0
+//
+//                    }
                     
                 } else {
                     
@@ -113,13 +112,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     if self.control?.directionCommand == UserControl.right {
                          spriteComponent.nodeTexture.xScale = abs(spriteComponent.nodeTexture.xScale) * 1.0
                         
-                      
-                        
                     } else {
                         
                         spriteComponent.nodeTexture.xScale = abs(spriteComponent.nodeTexture.xScale) * -1.0
                    
-                        
                     }
                 //    print(self.control?.directionCommand ?? "")
                     // MARK: Move for Physics
@@ -143,6 +139,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             }
         }
         
+        entityManager.add(soulEnemy1)
         entityManager.add(personagemPrincipal)
         entityManager.add(petala)
         entityManager.add(boxBig)
