@@ -13,7 +13,7 @@
 		1DC4EB0B22A8189500245A79 /* MovingObjectComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC4EB0A22A8189500245A79 /* MovingObjectComponent.swift */; };
 		1DDEBC6B22A6A4C300262156 /* Petala.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDEBC6A22A6A4C300262156 /* Petala.swift */; };
 		1DDEBC6D22A6A6A500262156 /* CollectableComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDEBC6C22A6A6A500262156 /* CollectableComponent.swift */; };
-		1F22A1F222A7FC5F00335135 /* balloonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F22A1F122A7FC5F00335135 /* balloonComponent.swift */; };
+		1F22A1F222A7FC5F00335135 /* BalloonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F22A1F122A7FC5F00335135 /* BalloonComponent.swift */; };
 		1F399AFF22A6A9AB0096B59E /* DestroyContactComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F399AFE22A6A9AB0096B59E /* DestroyContactComponent.swift */; };
 		1F5DF38622A01934000D04CF /* (null) in Sources */ = {isa = PBXBuildFile; };
 		1F5DF38A22A1631F000D04CF /* StateMachineComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5DF38922A1631F000D04CF /* StateMachineComponent.swift */; };
@@ -47,7 +47,7 @@
 		1DC4EB0A22A8189500245A79 /* MovingObjectComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovingObjectComponent.swift; sourceTree = "<group>"; };
 		1DDEBC6A22A6A4C300262156 /* Petala.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Petala.swift; sourceTree = "<group>"; };
 		1DDEBC6C22A6A6A500262156 /* CollectableComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectableComponent.swift; sourceTree = "<group>"; };
-		1F22A1F122A7FC5F00335135 /* balloonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = balloonComponent.swift; sourceTree = "<group>"; };
+		1F22A1F122A7FC5F00335135 /* BalloonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalloonComponent.swift; sourceTree = "<group>"; };
 		1F399AFE22A6A9AB0096B59E /* DestroyContactComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestroyContactComponent.swift; sourceTree = "<group>"; };
 		1F5DF38922A1631F000D04CF /* StateMachineComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateMachineComponent.swift; sourceTree = "<group>"; };
 		1F5DF38B22A16805000D04CF /* VilarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VilarExtension.swift; sourceTree = "<group>"; };
@@ -159,8 +159,8 @@
 				1F5DF38922A1631F000D04CF /* StateMachineComponent.swift */,
 				1DDEBC6C22A6A6A500262156 /* CollectableComponent.swift */,
 				1F399AFE22A6A9AB0096B59E /* DestroyContactComponent.swift */,
-				5E88671222A6B61F0008D4B0 /* HotRegionComponent.swift */,
-				1F22A1F122A7FC5F00335135 /* balloonComponent.swift */,
+				5E88671222A6B61F0008D4B0 /* AttackRegionComponent.swift */,
+				1F22A1F122A7FC5F00335135 /* BalloonComponent.swift */,
 				1DC4EB0A22A8189500245A79 /* MovingObjectComponent.swift */,
 				5E1282EC22A95176000784FB /* EnemyComponent.swift */,
 			);
@@ -275,7 +275,7 @@
 				5E88671022A6ABBF0008D4B0 /* Souls.swift in Sources */,
 				1DDEBC6B22A6A4C300262156 /* Petala.swift in Sources */,
 				1DA672E522A01D280007B49B /* PlayerComponent.swift in Sources */,
-				1F22A1F222A7FC5F00335135 /* balloonComponent.swift in Sources */,
+				1F22A1F222A7FC5F00335135 /* BalloonComponent.swift in Sources */,
 				1FF45049229C2434009B7DF7 /* GameScene.swift in Sources */,
 				5E1282EB22A94DD9000784FB /* DangerArea.swift in Sources */,
 				1FF45068229C2826009B7DF7 /* Control.swift in Sources */,
