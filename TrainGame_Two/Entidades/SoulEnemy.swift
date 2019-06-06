@@ -17,12 +17,9 @@ class SoulEnemy: GKEntity{
         
         let spriteComponent = SpriteComponent(texture: SKTexture(imageNamed: imageName), gameScene: gameScene, nodeName: "SoulPhysicNode", textureNodeName: "SoulTextureNode")
 
-<<<<<<< HEAD:TrainGame_Two/Entidades/SoulEnemy.swift
         let AnimationAction = SKAction.repeatForever(SKAction.animate(with: .init(withFormat: "Hand-Straight-%d", range: 1...3), timePerFrame: 0.1))
-=======
-        let AnimationAction = SKAction.repeatForever(SKAction.animate(with: .init(withFormat: "Hand-Straight-%d", range: 1...3), timePerFrame: 0.3))
->>>>>>> Developer:TrainGame_Two/Entidades/Souls.swift
-        
+
+
         spriteComponent.nodeTexture.run(AnimationAction)
         spriteComponent.nodePhysic.entity = self
         

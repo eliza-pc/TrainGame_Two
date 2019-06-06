@@ -65,18 +65,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             moveJoystick.on(.begin) { [unowned self] _ in
              
-//                self.control?.directionCommand = UserControl.idle
-                
-              //  let actions = [
-//                    SKAction.scale(to: 1, duration: 0.5),
-//                    SKAction.scale(to: 1, duration: 0.5)
-                    
-//                    SKAction.scale(to: 1, duration: 0.5),
-//                    SKAction.scale(to: 1, duration: 0.5)
-
-               // ]
-                
-               // spriteComponent.node.run(SKAction.sequence(actions))
+//              Actions of the begin in Game
             }
             
             moveJoystick.on(.move) { [unowned self] joystick in
@@ -95,14 +84,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     // MARK: Move for Physics
                     spriteComponent.nodePhysic.position = CGPoint(x: spriteComponent.nodePhysic.position.x + (pVelocity.x * speed), y: spriteComponent.nodePhysic.position.y)
 
-//                    if self.control?.directionCommand == UserControl.right {
-//                        spriteComponent.nodeTexture.xScale = abs(spriteComponent.nodeTexture.xScale) * 1.0
-//
-//                    } else {
-//
-//                        spriteComponent.nodeTexture.xScale = abs(spriteComponent.nodeTexture.xScale) * -1.0
-//
-//                    }
                     
                 } else {
                     
@@ -117,7 +98,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                         spriteComponent.nodeTexture.xScale = abs(spriteComponent.nodeTexture.xScale) * -1.0
                    
                     }
-                //    print(self.control?.directionCommand ?? "")
+                
                     // MARK: Move for Physics
                     spriteComponent.nodePhysic.position = CGPoint(x: spriteComponent.nodePhysic.position.x + (pVelocity.x * speed), y: spriteComponent.nodePhysic.position.y)
             
@@ -126,13 +107,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             }
             
             moveJoystick.on(.end) { [unowned self] _ in
-              //  print("ta acabando")
-//                let actions = [
-//                    SKAction.scale(to: 1, duration: 0.5),
-//                    SKAction.scale(to: 1, duration: 0.5)
-//                ]
-//
-//                spriteComponent.node.run(SKAction.sequence(actions))
+              
                 if self.control?.directionCommand != UserControl.jump {
                     self.control?.directionCommand = UserControl.idle
                 }
