@@ -19,23 +19,11 @@ class Souls: GKEntity{
 
         let AnimationAction = SKAction.repeatForever(SKAction.animate(with: .init(withFormat: "Hand-Left-Down-%d", range: 1...3), timePerFrame: 0.3))
         
+        spriteComponent.nodeTexture.run(AnimationAction)
+        spriteComponent.nodePhysic.entity = self
         
-//        let texturePlayer = SKTexture.init(imageNamed: imageName)
-//
-//        spriteComponent.nodeTexture.texture = texturePlayer
-//        spriteComponent.nodePhysic.size = CGSize(width: 87.75, height: 116)
-//        addComponent(PlayerComponent())
-//        addComponent(spriteComponent)
-//        addComponent(spriteComponent)
-//        addComponent(CameraComponent.init(parentNode: gameScene))
-//
-//        
-//        let stateMachineComponent = StateMachineComponent()
-//        addComponent(stateMachineComponent)
-//        stateMachineComponent.stateMachine.enter(IdleState.self)
-        
-        
-        
+        addComponent(spriteComponent)
+        addComponent(DestroyOnContactComponent())
     }
     
     required init?(coder aDecoder: NSCoder) {
