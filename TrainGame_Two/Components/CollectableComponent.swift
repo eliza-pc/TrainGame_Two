@@ -9,7 +9,4 @@
 import Foundation
 import GameplayKit
 
-class CollectableComponent: GKComponent {
-    
-    
-}
+class CollectableComponent: GKComponent { }

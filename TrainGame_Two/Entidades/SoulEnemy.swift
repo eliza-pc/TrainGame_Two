@@ -10,20 +10,24 @@ import SpriteKit
 import GameplayKit
 
 
-class Souls: GKEntity{
+class SoulEnemy: GKEntity{
     
     init(imageName: String, gameScene: GameScene){
         super.init()
         
-        let spriteComponent = SpriteComponent(texture: SKTexture(imageNamed: imageName), gameScene: gameScene, nodeName: "Souls", textureNodeName: "???")
+        let spriteComponent = SpriteComponent(texture: SKTexture(imageNamed: imageName), gameScene: gameScene, nodeName: "SoulPhysicNode", textureNodeName: "SoulTextureNode")
 
-        let AnimationAction = SKAction.repeatForever(SKAction.animate(with: .init(withFormat: "Hand-Left-Down-%d", range: 1...3), timePerFrame: 0.3))
+        let AnimationAction = SKAction.repeatForever(SKAction.animate(with: .init(withFormat: "Hand-Straight-%d", range: 1...3), timePerFrame: 0.1))
         
         spriteComponent.nodeTexture.run(AnimationAction)
         spriteComponent.nodePhysic.entity = self
         
+        let enemyComponent = EnemyComponente(minX: 1200, maxX: 1520, nodePhysic: spriteComponent.nodePhysic)
+        
         addComponent(spriteComponent)
+        addComponent(enemyComponent)
         addComponent(DestroyOnContactComponent())
+        
     }
     
     required init?(coder aDecoder: NSCoder) {

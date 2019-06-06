@@ -11,4 +11,20 @@ import GameplayKit
 
 class DangerArea: GKEntity {
     
+    
+    init(gameScene: GameScene){
+        super.init()
+        
+        let physicComponent = PhysicComponent(gameScene: gameScene, nodeName: "")
+        
+        addComponent(physicComponent)
+        addComponent(HotRegionComonent())
+    }
+    
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
 }

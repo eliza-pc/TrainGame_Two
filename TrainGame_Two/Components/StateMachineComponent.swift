@@ -54,6 +54,7 @@ class IdleState: AnimatedState{
     override func deactivateNode(_ node: SKSpriteNode) {
         node.removeAction(forKey: "normal")
     }
+    
 }
 
 class WalkState: AnimatedState{
