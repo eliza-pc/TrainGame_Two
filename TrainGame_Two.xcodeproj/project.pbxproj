@@ -18,6 +18,7 @@
 		1F5DF38622A01934000D04CF /* (null) in Sources */ = {isa = PBXBuildFile; };
 		1F5DF38A22A1631F000D04CF /* StateMachineComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5DF38922A1631F000D04CF /* StateMachineComponent.swift */; };
 		1F5DF38C22A16805000D04CF /* VilarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5DF38B22A16805000D04CF /* VilarExtension.swift */; };
+		1FD727C422A93F240085172F /* SoundBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD727C322A93F240085172F /* SoundBox.swift */; };
 		1FE5D666229F42A3008E1287 /* Walking in Resources */ = {isa = PBXBuildFile; fileRef = 1FE5D665229F42A3008E1287 /* Walking */; };
 		1FE5D67B229F42DC008E1287 /* Idle in Resources */ = {isa = PBXBuildFile; fileRef = 1FE5D67A229F42DC008E1287 /* Idle */; };
 		1FF45043229C2434009B7DF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF45042229C2434009B7DF7 /* AppDelegate.swift */; };
@@ -48,6 +49,7 @@
 		1F399AFE22A6A9AB0096B59E /* DestroyContactComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestroyContactComponent.swift; sourceTree = "<group>"; };
 		1F5DF38922A1631F000D04CF /* StateMachineComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateMachineComponent.swift; sourceTree = "<group>"; };
 		1F5DF38B22A16805000D04CF /* VilarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VilarExtension.swift; sourceTree = "<group>"; };
+		1FD727C322A93F240085172F /* SoundBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundBox.swift; sourceTree = "<group>"; };
 		1FE5D665229F42A3008E1287 /* Walking */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Walking; sourceTree = "<group>"; };
 		1FE5D67A229F42DC008E1287 /* Idle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Idle; sourceTree = "<group>"; };
 		1FF4503F229C2434009B7DF7 /* TrainGame_Two.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrainGame_Two.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,6 +140,7 @@
 				1DDEBC6A22A6A4C300262156 /* Petala.swift */,
 				5E88670F22A6ABBF0008D4B0 /* Souls.swift */,
 				1DC4EB0822A8153000245A79 /* BoxObstacles.swift */,
+				1FD727C322A93F240085172F /* SoundBox.swift */,
 			);
 			path = Entidades;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 				1DA672E322A018C40007B49B /* (null) in Sources */,
 				1DC4EB0B22A8189500245A79 /* MovingObjectComponent.swift in Sources */,
 				1FF4506A229C2D34009B7DF7 /* CameraComponent.swift in Sources */,
+				1FD727C422A93F240085172F /* SoundBox.swift in Sources */,
 				1DDEBC6D22A6A6A500262156 /* CollectableComponent.swift in Sources */,
 				1F5DF38A22A1631F000D04CF /* StateMachineComponent.swift in Sources */,
 			);
