@@ -100,7 +100,7 @@ class Control {
         //Mark: Control Entities
         let entitys = gameScene.entityManager.getEntitys(component: PlayerComponent.self)
         self.entityNode = entitys[0].component(ofType: SpriteComponent.self)?.nodePhysic
-        entityNode?.run(SKAction.moveTo(y: CGFloat(20 + incrementJump), duration: 0.25))
+        entityNode?.run(SKAction.moveTo(y: CGFloat(20 + incrementJump), duration: 0.35))
         
         //                    entityNode?.run(SKAction.moveTo(y: entityNode!.position.y + (100 * 1.2), duration: 0.25))
         
