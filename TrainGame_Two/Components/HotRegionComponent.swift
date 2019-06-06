@@ -9,7 +9,7 @@
 import Foundation
 import GameplayKit
 
-class HotRegionComonent: GKComponent {
+class HotRegionComponent: GKComponent {
     
     enum InvasionDirection{
         case entering

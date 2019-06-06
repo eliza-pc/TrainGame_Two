@@ -58,7 +58,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let petala = Petala(imageName: "RosePetal", gameScene: self)
         let boxBig = BoxObstacle(imageName: "Luggage", gameScene: self)
         let soulEnemy1 = SoulEnemy(imageName: "", gameScene: self)
-        
+        let hotArea = DangerArea(gameScene: self)
         
         
         if personagemPrincipal.component(ofType: PlayerComponent.self) != nil {
@@ -113,7 +113,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 }
             }
         }
-        
+        entityManager.add(hotArea)
         entityManager.add(soulEnemy1)
         entityManager.add(personagemPrincipal)
         entityManager.add(petala)
