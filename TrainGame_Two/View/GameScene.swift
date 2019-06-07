@@ -169,10 +169,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             print("positionPersonagem: \(entityA.component(ofType: SpriteComponent.self)?.nodePhysic)")
             
-//            let entityEnemyNode = entities[0].component(ofType: SpriteComponent.self)?.nodePhysic
-//
-//            entities[0].component(ofType: EnemyComponente.self)?.ataque(alvo: nodeA as! SKSpriteNode, autor: entityEnemyNode!)
-            
         } else if let _ = entityB.component(ofType: PlayerComponent.self), let _ = entityA.component(ofType: HotRegionComponent.self) {
             
             print("positionPersonagem: \(entityB.component(ofType: SpriteComponent.self)?.nodePhysic)")
@@ -180,9 +176,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             let entities = self.entityManager.getEntitys(component: EnemyComponente.self)
             
             entities[0].component(ofType: EnemyComponente.self)?.state = .ataque
-//            let entityEnemyNode = entities[0].component(ofType: SpriteComponent.self)?.nodePhysic
-//
-//            entities[0].component(ofType: EnemyComponente.self)?.ataque(alvo: nodeB as! SKSpriteNode, autor: entityEnemyNode!)
             
         }
 

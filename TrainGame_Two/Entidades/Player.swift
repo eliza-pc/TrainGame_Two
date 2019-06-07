@@ -23,7 +23,7 @@ class Player: GKEntity{
 //        spriteComponent.node.texture = SKTexture.init(imageNamed: imageName)
 //      spriteComponent.node.zPosition = -3
     
-    let soundPlayer = SoundPlayer.soundPlayer.playSong(sound: sound)
+        _ = SoundPlayer.soundPlayer.playSong(sound: sound)
         
         
         spriteComponent.nodeTexture.texture = texturePlayer
