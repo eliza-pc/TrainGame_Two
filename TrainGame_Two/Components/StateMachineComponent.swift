@@ -82,9 +82,12 @@ class JumpState: AnimatedState{
     
     override func activateNode(_ node: SKSpriteNode) {
         node.run(action, withKey: "jump")
+        
     }
     override func deactivateNode(_ node: SKSpriteNode) {
         node.removeAction(forKey: "jump")
+        SoundEffects.soundEffects.playSoundEffect(sound: "jump")
+        
     }
     
 }
@@ -97,8 +100,8 @@ class StateMachineComponent: GKComponent {
         super.init()
         self.stateMachine = GKStateMachine(states: [
             IdleState(self),
-        WalkState(self),
-//            JumpState(self),
+            WalkState(self),
+            JumpState(self),
             ])
     }
     
