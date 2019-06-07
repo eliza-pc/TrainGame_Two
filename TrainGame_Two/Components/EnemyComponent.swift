@@ -44,9 +44,8 @@ class EnemyComponente: GKComponent{
     }
     
     func ataque(autor: SKSpriteNode){
-//        autor.removeAllActions()
-//
-        print("xScale: \(autor.xScale)")
+
+//        print("xScale: \(autor.xScale)")
         
         if (autor.action(forKey: "vigiando") != nil) {
             
@@ -91,6 +90,7 @@ class EnemyComponente: GKComponent{
     func vigiar(autor: SKSpriteNode) {
 
 //        print("xScale: \(autor.xScale)")
+        
         let direction = autor.position.x - self.alvo.position.x
         print(direction)
         
