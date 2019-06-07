@@ -33,10 +33,10 @@ class EnemyComponente: GKComponent{
         super.init()
         
         let leftAction = SKAction.moveTo(x: self.leftLimit, duration: 2.0)
-        let dropForRight = SKAction.scaleX(to: nodePhysic.xScale * 1.0, duration: 0.35)
+        let dropForRight = SKAction.scaleX(to: nodePhysic.xScale * 1.0, duration: 0.01)
 //        let dropForRight = SKAction.rotate(byAngle: 2 * .pi, duration: 0.35)
         let rightAction = SKAction.moveTo(x: self.rightLimit, duration: 2.0)
-        let dropForleft = SKAction.scaleX(to: nodePhysic.xScale * -1.0, duration: 0.35)
+        let dropForleft = SKAction.scaleX(to: nodePhysic.xScale * -1.0, duration: 0.01)
 //        let dropForleft = SKAction.rotate(byAngle: 2 * .pi, duration: 0.35)
         
         let sequence = SKAction.repeatForever(SKAction.sequence([leftAction, dropForRight, rightAction, dropForleft]))
@@ -49,9 +49,15 @@ class EnemyComponente: GKComponent{
 //        autor.removeAllActions()
 //
         if (autor.action(forKey: "vigiando") != nil) {
-            if autor.isPaused == true {
-                autor.removeAction(forKey: "vigiando")
-            }
+            
+            autor.removeAction(forKey: "vigiando")
+            
+        }
+        
+        if (autor.action(forKey: "pontoInicial") != nil) {
+            
+            autor.removeAction(forKey: "pontoInicial")
+       
         }
 //
 //        print(autor.hasActions())
@@ -94,9 +100,9 @@ class EnemyComponente: GKComponent{
 //        }
         
         let leftAction = SKAction.moveTo(x: self.leftLimit, duration: 2.0)
-        let dropForRight = SKAction.scaleX(to: autor.xScale * 1.0, duration: 0.35)
+        let dropForRight = SKAction.scaleX(to: autor.xScale * 1.0, duration: 0.01)
         let rightAction = SKAction.moveTo(x: self.rightLimit, duration: 2.0)
-        let dropForleft = SKAction.scaleX(to: autor.xScale * -1.0, duration: 0.35)
+        let dropForleft = SKAction.scaleX(to: autor.xScale * -1.0, duration: 0.01)
         let sequence = SKAction.repeatForever(SKAction.sequence([leftAction, dropForRight, rightAction, dropForleft]))
         autor.run(sequence, withKey: "vigiando")
         
