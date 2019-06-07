@@ -51,7 +51,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         entityManager = EntityManager(scene: self)
         
-        let personagemPrincipal = Player(imageName: "idle1", gameScene: self)
+        let personagemPrincipal = Player(imageName: "idle1", gameScene: self, sound: "BackgroundSound")
         let petala = Petala(imageName: "RosePetal", gameScene: self)
         let boxBig = BoxObstacle(imageName: "Luggage", gameScene: self)
         let soulEnemy1 = SoulEnemy(imageName: "", gameScene: self)
