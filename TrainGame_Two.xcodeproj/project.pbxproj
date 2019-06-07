@@ -19,6 +19,8 @@
 		1F5DF38622A01934000D04CF /* (null) in Sources */ = {isa = PBXBuildFile; };
 		1F5DF38A22A1631F000D04CF /* StateMachineComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5DF38922A1631F000D04CF /* StateMachineComponent.swift */; };
 		1F5DF38C22A16805000D04CF /* VilarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5DF38B22A16805000D04CF /* VilarExtension.swift */; };
+		1FA72A7822AAA42C00339D72 /* BackgroundMusicClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA72A7722AAA42C00339D72 /* BackgroundMusicClass.swift */; };
+		1FA72A7A22AAA4D200339D72 /* SoundEffectsClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA72A7922AAA4D200339D72 /* SoundEffectsClass.swift */; };
 		1FD727C422A93F240085172F /* SoundBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD727C322A93F240085172F /* SoundBox.swift */; };
 		1FD727C722A952C20085172F /* BackgroundSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1FD727C622A952C20085172F /* BackgroundSound.wav */; };
 		1FD727CA22A956550085172F /* TrainSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1FD727C922A956540085172F /* TrainSound.wav */; };
@@ -57,6 +59,8 @@
 		1F399AFE22A6A9AB0096B59E /* DestroyContactComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestroyContactComponent.swift; sourceTree = "<group>"; };
 		1F5DF38922A1631F000D04CF /* StateMachineComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateMachineComponent.swift; sourceTree = "<group>"; };
 		1F5DF38B22A16805000D04CF /* VilarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VilarExtension.swift; sourceTree = "<group>"; };
+		1FA72A7722AAA42C00339D72 /* BackgroundMusicClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundMusicClass.swift; sourceTree = "<group>"; };
+		1FA72A7922AAA4D200339D72 /* SoundEffectsClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundEffectsClass.swift; sourceTree = "<group>"; };
 		1FD727C322A93F240085172F /* SoundBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundBox.swift; sourceTree = "<group>"; };
 		1FD727C622A952C20085172F /* BackgroundSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = BackgroundSound.wav; sourceTree = "<group>"; };
 		1FD727C922A956540085172F /* TrainSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = TrainSound.wav; sourceTree = "<group>"; };
@@ -111,6 +115,8 @@
 				1FD727CD22A9667A0085172F /* jump.wav */,
 				1FD727C922A956540085172F /* TrainSound.wav */,
 				1FD727C622A952C20085172F /* BackgroundSound.wav */,
+				1FA72A7722AAA42C00339D72 /* BackgroundMusicClass.swift */,
+				1FA72A7922AAA4D200339D72 /* SoundEffectsClass.swift */,
 			);
 			path = SoundEffects;
 			sourceTree = "<group>";
@@ -298,8 +304,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FA72A7822AAA42C00339D72 /* BackgroundMusicClass.swift in Sources */,
 				5E88671022A6ABBF0008D4B0 /* SoulEnemy.swift in Sources */,
 				1DD53DF122A9541900823FF9 /* PhysicComponent.swift in Sources */,
+				1FA72A7A22AAA4D200339D72 /* SoundEffectsClass.swift in Sources */,
 				1DDEBC6B22A6A4C300262156 /* Petala.swift in Sources */,
 				1DA672E522A01D280007B49B /* PlayerComponent.swift in Sources */,
 				1F22A1F222A7FC5F00335135 /* BalloonComponent.swift in Sources */,
@@ -471,7 +479,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 97WB89LRXA;
+				DEVELOPMENT_TEAM = T9WDNLZLLU;
 				INFOPLIST_FILE = TrainGame_Two/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -489,7 +497,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 97WB89LRXA;
+				DEVELOPMENT_TEAM = T9WDNLZLLU;
 				INFOPLIST_FILE = TrainGame_Two/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
