@@ -26,11 +26,11 @@ class SoundEffects {
                 audioPlayer = try AVAudioPlayer(contentsOf:aSound as URL)
                 audioPlayer!.numberOfLoops = 0
                 audioPlayer!.prepareToPlay()
-                audioPlayer!.setVolume(34, fadeDuration: 4)
+                audioPlayer!.setVolume(300, fadeDuration: 4)
                 audioPlayer!.currentTime = 0.35
                 audioPlayer!.play()
                 
-                
+                print("JumpSound")
             } catch {
                 print("Cannot play the file")
             }

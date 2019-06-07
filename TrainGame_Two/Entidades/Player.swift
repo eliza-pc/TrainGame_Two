@@ -19,15 +19,16 @@ class Player: GKEntity{
         
   
     let texturePlayer = SKTexture.init(imageNamed: imageName)
-//       texturePlayer.size().equalTo(CGSize(width: 200, height: 200))
-//        spriteComponent.node.texture = SKTexture.init(imageNamed: imageName)
-//      spriteComponent.node.zPosition = -3
+        //       texturePlayer.size().equalTo(CGSize(width: 200, height: 200))
+        //        spriteComponent.node.texture = SKTexture.init(imageNamed: imageName)
+        //      spriteComponent.node.zPosition = -3
     
        // _ = SoundPlayer.soundPlayer.playBackgroundMusic(backgroundMusicName: sound)
         
         spriteComponent.nodeTexture.texture = texturePlayer
         spriteComponent.nodePhysic.size = CGSize(width: 87.75, height: 116)
         BackgroundMusicClass.backgroundMusic.playBackgroundMusic()
+        BackgroundTrainSound.backgroundTrainSound.playBackgroundTrainSound()
         
 //        // Quem sou eu?
 //        spriteComponent.nodePhysic.physicsBody?.categoryBitMask    = 0b0001
