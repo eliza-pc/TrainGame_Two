@@ -23,7 +23,8 @@ class SoulEnemy: GKEntity{
         spriteComponent.nodeTexture.run(AnimationAction)
         spriteComponent.nodePhysic.entity = self
         
-        let enemyComponent = EnemyComponente(minX: 1200, maxX: 1520, nodePhysic: spriteComponent.nodePhysic)
+        
+        let enemyComponent = EnemyComponente(minX: 1200, maxX: 1520, nodePhysic: spriteComponent.nodePhysic, initialPoint: CGPoint(x: spriteComponent.nodePhysic.position.x, y: spriteComponent.nodePhysic.position.y), gameScene: gameScene)
         
         addComponent(spriteComponent)
         addComponent(enemyComponent)

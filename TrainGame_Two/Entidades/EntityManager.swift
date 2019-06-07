@@ -48,6 +48,12 @@ class EntityManager {
             if let balloonComponent = entity.component(ofType: BalloonComponent.self), !contactObjects {
                 balloonComponent.isNotVisible()
             }
+            
+            if let enemyComponent = entity.component(ofType: EnemyComponente.self), entity.component(ofType: EnemyComponente.self)?.state == StateEnemy.ataque {
+                enemyComponent.ataque(autor: entity.component(ofType: SpriteComponent.self)!.nodePhysic)
+            }
+            
+//            entities[0].component(ofType: EnemyComponente.self)?.ataque(alvo: nodeB as! SKSpriteNode, autor: entityEnemyNode!)
             entity.update(deltaTime: dt)
         }
     }

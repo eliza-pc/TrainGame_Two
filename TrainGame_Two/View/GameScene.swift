@@ -30,14 +30,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var joystickSubstrateImageEnabled = true
     
     
-    var player: SKSpriteNode?
-    var Souls: SKAudioNode?
  
     
     
     //#MARK: DidMove_FUNC
     override func didMove(to view: SKView) {
-        
         
         control = Control(view: self.view!, gameScene: self)
         
@@ -114,11 +111,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             }
         }
         
-        entityManager.add(hotArea)
-        entityManager.add(soulEnemy1)
         entityManager.add(personagemPrincipal)
+        entityManager.add(hotArea)
         entityManager.add(petala)
         entityManager.add(boxBig)
+        entityManager.add(soulEnemy1)
         view.isMultipleTouchEnabled = false
         
     }
@@ -168,18 +165,24 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             let entities = self.entityManager.getEntitys(component: EnemyComponente.self)
             
-            let entityEnemyNode = entities[0].component(ofType: SpriteComponent.self)?.nodePhysic
+            entities[0].component(ofType: EnemyComponente.self)?.state = .ataque
             
-            entities[0].component(ofType: EnemyComponente.self)?.ataque(alvo: nodeA as! SKSpriteNode, autor: entityEnemyNode!)
+            print("positionPersonagem: \(entityA.component(ofType: SpriteComponent.self)?.nodePhysic)")
+            
+//            let entityEnemyNode = entities[0].component(ofType: SpriteComponent.self)?.nodePhysic
+//
+//            entities[0].component(ofType: EnemyComponente.self)?.ataque(alvo: nodeA as! SKSpriteNode, autor: entityEnemyNode!)
             
         } else if let _ = entityB.component(ofType: PlayerComponent.self), let _ = entityA.component(ofType: HotRegionComponent.self) {
             
-        
+            print("positionPersonagem: \(entityB.component(ofType: SpriteComponent.self)?.nodePhysic)")
+            
             let entities = self.entityManager.getEntitys(component: EnemyComponente.self)
             
-            let entityEnemyNode = entities[0].component(ofType: SpriteComponent.self)?.nodePhysic
-            
-            entities[0].component(ofType: EnemyComponente.self)?.ataque(alvo: nodeB as! SKSpriteNode, autor: entityEnemyNode!)
+            entities[0].component(ofType: EnemyComponente.self)?.state = .ataque
+//            let entityEnemyNode = entities[0].component(ofType: SpriteComponent.self)?.nodePhysic
+//
+//            entities[0].component(ofType: EnemyComponente.self)?.ataque(alvo: nodeB as! SKSpriteNode, autor: entityEnemyNode!)
             
         }
 
@@ -218,6 +221,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             let entityEnemyNode = entities[0].component(ofType: SpriteComponent.self)?.nodePhysic
             
+            entities[0].component(ofType: EnemyComponente.self)?.state = StateEnemy.vigilancia
+            
             entities[0].component(ofType: EnemyComponente.self)?.vigiar(autor: entityEnemyNode!)
             
         } else if let _ = entityB.component(ofType: PlayerComponent.self), let _ = entityA.component(ofType: HotRegionComponent.self) {
@@ -226,6 +231,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             let entities = self.entityManager.getEntitys(component: EnemyComponente.self)
             
             let entityEnemyNode = entities[0].component(ofType: SpriteComponent.self)?.nodePhysic
+            
+            entities[0].component(ofType: EnemyComponente.self)?.state = StateEnemy.vigilancia
             
             entities[0].component(ofType: EnemyComponente.self)?.vigiar(autor: entityEnemyNode!)
             
