@@ -26,7 +26,7 @@ class SoundEffects {
                 audioPlayer = try AVAudioPlayer(contentsOf:aSound as URL)
                 audioPlayer!.numberOfLoops = 0
                 audioPlayer!.prepareToPlay()
-                audioPlayer!.setVolume(12, fadeDuration: 4)
+                audioPlayer!.setVolume(34, fadeDuration: 4)
                 audioPlayer!.currentTime = 0.35
                 audioPlayer!.play()
                 
