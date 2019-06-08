@@ -15,6 +15,8 @@
 		1DDEBC6B22A6A4C300262156 /* Petala.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDEBC6A22A6A4C300262156 /* Petala.swift */; };
 		1DDEBC6D22A6A6A500262156 /* CollectableComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDEBC6C22A6A6A500262156 /* CollectableComponent.swift */; };
 		1F22A1F222A7FC5F00335135 /* BalloonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F22A1F122A7FC5F00335135 /* BalloonComponent.swift */; };
+		1F29DE3722AABA6D003C7225 /* walk.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1F29DE3622AABA6D003C7225 /* walk.wav */; };
+		1F29DE3922AABC3D003C7225 /* walk1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1F29DE3822AABC3D003C7225 /* walk1.wav */; };
 		1F399AFF22A6A9AB0096B59E /* DestroyContactComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F399AFE22A6A9AB0096B59E /* DestroyContactComponent.swift */; };
 		1F41B63822AAB39700153C94 /* BackgroundTrainSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F41B63722AAB39700153C94 /* BackgroundTrainSound.swift */; };
 		1F41B63A22AAB50100153C94 /* train.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1F41B63922AAB50100153C94 /* train.wav */; };
@@ -58,6 +60,8 @@
 		1DDEBC6A22A6A4C300262156 /* Petala.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Petala.swift; sourceTree = "<group>"; };
 		1DDEBC6C22A6A6A500262156 /* CollectableComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectableComponent.swift; sourceTree = "<group>"; };
 		1F22A1F122A7FC5F00335135 /* BalloonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalloonComponent.swift; sourceTree = "<group>"; };
+		1F29DE3622AABA6D003C7225 /* walk.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = walk.wav; sourceTree = "<group>"; };
+		1F29DE3822AABC3D003C7225 /* walk1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = walk1.wav; sourceTree = "<group>"; };
 		1F399AFE22A6A9AB0096B59E /* DestroyContactComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestroyContactComponent.swift; sourceTree = "<group>"; };
 		1F41B63722AAB39700153C94 /* BackgroundTrainSound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundTrainSound.swift; sourceTree = "<group>"; };
 		1F41B63922AAB50100153C94 /* train.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = train.wav; sourceTree = "<group>"; };
@@ -119,6 +123,8 @@
 				1F41B63922AAB50100153C94 /* train.wav */,
 				1FD727CD22A9667A0085172F /* jump.wav */,
 				1FD727C922A956540085172F /* TrainSound.wav */,
+				1F29DE3822AABC3D003C7225 /* walk1.wav */,
+				1F29DE3622AABA6D003C7225 /* walk.wav */,
 				1FD727C622A952C20085172F /* BackgroundSound.wav */,
 				1FA72A7722AAA42C00339D72 /* BackgroundMusicClass.swift */,
 				1FA72A7922AAA4D200339D72 /* SoundEffectsClass.swift */,
@@ -293,10 +299,12 @@
 				1FD727CE22A9667A0085172F /* jump.wav in Resources */,
 				1FD727CA22A956550085172F /* TrainSound.wav in Resources */,
 				1FD727C722A952C20085172F /* BackgroundSound.wav in Resources */,
+				1F29DE3722AABA6D003C7225 /* walk.wav in Resources */,
 				1FE5D666229F42A3008E1287 /* Walking in Resources */,
 				1F41B63A22AAB50100153C94 /* train.wav in Resources */,
 				1FF4504E229C2434009B7DF7 /* Main.storyboard in Resources */,
 				1FF45045229C2434009B7DF7 /* GameScene.sks in Resources */,
+				1F29DE3922AABC3D003C7225 /* walk1.wav in Resources */,
 				1FE5D67B229F42DC008E1287 /* Idle in Resources */,
 				1FF45050229C2435009B7DF7 /* Assets.xcassets in Resources */,
 				1FF45053229C2435009B7DF7 /* LaunchScreen.storyboard in Resources */,
