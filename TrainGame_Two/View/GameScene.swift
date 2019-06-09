@@ -138,7 +138,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             return
         }
-        
+         
         
         guard let entityA = nodeA.entity, let entityB = nodeB.entity else {
             

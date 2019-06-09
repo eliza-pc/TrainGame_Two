@@ -50,6 +50,7 @@ class IdleState: AnimatedState{
     
     override func activateNode(_ node: SKSpriteNode) {
         node.run(action, withKey: "normal")
+       
     }
     override func deactivateNode(_ node: SKSpriteNode) {
         node.removeAction(forKey: "normal")
@@ -65,10 +66,12 @@ class WalkState: AnimatedState{
     }
     
     override func activateNode(_ node: SKSpriteNode) {
-        node.run(action, withKey: "walk")
+        
+       
     }
     override func deactivateNode(_ node: SKSpriteNode) {
         node.removeAction(forKey: "walk")
+        //SoundEffects.soundEffects.playSoundEffect(sound: "walk1")
     }
     
 }
