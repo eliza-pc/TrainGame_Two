@@ -23,6 +23,7 @@
 		1F5DF38622A01934000D04CF /* (null) in Sources */ = {isa = PBXBuildFile; };
 		1F5DF38A22A1631F000D04CF /* StateMachineComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5DF38922A1631F000D04CF /* StateMachineComponent.swift */; };
 		1F5DF38C22A16805000D04CF /* VilarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5DF38B22A16805000D04CF /* VilarExtension.swift */; };
+		1F6FFEE522ACB3EC002789F6 /* SpeakableComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6FFEE422ACB3EC002789F6 /* SpeakableComponent.swift */; };
 		1FA72A7822AAA42C00339D72 /* BackgroundMusicClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA72A7722AAA42C00339D72 /* BackgroundMusicClass.swift */; };
 		1FA72A7A22AAA4D200339D72 /* SoundEffectsClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA72A7922AAA4D200339D72 /* SoundEffectsClass.swift */; };
 		1FD727C422A93F240085172F /* SoundBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD727C322A93F240085172F /* SoundBox.swift */; };
@@ -66,6 +67,7 @@
 		1F41B63922AAB50100153C94 /* train.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = train.wav; sourceTree = "<group>"; };
 		1F5DF38922A1631F000D04CF /* StateMachineComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateMachineComponent.swift; sourceTree = "<group>"; };
 		1F5DF38B22A16805000D04CF /* VilarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VilarExtension.swift; sourceTree = "<group>"; };
+		1F6FFEE422ACB3EC002789F6 /* SpeakableComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakableComponent.swift; sourceTree = "<group>"; };
 		1FA72A7722AAA42C00339D72 /* BackgroundMusicClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundMusicClass.swift; sourceTree = "<group>"; };
 		1FA72A7922AAA4D200339D72 /* SoundEffectsClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundEffectsClass.swift; sourceTree = "<group>"; };
 		1FD727C322A93F240085172F /* SoundBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundBox.swift; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 				1DC4EB0A22A8189500245A79 /* MovingObjectComponent.swift */,
 				5E1282EC22A95176000784FB /* EnemyComponent.swift */,
 				1DD53DF022A9541900823FF9 /* PhysicComponent.swift */,
+				1F6FFEE422ACB3EC002789F6 /* SpeakableComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -330,6 +333,7 @@
 				1FF4504B229C2434009B7DF7 /* GameViewController.swift in Sources */,
 				1FF45063229C27B6009B7DF7 /* EntityManager.swift in Sources */,
 				1DC4EB0922A8153000245A79 /* BoxObstacles.swift in Sources */,
+				1F6FFEE522ACB3EC002789F6 /* SpeakableComponent.swift in Sources */,
 				1FF4505F229C278E009B7DF7 /* SpriteComponent.swift in Sources */,
 				5E88671322A6B61F0008D4B0 /* HotRegionComponent.swift in Sources */,
 				1F5DF38C22A16805000D04CF /* VilarExtension.swift in Sources */,

@@ -21,12 +21,12 @@ class SoundBox: GKEntity{
     
         
         spriteComponent.nodePhysic.entity = self
-        let balloonComponent = BalloonComponent(parentNode: spriteComponent.nodePhysic, balloonNodeName: "textureBalaoMentor")
+        let balloonComponent = BalloonComponent(parentNode: spriteComponent.nodePhysic, balloonNodeName: "textureBalao")
         
       
         addComponent(balloonComponent)
         addComponent(spriteComponent)
-        addComponent(CollectableComponent())
+        addComponent(SpeakableComponent())
         
     }
     
