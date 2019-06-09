@@ -53,6 +53,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         let personagemPrincipal = Player(imageName: "idle1", gameScene: self)
         let petala = Petala(imageName: "RosePetal", gameScene: self)
+        let soundBox = SoundBox(imageName: "SoundBox", gameScene: self)
         let boxBig = BoxObstacle(imageName: "Luggage", gameScene: self)
         let soulEnemy1 = SoulEnemy(imageName: "", gameScene: self)
         let hotArea = DangerArea(gameScene: self)
@@ -114,6 +115,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         entityManager.add(personagemPrincipal)
         entityManager.add(hotArea)
         entityManager.add(petala)
+        entityManager.add(soundBox)
         entityManager.add(boxBig)
         entityManager.add(soulEnemy1)
         view.isMultipleTouchEnabled = false
@@ -131,13 +133,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         control?.swipeActive =  false
         
         //Verifica contato entre player e a petala
-        guard let nodeA = contact.bodyA.node, let nodeB = contact.bodyB.node else {
+        guard let nodeA = contact.bodyA.node, let nodeB = contact.bodyB.node, let nodeC = contact.bodyB.node else {
             
             return
         }
-         
+          
         
-        guard let entityA = nodeA.entity, let entityB = nodeB.entity else {
+        guard let entityA = nodeA.entity, let entityB = nodeB.entity,  let entityC = nodeC.entity else {
             
             return 
             
@@ -153,11 +155,23 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             self.control?.collectableActive = true
             self.entityManager.setObjectInContact(entity: entityB)
             
-        } else if let _ = entityB.component(ofType: PlayerComponent.self), let _ = entityA.component(ofType: CollectableComponent.self) {
+        } else if  let _ = entityB.component(ofType: PlayerComponent.self), let _ = entityA.component(ofType: CollectableComponent.self) {
             
             self.entityManager.contactObjects = true
             entityA.component(ofType: BalloonComponent.self)!.isVisible()
             self.control?.collectableActive = true
+            self.entityManager.setObjectInContact(entity: entityA)
+            
+        } else if let _ = entityA.component(ofType: PlayerComponent.self), let _ = entityC.component(ofType: SpeakableComponent.self){
+            
+            self.entityManager.contactObjects = true
+            entityC.component(ofType: BalloonComponent.self)!.isVisible()
+            self.entityManager.setObjectInContact(entity: entityC)
+            
+        } else if let _ = entityC.component(ofType: PlayerComponent.self), let _ = entityA.component(ofType: SpeakableComponent.self) {
+           
+            self.entityManager.contactObjects = true
+            entityA.component(ofType: BalloonComponent.self)!.isVisible()
             self.entityManager.setObjectInContact(entity: entityA)
             
         }
