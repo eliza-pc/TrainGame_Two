@@ -12,10 +12,10 @@ import GameplayKit
 
 class BoxObstacle: GKEntity {
     
-    init(imageName: String, gameScene: GameScene){
+    init(nodeName: String, gameScene: GameScene){
         super.init()
         
-        let spriteComponent = SpriteComponent(texture: SKTexture(imageNamed: imageName), gameScene: gameScene, nodeName: "PhysicBoxG", textureNodeName: "TextureBoxG")
+        let spriteComponent = SpriteComponent(gameScene: gameScene, nodeName: nodeName, textureNodeName: "TextureBoxG")
         
         spriteComponent.nodePhysic.entity = self
         

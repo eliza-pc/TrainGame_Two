@@ -12,20 +12,11 @@ import GameplayKit
 
 class Player: GKEntity{
     
-    init(imageName: String, gameScene: GameScene){
+    init(nodeName: String, gameScene: GameScene){
         super.init()
        
-    let spriteComponent = SpriteComponent(texture: SKTexture(imageNamed: imageName), gameScene: gameScene, nodeName: "player", textureNodeName: "texturePlayer")
-        
+    let spriteComponent = SpriteComponent(gameScene: gameScene, nodeName: nodeName, textureNodeName: "texturePlayer")
   
-    let texturePlayer = SKTexture.init(imageNamed: imageName)
-        //       texturePlayer.size().equalTo(CGSize(width: 200, height: 200))
-        //        spriteComponent.node.texture = SKTexture.init(imageNamed: imageName)
-        //      spriteComponent.node.zPosition = -3
-    
-       // _ = SoundPlayer.soundPlayer.playBackgroundMusic(backgroundMusicName: sound)
-        
-        spriteComponent.nodeTexture.texture = texturePlayer
         spriteComponent.nodePhysic.size = CGSize(width: 87.75, height: 116)
         BackgroundMusicClass.backgroundMusic.playBackgroundMusic()
         BackgroundTrainSound.backgroundTrainSound.playBackgroundTrainSound()

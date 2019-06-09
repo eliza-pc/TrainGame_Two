@@ -12,10 +12,10 @@ import GameplayKit
 
 class SoulEnemy: GKEntity{
     
-    init(imageName: String, gameScene: GameScene){
+    init(nodeName: String, gameScene: GameScene){
         super.init()
         
-        let spriteComponent = SpriteComponent(texture: SKTexture(imageNamed: imageName), gameScene: gameScene, nodeName: "SoulPhysicNode", textureNodeName: "SoulTextureNode")
+        let spriteComponent = SpriteComponent(gameScene: gameScene, nodeName: nodeName, textureNodeName: "SoulTextureNode")
 
         let AnimationAction = SKAction.repeatForever(SKAction.animate(with: .init(withFormat: "Hand-Straight-%d", range: 1...3), timePerFrame: 0.1))
 

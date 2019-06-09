@@ -13,12 +13,10 @@ import GameplayKit
 class Petala: GKEntity{
     
     
-    init(imageName: String, gameScene: GameScene){
+    init(nodeName: String, gameScene: GameScene){
         super.init()
-        
-//    let texturePetal = SKTexture.init(imageNamed: imageName)
       
-        let spriteComponent = SpriteComponent(texture: SKTexture(imageNamed: imageName), gameScene: gameScene, nodeName: "nodePetal", textureNodeName: "texturePetal")
+        let spriteComponent = SpriteComponent(gameScene: gameScene, nodeName: nodeName, textureNodeName: "texturePetal")
         
        
     

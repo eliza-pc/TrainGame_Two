@@ -19,20 +19,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     private var control: Control?
     var moveJoystickHiddenArea: TLAnalogJoystickHiddenArea? = nil
     
-    let setJoystickStickImageBtn = SKLabelNode()
-    let setJoystickSubstrateImageBtn = SKLabelNode()
-    let joystickStickColorBtn = SKLabelNode(text: "Sticks random color")
-    let joystickSubstrateColorBtn = SKLabelNode(text: "Substrates random color")
-    
     let moveJoystick = 🕹(withDiameter: 100)
-    let rotateJoystick = TLAnalogJoystick(withDiameter: 100)
-    var joystickStickImageEnabled = true
-    var joystickSubstrateImageEnabled = true
-    
-    
- 
-    
-    
+  
     //#MARK: DidMove_FUNC
     override func didMove(to view: SKView) {
         
@@ -51,19 +39,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         entityManager = EntityManager(scene: self)
         
-        let personagemPrincipal = Player(imageName: "idle1", gameScene: self)
-        let petala = Petala(imageName: "RosePetal", gameScene: self)
-        let boxBig = BoxObstacle(imageName: "Luggage", gameScene: self)
-        let soulEnemy1 = SoulEnemy(imageName: "", gameScene: self)
-        let hotArea = DangerArea(gameScene: self)
+        let personagemPrincipal = Player(nodeName: "player", gameScene: self)
+        let petala = Petala(nodeName: "nodePetal-1", gameScene: self)
+        let boxBig = BoxObstacle(nodeName: "PhysicBoxG-1", gameScene: self)
+        let soulEnemy1 = SoulEnemy(nodeName: "SoulPhysicNode-1", gameScene: self)
+        let hotArea = DangerArea(nodeName: "hotArea-1" ,gameScene: self)
         
         
         if personagemPrincipal.component(ofType: PlayerComponent.self) != nil {
             
-            moveJoystick.on(.begin) { [unowned self] _ in
-             
-//              Actions of the begin in Game
-            }
+//            moveJoystick.on(.begin) { [unowned self] _ in }
             
             moveJoystick.on(.move) { [unowned self] joystick in
                 
@@ -71,13 +56,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     return
                 }
                 
-                
-                
-//                print (self.moveJoystick)
+              
                 let pVelocity = joystick.velocity;
                 let speed = CGFloat(0.05)
 
                 if self.control?.directionCommand == UserControl.jump {
+                    
                     // MARK: Move for Physics
                     spriteComponent.nodePhysic.position = CGPoint(x: spriteComponent.nodePhysic.position.x + (pVelocity.x * speed), y: spriteComponent.nodePhysic.position.y)
 

@@ -13,11 +13,11 @@ import GameplayKit
 class SoundBox: GKEntity{
     
     
-    init(imageName: String, gameScene: GameScene){
+    init(nodeName: String, gameScene: GameScene){
         super.init()
         
         
-        let spriteComponent = SpriteComponent(texture: SKTexture(imageNamed: imageName), gameScene: gameScene, nodeName: "nodeSoundBox", textureNodeName: "textureSoundBox")
+        let spriteComponent = SpriteComponent(gameScene: gameScene, nodeName: "nodeSoundBox", textureNodeName: "textureSoundBox")
     
         
         spriteComponent.nodePhysic.entity = self

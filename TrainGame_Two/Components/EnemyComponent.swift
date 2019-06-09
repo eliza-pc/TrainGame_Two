@@ -70,8 +70,7 @@ class EnemyComponente: GKComponent{
         let velocityY = sin(angle) * self.enemySpeed
         
         let direction = Int(autor.position.x - self.alvo.position.x)
-        print(direction)
-        
+//        print(direction)
         
         if direction >= 0 {
             autor.xScale = abs(autor.xScale) * 1.0

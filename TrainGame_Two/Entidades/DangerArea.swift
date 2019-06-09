@@ -12,10 +12,10 @@ import GameplayKit
 class DangerArea: GKEntity {
     
     
-    init(gameScene: GameScene){
+    init(nodeName: String,gameScene: GameScene){
         super.init()
         
-        let physicComponent = PhysicComponent(gameScene: gameScene, nodeName: "hotArea")
+        let physicComponent = PhysicComponent(gameScene: gameScene, nodeName: nodeName)
         physicComponent.nodePhysic.entity = self
         
         addComponent(physicComponent)
