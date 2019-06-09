@@ -21,8 +21,6 @@ class GameViewController: UIViewController {
             
             // Get the SKScene from the loaded GKScene
             if let sceneNode = scene.rootNode as! GameScene? {
-                print("entrou")
-                
                
                 // Copy gameplay related content over to the scene
                 sceneNode.graphs = scene.graphs

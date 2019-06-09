@@ -25,7 +25,7 @@ class EntityManager {
     
     func add(_ entity: GKEntity) {
         entities.insert(entity)
-       
+        printEntities()
     }
     
     
@@ -36,10 +36,7 @@ class EntityManager {
         }
         
         entities.remove(entity)
-        for entity in entities {
-            print("entity: \(entity)")
-        }
-        print("tamanho: \(entities.count)")
+        printEntities()
         
     }
     
@@ -53,7 +50,7 @@ class EntityManager {
                 enemyComponent.ataque(autor: entity.component(ofType: SpriteComponent.self)!.nodePhysic)
             }
             
-//            entities[0].component(ofType: EnemyComponente.self)?.ataque(alvo: nodeB as! SKSpriteNode, autor: entityEnemyNode!)
+
             entity.update(deltaTime: dt)
         }
     }
@@ -72,13 +69,24 @@ class EntityManager {
         return entitys
     }
     
+    
     func setObjectInContact(entity: GKEntity ){
         self.entityInContact = entity
     }
     
+    
     func getObjectInContact() -> GKEntity? {
         let entityContact = self.entityInContact
         return entityContact
+    }
+    
+    func printEntities(){
+        
+        for entity in entities {
+            print("entitiy: \(entity)")
+        }
+        print("entities Count: \(entities.count)")
+        print("\n ---- [end] ---- \n")
     }
     
 }

@@ -111,22 +111,25 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             }
         }
         
-        entityManager.add(personagemPrincipal)
-        entityManager.add(hotArea)
-        entityManager.add(petala)
-        entityManager.add(boxBig)
-        entityManager.add(soulEnemy1)
+//        entityManager.add(personagemPrincipal)
+//        entityManager.add(hotArea)
+//        entityManager.add(petala)
+//        entityManager.add(boxBig)
+//        entityManager.add(soulEnemy1)
+        addEntities(arrayEntities: [personagemPrincipal, hotArea, petala, boxBig, soulEnemy1])
         view.isMultipleTouchEnabled = false
-        
     }
     
+    func addEntities(arrayEntities: Array<GKEntity>) {
+        for entity in arrayEntities {
+            entityManager.add(entity)
+        }
+    }
     
     
     func didBegin(_ contact: SKPhysicsContact) {
         print("Houve Contato😎")
         
- //       let petala = Petala(imageName: "RosePetal", gameScene: self)
-
         control?.directionCommand =  UserControl.idle
         control?.swipeActive =  false
         
@@ -169,11 +172,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             entities[0].component(ofType: EnemyComponente.self)?.state = .ataque
             
-            print("positionPersonagem: \(entityA.component(ofType: SpriteComponent.self)?.nodePhysic)")
-            
         } else if let _ = entityB.component(ofType: PlayerComponent.self), let _ = entityA.component(ofType: HotRegionComponent.self) {
-            
-            print("positionPersonagem: \(entityB.component(ofType: SpriteComponent.self)?.nodePhysic)")
             
             let entities = self.entityManager.getEntitys(component: EnemyComponente.self)
             

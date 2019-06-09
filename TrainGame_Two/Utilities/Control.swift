@@ -66,26 +66,25 @@ class Control {
 
             switch gesture.direction{
             case .up:
-//                print(swipeActive)
+
                 if directionCommand != UserControl.jump && swipeActive == false  {
-           //         print("swipe")
+   
                     directionCommand = UserControl.jump
                     swipeActive = true
                     jump()
                 }
-//                print(directionCommand)
+
             case .down:
                 directionCommand = UserControl.take
             default:
                 print("don't have swipe")
-               // self.gameScene.entityManager.remove(entityB)
+               
             }
             
         }
         
         if gesture is UITapGestureRecognizer {
             if collectableActive == true {
-                print("TapOK")
                 if let removeObject = self.gameScene.entityManager.getObjectInContact() {
                     self.gameScene.entityManager.remove(removeObject)
                     self.collectableActive = false
@@ -101,8 +100,6 @@ class Control {
         let entitys = gameScene.entityManager.getEntitys(component: PlayerComponent.self)
         self.entityNode = entitys[0].component(ofType: SpriteComponent.self)?.nodePhysic
         entityNode?.run(SKAction.moveTo(y: CGFloat(20 + incrementJump), duration: 0.35))
-        
-        //                    entityNode?.run(SKAction.moveTo(y: entityNode!.position.y + (100 * 1.2), duration: 0.25))
         
     }
     

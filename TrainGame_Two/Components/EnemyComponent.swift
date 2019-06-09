@@ -31,7 +31,6 @@ class EnemyComponente: GKComponent{
         self.alvo = ((gameScene.childNode(withName: "player") as? SKSpriteNode)!)
         
         super.init()
-        print(nodePhysic.xScale)
         let leftAction = SKAction.moveTo(x: self.leftLimit, duration: 2.0)
         let dropForRight = SKAction.scaleX(to: nodePhysic.xScale * -1.0, duration: 0.001)
         let rightAction = SKAction.moveTo(x: self.rightLimit, duration: 2.0)
@@ -90,9 +89,7 @@ class EnemyComponente: GKComponent{
     func vigiar(autor: SKSpriteNode) {
 
 //        print("xScale: \(autor.xScale)")
-        
-        let direction = autor.position.x - self.alvo.position.x
-        print(direction)
+//        print(direction)
         
         autor.run(SKAction.moveTo(y: self.initialPosition.y, duration: 2.25), withKey: "pontoInicial")
         autor.xScale = abs(autor.xScale) * 1.0
