@@ -21,8 +21,8 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3pQ-9S-c44">
                                 <rect key="frame" x="792" y="25" width="35" height="35"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="35" id="4RH-Us-Ivs"/>
-                                    <constraint firstAttribute="height" constant="35" id="AfF-EO-Xw4"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="35" id="4RH-Us-Ivs"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="35" id="AfF-EO-Xw4"/>
                                 </constraints>
                                 <state key="normal" image="Pause"/>
                                 <connections>

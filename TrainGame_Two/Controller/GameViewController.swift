@@ -12,6 +12,9 @@ import UIKit
 import SpriteKit
 import GameplayKit
 
+//this variable will be use by observe
+let pausedExit = Notification.Name(rawValue: "pausedExit")
+
 class GameViewController: UIViewController {
     
     var gameScene: GameScene? = nil
@@ -46,10 +49,20 @@ class GameViewController: UIViewController {
                     view.showsNodeCount = true
                 }
                 
-               
+               createObserve()
+                
             }
         }
     }
+    
+    func createObserve(){
+        NotificationCenter.default.addObserver(self, selector: #selector(self.exitPaused), name: pausedExit, object: nil)
+    }
+    
+    @objc func exitPaused(){
+        resumeGame()
+    }
+    
     
     func shake() {
         
@@ -94,7 +107,7 @@ class GameViewController: UIViewController {
         view.layer.removeAnimation(forKey: "Shake")
         self.gameScene?.inPaused(switchPaused: true)
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "PauseViewController") as! PauseViewController
-        vc.view.backgroundColor = UIColor.white.withAlphaComponent(0.3)
+        vc.view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
         self.addChild(vc)
         self.view.addSubview(vc.view)
     }

@@ -240,11 +240,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if let _ = entityA.component(ofType: PlayerComponent.self), let _ = entityB.component(ofType: CollectableComponent.self) {
             if (self.entityManager.contactObjects == true)
             {
+                self.entityManager.entityInContact = nil
                 self.entityManager.contactObjects = false
             }
         } else if let _ = entityB.component(ofType: PlayerComponent.self), let _ = entityA.component(ofType: CollectableComponent.self) {
             if (self.entityManager.contactObjects == true)
             {
+                self.entityManager.entityInContact = nil
                 self.entityManager.contactObjects = false
             }
         }

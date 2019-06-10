@@ -20,6 +20,7 @@ class PauseViewController: UIViewController {
     
     
     @IBAction func continueGame(_ sender: Any) {
+        NotificationCenter.default.post(name: pausedExit, object: nil)
         self.removeFromParent()
         self.view.removeFromSuperview()
     }

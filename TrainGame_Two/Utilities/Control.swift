@@ -77,7 +77,6 @@ class Control {
 
             case .down:
                 directionCommand = UserControl.take
-                gameScene.inPaused(switchPaused: false)
             default:
                 print("don't have swipe")
                
