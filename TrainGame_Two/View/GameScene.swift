@@ -22,9 +22,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var gameOver: Bool = false
     
     let moveJoystick = 🕹(withDiameter: 100)
+    //let camera: SKCameraNode?
   
     //#MARK: DidMove_FUNC
     override func didMove(to view: SKView) {
+        
         
         control = Control(view: self.view!, gameScene: self)
         
@@ -232,6 +234,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             return
         }
         
+        _ = SKAction.repeatForever(SKAction.shake(initialPosition: camera!.position, duration: 0.8, amplitudeX: 16, amplitudeY: 16))
+
         print("DesContato: \(entityA) com \(entityB)")
         if let _ = entityA.component(ofType: PlayerComponent.self), let _ = entityB.component(ofType: CollectableComponent.self) {
             if (self.entityManager.contactObjects == true)
