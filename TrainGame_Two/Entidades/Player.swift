@@ -18,16 +18,9 @@ class Player: GKEntity{
     let spriteComponent = SpriteComponent(gameScene: gameScene, nodeName: nodeName, textureNodeName: "texturePlayer")
   
         spriteComponent.nodePhysic.size = CGSize(width: 87.75, height: 116)
+        //        spriteComponent.nodeTexture.size = CGSize(width: 131.625, height: 174)
         BackgroundMusicClass.backgroundMusic.playBackgroundMusic()
         BackgroundTrainSound.backgroundTrainSound.playBackgroundTrainSound()
-        
-//        // Quem sou eu?
-//        spriteComponent.nodePhysic.physicsBody?.categoryBitMask    = 0b0001
-//        // De quem eu recebo colisões?
-//        spriteComponent.nodePhysic.physicsBody?.collisionBitMask   = 0b0111
-//        // De quem eu recebo contato?
-//        spriteComponent.nodePhysic.physicsBody?.contactTestBitMask = 0b0001
-        
         
         spriteComponent.nodePhysic.entity = self
         

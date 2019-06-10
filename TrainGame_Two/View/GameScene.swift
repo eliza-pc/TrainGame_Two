@@ -72,12 +72,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     //Mark: Trecho do código que faz o personagem virar. OBS: FAZER O PERSONAGEM VIRADO PARA A DIREITA (PADRÃO DE PROJETO)
                     
                     if self.control?.directionCommand == UserControl.right {
-                         spriteComponent.nodeTexture.xScale = abs(spriteComponent.nodeTexture.xScale) * 1.0
+                         spriteComponent.nodeTexture.xScale = abs(spriteComponent.nodeTexture.xScale) * -1.0
+                        
                         
                     } else {
                         
-                        spriteComponent.nodeTexture.xScale = abs(spriteComponent.nodeTexture.xScale) * -1.0
-                   
+                        spriteComponent.nodeTexture.xScale = abs(spriteComponent.nodeTexture.xScale) * 1.0
+                        
                     }
                 
                     // MARK: Move for Physics
@@ -95,11 +96,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             }
         }
         
-//        entityManager.add(personagemPrincipal)
-//        entityManager.add(hotArea)
-//        entityManager.add(petala)
-//        entityManager.add(boxBig)
-//        entityManager.add(soulEnemy1)
+
         addEntities(arrayEntities: [personagemPrincipal, hotArea, petala, boxBig, soulEnemy1])
         view.isMultipleTouchEnabled = false
     }
@@ -175,6 +172,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             entities[0].component(ofType: EnemyComponente.self)?.state = .ataque
             
         }
+        
+        if let _ = entityA.component(ofType: PlayerComponent.self), let _ = entityB.component(ofType: EnemyComponente.self) {
+            
+            // FAZ ALGO INIMIGO E PLAYER
+            print("inimigo e pppplayer")
+        } else if let _ = entityB.component(ofType: PlayerComponent.self), let _ = entityA.component(ofType: EnemyComponente.self) {
+            
+            // FAZ ALGO INIMIGO E PLAYER
+            print("inimigo e pplayer")
+        }
+        
+        
 
     }
     

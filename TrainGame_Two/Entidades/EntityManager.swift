@@ -25,7 +25,7 @@ class EntityManager {
     
     func add(_ entity: GKEntity) {
         entities.insert(entity)
-        printEntities()
+//        printEntities()
     }
     
     
@@ -36,7 +36,7 @@ class EntityManager {
         }
         
         entities.remove(entity)
-        printEntities()
+//        printEntities()
         
     }
     

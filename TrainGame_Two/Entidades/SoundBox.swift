@@ -17,10 +17,10 @@ class SoundBox: GKEntity{
         super.init()
         
         
-        let spriteComponent = SpriteComponent(gameScene: gameScene, nodeName: "nodeSoundBox", textureNodeName: "textureSoundBox")
+        let spriteComponent = SpriteComponent(gameScene: gameScene, nodeName: nodeName, textureNodeName: "textureSoundBox")
     
-        
         spriteComponent.nodePhysic.entity = self
+        
         let balloonComponent = BalloonComponent(parentNode: spriteComponent.nodePhysic, balloonNodeName: "textureBalao")
         
       

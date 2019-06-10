@@ -103,31 +103,33 @@ class Control {
         
     }
     
-        func updatePressedButtons(control: UserControl?, dt: Double) {
-    
-            if (control == UserControl.jump) {
-
-                stateJump()
+    func updatePressedButtons(control: UserControl?, dt: Double) {
         
-            }else if (control == UserControl.take) {
-              
-                
-            }else if (control == UserControl.left) {
+        if (control == UserControl.jump) {
+        
+            stateJump()
+            
+        }else if (control == UserControl.take) {
+       
+            
+        }else if (control == UserControl.left) {
            
-                stateWalk()
-                
-            }else if (control == UserControl.right) {
+            stateWalk()
+            
+        }else if (control == UserControl.right) {
+            
+            stateWalk()
+            
+            
+        }else if (control == UserControl.idle){
           
-                stateWalk()
-               
-                
-            }else if (control == UserControl.idle){
-                stateIdle()
-            }
-            
-            
-    
+            stateIdle()
         }
+        
+        
+        
+    }
+    
     func stateIdle(){
         let entitys = gameScene.entityManager.getEntitys(component: PlayerComponent.self)
         let entity = entitys[0]
