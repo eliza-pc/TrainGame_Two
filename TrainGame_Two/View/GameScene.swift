@@ -40,10 +40,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         entityManager = EntityManager(scene: self)
         
         let personagemPrincipal = Player(nodeName: "player", gameScene: self)
-        let petala = Petala(nodeName: "nodePetal-1", gameScene: self)
-        let boxBig = BoxObstacle(nodeName: "PhysicBoxG-1", gameScene: self)
+        let petala1 = Petala(nodeName: "nodePetal-1", gameScene: self)
+        let boxBig1 = BoxObstacle(nodeName: "PhysicBoxG-1", gameScene: self)
         let soulEnemy1 = SoulEnemy(nodeName: "SoulPhysicNode-1", gameScene: self)
-        let hotArea = DangerArea(nodeName: "hotArea-1" ,gameScene: self)
+        let hotArea1 = DangerArea(nodeName: "hotArea-1" ,gameScene: self)
+        let jumpArea1 = JumpArea(nodeName: "jumpArea-1", gameScene: self)
+        let infoArea1 = InfoArea(nodeName: "infoArea-1", gameScene: self)
         
         
         if personagemPrincipal.component(ofType: PlayerComponent.self) != nil {
@@ -97,7 +99,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         
 
-        addEntities(arrayEntities: [personagemPrincipal, hotArea, petala, boxBig, soulEnemy1])
+        addEntities(arrayEntities: [personagemPrincipal, hotArea1, petala1, boxBig1, soulEnemy1, infoArea1, jumpArea1])
         view.isMultipleTouchEnabled = false
     }
     
@@ -183,6 +185,25 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             print("inimigo e pplayer")
         }
         
+        if let _ = entityA.component(ofType: PlayerComponent.self), let _ = entityB.component(ofType: InfoComponent.self) {
+            
+            // FAZ ALGO INFO E PLAYER
+            print("information + player 1")
+        } else if let _ = entityB.component(ofType: PlayerComponent.self), let _ = entityA.component(ofType: InfoComponent.self) {
+            
+            // FAZ ALGO INFO E PLAYER
+            print("information + player 2")
+        }
+        
+        if let _ = entityA.component(ofType: PlayerComponent.self), let _ = entityB.component(ofType: JumpComponent.self) {
+            
+            // FAZ ALGO JUMP E PLAYER
+            print("jump + pppplayer")
+        } else if let _ = entityB.component(ofType: PlayerComponent.self), let _ = entityA.component(ofType: JumpComponent.self) {
+            
+            // FAZ ALGO JUMP E PLAYER
+            print("jump + pplayer")
+        }
         
 
     }

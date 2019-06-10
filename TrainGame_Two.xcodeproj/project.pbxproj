@@ -14,6 +14,10 @@
 		1DD53DF122A9541900823FF9 /* PhysicComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD53DF022A9541900823FF9 /* PhysicComponent.swift */; };
 		1DDEBC6B22A6A4C300262156 /* Petala.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDEBC6A22A6A4C300262156 /* Petala.swift */; };
 		1DDEBC6D22A6A6A500262156 /* CollectableComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDEBC6C22A6A6A500262156 /* CollectableComponent.swift */; };
+		1DEA642322AE013500A03632 /* InfoArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEA642222AE013500A03632 /* InfoArea.swift */; };
+		1DEA642522AE017900A03632 /* JumpArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEA642422AE017900A03632 /* JumpArea.swift */; };
+		1DEA642722AE019D00A03632 /* JumpComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEA642622AE019D00A03632 /* JumpComponent.swift */; };
+		1DEA642922AE01C100A03632 /* InfoComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEA642822AE01C100A03632 /* InfoComponent.swift */; };
 		1F22A1F222A7FC5F00335135 /* BalloonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F22A1F122A7FC5F00335135 /* BalloonComponent.swift */; };
 		1F29DE3722AABA6D003C7225 /* walk.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1F29DE3622AABA6D003C7225 /* walk.wav */; };
 		1F29DE3922AABC3D003C7225 /* walk1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1F29DE3822AABC3D003C7225 /* walk1.wav */; };
@@ -32,7 +36,6 @@
 		1FD727CE22A9667A0085172F /* jump.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1FD727CD22A9667A0085172F /* jump.wav */; };
 		1FF45043229C2434009B7DF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF45042229C2434009B7DF7 /* AppDelegate.swift */; };
 		1FF45045229C2434009B7DF7 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1FF45044229C2434009B7DF7 /* GameScene.sks */; };
-		1FF45047229C2434009B7DF7 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1FF45046229C2434009B7DF7 /* Actions.sks */; };
 		1FF45049229C2434009B7DF7 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF45048229C2434009B7DF7 /* GameScene.swift */; };
 		1FF4504B229C2434009B7DF7 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF4504A229C2434009B7DF7 /* GameViewController.swift */; };
 		1FF4504E229C2434009B7DF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FF4504C229C2434009B7DF7 /* Main.storyboard */; };
@@ -57,6 +60,10 @@
 		1DD53DF022A9541900823FF9 /* PhysicComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicComponent.swift; sourceTree = "<group>"; };
 		1DDEBC6A22A6A4C300262156 /* Petala.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Petala.swift; sourceTree = "<group>"; };
 		1DDEBC6C22A6A6A500262156 /* CollectableComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectableComponent.swift; sourceTree = "<group>"; };
+		1DEA642222AE013500A03632 /* InfoArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoArea.swift; sourceTree = "<group>"; };
+		1DEA642422AE017900A03632 /* JumpArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JumpArea.swift; sourceTree = "<group>"; };
+		1DEA642622AE019D00A03632 /* JumpComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JumpComponent.swift; sourceTree = "<group>"; };
+		1DEA642822AE01C100A03632 /* InfoComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoComponent.swift; sourceTree = "<group>"; };
 		1F22A1F122A7FC5F00335135 /* BalloonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalloonComponent.swift; sourceTree = "<group>"; };
 		1F29DE3622AABA6D003C7225 /* walk.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = walk.wav; sourceTree = "<group>"; };
 		1F29DE3822AABC3D003C7225 /* walk1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = walk1.wav; sourceTree = "<group>"; };
@@ -75,7 +82,6 @@
 		1FF4503F229C2434009B7DF7 /* TrainGame_Two.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrainGame_Two.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FF45042229C2434009B7DF7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1FF45044229C2434009B7DF7 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		1FF45046229C2434009B7DF7 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		1FF45048229C2434009B7DF7 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		1FF4504A229C2434009B7DF7 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		1FF4504D229C2434009B7DF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -171,6 +177,8 @@
 				1DC4EB0822A8153000245A79 /* BoxObstacles.swift */,
 				1FD727C322A93F240085172F /* SoundBox.swift */,
 				5E1282EA22A94DD9000784FB /* DangerArea.swift */,
+				1DEA642222AE013500A03632 /* InfoArea.swift */,
+				1DEA642422AE017900A03632 /* JumpArea.swift */,
 			);
 			path = Entidades;
 			sourceTree = "<group>";
@@ -190,6 +198,8 @@
 				5E1282EC22A95176000784FB /* EnemyComponent.swift */,
 				1DD53DF022A9541900823FF9 /* PhysicComponent.swift */,
 				1F6FFEE422ACB3EC002789F6 /* SpeakableComponent.swift */,
+				1DEA642622AE019D00A03632 /* JumpComponent.swift */,
+				1DEA642822AE01C100A03632 /* InfoComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -200,7 +210,6 @@
 				1FF45048229C2434009B7DF7 /* GameScene.swift */,
 				1FF45051229C2435009B7DF7 /* LaunchScreen.storyboard */,
 				1FF4504C229C2434009B7DF7 /* Main.storyboard */,
-				1FF45046229C2434009B7DF7 /* Actions.sks */,
 				1FF45044229C2434009B7DF7 /* GameScene.sks */,
 			);
 			path = View;
@@ -292,7 +301,6 @@
 				1F29DE3922AABC3D003C7225 /* walk1.wav in Resources */,
 				1FF45050229C2435009B7DF7 /* Assets.xcassets in Resources */,
 				1FF45053229C2435009B7DF7 /* LaunchScreen.storyboard in Resources */,
-				1FF45047229C2434009B7DF7 /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,11 +328,13 @@
 				1F6FFEE522ACB3EC002789F6 /* SpeakableComponent.swift in Sources */,
 				1FF4505F229C278E009B7DF7 /* SpriteComponent.swift in Sources */,
 				5E88671322A6B61F0008D4B0 /* HotRegionComponent.swift in Sources */,
+				1DEA642922AE01C100A03632 /* InfoComponent.swift in Sources */,
 				1F5DF38C22A16805000D04CF /* VilarExtension.swift in Sources */,
 				1FF45066229C281B009B7DF7 /* TLAnalogJoystick.swift in Sources */,
 				1F5DF38622A01934000D04CF /* (null) in Sources */,
 				1FF45061229C27A1009B7DF7 /* Player.swift in Sources */,
 				1FF45043229C2434009B7DF7 /* AppDelegate.swift in Sources */,
+				1DEA642722AE019D00A03632 /* JumpComponent.swift in Sources */,
 				1DA672E322A018C40007B49B /* (null) in Sources */,
 				1DC4EB0B22A8189500245A79 /* MovingObjectComponent.swift in Sources */,
 				1FF4506A229C2D34009B7DF7 /* CameraComponent.swift in Sources */,
@@ -332,6 +342,8 @@
 				1F41B63822AAB39700153C94 /* BackgroundTrainSound.swift in Sources */,
 				1DDEBC6D22A6A6A500262156 /* CollectableComponent.swift in Sources */,
 				1F5DF38A22A1631F000D04CF /* StateMachineComponent.swift in Sources */,
+				1DEA642322AE013500A03632 /* InfoArea.swift in Sources */,
+				1DEA642522AE017900A03632 /* JumpArea.swift in Sources */,
 				5E1282ED22A95176000784FB /* EnemyComponent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
