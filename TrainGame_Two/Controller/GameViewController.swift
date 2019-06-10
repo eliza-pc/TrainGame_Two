@@ -69,7 +69,7 @@ class GameViewController: UIViewController {
         shake.fromValue = fromValue
         shake.toValue = toValue
         
-        view.layer.add(shake, forKey: "position")
+        view.layer.add(shake, forKey: "Shake")
     }
 
     override var shouldAutorotate: Bool {
@@ -86,11 +86,12 @@ class GameViewController: UIViewController {
     
     
     func resumeGame(){
+        shake()
         self.gameScene?.inPaused(switchPaused: false)
     }
     
     @IBAction func inPausedGame(_ sender: Any) {
-        
+        view.layer.removeAnimation(forKey: "Shake")
         self.gameScene?.inPaused(switchPaused: true)
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "PauseViewController") as! PauseViewController
         vc.view.backgroundColor = UIColor.white.withAlphaComponent(0.3)
