@@ -59,7 +59,7 @@ class Control {
     
     func addLongRecognizer(view: UIView) {
         let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(handleRecognize))
-        longPressRecognizer.minimumPressDuration = 2
+        longPressRecognizer.minimumPressDuration = 1
         longPressRecognizer.numberOfTouchesRequired = 1
 //        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleRecognize))
 //        view.addGestureRecognizer(tapGestureRecognizer)

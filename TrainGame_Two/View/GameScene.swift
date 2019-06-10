@@ -118,7 +118,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func didBegin(_ contact: SKPhysicsContact) {
         print("Houve Contato😎")
         
-        control?.directionCommand =  UserControl.idle
         control?.swipeActive =  false
         
         //Verifica contato entre player e a petala
@@ -129,7 +128,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
           
         
         guard let entityA = nodeA.entity, let entityB = nodeB.entity else {
-            
+            control?.directionCommand =  UserControl.idle
             return
             
         }
