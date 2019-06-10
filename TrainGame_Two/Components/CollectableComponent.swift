@@ -2,9 +2,11 @@
 //  CollectableComponent.swift
 //  TrainGame_Two
 //
-//  Created by Robson James Junior on 04/06/19.
+//  Created by Eliza Maria Porto de Carvalho, Robson James Junior, Lucídio Andrade Barbosa de Souza e André Afonso @Raj on 2019.
 //  Copyright © 2019 Academy. All rights reserved.
 //
+// #part of the credits to Vilar da Camara Neto
+
 
 import Foundation
 import GameplayKit

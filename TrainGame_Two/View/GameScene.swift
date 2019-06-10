@@ -340,8 +340,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     
-    
-    
     func inPaused(switchPaused: Bool){
         self.view?.isPaused = switchPaused
     }

@@ -1,10 +1,12 @@
 //
-//  DamagingComponent.swift
-//  shoot
+//  InfoComponent.swift
+//  TrainGame_Two
 //
-//  Created by Vilar da Camara Neto on 08/04/19.
-//  Copyright © 2019 Vilar da Camara Neto. All rights reserved.
+//  Created by Eliza Maria Porto de Carvalho, Robson James Junior, Lucídio Andrade Barbosa de Souza e André Afonso @Raj on 2019.
+//  Copyright © 2019 Academy. All rights reserved.
 //
+// #part of the credits to Vilar da Camara Neto
+
 
 import Foundation
 import GameplayKit
