@@ -18,6 +18,7 @@
 		1DEA642522AE017900A03632 /* JumpArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEA642422AE017900A03632 /* JumpArea.swift */; };
 		1DEA642722AE019D00A03632 /* JumpComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEA642622AE019D00A03632 /* JumpComponent.swift */; };
 		1DEA642922AE01C100A03632 /* InfoComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEA642822AE01C100A03632 /* InfoComponent.swift */; };
+		1DEA642B22AE07F500A03632 /* PauseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEA642A22AE07F500A03632 /* PauseViewController.swift */; };
 		1F22A1F222A7FC5F00335135 /* BalloonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F22A1F122A7FC5F00335135 /* BalloonComponent.swift */; };
 		1F29DE3722AABA6D003C7225 /* walk.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1F29DE3622AABA6D003C7225 /* walk.wav */; };
 		1F29DE3922AABC3D003C7225 /* walk1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1F29DE3822AABC3D003C7225 /* walk1.wav */; };
@@ -64,6 +65,7 @@
 		1DEA642422AE017900A03632 /* JumpArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JumpArea.swift; sourceTree = "<group>"; };
 		1DEA642622AE019D00A03632 /* JumpComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JumpComponent.swift; sourceTree = "<group>"; };
 		1DEA642822AE01C100A03632 /* InfoComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoComponent.swift; sourceTree = "<group>"; };
+		1DEA642A22AE07F500A03632 /* PauseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseViewController.swift; sourceTree = "<group>"; };
 		1F22A1F122A7FC5F00335135 /* BalloonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalloonComponent.swift; sourceTree = "<group>"; };
 		1F29DE3622AABA6D003C7225 /* walk.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = walk.wav; sourceTree = "<group>"; };
 		1F29DE3822AABC3D003C7225 /* walk1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = walk1.wav; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 			children = (
 				1FF45042229C2434009B7DF7 /* AppDelegate.swift */,
 				1FF4504A229C2434009B7DF7 /* GameViewController.swift */,
+				1DEA642A22AE07F500A03632 /* PauseViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 				1FF45068229C2826009B7DF7 /* Control.swift in Sources */,
 				1F399AFF22A6A9AB0096B59E /* DestroyContactComponent.swift in Sources */,
 				1FF4504B229C2434009B7DF7 /* GameViewController.swift in Sources */,
+				1DEA642B22AE07F500A03632 /* PauseViewController.swift in Sources */,
 				1FF45063229C27B6009B7DF7 /* EntityManager.swift in Sources */,
 				1DC4EB0922A8153000245A79 /* BoxObstacles.swift in Sources */,
 				1F6FFEE522ACB3EC002789F6 /* SpeakableComponent.swift in Sources */,

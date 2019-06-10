@@ -18,6 +18,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     private var lastUpdateTime : TimeInterval = 0
     private var control: Control?
     var moveJoystickHiddenArea: TLAnalogJoystickHiddenArea? = nil
+    var gameOver: Bool = false
     
     let moveJoystick = 🕹(withDiameter: 100)
   
@@ -179,9 +180,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             // FAZ ALGO INIMIGO E PLAYER
             print("inimigo e pppplayer")
+            self.gameOver = true
         } else if let _ = entityB.component(ofType: PlayerComponent.self), let _ = entityA.component(ofType: EnemyComponente.self) {
             
             // FAZ ALGO INIMIGO E PLAYER
+            self.gameOver = true
             print("inimigo e pplayer")
         }
         
@@ -303,8 +306,41 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         self.lastUpdateTime = currentTime
         
-       
+        if gameOver == true {
+            print("Game Over!")
+            controllerScenesGame(keyScene: 1)
+        }
     }
+    
+    
+    func controllerScenesGame (keyScene: Int) {
+        switch keyScene {
+        case 1:
+            if let scene = GKScene(fileNamed: "GameScene") {
+                if let sceneNode = scene.rootNode as! GameScene? {
+                    // Copy gameplay related content over to the scene
+                    sceneNode.graphs = scene.graphs
+                    // Set the scale mode to scale to fit the window
+                    sceneNode.scaleMode = .aspectFill
+                    // Present the scene
+                    if let view = self.view {
+                        view.presentScene(sceneNode)
+                        
+                        view.ignoresSiblingOrder = true
+                        view.showsPhysics = true
+                        view.showsFPS = true
+                        view.showsNodeCount = true
+                    }
+                    
+                }
+            }
+        default:
+            "key don`t identify"
+        }
+    }
+    
+    
+    
     
     func inPaused(switchPaused: Bool){
         self.view?.isPaused = switchPaused

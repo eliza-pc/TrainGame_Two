@@ -11,17 +11,18 @@ import SpriteKit
 import GameplayKit
 
 class GameViewController: UIViewController {
-
+    
+    var gameScene: GameScene? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Load 'GameScene.sks' as a GKScene. This provides gameplay related content
         // including entities and graphs.
         if let scene = GKScene(fileNamed: "GameScene") {
             
             // Get the SKScene from the loaded GKScene
             if let sceneNode = scene.rootNode as! GameScene? {
-               
+                gameScene = sceneNode
                 // Copy gameplay related content over to the scene
                 sceneNode.graphs = scene.graphs
                 
@@ -54,6 +55,21 @@ class GameViewController: UIViewController {
             return .all
         }
     }
+    
+    
+    func resumeGame(){
+        self.gameScene?.inPaused(switchPaused: false)
+    }
+    
+    @IBAction func inPausedGame(_ sender: Any) {
+        
+        self.gameScene?.inPaused(switchPaused: true)
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "PauseViewController") as! PauseViewController
+        vc.view.backgroundColor = UIColor.white.withAlphaComponent(0.3)
+        self.addChild(vc)
+        self.view.addSubview(vc.view)
+    }
+    
 
     override var prefersStatusBarHidden: Bool {
         return true
