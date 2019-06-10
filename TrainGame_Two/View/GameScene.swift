@@ -49,7 +49,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let hotArea1 = DangerArea(nodeName: "hotArea-1" ,gameScene: self)
         let jumpArea1 = JumpArea(nodeName: "jumpArea-1", gameScene: self)
         let infoArea1 = InfoArea(nodeName: "infoArea-1", gameScene: self)
-        
+        let soundBox = SoundBox(nodeName: "NodeSoundBox-1", gameScene: self)
         
         if personagemPrincipal.component(ofType: PlayerComponent.self) != nil {
             
@@ -102,7 +102,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         
 
-        addEntities(arrayEntities: [personagemPrincipal, hotArea1, petala1, boxBig1, soulEnemy1, infoArea1, jumpArea1])
+        addEntities(arrayEntities: [personagemPrincipal, hotArea1, petala1, boxBig1, soulEnemy1, infoArea1, jumpArea1,soundBox])
         view.isMultipleTouchEnabled = false
     }
     
@@ -120,16 +120,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         control?.swipeActive =  false
         
         //Verifica contato entre player e a petala
-        guard let nodeA = contact.bodyA.node, let nodeB = contact.bodyB.node, let nodeC = contact.bodyB.node else {
+        guard let nodeA = contact.bodyA.node, let nodeB = contact.bodyB.node else {
             
             return
         }
           
         
-        guard let entityA = nodeA.entity, let entityB = nodeB.entity,  let entityC = nodeC.entity else {
+        guard let entityA = nodeA.entity, let entityB = nodeB.entity else {
             
-            return 
-            
+            return
             
         }
         
@@ -149,14 +148,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             self.control?.collectableActive = true
             self.entityManager.setObjectInContact(entity: entityA)
             
-        } else if let _ = entityA.component(ofType: PlayerComponent.self), let _ = entityC.component(ofType: SpeakableComponent.self){
+        }
+        
+        if let _ = entityA.component(ofType: PlayerComponent.self), let _ = entityB.component(ofType: SpeakableComponent.self){
             
+            print("Radinho1")
             self.entityManager.contactObjects = true
-            entityC.component(ofType: BalloonComponent.self)!.isVisible()
-            self.entityManager.setObjectInContact(entity: entityC)
+            entityB.component(ofType: BalloonComponent.self)!.isVisible()
+            self.entityManager.setObjectInContact(entity: entityB)
             
-        } else if let _ = entityC.component(ofType: PlayerComponent.self), let _ = entityA.component(ofType: SpeakableComponent.self) {
+        } else if let _ = entityB.component(ofType: PlayerComponent.self), let _ = entityA.component(ofType: SpeakableComponent.self) {
            
+             print("Radinho2")
             self.entityManager.contactObjects = true
             entityA.component(ofType: BalloonComponent.self)!.isVisible()
             self.entityManager.setObjectInContact(entity: entityA)
@@ -276,6 +279,19 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             print("desjump + pplayer")
             self.control?.incrementJump = 0
         }
+        
+        if let _ = entityA.component(ofType: PlayerComponent.self), let _ = entityB.component(ofType: SpeakableComponent.self) {
+            if (self.entityManager.contactObjects == true)
+            {
+                self.entityManager.contactObjects = false
+            }
+        } else if let _ = entityB.component(ofType: PlayerComponent.self), let _ = entityA.component(ofType: SpeakableComponent.self) {
+            if (self.entityManager.contactObjects == true)
+            {
+                self.entityManager.contactObjects = false
+            }
+        }
+        
         
         
     }
