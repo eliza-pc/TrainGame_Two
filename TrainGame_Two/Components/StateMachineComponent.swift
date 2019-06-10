@@ -44,7 +44,7 @@ class AnimatedState: GKState{
 }
 
 class IdleState: AnimatedState{
-    private let action = SKAction.repeatForever(SKAction.animate(with: .init(withFormat: "normal-%d", range: 1...3), timePerFrame: 0.1))
+    private let action = SKAction.repeatForever(SKAction.animate(with: .init(withFormat: "normal-%d", range: 1...10), timePerFrame: 0.3))
     
     override func isValidNextState(_ stateClass: AnyClass) -> Bool {
         return stateClass is WalkState.Type || stateClass is JumpState.Type
@@ -79,7 +79,7 @@ class WalkState: AnimatedState{
 }
 
 class JumpState: AnimatedState{
-    private let action = SKAction.repeatForever(SKAction.animate(with: .init(withFormat: "jump%d", range: 1...3), timePerFrame: 0.1))
+    private let action = SKAction.repeatForever(SKAction.animate(with: .init(withFormat: "jump%d", range: 1...10), timePerFrame: 0.1))
     
     override func isValidNextState(_ stateClass: AnyClass) -> Bool {
         return stateClass is IdleState.Type || stateClass is IdleState.Type || stateClass is WalkState.Type
