@@ -2,9 +2,10 @@
 //  GameScene.swift
 //  TrainGame
 //
-//  Created by Eliza Maria Porto de Carvalho on 21/05/19.
+//  Created by Eliza Maria Porto de Carvalho, Robson James Junior, Lucídio Andrade Barbosa de Souza e André Afonso @Raj on 2019.
 //  Copyright © 2019 Academy. All rights reserved.
 //
+// #part of the credits to Vilar da Camara Neto
 
 import SpriteKit
 import GameplayKit
@@ -344,7 +345,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                         view.presentScene(sceneNode)
                         
                         view.ignoresSiblingOrder = true
-                        view.showsPhysics = true
+                        view.showsPhysics = false
                         view.showsFPS = true
                         view.showsNodeCount = true
                     }
