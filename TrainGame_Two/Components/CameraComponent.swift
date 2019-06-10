@@ -65,8 +65,8 @@ class CameraComponent: GKComponent{
             
         }
         
-        let shake = SKAction.repeatForever(SKAction.shake(initialPosition: camera.position, duration: 0.8, amplitudeX: 16, amplitudeY: 16))
-        camera.run(shake)
+//        let shake = SKAction.repeatForever(SKAction.shake(initialPosition: camera.position, duration: 0.8, amplitudeX: 16, amplitudeY: 16))
+//        camera.run(shake)
         parentNode.addChild(camera)
     }
     

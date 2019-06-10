@@ -234,7 +234,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             return
         }
         
-        _ = SKAction.repeatForever(SKAction.shake(initialPosition: camera!.position, duration: 0.8, amplitudeX: 16, amplitudeY: 16))
+//        _ = SKAction.repeatForever(SKAction.shake(initialPosition: camera!.position, duration: 0.8, amplitudeX: 16, amplitudeY: 16))
 
         print("DesContato: \(entityA) com \(entityB)")
         if let _ = entityA.component(ofType: PlayerComponent.self), let _ = entityB.component(ofType: CollectableComponent.self) {
