@@ -48,6 +48,7 @@ class CameraComponent: GKComponent{
         let lowerYConstraint = SKConstraint.positionY(SKRange.init(lowerLimit: 0))
         
         camera.constraints = [followConstraint, fixedXConstraint, fixedYConstraint, lowerYConstraint,fixedXConstraint_upper]
+
         
         guard let cena = parentNode as? SKScene else { return }
  
@@ -64,6 +65,8 @@ class CameraComponent: GKComponent{
             
         }
         
+//        let shake = SKAction.repeatForever(SKAction.shake(initialPosition: camera.position, duration: 0.8, amplitudeX: 16, amplitudeY: 16))
+//        camera.run(shake)
         parentNode.addChild(camera)
     }
     

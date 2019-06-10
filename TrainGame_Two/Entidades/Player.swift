@@ -29,7 +29,7 @@ class Player: GKEntity{
         addComponent(PlayerComponent())
         addComponent(spriteComponent)
         addComponent(CameraComponent.init(parentNode: gameScene))
-   
+        
         
         let stateMachineComponent = StateMachineComponent()
         addComponent(stateMachineComponent)

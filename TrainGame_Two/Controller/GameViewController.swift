@@ -21,6 +21,8 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        shake()
+        
         // Load 'GameScene.sks' as a GKScene. This provides gameplay related content
         // including entities and graphs.
         if let scene = GKScene(fileNamed: "GameScene") {
@@ -47,6 +49,27 @@ class GameViewController: UIViewController {
                
             }
         }
+    }
+    
+    func shake() {
+        
+        let center = view.center
+        
+        let shake = CABasicAnimation(keyPath: "position")
+        shake.duration = 0.2
+        shake.repeatCount = .infinity
+        shake.autoreverses = true
+        
+        let fromPoint = CGPoint(x: center.x, y: center.y)
+        let fromValue = NSValue(cgPoint: fromPoint)
+        
+        let toPoint = CGPoint(x: center.x, y: center.y + 2)
+        let toValue = NSValue(cgPoint: toPoint)
+        
+        shake.fromValue = fromValue
+        shake.toValue = toValue
+        
+        view.layer.add(shake, forKey: "position")
     }
 
     override var shouldAutorotate: Bool {

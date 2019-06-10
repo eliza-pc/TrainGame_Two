@@ -54,6 +54,7 @@
 		1FFCAF4822AEA01C00258D50 /* SoundLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFCAF4722AEA01C00258D50 /* SoundLibrary.swift */; };
 		5E1282EB22A94DD9000784FB /* DangerArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1282EA22A94DD9000784FB /* DangerArea.swift */; };
 		5E1282ED22A95176000784FB /* EnemyComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1282EC22A95176000784FB /* EnemyComponent.swift */; };
+		5E7B224D22AAA7D600BFF0AE /* ScreenShake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7B224C22AAA7D600BFF0AE /* ScreenShake.swift */; };
 		5E88671022A6ABBF0008D4B0 /* SoulEnemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E88670F22A6ABBF0008D4B0 /* SoulEnemy.swift */; };
 		5E88671322A6B61F0008D4B0 /* HotRegionComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E88671222A6B61F0008D4B0 /* HotRegionComponent.swift */; };
 /* End PBXBuildFile section */
@@ -106,6 +107,7 @@
 		1FFCAF4722AEA01C00258D50 /* SoundLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundLibrary.swift; sourceTree = "<group>"; };
 		5E1282EA22A94DD9000784FB /* DangerArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DangerArea.swift; sourceTree = "<group>"; };
 		5E1282EC22A95176000784FB /* EnemyComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnemyComponent.swift; sourceTree = "<group>"; };
+		5E7B224C22AAA7D600BFF0AE /* ScreenShake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenShake.swift; sourceTree = "<group>"; };
 		5E88670F22A6ABBF0008D4B0 /* SoulEnemy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoulEnemy.swift; sourceTree = "<group>"; };
 		5E88671222A6B61F0008D4B0 /* HotRegionComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotRegionComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -125,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				1F5DF38B22A16805000D04CF /* VilarExtension.swift */,
+				5E7B224C22AAA7D600BFF0AE /* ScreenShake.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -339,6 +342,8 @@
 				1FF45049229C2434009B7DF7 /* GameScene.swift in Sources */,
 				5E1282EB22A94DD9000784FB /* DangerArea.swift in Sources */,
 				1FF45068229C2826009B7DF7 /* Control.swift in Sources */,
+				5E7B224D22AAA7D600BFF0AE /* ScreenShake.swift in Sources */,
+				1FD727CC22A95AC50085172F /* SoundPlayerComponent.swift in Sources */,
 				1F399AFF22A6A9AB0096B59E /* DestroyContactComponent.swift in Sources */,
 				1FF4504B229C2434009B7DF7 /* GameViewController.swift in Sources */,
 				1DEA642B22AE07F500A03632 /* PauseViewController.swift in Sources */,
@@ -511,7 +516,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 97WB89LRXA;
+				DEVELOPMENT_TEAM = 2CW963BG8P;
 				INFOPLIST_FILE = TrainGame_Two/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -529,7 +534,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 97WB89LRXA;
+				DEVELOPMENT_TEAM = 2CW963BG8P;
 				INFOPLIST_FILE = TrainGame_Two/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
