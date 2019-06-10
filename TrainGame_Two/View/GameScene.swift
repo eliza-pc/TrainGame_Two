@@ -36,6 +36,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         hiddenJoystick.joystick = moveJoystick
         moveJoystick.isMoveable = true
+        hiddenJoystick.joystick?.zPosition = 4
         self.camera?.addChild(hiddenJoystick)
         
         entityManager = EntityManager(scene: self)
