@@ -76,6 +76,8 @@ class Control {
 
             case .down:
                 directionCommand = UserControl.take
+//                pushBox = !pushBox
+//                gameScene.inPaused(switchPaused: pushBox)
             default:
                 print("don't have swipe")
                
@@ -89,9 +91,8 @@ class Control {
                     self.gameScene.entityManager.remove(removeObject)
                     self.collectableActive = false
                 }
-            } else if pushBox == true {
-                print("ENTROU")
             }
+//            else if pushBox == true { }
         }
     }
     
@@ -99,7 +100,7 @@ class Control {
         //Mark: Control Entities
         let entitys = gameScene.entityManager.getEntitys(component: PlayerComponent.self)
         self.entityNode = entitys[0].component(ofType: SpriteComponent.self)?.nodePhysic
-        entityNode?.run(SKAction.moveTo(y: CGFloat(20 + incrementJump), duration: 0.35))
+        entityNode?.run(SKAction.moveTo(y: CGFloat(10 + incrementJump), duration: 0.35))
         
     }
     

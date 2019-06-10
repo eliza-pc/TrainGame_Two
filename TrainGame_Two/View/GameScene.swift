@@ -197,12 +197,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         if let _ = entityA.component(ofType: PlayerComponent.self), let _ = entityB.component(ofType: JumpComponent.self) {
             
-            // FAZ ALGO JUMP E PLAYER
+            // incremento do jump do player
             print("jump + pppplayer")
+            self.control?.incrementJump = 50
         } else if let _ = entityB.component(ofType: PlayerComponent.self), let _ = entityA.component(ofType: JumpComponent.self) {
             
-            // FAZ ALGO JUMP E PLAYER
+            // incremento do jump do player
             print("jump + pplayer")
+            self.control?.incrementJump = 50
         }
         
 
@@ -258,6 +260,19 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
         }
         
+        if let _ = entityA.component(ofType: PlayerComponent.self), let _ = entityB.component(ofType: JumpComponent.self) {
+            
+            // decremento do jump do player
+            print("desjump + pppplayer")
+            self.control?.incrementJump = 0
+        } else if let _ = entityB.component(ofType: PlayerComponent.self), let _ = entityA.component(ofType: JumpComponent.self) {
+            
+            // decremento do jump do player
+            print("desjump + pplayer")
+            self.control?.incrementJump = 0
+        }
+        
+        
     }
     
     override func sceneDidLoad() {
@@ -291,7 +306,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
        
     }
     
-    
-    
+    func inPaused(switchPaused: Bool){
+        self.view?.isPaused = switchPaused
+    }
     
 }
