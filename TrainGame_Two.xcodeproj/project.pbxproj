@@ -52,6 +52,7 @@
 		1FFCAF4422AE97C100258D50 /* walk3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1FFCAF4322AE97C100258D50 /* walk3.wav */; };
 		1FFCAF4622AE989500258D50 /* breathe.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1FFCAF4522AE989500258D50 /* breathe.wav */; };
 		1FFCAF4822AEA01C00258D50 /* SoundLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFCAF4722AEA01C00258D50 /* SoundLibrary.swift */; };
+		1FFCAF4C22AEB1AB00258D50 /* walk4.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1FFCAF4B22AEB1AB00258D50 /* walk4.wav */; };
 		5E1282EB22A94DD9000784FB /* DangerArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1282EA22A94DD9000784FB /* DangerArea.swift */; };
 		5E1282ED22A95176000784FB /* EnemyComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1282EC22A95176000784FB /* EnemyComponent.swift */; };
 		5E7B224D22AAA7D600BFF0AE /* ScreenShake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7B224C22AAA7D600BFF0AE /* ScreenShake.swift */; };
@@ -105,6 +106,7 @@
 		1FFCAF4322AE97C100258D50 /* walk3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = walk3.wav; sourceTree = "<group>"; };
 		1FFCAF4522AE989500258D50 /* breathe.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = breathe.wav; sourceTree = "<group>"; };
 		1FFCAF4722AEA01C00258D50 /* SoundLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundLibrary.swift; sourceTree = "<group>"; };
+		1FFCAF4B22AEB1AB00258D50 /* walk4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = walk4.wav; sourceTree = "<group>"; };
 		5E1282EA22A94DD9000784FB /* DangerArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DangerArea.swift; sourceTree = "<group>"; };
 		5E1282EC22A95176000784FB /* EnemyComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnemyComponent.swift; sourceTree = "<group>"; };
 		5E7B224C22AAA7D600BFF0AE /* ScreenShake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenShake.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				1FD727CD22A9667A0085172F /* jump.wav */,
 				1FD727C922A956540085172F /* TrainSound.wav */,
 				1FFCAF4522AE989500258D50 /* breathe.wav */,
+				1FFCAF4B22AEB1AB00258D50 /* walk4.wav */,
 				1FFCAF4322AE97C100258D50 /* walk3.wav */,
 				1FFCAF4122AE95F100258D50 /* walk-2.wav */,
 				1F29DE3822AABC3D003C7225 /* walk1.wav */,
@@ -311,6 +314,7 @@
 			files = (
 				1FFCAF4222AE95F100258D50 /* walk-2.wav in Resources */,
 				1FFCAF4622AE989500258D50 /* breathe.wav in Resources */,
+				1FFCAF4C22AEB1AB00258D50 /* walk4.wav in Resources */,
 				1FD727CE22A9667A0085172F /* jump.wav in Resources */,
 				1FD727CA22A956550085172F /* TrainSound.wav in Resources */,
 				1FD727C722A952C20085172F /* BackgroundSound.wav in Resources */,

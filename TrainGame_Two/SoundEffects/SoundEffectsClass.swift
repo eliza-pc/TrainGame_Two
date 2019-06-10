@@ -44,7 +44,7 @@ class SoundEffects {
             
         }
         
-        if sound == "walk3"{
+        if sound == "walk4"{
            
             do {
                 audioPlayer = try AVAudioPlayer(contentsOf:aSound as URL)

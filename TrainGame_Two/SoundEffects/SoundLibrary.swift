@@ -10,4 +10,4 @@ import Foundation
 
 
 let jumpSound: SoundEffects = SoundEffects(soundName: "jump")
-let walkSound: SoundEffects = SoundEffects(soundName: "walk3")
+let walkSound: SoundEffects = SoundEffects(soundName: "walk4")
