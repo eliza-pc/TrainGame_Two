@@ -343,7 +343,6 @@
 				5E1282EB22A94DD9000784FB /* DangerArea.swift in Sources */,
 				1FF45068229C2826009B7DF7 /* Control.swift in Sources */,
 				5E7B224D22AAA7D600BFF0AE /* ScreenShake.swift in Sources */,
-				1FD727CC22A95AC50085172F /* SoundPlayerComponent.swift in Sources */,
 				1F399AFF22A6A9AB0096B59E /* DestroyContactComponent.swift in Sources */,
 				1FF4504B229C2434009B7DF7 /* GameViewController.swift in Sources */,
 				1DEA642B22AE07F500A03632 /* PauseViewController.swift in Sources */,
@@ -516,7 +515,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2CW963BG8P;
+				DEVELOPMENT_TEAM = 97WB89LRXA;
 				INFOPLIST_FILE = TrainGame_Two/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -534,7 +533,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2CW963BG8P;
+				DEVELOPMENT_TEAM = 97WB89LRXA;
 				INFOPLIST_FILE = TrainGame_Two/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
