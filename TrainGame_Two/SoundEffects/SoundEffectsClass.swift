@@ -13,11 +13,17 @@ import Foundation
 
 class SoundEffects {
     
-    static let soundEffects = SoundEffects()
+    //static let soundEffects = SoundEffects()
     var audioPlayer: AVAudioPlayer?
     var sound: String = ""
+ 
     
-    func playSoundEffect(sound:String){
+    init(soundName: String) {
+        self.sound = soundName
+    }
+    
+    
+    func playSoundEffect(){
         
         let aSound = NSURL(fileURLWithPath: Bundle.main.path(forResource: sound, ofType: "wav")!)
         
@@ -36,13 +42,15 @@ class SoundEffects {
                 print("Cannot play the file")
             }
             
-        }else if sound == "walk1"{
+        }
+        
+        if sound == "walk3"{
            
             do {
                 audioPlayer = try AVAudioPlayer(contentsOf:aSound as URL)
                 audioPlayer!.numberOfLoops = -1
                 audioPlayer!.prepareToPlay()
-                audioPlayer!.setVolume(300, fadeDuration: 4)
+                audioPlayer!.setVolume(10, fadeDuration: 4)
                 //audioPlayer!.currentTime = 0.35
                 audioPlayer!.play()
                 
@@ -53,8 +61,27 @@ class SoundEffects {
             
         }
         
+        if sound == "breathe"{
+            do {
+                audioPlayer = try AVAudioPlayer(contentsOf:aSound as URL)
+                audioPlayer!.numberOfLoops = -1
+                audioPlayer!.prepareToPlay()
+                audioPlayer!.setVolume(1, fadeDuration: 4)
+                //audioPlayer!.currentTime = 0.35
+                audioPlayer!.play()
+                
+                print("breathSound")
+            } catch {
+                print("Cannot play the file")
+            }
+        }
         
         
+        
+    }
+    
+    func pauseSong() {
+      audioPlayer?.pause()
     }
     
     

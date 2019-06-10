@@ -20,6 +20,7 @@ class AnimatedState: GKState{
         super.init()
     }
     
+    
     func activateNode(_ node: SKSpriteNode){
         
     }
@@ -53,9 +54,11 @@ class IdleState: AnimatedState{
     override func activateNode(_ node: SKSpriteNode) {
         node.run(action, withKey: "normal")
        
+        
     }
     override func deactivateNode(_ node: SKSpriteNode) {
         node.removeAction(forKey: "normal")
+       // SoundEffects.soundEffects.playSoundEffect(sound: "breathe")
     }
     
 }
@@ -70,10 +73,14 @@ class WalkState: AnimatedState{
     
     override func activateNode(_ node: SKSpriteNode) {
         node.run(action, withKey: "walk")
+            //SoundEffects.soundEffects.playSoundEffect(sound: "walk3")
+        walkSound.playSoundEffect()
+       
     }
     override func deactivateNode(_ node: SKSpriteNode) {
         node.removeAction(forKey: "walk")
-        //SoundEffects.soundEffects.playSoundEffect(sound: "walk1")
+        walkSound.pauseSong()
+    
     }
     
 }
@@ -91,7 +98,8 @@ class JumpState: AnimatedState{
     }
     override func deactivateNode(_ node: SKSpriteNode) {
         node.removeAction(forKey: "jump")
-        SoundEffects.soundEffects.playSoundEffect(sound: "jump")
+       // SoundEffects.soundEffects.playSoundEffect(sound: "jump")
+        jumpSound.playSoundEffect()
         
     }
     
