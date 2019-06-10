@@ -50,7 +50,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let soulEnemy1 = SoulEnemy(nodeName: "SoulPhysicNode-1", gameScene: self)
         let hotArea1 = DangerArea(nodeName: "hotArea-1" ,gameScene: self)
         let jumpArea1 = JumpArea(nodeName: "jumpArea-1", gameScene: self)
-        let infoArea1 = InfoArea(nodeName: "infoArea-1", gameScene: self)
+        let jumpArea2 = JumpArea(nodeName: "jumpArea-2", gameScene: self)
+        let jumpArea3 = JumpArea(nodeName: "jumpArea-3", gameScene: self)
+//        let infoArea1 = InfoArea(nodeName: "infoArea-1", gameScene: self)
         let soundBox = SoundBox(nodeName: "NodeSoundBox-1", gameScene: self)
         
         if personagemPrincipal.component(ofType: PlayerComponent.self) != nil {
@@ -104,7 +106,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         
 
-        addEntities(arrayEntities: [personagemPrincipal, hotArea1, petala1, boxBig1, soulEnemy1, infoArea1, jumpArea1,soundBox])
+//        addEntities(arrayEntities: [personagemPrincipal, hotArea1, petala1, boxBig1, soulEnemy1, infoArea1, jumpArea1,jumpArea2,jumpArea3,soundBox])
+        addEntities(arrayEntities: [personagemPrincipal, hotArea1, petala1, boxBig1, soulEnemy1, jumpArea1,jumpArea2,jumpArea3,soundBox])
         view.isMultipleTouchEnabled = false
     }
     
@@ -114,7 +117,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
-    
+     
     func didBegin(_ contact: SKPhysicsContact) {
         print("Houve Contato😎")
         
@@ -208,12 +211,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             // incremento do jump do player
             print("jump + pppplayer")
-            self.control?.incrementJump = 50
+            self.control?.directionCommand =  UserControl.idle
+            self.control?.incrementJump = 20
         } else if let _ = entityB.component(ofType: PlayerComponent.self), let _ = entityA.component(ofType: JumpComponent.self) {
             
             // incremento do jump do player
             print("jump + pplayer")
-            self.control?.incrementJump = 50
+            self.control?.directionCommand =  UserControl.idle
+            self.control?.incrementJump = 20
         }
         
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D97E8F222AEE2EA009C88BD /* ObstacleComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D97E8F122AEE2EA009C88BD /* ObstacleComponent.swift */; };
 		1DA672E322A018C40007B49B /* (null) in Sources */ = {isa = PBXBuildFile; };
 		1DA672E522A01D280007B49B /* PlayerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA672E422A01D280007B49B /* PlayerComponent.swift */; };
 		1DC4EB0922A8153000245A79 /* BoxObstacles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC4EB0822A8153000245A79 /* BoxObstacles.swift */; };
@@ -61,6 +62,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D97E8F122AEE2EA009C88BD /* ObstacleComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObstacleComponent.swift; sourceTree = "<group>"; };
 		1DA672E422A01D280007B49B /* PlayerComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerComponent.swift; sourceTree = "<group>"; };
 		1DC4EB0822A8153000245A79 /* BoxObstacles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxObstacles.swift; sourceTree = "<group>"; };
 		1DC4EB0A22A8189500245A79 /* MovingObjectComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovingObjectComponent.swift; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 				1F6FFEE422ACB3EC002789F6 /* SpeakableComponent.swift */,
 				1DEA642622AE019D00A03632 /* JumpComponent.swift */,
 				1DEA642822AE01C100A03632 /* InfoComponent.swift */,
+				1D97E8F122AEE2EA009C88BD /* ObstacleComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 				1F41B63822AAB39700153C94 /* BackgroundTrainSound.swift in Sources */,
 				1DDEBC6D22A6A6A500262156 /* CollectableComponent.swift in Sources */,
 				1F5DF38A22A1631F000D04CF /* StateMachineComponent.swift in Sources */,
+				1D97E8F222AEE2EA009C88BD /* ObstacleComponent.swift in Sources */,
 				1DEA642322AE013500A03632 /* InfoArea.swift in Sources */,
 				1DEA642522AE017900A03632 /* JumpArea.swift in Sources */,
 				5E1282ED22A95176000784FB /* EnemyComponent.swift in Sources */,

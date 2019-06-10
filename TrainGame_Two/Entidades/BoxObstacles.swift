@@ -24,6 +24,7 @@ class BoxObstacle: GKEntity {
         
         spriteComponent.nodePhysic.entity = self
         
+        addComponent(ObstacleComponent())
         addComponent(MovingObjectComponent())
         addComponent(spriteComponent)
     }
