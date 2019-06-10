@@ -2,9 +2,11 @@
 //  Player.swift
 //  TrainGame
 //
-//  Created by Eliza Maria Porto de Carvalho on 22/05/19.
+//  Created by Eliza Maria Porto de Carvalho, Robson James Junior, Lucídio Andrade Barbosa de Souza e André Afonso @Raj on 2019.
 //  Copyright © 2019 Academy. All rights reserved.
 //
+// #part of the credits to Vilar da Camara Neto
+
 
 
 import SpriteKit
@@ -13,12 +15,10 @@ import GameplayKit
 class Petala: GKEntity{
     
     
-    init(imageName: String, gameScene: GameScene){
+    init(nodeName: String, gameScene: GameScene){
         super.init()
-        
-//    let texturePetal = SKTexture.init(imageNamed: imageName)
       
-        let spriteComponent = SpriteComponent(texture: SKTexture(imageNamed: imageName), gameScene: gameScene, nodeName: "nodePetal", textureNodeName: "texturePetal")
+        let spriteComponent = SpriteComponent(gameScene: gameScene, nodeName: nodeName, textureNodeName: "texturePetal")
         
        
     

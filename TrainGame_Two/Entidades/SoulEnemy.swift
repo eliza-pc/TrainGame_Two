@@ -2,9 +2,11 @@
 //  Souls.swift
 //  TrainGame_Two
 //
-//  Created by Lucídio Andrade Barbosa de Souza on 04/06/19.
+//  Created by Eliza Maria Porto de Carvalho, Robson James Junior, Lucídio Andrade Barbosa de Souza e André Afonso @Raj on 2019.
 //  Copyright © 2019 Academy. All rights reserved.
 //
+// #part of the credits to Vilar da Camara Neto
+
 
 import SpriteKit
 import GameplayKit
@@ -12,10 +14,10 @@ import GameplayKit
 
 class SoulEnemy: GKEntity{
     
-    init(imageName: String, gameScene: GameScene){
+    init(nodeName: String, gameScene: GameScene){
         super.init()
         
-        let spriteComponent = SpriteComponent(texture: SKTexture(imageNamed: imageName), gameScene: gameScene, nodeName: "SoulPhysicNode", textureNodeName: "SoulTextureNode")
+        let spriteComponent = SpriteComponent(gameScene: gameScene, nodeName: nodeName, textureNodeName: "SoulTextureNode")
 
         let AnimationAction = SKAction.repeatForever(SKAction.animate(with: .init(withFormat: "Hand-Straight-%d", range: 1...3), timePerFrame: 0.1))
 

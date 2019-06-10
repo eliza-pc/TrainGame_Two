@@ -2,9 +2,11 @@
 //  DangerArea.swift
 //  TrainGame_Two
 //
-//  Created by Lucídio Andrade Barbosa de Souza on 06/06/19.
+//  Created by Eliza Maria Porto de Carvalho, Robson James Junior, Lucídio Andrade Barbosa de Souza e André Afonso @Raj on 2019.
 //  Copyright © 2019 Academy. All rights reserved.
 //
+// #part of the credits to Vilar da Camara Neto
+
 
 import SpriteKit
 import GameplayKit
@@ -12,10 +14,10 @@ import GameplayKit
 class DangerArea: GKEntity {
     
     
-    init(gameScene: GameScene){
+    init(nodeName: String,gameScene: GameScene){
         super.init()
         
-        let physicComponent = PhysicComponent(gameScene: gameScene, nodeName: "hotArea")
+        let physicComponent = PhysicComponent(gameScene: gameScene, nodeName: nodeName)
         physicComponent.nodePhysic.entity = self
         
         addComponent(physicComponent)

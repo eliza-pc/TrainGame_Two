@@ -2,9 +2,11 @@
 //  StateMachineComponent.swift
 //  TrainGame_Two
 //
-//  Created by Eliza Maria Porto de Carvalho on 31/05/19.
+//  Created by Eliza Maria Porto de Carvalho, Robson James Junior, Lucídio Andrade Barbosa de Souza e André Afonso @Raj on 2019.
 //  Copyright © 2019 Academy. All rights reserved.
 //
+// #part of the credits to Vilar da Camara Neto
+
 
 import GameplayKit
 import SpriteKit
@@ -42,7 +44,7 @@ class AnimatedState: GKState{
 }
 
 class IdleState: AnimatedState{
-    private let action = SKAction.repeatForever(SKAction.animate(with: .init(withFormat: "normal-%d", range: 2...9), timePerFrame: 0.1))
+    private let action = SKAction.repeatForever(SKAction.animate(with: .init(withFormat: "normal-%d", range: 1...3), timePerFrame: 0.1))
     
     override func isValidNextState(_ stateClass: AnyClass) -> Bool {
         return stateClass is WalkState.Type || stateClass is JumpState.Type
@@ -50,6 +52,7 @@ class IdleState: AnimatedState{
     
     override func activateNode(_ node: SKSpriteNode) {
         node.run(action, withKey: "normal")
+       
     }
     override func deactivateNode(_ node: SKSpriteNode) {
         node.removeAction(forKey: "normal")
@@ -58,7 +61,8 @@ class IdleState: AnimatedState{
 }
 
 class WalkState: AnimatedState{
-    private let action = SKAction.repeatForever(SKAction.animate(with: .init(withFormat: "walk%d", range: 1...8), timePerFrame: 0.1))
+    
+    private let action = SKAction.repeatForever(SKAction.animate(with: .init(withFormat: "walk%d", range: 1...10), timePerFrame: 0.1))
     
     override func isValidNextState(_ stateClass: AnyClass) -> Bool {
         return stateClass is IdleState.Type || stateClass is JumpState.Type
@@ -69,12 +73,13 @@ class WalkState: AnimatedState{
     }
     override func deactivateNode(_ node: SKSpriteNode) {
         node.removeAction(forKey: "walk")
+        //SoundEffects.soundEffects.playSoundEffect(sound: "walk1")
     }
     
 }
 
 class JumpState: AnimatedState{
-    private let action = SKAction.repeatForever(SKAction.animate(with: .init(withFormat: "jump%d", range: 1...6), timePerFrame: 0.1))
+    private let action = SKAction.repeatForever(SKAction.animate(with: .init(withFormat: "jump%d", range: 1...3), timePerFrame: 0.1))
     
     override func isValidNextState(_ stateClass: AnyClass) -> Bool {
         return stateClass is IdleState.Type || stateClass is IdleState.Type || stateClass is WalkState.Type
@@ -82,9 +87,12 @@ class JumpState: AnimatedState{
     
     override func activateNode(_ node: SKSpriteNode) {
         node.run(action, withKey: "jump")
+        
     }
     override func deactivateNode(_ node: SKSpriteNode) {
         node.removeAction(forKey: "jump")
+        SoundEffects.soundEffects.playSoundEffect(sound: "jump")
+        
     }
     
 }
@@ -97,8 +105,8 @@ class StateMachineComponent: GKComponent {
         super.init()
         self.stateMachine = GKStateMachine(states: [
             IdleState(self),
-        WalkState(self),
-//            JumpState(self),
+            WalkState(self),
+            JumpState(self),
             ])
     }
     

@@ -2,9 +2,10 @@
 //  Control.swift
 //  TrainGame
 //
-//  Created by Robson James Junior on 22/05/19.
+//  Created by Eliza Maria Porto de Carvalho, Robson James Junior, Lucídio Andrade Barbosa de Souza e André Afonso @Raj on 2019.
 //  Copyright © 2019 Academy. All rights reserved.
 //
+// #part of the credits to Vilar da Camara Neto
 
 import SpriteKit
 import GameplayKit
@@ -66,33 +67,32 @@ class Control {
 
             switch gesture.direction{
             case .up:
-//                print(swipeActive)
+
                 if directionCommand != UserControl.jump && swipeActive == false  {
-           //         print("swipe")
+   
                     directionCommand = UserControl.jump
                     swipeActive = true
                     jump()
                 }
-//                print(directionCommand)
+
             case .down:
                 directionCommand = UserControl.take
+                gameScene.inPaused(switchPaused: false)
             default:
                 print("don't have swipe")
-               // self.gameScene.entityManager.remove(entityB)
+               
             }
             
         }
         
         if gesture is UITapGestureRecognizer {
             if collectableActive == true {
-                print("TapOK")
                 if let removeObject = self.gameScene.entityManager.getObjectInContact() {
                     self.gameScene.entityManager.remove(removeObject)
                     self.collectableActive = false
                 }
-            } else if pushBox == true {
-                print("ENTROU")
             }
+//            else if pushBox == true { }
         }
     }
     
@@ -100,37 +100,37 @@ class Control {
         //Mark: Control Entities
         let entitys = gameScene.entityManager.getEntitys(component: PlayerComponent.self)
         self.entityNode = entitys[0].component(ofType: SpriteComponent.self)?.nodePhysic
-        entityNode?.run(SKAction.moveTo(y: CGFloat(20 + incrementJump), duration: 0.35))
-        
-        //                    entityNode?.run(SKAction.moveTo(y: entityNode!.position.y + (100 * 1.2), duration: 0.25))
+        entityNode?.run(SKAction.moveTo(y: CGFloat(10 + incrementJump), duration: 0.35))
         
     }
     
-        func updatePressedButtons(control: UserControl?, dt: Double) {
-    
-            if (control == UserControl.jump) {
-
-                stateJump()
+    func updatePressedButtons(control: UserControl?, dt: Double) {
         
-            }else if (control == UserControl.take) {
-              
-                
-            }else if (control == UserControl.left) {
+        if (control == UserControl.jump) {
+        
+            stateJump()
+            
+        }else if (control == UserControl.take) {
+       
+            
+        }else if (control == UserControl.left) {
            
-                stateWalk()
-                
-            }else if (control == UserControl.right) {
+            stateWalk()
+            
+        }else if (control == UserControl.right) {
+            
+            stateWalk()
+            
+            
+        }else if (control == UserControl.idle){
           
-                stateWalk()
-               
-                
-            }else if (control == UserControl.idle){
-                stateIdle()
-            }
-            
-            
-    
+            stateIdle()
         }
+        
+        
+        
+    }
+    
     func stateIdle(){
         let entitys = gameScene.entityManager.getEntitys(component: PlayerComponent.self)
         let entity = entitys[0]

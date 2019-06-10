@@ -2,9 +2,11 @@
 //  EntityManager.swift
 //  TrainGame_Two
 //
-//  Created by Eliza Maria Porto de Carvalho on 27/05/19.
+//  Created by Eliza Maria Porto de Carvalho, Robson James Junior, Lucídio Andrade Barbosa de Souza e André Afonso @Raj on 2019.
 //  Copyright © 2019 Academy. All rights reserved.
 //
+// #part of the credits to Vilar da Camara Neto
+
 
 import Foundation
 import SpriteKit
@@ -25,7 +27,7 @@ class EntityManager {
     
     func add(_ entity: GKEntity) {
         entities.insert(entity)
-       
+//        printEntities()
     }
     
     
@@ -36,10 +38,7 @@ class EntityManager {
         }
         
         entities.remove(entity)
-        for entity in entities {
-            print("entity: \(entity)")
-        }
-        print("tamanho: \(entities.count)")
+//        printEntities()
         
     }
     
@@ -53,7 +52,7 @@ class EntityManager {
                 enemyComponent.ataque(autor: entity.component(ofType: SpriteComponent.self)!.nodePhysic)
             }
             
-//            entities[0].component(ofType: EnemyComponente.self)?.ataque(alvo: nodeB as! SKSpriteNode, autor: entityEnemyNode!)
+
             entity.update(deltaTime: dt)
         }
     }
@@ -72,13 +71,24 @@ class EntityManager {
         return entitys
     }
     
+    
     func setObjectInContact(entity: GKEntity ){
         self.entityInContact = entity
     }
     
+    
     func getObjectInContact() -> GKEntity? {
         let entityContact = self.entityInContact
         return entityContact
+    }
+    
+    func printEntities(){
+        
+        for entity in entities {
+            print("entitiy: \(entity)")
+        }
+        print("entities Count: \(entities.count)")
+        print("\n ---- [end] ---- \n")
     }
     
 }

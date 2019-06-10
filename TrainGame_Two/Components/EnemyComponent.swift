@@ -2,9 +2,11 @@
 //  EnemyComponent.swift
 //  TrainGame_Two
 //
-//  Created by Lucídio Andrade Barbosa de Souza on 06/06/19.
+//  Created by Eliza Maria Porto de Carvalho, Robson James Junior, Lucídio Andrade Barbosa de Souza e André Afonso @Raj on 2019.
 //  Copyright © 2019 Academy. All rights reserved.
 //
+// #part of the credits to Vilar da Camara Neto
+
 
 import Foundation
 import GameplayKit
@@ -31,13 +33,10 @@ class EnemyComponente: GKComponent{
         self.alvo = ((gameScene.childNode(withName: "player") as? SKSpriteNode)!)
         
         super.init()
-        
         let leftAction = SKAction.moveTo(x: self.leftLimit, duration: 2.0)
-        let dropForRight = SKAction.scaleX(to: nodePhysic.xScale * 1.0, duration: 0.01)
-//        let dropForRight = SKAction.rotate(byAngle: 2 * .pi, duration: 0.35)
+        let dropForRight = SKAction.scaleX(to: nodePhysic.xScale * -1.0, duration: 0.001)
         let rightAction = SKAction.moveTo(x: self.rightLimit, duration: 2.0)
-        let dropForleft = SKAction.scaleX(to: nodePhysic.xScale * -1.0, duration: 0.01)
-//        let dropForleft = SKAction.rotate(byAngle: 2 * .pi, duration: 0.35)
+        let dropForleft = SKAction.scaleX(to: nodePhysic.xScale * 1.0, duration: 0.001)
         
         let sequence = SKAction.repeatForever(SKAction.sequence([leftAction, dropForRight, rightAction, dropForleft]))
         
@@ -46,8 +45,9 @@ class EnemyComponente: GKComponent{
     }
     
     func ataque(autor: SKSpriteNode){
-//        autor.removeAllActions()
-//
+
+//        print("xScale: \(autor.xScale)")
+        
         if (autor.action(forKey: "vigiando") != nil) {
             
             autor.removeAction(forKey: "vigiando")
@@ -59,25 +59,27 @@ class EnemyComponente: GKComponent{
             autor.removeAction(forKey: "pontoInicial")
        
         }
-//
-//        print(autor.hasActions())
-//        let positionAtaque = self.alvo.position
-//        print("positionAtaque: \(positionAtaque)")
-//        let moveAtaque = SKAction.move(to: positionAtaque, duration: 1.0)
-//
-//        autor.run(moveAtaque, withKey: "atacando")
+
         let location = self.alvo.position
         
         let dx = (location.x) - autor.position.x
         let dy = (location.y) - autor.position.y
         let angle = atan2(dy, dx)
 
-//        autor.zRotation = angle - 3 * .pi/2
-        
         
         //Seek
         let velocityX = cos(angle) * self.enemySpeed
         let velocityY = sin(angle) * self.enemySpeed
+        
+        let direction = Int(autor.position.x - self.alvo.position.x)
+//        print(direction)
+        
+        if direction >= 0 {
+            autor.xScale = abs(autor.xScale) * 1.0
+        } else {
+            autor.xScale = abs(autor.xScale) * -1.0
+        }
+        
         
         autor.position.x += velocityX
         autor.position.y += velocityY
@@ -86,23 +88,17 @@ class EnemyComponente: GKComponent{
  
     
     func vigiar(autor: SKSpriteNode) {
-//        autor.position = self.initialPosition
-//        autor.removeAllActions()
-//        if (autor.action(forKey: "atacando") != nil) {
-//            autor.removeAction(forKey: "atacando")
-//        }
-        print(self.initialPosition)
-//        autor.run(SKAction.move(to: self.initialPosition, duration: 2.25), withKey: "pontoInicial")
-        autor.run(SKAction.moveTo(y: self.initialPosition.y, duration: 2.25), withKey: "pontoInicial")
-//        autor.removeAllActions()
-//        if (autor.action(forKey: "pontoInicial") != nil) {
-//            autor.removeAction(forKey: "pontoInicial")
-//        }
+
+//        print("xScale: \(autor.xScale)")
+//        print(direction)
         
+        autor.run(SKAction.moveTo(y: self.initialPosition.y, duration: 2.25), withKey: "pontoInicial")
+        autor.xScale = abs(autor.xScale) * 1.0
         let leftAction = SKAction.moveTo(x: self.leftLimit, duration: 2.0)
-        let dropForRight = SKAction.scaleX(to: autor.xScale * 1.0, duration: 0.01)
+        let dropForRight = SKAction.scaleX(to: autor.xScale * -1.0, duration: 0.001)
         let rightAction = SKAction.moveTo(x: self.rightLimit, duration: 2.0)
-        let dropForleft = SKAction.scaleX(to: autor.xScale * -1.0, duration: 0.01)
+        let dropForleft = SKAction.scaleX(to: autor.xScale * 1.0, duration: 0.001)
+        
         let sequence = SKAction.repeatForever(SKAction.sequence([leftAction, dropForRight, rightAction, dropForleft]))
         autor.run(sequence, withKey: "vigiando")
         

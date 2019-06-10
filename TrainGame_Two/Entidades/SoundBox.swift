@@ -2,9 +2,11 @@
 //  SoundBox.swift
 //  TrainGame_Two
 //
-//  Created by Eliza Maria Porto de Carvalho on 06/06/19.
+//  Created by Eliza Maria Porto de Carvalho, Robson James Junior, Lucídio Andrade Barbosa de Souza e André Afonso @Raj on 2019.
 //  Copyright © 2019 Academy. All rights reserved.
 //
+// #part of the credits to Vilar da Camara Neto
+
 
 
 import SpriteKit
@@ -13,20 +15,20 @@ import GameplayKit
 class SoundBox: GKEntity{
     
     
-    init(imageName: String, gameScene: GameScene){
+    init(nodeName: String, gameScene: GameScene){
         super.init()
         
         
-        let spriteComponent = SpriteComponent(texture: SKTexture(imageNamed: imageName), gameScene: gameScene, nodeName: "nodeSoundBox", textureNodeName: "textureSoundBox")
+        let spriteComponent = SpriteComponent(gameScene: gameScene, nodeName: nodeName, textureNodeName: "textureSoundBox")
     
-        
         spriteComponent.nodePhysic.entity = self
-        let balloonComponent = BalloonComponent(parentNode: spriteComponent.nodePhysic, balloonNodeName: "textureBalaoMentor")
+        
+        let balloonComponent = BalloonComponent(parentNode: spriteComponent.nodePhysic, balloonNodeName: "textureBalao")
         
       
         addComponent(balloonComponent)
         addComponent(spriteComponent)
-        addComponent(CollectableComponent())
+        addComponent(SpeakableComponent())
         
     }
     
