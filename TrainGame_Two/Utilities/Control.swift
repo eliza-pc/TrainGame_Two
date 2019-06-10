@@ -32,10 +32,12 @@ class Control {
     var incrementJump: Int = 0
     var pushBox: Bool = false
     
+    var feedbackGenerator: UINotificationFeedbackGenerator? = UINotificationFeedbackGenerator()
+    
     init(view: UIView, gameScene: GameScene) {
         self.gameScene = gameScene
         self.addSwiperRecognizer(view: view)
-        self.addTapRecognizer(view: view)
+        self.addLongRecognizer(view: view)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -55,9 +57,13 @@ class Control {
         
     }
     
-    func addTapRecognizer(view: UIView) {
-        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleRecognize))
-        view.addGestureRecognizer(gestureRecognizer)
+    func addLongRecognizer(view: UIView) {
+        let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(handleRecognize))
+        longPressRecognizer.minimumPressDuration = 2
+        longPressRecognizer.numberOfTouchesRequired = 1
+//        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleRecognize))
+//        view.addGestureRecognizer(tapGestureRecognizer)
+        view.addGestureRecognizer(longPressRecognizer)
     }
     
     
@@ -84,15 +90,28 @@ class Control {
             
         }
         
-        if gesture is UITapGestureRecognizer {
+//        if gesture is UITapGestureRecognizer {
+//            if collectableActive == true {
+//                if let removeObject = self.gameScene.entityManager.getObjectInContact() {
+//                    self.gameScene.entityManager.remove(removeObject)
+//                    self.collectableActive = false
+//                }
+//            }
+////            else if pushBox == true { }
+//        }
+        
+        if gesture is UILongPressGestureRecognizer {
             if collectableActive == true {
+                self.feedbackGenerator?.notificationOccurred(.success)
                 if let removeObject = self.gameScene.entityManager.getObjectInContact() {
                     self.gameScene.entityManager.remove(removeObject)
                     self.collectableActive = false
                 }
             }
-//            else if pushBox == true { }
+            //            else if pushBox == true { }
         }
+        
+        
     }
     
     func jump() {

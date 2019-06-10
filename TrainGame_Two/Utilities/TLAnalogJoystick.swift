@@ -443,12 +443,12 @@ open class TLAnalogJoystick: SKNode {
         }
 
         
-        if location.x > 10 {
+        if location.x > 20 {
             userControl = UserControl.right
-        }
-        
-        if location.x < -10 {
+        } else if location.x < -20 {
             userControl = UserControl.left
+        } else {
+            userControl = UserControl.idle
         }
         
     }
