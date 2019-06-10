@@ -335,7 +335,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 }
             }
         default:
-            "key don`t identify"
+           print("key don't identify")
         }
     }
     
