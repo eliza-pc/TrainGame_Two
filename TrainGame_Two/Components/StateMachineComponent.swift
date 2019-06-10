@@ -20,6 +20,7 @@ class AnimatedState: GKState{
         super.init()
     }
     
+    
     func activateNode(_ node: SKSpriteNode){
         
     }
@@ -44,7 +45,7 @@ class AnimatedState: GKState{
 }
 
 class IdleState: AnimatedState{
-    private let action = SKAction.repeatForever(SKAction.animate(with: .init(withFormat: "normal-%d", range: 1...3), timePerFrame: 0.1))
+    private let action = SKAction.repeatForever(SKAction.animate(with: .init(withFormat: "normal-%d", range: 1...10), timePerFrame: 0.3))
     
     override func isValidNextState(_ stateClass: AnyClass) -> Bool {
         return stateClass is WalkState.Type || stateClass is JumpState.Type
@@ -53,9 +54,11 @@ class IdleState: AnimatedState{
     override func activateNode(_ node: SKSpriteNode) {
         node.run(action, withKey: "normal")
        
+        
     }
     override func deactivateNode(_ node: SKSpriteNode) {
         node.removeAction(forKey: "normal")
+       // SoundEffects.soundEffects.playSoundEffect(sound: "breathe")
     }
     
 }
@@ -70,16 +73,20 @@ class WalkState: AnimatedState{
     
     override func activateNode(_ node: SKSpriteNode) {
         node.run(action, withKey: "walk")
+            //SoundEffects.soundEffects.playSoundEffect(sound: "walk3")
+        walkSound.playSoundEffect()
+       
     }
     override func deactivateNode(_ node: SKSpriteNode) {
         node.removeAction(forKey: "walk")
-        //SoundEffects.soundEffects.playSoundEffect(sound: "walk1")
+        walkSound.pauseSong()
+    
     }
     
 }
 
 class JumpState: AnimatedState{
-    private let action = SKAction.repeatForever(SKAction.animate(with: .init(withFormat: "jump%d", range: 1...3), timePerFrame: 0.1))
+    private let action = SKAction.repeatForever(SKAction.animate(with: .init(withFormat: "jump%d", range: 1...10), timePerFrame: 0.1))
     
     override func isValidNextState(_ stateClass: AnyClass) -> Bool {
         return stateClass is IdleState.Type || stateClass is IdleState.Type || stateClass is WalkState.Type
@@ -91,7 +98,8 @@ class JumpState: AnimatedState{
     }
     override func deactivateNode(_ node: SKSpriteNode) {
         node.removeAction(forKey: "jump")
-        SoundEffects.soundEffects.playSoundEffect(sound: "jump")
+       // SoundEffects.soundEffects.playSoundEffect(sound: "jump")
+        jumpSound.playSoundEffect()
         
     }
     
