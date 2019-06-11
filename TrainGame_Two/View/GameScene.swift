@@ -15,7 +15,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     //#MARK: Variables
     var graphs = [String : GKGraph]()
     var entityManager: EntityManager!
-    var incremento: CGFloat = 0
+    
     private var lastUpdateTime : TimeInterval = 0
     private var control: Control?
     var moveJoystickHiddenArea: TLAnalogJoystickHiddenArea? = nil
@@ -70,12 +70,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 
               
                 let pVelocity = joystick.velocity;
-                let speed = CGFloat(0.09)
+                let speed = CGFloat(0.05)
 
                 if self.control?.directionCommand == UserControl.jump {
                     
                     // MARK: Move for Physics
-                    spriteComponent.nodePhysic.position = CGPoint(x: spriteComponent.nodePhysic.position.x + (pVelocity.x * speed) + self.incremento, y: spriteComponent.nodePhysic.position.y)
+                    spriteComponent.nodePhysic.position = CGPoint(x: spriteComponent.nodePhysic.position.x + (pVelocity.x * speed), y: spriteComponent.nodePhysic.position.y)
 
                     
                 } else {
@@ -231,15 +231,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             // incremento do jump do player
 //            print("jump + player")
             self.control?.directionCommand =  UserControl.idle
-            self.control?.incrementJump = 50
-            self.incremento = speedIncremento
+            self.control?.incrementJump = 20
         } else if let _ = entityB.component(ofType: PlayerComponent.self), let _ = entityA.component(ofType: JumpComponent.self) {
             
             // incremento do jump do player
 //            print("jump + player")
             self.control?.directionCommand =  UserControl.idle
-            self.control?.incrementJump = 50
-            self.incremento = speedIncremento
+            self.control?.incrementJump = 20
         }
         
 
