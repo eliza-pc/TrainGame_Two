@@ -39,7 +39,7 @@ class SoundEffects {
                 audioPlayer!.volume = 0.1
                 
                 
-                print("Volume: ",audioPlayer!.volume )
+//                print("Volume: ",audioPlayer!.volume )
             } catch {
                 print("Cannot play the file")
             }
@@ -89,7 +89,7 @@ class SoundEffects {
                 audioPlayer!.volume = 0.1
                 
                 
-                print("radiosound")
+//                print("radiosound")
             } catch {
                 print("Cannot play the file")
             }

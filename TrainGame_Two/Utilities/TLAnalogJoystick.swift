@@ -411,7 +411,6 @@ open class TLAnalogJoystick: SKNode {
     //MARK: - Overrides
     open override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let touch = touches.first!
-        
         guard handle == atPoint(touch.location(in: self)) else {
             return
         }
@@ -443,9 +442,9 @@ open class TLAnalogJoystick: SKNode {
         }
 
         
-        if location.x > 20 {
+        if location.x > 5 {
             userControl = UserControl.right
-        } else if location.x < -20 {
+        } else if location.x < -5 {
             userControl = UserControl.left
         } else {
             userControl = UserControl.idle

@@ -17,10 +17,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var entityManager: EntityManager!
     
     private var lastUpdateTime : TimeInterval = 0
+    
     private var control: Control?
     var moveJoystickHiddenArea: TLAnalogJoystickHiddenArea? = nil
     var gameOver: Bool = false
-    let speedIncremento: CGFloat = 0.6
+    let speedIncremento: CGFloat = 0.8
+    var speedJump: CGFloat = 0
     
     let moveJoystick = 🕹(withDiameter: 100)
     //let camera: SKCameraNode?
@@ -74,8 +76,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 
                 if self.control?.directionCommand == UserControl.jump {
                     
+                    print("1 - incremento: \(self.speedJump), velocidade: \(spriteComponent.nodePhysic.position.x + (pVelocity.x * speed) + self.speedJump)")
                     // MARK: Move for Physics
-                    spriteComponent.nodePhysic.position = CGPoint(x: spriteComponent.nodePhysic.position.x + (pVelocity.x * speed), y: spriteComponent.nodePhysic.position.y)
+                    spriteComponent.nodePhysic.position = CGPoint(x: spriteComponent.nodePhysic.position.x + (pVelocity.x * speed) + self.speedJump, y: spriteComponent.nodePhysic.position.y)
 
                     
                 } else {
@@ -86,16 +89,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     if self.control?.directionCommand == UserControl.right {
                          spriteComponent.nodeTexture.xScale = abs(spriteComponent.nodeTexture.xScale) * 1.0
                         
+                        print("1 - incremento: \(self.speedJump), velocidade: \(spriteComponent.nodePhysic.position.x + (pVelocity.x * speed))")
+                        // MARK: Move for Physics
+                        spriteComponent.nodePhysic.position = CGPoint(x: spriteComponent.nodePhysic.position.x + (pVelocity.x * speed) + self.speedJump, y: spriteComponent.nodePhysic.position.y)
                         
                     } else {
                         
                         spriteComponent.nodeTexture.xScale = abs(spriteComponent.nodeTexture.xScale) * -1.0
                         
+                        // MARK: Move for Physics
+                        spriteComponent.nodePhysic.position = CGPoint(x: spriteComponent.nodePhysic.position.x + (pVelocity.x * speed) - self.speedJump, y: spriteComponent.nodePhysic.position.y)
                     }
                 
-                    // MARK: Move for Physics
-                    spriteComponent.nodePhysic.position = CGPoint(x: spriteComponent.nodePhysic.position.x + (pVelocity.x * speed), y: spriteComponent.nodePhysic.position.y)
-            
                 }
                 
             }
@@ -231,13 +236,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             // incremento do jump do player
 //            print("jump + player")
             self.control?.directionCommand =  UserControl.idle
-            self.control?.incrementJump = 20
+            self.control?.incrementJump = 30
+            self.speedJump = speedIncremento
+            
         } else if let _ = entityB.component(ofType: PlayerComponent.self), let _ = entityA.component(ofType: JumpComponent.self) {
             
             // incremento do jump do player
 //            print("jump + player")
             self.control?.directionCommand =  UserControl.idle
-            self.control?.incrementJump = 20
+            self.control?.incrementJump = 30
+            self.speedJump = speedIncremento
         }
         
 
@@ -291,11 +299,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if let _ = entityA.component(ofType: PlayerComponent.self), let _ = entityB.component(ofType: JumpComponent.self) {
         
             self.control?.incrementJump = 0
+            self.speedJump = 0
             
         } else if let _ = entityB.component(ofType: PlayerComponent.self), let _ = entityA.component(ofType: JumpComponent.self) {
             
             self.control?.incrementJump = 0
-            
+            self.speedJump = 0
         }
         
         
