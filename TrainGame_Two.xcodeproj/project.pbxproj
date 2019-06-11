@@ -20,8 +20,8 @@
 		1DEA642722AE019D00A03632 /* JumpComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEA642622AE019D00A03632 /* JumpComponent.swift */; };
 		1DEA642922AE01C100A03632 /* InfoComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEA642822AE01C100A03632 /* InfoComponent.swift */; };
 		1DEA642B22AE07F500A03632 /* PauseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEA642A22AE07F500A03632 /* PauseViewController.swift */; };
+		1F0278A022AFF407004796B8 /* radio2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1F02789E22AFF407004796B8 /* radio2.wav */; };
 		1F22A1F222A7FC5F00335135 /* BalloonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F22A1F122A7FC5F00335135 /* BalloonComponent.swift */; };
-		1F29DE3722AABA6D003C7225 /* walk.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1F29DE3622AABA6D003C7225 /* walk.wav */; };
 		1F29DE3922AABC3D003C7225 /* walk1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1F29DE3822AABC3D003C7225 /* walk1.wav */; };
 		1F399AFF22A6A9AB0096B59E /* DestroyContactComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F399AFE22A6A9AB0096B59E /* DestroyContactComponent.swift */; };
 		1F41B63822AAB39700153C94 /* BackgroundTrainSound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F41B63722AAB39700153C94 /* BackgroundTrainSound.swift */; };
@@ -29,8 +29,6 @@
 		1F5DF38622A01934000D04CF /* (null) in Sources */ = {isa = PBXBuildFile; };
 		1F5DF38A22A1631F000D04CF /* StateMachineComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5DF38922A1631F000D04CF /* StateMachineComponent.swift */; };
 		1F5DF38C22A16805000D04CF /* VilarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5DF38B22A16805000D04CF /* VilarExtension.swift */; };
-		1F6E773022AF5D0400981A03 /* jump5.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1F6E772F22AF5D0400981A03 /* jump5.wav */; };
-		1F6E773222AF5FA100981A03 /* step3-1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1F6E773122AF5FA100981A03 /* step3-1.wav */; };
 		1F6E773422AF5FAA00981A03 /* step2-1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1F6E773322AF5FAA00981A03 /* step2-1.wav */; };
 		1F6FFEE522ACB3EC002789F6 /* SpeakableComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6FFEE422ACB3EC002789F6 /* SpeakableComponent.swift */; };
 		1FA72A7822AAA42C00339D72 /* BackgroundMusicClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA72A7722AAA42C00339D72 /* BackgroundMusicClass.swift */; };
@@ -38,7 +36,6 @@
 		1FD727C422A93F240085172F /* SoundBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD727C322A93F240085172F /* SoundBox.swift */; };
 		1FD727C722A952C20085172F /* BackgroundSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1FD727C622A952C20085172F /* BackgroundSound.wav */; };
 		1FD727CA22A956550085172F /* TrainSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1FD727C922A956540085172F /* TrainSound.wav */; };
-		1FD727CE22A9667A0085172F /* jump.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1FD727CD22A9667A0085172F /* jump.wav */; };
 		1FF45043229C2434009B7DF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF45042229C2434009B7DF7 /* AppDelegate.swift */; };
 		1FF45045229C2434009B7DF7 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1FF45044229C2434009B7DF7 /* GameScene.sks */; };
 		1FF45049229C2434009B7DF7 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF45048229C2434009B7DF7 /* GameScene.swift */; };
@@ -52,11 +49,8 @@
 		1FF45066229C281B009B7DF7 /* TLAnalogJoystick.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF45065229C281B009B7DF7 /* TLAnalogJoystick.swift */; };
 		1FF45068229C2826009B7DF7 /* Control.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF45067229C2826009B7DF7 /* Control.swift */; };
 		1FF4506A229C2D34009B7DF7 /* CameraComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF45069229C2D34009B7DF7 /* CameraComponent.swift */; };
-		1FFCAF4222AE95F100258D50 /* walk-2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1FFCAF4122AE95F100258D50 /* walk-2.wav */; };
-		1FFCAF4422AE97C100258D50 /* walk3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1FFCAF4322AE97C100258D50 /* walk3.wav */; };
 		1FFCAF4622AE989500258D50 /* breathe.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1FFCAF4522AE989500258D50 /* breathe.wav */; };
 		1FFCAF4822AEA01C00258D50 /* SoundLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFCAF4722AEA01C00258D50 /* SoundLibrary.swift */; };
-		1FFCAF4C22AEB1AB00258D50 /* walk4.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1FFCAF4B22AEB1AB00258D50 /* walk4.wav */; };
 		5E1282EB22A94DD9000784FB /* DangerArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1282EA22A94DD9000784FB /* DangerArea.swift */; };
 		5E1282ED22A95176000784FB /* EnemyComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1282EC22A95176000784FB /* EnemyComponent.swift */; };
 		5E7B224D22AAA7D600BFF0AE /* ScreenShake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7B224C22AAA7D600BFF0AE /* ScreenShake.swift */; };
@@ -77,16 +71,14 @@
 		1DEA642622AE019D00A03632 /* JumpComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JumpComponent.swift; sourceTree = "<group>"; };
 		1DEA642822AE01C100A03632 /* InfoComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoComponent.swift; sourceTree = "<group>"; };
 		1DEA642A22AE07F500A03632 /* PauseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseViewController.swift; sourceTree = "<group>"; };
+		1F02789E22AFF407004796B8 /* radio2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = radio2.wav; sourceTree = "<group>"; };
 		1F22A1F122A7FC5F00335135 /* BalloonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalloonComponent.swift; sourceTree = "<group>"; };
-		1F29DE3622AABA6D003C7225 /* walk.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = walk.wav; sourceTree = "<group>"; };
 		1F29DE3822AABC3D003C7225 /* walk1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = walk1.wav; sourceTree = "<group>"; };
 		1F399AFE22A6A9AB0096B59E /* DestroyContactComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestroyContactComponent.swift; sourceTree = "<group>"; };
 		1F41B63722AAB39700153C94 /* BackgroundTrainSound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundTrainSound.swift; sourceTree = "<group>"; };
 		1F41B63922AAB50100153C94 /* train.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = train.wav; sourceTree = "<group>"; };
 		1F5DF38922A1631F000D04CF /* StateMachineComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateMachineComponent.swift; sourceTree = "<group>"; };
 		1F5DF38B22A16805000D04CF /* VilarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VilarExtension.swift; sourceTree = "<group>"; };
-		1F6E772F22AF5D0400981A03 /* jump5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = jump5.wav; sourceTree = "<group>"; };
-		1F6E773122AF5FA100981A03 /* step3-1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "step3-1.wav"; sourceTree = "<group>"; };
 		1F6E773322AF5FAA00981A03 /* step2-1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "step2-1.wav"; sourceTree = "<group>"; };
 		1F6FFEE422ACB3EC002789F6 /* SpeakableComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakableComponent.swift; sourceTree = "<group>"; };
 		1FA72A7722AAA42C00339D72 /* BackgroundMusicClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundMusicClass.swift; sourceTree = "<group>"; };
@@ -94,7 +86,6 @@
 		1FD727C322A93F240085172F /* SoundBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundBox.swift; sourceTree = "<group>"; };
 		1FD727C622A952C20085172F /* BackgroundSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = BackgroundSound.wav; sourceTree = "<group>"; };
 		1FD727C922A956540085172F /* TrainSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = TrainSound.wav; sourceTree = "<group>"; };
-		1FD727CD22A9667A0085172F /* jump.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = jump.wav; sourceTree = "<group>"; };
 		1FF4503F229C2434009B7DF7 /* TrainGame_Two.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrainGame_Two.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FF45042229C2434009B7DF7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1FF45044229C2434009B7DF7 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -110,11 +101,8 @@
 		1FF45065229C281B009B7DF7 /* TLAnalogJoystick.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLAnalogJoystick.swift; sourceTree = "<group>"; };
 		1FF45067229C2826009B7DF7 /* Control.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Control.swift; sourceTree = "<group>"; };
 		1FF45069229C2D34009B7DF7 /* CameraComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraComponent.swift; sourceTree = "<group>"; };
-		1FFCAF4122AE95F100258D50 /* walk-2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "walk-2.wav"; sourceTree = "<group>"; };
-		1FFCAF4322AE97C100258D50 /* walk3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = walk3.wav; sourceTree = "<group>"; };
 		1FFCAF4522AE989500258D50 /* breathe.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = breathe.wav; sourceTree = "<group>"; };
 		1FFCAF4722AEA01C00258D50 /* SoundLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundLibrary.swift; sourceTree = "<group>"; };
-		1FFCAF4B22AEB1AB00258D50 /* walk4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = walk4.wav; sourceTree = "<group>"; };
 		5E1282EA22A94DD9000784FB /* DangerArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DangerArea.swift; sourceTree = "<group>"; };
 		5E1282EC22A95176000784FB /* EnemyComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnemyComponent.swift; sourceTree = "<group>"; };
 		5E7B224C22AAA7D600BFF0AE /* ScreenShake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenShake.swift; sourceTree = "<group>"; };
@@ -146,17 +134,11 @@
 			isa = PBXGroup;
 			children = (
 				1F41B63922AAB50100153C94 /* train.wav */,
-				1FD727CD22A9667A0085172F /* jump.wav */,
 				1FD727C922A956540085172F /* TrainSound.wav */,
 				1FFCAF4522AE989500258D50 /* breathe.wav */,
-				1F6E772F22AF5D0400981A03 /* jump5.wav */,
-				1FFCAF4B22AEB1AB00258D50 /* walk4.wav */,
-				1F6E773122AF5FA100981A03 /* step3-1.wav */,
-				1FFCAF4322AE97C100258D50 /* walk3.wav */,
+				1F02789E22AFF407004796B8 /* radio2.wav */,
 				1F6E773322AF5FAA00981A03 /* step2-1.wav */,
-				1FFCAF4122AE95F100258D50 /* walk-2.wav */,
 				1F29DE3822AABC3D003C7225 /* walk1.wav */,
-				1F29DE3622AABA6D003C7225 /* walk.wav */,
 				1FD727C622A952C20085172F /* BackgroundSound.wav */,
 				1FA72A7722AAA42C00339D72 /* BackgroundMusicClass.swift */,
 				1FA72A7922AAA4D200339D72 /* SoundEffectsClass.swift */,
@@ -324,15 +306,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1FFCAF4222AE95F100258D50 /* walk-2.wav in Resources */,
 				1FFCAF4622AE989500258D50 /* breathe.wav in Resources */,
-				1FFCAF4C22AEB1AB00258D50 /* walk4.wav in Resources */,
-				1F6E773022AF5D0400981A03 /* jump5.wav in Resources */,
-				1F6E773222AF5FA100981A03 /* step3-1.wav in Resources */,
-				1FD727CE22A9667A0085172F /* jump.wav in Resources */,
+				1F0278A022AFF407004796B8 /* radio2.wav in Resources */,
 				1FD727CA22A956550085172F /* TrainSound.wav in Resources */,
 				1FD727C722A952C20085172F /* BackgroundSound.wav in Resources */,
-				1F29DE3722AABA6D003C7225 /* walk.wav in Resources */,
 				1F41B63A22AAB50100153C94 /* train.wav in Resources */,
 				1FF4504E229C2434009B7DF7 /* Main.storyboard in Resources */,
 				1FF45045229C2434009B7DF7 /* GameScene.sks in Resources */,
@@ -340,7 +317,6 @@
 				1FF45050229C2435009B7DF7 /* Assets.xcassets in Resources */,
 				1FF45053229C2435009B7DF7 /* LaunchScreen.storyboard in Resources */,
 				1F6E773422AF5FAA00981A03 /* step2-1.wav in Resources */,
-				1FFCAF4422AE97C100258D50 /* walk3.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

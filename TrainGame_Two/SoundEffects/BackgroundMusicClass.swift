@@ -20,7 +20,7 @@ class BackgroundMusicClass {
             audioPlayer = try AVAudioPlayer(contentsOf:aSound as URL)
             audioPlayer!.numberOfLoops = -1
             audioPlayer!.prepareToPlay()
-            audioPlayer!.setVolume(5, fadeDuration: 4)
+            audioPlayer!.setVolume(0.6, fadeDuration: 4)
             audioPlayer!.play()
         } catch {
             print("Cannot play the file")

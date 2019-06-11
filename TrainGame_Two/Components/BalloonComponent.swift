@@ -11,6 +11,8 @@
 import SpriteKit
 import GameplayKit
 
+let arrayEnigmas: [SKTexture] = [SKTexture.init(imageNamed: "balao2"),SKTexture.init(imageNamed: "fala1")]
+
 
 class BalloonComponent: GKComponent {
     
@@ -18,24 +20,26 @@ class BalloonComponent: GKComponent {
     
     init(parentNode: SKNode, balloonNodeName: String) {
         self.balloon = parentNode.childNode(withName: balloonNodeName) as! SKSpriteNode
+        
+        self.balloon.texture = arrayEnigmas[0]
         self.balloon.alpha = 0
         
         super.init()
     }
         
     func isVisible(){
-        
         self.balloon.alpha = 1
-        
     }
-    
     func isNotVisible(){
-        
         self.balloon.alpha = 0
-        
     }
     
     
+    func changeBallon(index: Int) {
+        
+        self.balloon.texture = arrayEnigmas[index]
+        
+    }
     
     
     required init?(coder aDecoder: NSCoder) {
