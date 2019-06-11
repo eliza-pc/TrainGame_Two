@@ -16,6 +16,7 @@ class SpriteComponent: GKComponent {
     var nodePhysic: SKSpriteNode
     var nodeTexture: SKSpriteNode
     init(gameScene: GameScene, nodeName: String, textureNodeName: String) {
+       // print(gameScene.childNode(withName: nodeName) as? SKSpriteNode)
         nodePhysic = (gameScene.childNode(withName: nodeName) as? SKSpriteNode)!
         nodeTexture = nodePhysic.childNode(withName: textureNodeName) as! SKSpriteNode
         super.init()
