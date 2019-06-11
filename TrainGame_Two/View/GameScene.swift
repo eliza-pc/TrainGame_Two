@@ -304,12 +304,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             if (self.entityManager.contactObjects == true){
                 self.entityManager.contactObjects = false
+                let entities = self.entityManager.getEntitys(component: SoundComponent.self)
+                entities[0].component(ofType: SoundComponent.self)?.dontVisible()
+                
                 radioSound.pauseSong()
+                
             }
         } else if let _ = entityB.component(ofType: PlayerComponent.self), let _ = entityA.component(ofType: InfoComponent.self) {
             
             if (self.entityManager.contactObjects == true){
                 self.entityManager.contactObjects = false
+                let entities = self.entityManager.getEntitys(component: SoundComponent.self)
+                entities[0].component(ofType: SoundComponent.self)?.dontVisible()
                 radioSound.pauseSong()
             }
         }
@@ -319,12 +325,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             if (self.entityManager.contactObjects == true){
                 self.entityManager.contactObjects = false
                 radioSound.pauseSong()
+                entityB.component(ofType: SoundComponent.self)?.dontVisible()
             }
         } else if let _ = entityB.component(ofType: PlayerComponent.self), let _ = entityA.component(ofType: SpeakableComponent.self) {
             if (self.entityManager.contactObjects == true)
             {
                 self.entityManager.contactObjects = false
                 radioSound.pauseSong()
+                entityA.component(ofType: SoundComponent.self)?.dontVisible()
             }
         }
         
