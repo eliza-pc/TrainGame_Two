@@ -77,6 +77,24 @@ class SoundEffects {
             }
         }
         
+        if sound == "radio2"{
+            do {
+                
+                audioPlayer = try AVAudioPlayer(contentsOf:aSound as URL)
+                audioPlayer!.numberOfLoops = -1
+                audioPlayer!.prepareToPlay()
+                //audioPlayer!.setVolume(1, fadeDuration: 4)
+                //audioPlayer!.currentTime = 0.35
+                audioPlayer!.play()
+                audioPlayer!.volume = 0.030
+                
+                
+                print("radiosound")
+            } catch {
+                print("Cannot play the file")
+            }
+        }
+        
         
         
     }

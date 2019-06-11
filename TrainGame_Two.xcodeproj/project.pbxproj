@@ -20,6 +20,8 @@
 		1DEA642722AE019D00A03632 /* JumpComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEA642622AE019D00A03632 /* JumpComponent.swift */; };
 		1DEA642922AE01C100A03632 /* InfoComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEA642822AE01C100A03632 /* InfoComponent.swift */; };
 		1DEA642B22AE07F500A03632 /* PauseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEA642A22AE07F500A03632 /* PauseViewController.swift */; };
+		1F02789F22AFF407004796B8 /* radio1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1F02789D22AFF407004796B8 /* radio1.wav */; };
+		1F0278A022AFF407004796B8 /* radio2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1F02789E22AFF407004796B8 /* radio2.wav */; };
 		1F22A1F222A7FC5F00335135 /* BalloonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F22A1F122A7FC5F00335135 /* BalloonComponent.swift */; };
 		1F29DE3722AABA6D003C7225 /* walk.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1F29DE3622AABA6D003C7225 /* walk.wav */; };
 		1F29DE3922AABC3D003C7225 /* walk1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1F29DE3822AABC3D003C7225 /* walk1.wav */; };
@@ -77,6 +79,8 @@
 		1DEA642622AE019D00A03632 /* JumpComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JumpComponent.swift; sourceTree = "<group>"; };
 		1DEA642822AE01C100A03632 /* InfoComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoComponent.swift; sourceTree = "<group>"; };
 		1DEA642A22AE07F500A03632 /* PauseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PauseViewController.swift; sourceTree = "<group>"; };
+		1F02789D22AFF407004796B8 /* radio1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = radio1.wav; sourceTree = "<group>"; };
+		1F02789E22AFF407004796B8 /* radio2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = radio2.wav; sourceTree = "<group>"; };
 		1F22A1F122A7FC5F00335135 /* BalloonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalloonComponent.swift; sourceTree = "<group>"; };
 		1F29DE3622AABA6D003C7225 /* walk.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = walk.wav; sourceTree = "<group>"; };
 		1F29DE3822AABC3D003C7225 /* walk1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = walk1.wav; sourceTree = "<group>"; };
@@ -150,6 +154,8 @@
 				1FD727C922A956540085172F /* TrainSound.wav */,
 				1FFCAF4522AE989500258D50 /* breathe.wav */,
 				1F6E772F22AF5D0400981A03 /* jump5.wav */,
+				1F02789D22AFF407004796B8 /* radio1.wav */,
+				1F02789E22AFF407004796B8 /* radio2.wav */,
 				1FFCAF4B22AEB1AB00258D50 /* walk4.wav */,
 				1F6E773122AF5FA100981A03 /* step3-1.wav */,
 				1FFCAF4322AE97C100258D50 /* walk3.wav */,
@@ -329,11 +335,13 @@
 				1FFCAF4C22AEB1AB00258D50 /* walk4.wav in Resources */,
 				1F6E773022AF5D0400981A03 /* jump5.wav in Resources */,
 				1F6E773222AF5FA100981A03 /* step3-1.wav in Resources */,
+				1F0278A022AFF407004796B8 /* radio2.wav in Resources */,
 				1FD727CE22A9667A0085172F /* jump.wav in Resources */,
 				1FD727CA22A956550085172F /* TrainSound.wav in Resources */,
 				1FD727C722A952C20085172F /* BackgroundSound.wav in Resources */,
 				1F29DE3722AABA6D003C7225 /* walk.wav in Resources */,
 				1F41B63A22AAB50100153C94 /* train.wav in Resources */,
+				1F02789F22AFF407004796B8 /* radio1.wav in Resources */,
 				1FF4504E229C2434009B7DF7 /* Main.storyboard in Resources */,
 				1FF45045229C2434009B7DF7 /* GameScene.sks in Resources */,
 				1F29DE3922AABC3D003C7225 /* walk1.wav in Resources */,
@@ -535,7 +543,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 97WB89LRXA;
+				DEVELOPMENT_TEAM = T9WDNLZLLU;
 				INFOPLIST_FILE = TrainGame_Two/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -553,7 +561,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 97WB89LRXA;
+				DEVELOPMENT_TEAM = T9WDNLZLLU;
 				INFOPLIST_FILE = TrainGame_Two/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

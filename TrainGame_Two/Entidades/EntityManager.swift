@@ -53,7 +53,7 @@ class EntityManager {
             }
             
             if let _ = entity.component(ofType: EnemyComponente.self), let luminosidade: CGFloat = UIScreen.main.brightness {
-                print("luz: \(luminosidade)")
+                //print("luz: \(luminosidade)")
                 guard let autorNode = entity.component(ofType: SpriteComponent.self)?.nodeTexture else { return  }
                 
                 entity.component(ofType: EnemyComponente.self)?.isVisibleWithBrigthess(lum: luminosidade, autor: autorNode)

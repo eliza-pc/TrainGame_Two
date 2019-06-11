@@ -29,8 +29,11 @@ class Control {
     var entityNode: SKNode? = nil
     var swipeActive: Bool = false
     var collectableActive: Bool = false
+    var speakableActive: Bool = false
     var incrementJump: Int = 0
     var pushBox: Bool = false
+    
+    var countPhrases: Int = 0
     
     var feedbackGenerator: UINotificationFeedbackGenerator? = UINotificationFeedbackGenerator()
     
@@ -61,8 +64,8 @@ class Control {
         let longPressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(handleRecognize))
         longPressRecognizer.minimumPressDuration = 1
         longPressRecognizer.numberOfTouchesRequired = 1
-//        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleRecognize))
-//        view.addGestureRecognizer(tapGestureRecognizer)
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleRecognize))
+        view.addGestureRecognizer(tapGestureRecognizer)
         view.addGestureRecognizer(longPressRecognizer)
     }
     
@@ -90,15 +93,17 @@ class Control {
             
         }
         
-//        if gesture is UITapGestureRecognizer {
-//            if collectableActive == true {
-//                if let removeObject = self.gameScene.entityManager.getObjectInContact() {
-//                    self.gameScene.entityManager.remove(removeObject)
-//                    self.collectableActive = false
-//                }
-//            }
-////            else if pushBox == true { }
-//        }
+        if gesture is UITapGestureRecognizer {
+            if speakableActive == true {
+                
+                print("Fazer dinamica, qtd de tap: ", countPhrases)
+                
+                countPhrases += 1
+                
+                
+            }
+//            else if pushBox == true { }
+        }
         
         if gesture is UILongPressGestureRecognizer {
             if collectableActive == true {

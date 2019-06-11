@@ -160,6 +160,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             self.entityManager.contactObjects = true
             entityB.component(ofType: BalloonComponent.self)!.isVisible()
             self.entityManager.setObjectInContact(entity: entityB)
+            radioSound.playSoundEffect()
+            self.control!.speakableActive = true
             
         } else if let _ = entityB.component(ofType: PlayerComponent.self), let _ = entityA.component(ofType: SpeakableComponent.self) {
            
@@ -167,6 +169,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             self.entityManager.contactObjects = true
             entityA.component(ofType: BalloonComponent.self)!.isVisible()
             self.entityManager.setObjectInContact(entity: entityA)
+            radioSound.playSoundEffect()
+            self.control!.speakableActive = true
             
         }
         
@@ -293,11 +297,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             if (self.entityManager.contactObjects == true)
             {
                 self.entityManager.contactObjects = false
+                radioSound.pauseSong()
             }
         } else if let _ = entityB.component(ofType: PlayerComponent.self), let _ = entityA.component(ofType: SpeakableComponent.self) {
             if (self.entityManager.contactObjects == true)
             {
                 self.entityManager.contactObjects = false
+                radioSound.pauseSong()
             }
         }
         
