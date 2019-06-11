@@ -108,7 +108,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
 
 //        addEntities(arrayEntities: [personagemPrincipal, hotArea1, petala1, boxBig1, soulEnemy1, infoArea1, jumpArea1,jumpArea2,jumpArea3,soundBox])
-        addEntities(arrayEntities: [personagemPrincipal, hotArea1, petala1, boxBig1, soulEnemy1, jumpArea1,jumpArea2,jumpArea3,soundBox])
+        addEntities(arrayEntities: [personagemPrincipal, hotArea1, petala1, boxBig1, soulEnemy1, jumpArea1,jumpArea2,jumpArea3,soundBox,infoArea])
         view.isMultipleTouchEnabled = false
     }
     
@@ -157,21 +157,21 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         //Entra em contato com a caixinha de som
         if let _ = entityA.component(ofType: PlayerComponent.self), let _ = entityB.component(ofType: SpeakableComponent.self){
-            
+
             self.entityManager.contactObjects = true
             entityB.component(ofType: BalloonComponent.self)!.isVisible()
             self.entityManager.setObjectInContact(entity: entityB)
             radioSound.playSoundEffect()
             self.control!.speakableActive = true
-            
+
         } else if let _ = entityB.component(ofType: PlayerComponent.self), let _ = entityA.component(ofType: SpeakableComponent.self) {
-           
+
             self.entityManager.contactObjects = true
             entityA.component(ofType: BalloonComponent.self)!.isVisible()
             self.entityManager.setObjectInContact(entity: entityA)
             radioSound.playSoundEffect()
             self.control!.speakableActive = true
-            
+
         }
         
         
@@ -199,14 +199,25 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             print("inimigo e player")
         }
         
+        //O player entra em contato com essa area e o radinho ativa
         if let _ = entityA.component(ofType: PlayerComponent.self), let _ = entityB.component(ofType: InfoComponent.self) {
             
-            // FAZ ALGO INFO E PLAYER
-//            print("information + player 1")
+            let entities = self.entityManager.getEntitys(component: SpeakableComponent.self)
+            self.entityManager.contactObjects = true
+            entities[0].component(ofType: BalloonComponent.self)!.isVisible()
+            self.entityManager.setObjectInContact(entity: entityB)
+            radioSound.playSoundEffect()
+            self.control!.speakableActive = true
+            
         } else if let _ = entityB.component(ofType: PlayerComponent.self), let _ = entityA.component(ofType: InfoComponent.self) {
             
-            // FAZ ALGO INFO E PLAYER
-//            print("information + player 2")
+            let entities = self.entityManager.getEntitys(component: SpeakableComponent.self)
+            self.entityManager.contactObjects = true
+            entities[0].component(ofType: BalloonComponent.self)!.isVisible()
+            self.entityManager.setObjectInContact(entity: entityA)
+            radioSound.playSoundEffect()
+            self.control!.speakableActive = true
+            
         }
         
         if let _ = entityA.component(ofType: PlayerComponent.self), let _ = entityB.component(ofType: JumpComponent.self) {
@@ -226,22 +237,19 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 
     }
     
+    //#MARK: Função didEnd
     func didEnd(_ contact: SKPhysicsContact) {
         
         //Verifica contato entre player e a petala
         guard let nodeA = contact.bodyA.node, let nodeB = contact.bodyB.node else {
-            
             return
         }
-        
-        
         guard let entityA = nodeA.entity, let entityB = nodeB.entity else {
-            
             return
         }
         
-
-//        print("DesContato: \(entityA) com \(entityB)")
+        
+        //Parar o contato com a petala
         if let _ = entityA.component(ofType: PlayerComponent.self), let _ = entityB.component(ofType: CollectableComponent.self) {
             if (self.entityManager.contactObjects == true)
             {
@@ -256,46 +264,53 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             }
         }
         
-        //Entra na Area do Inimigo
+        
+        //Sair da area de Perigo
         if let _ = entityA.component(ofType: PlayerComponent.self), let _ = entityB.component(ofType: HotRegionComponent.self) {
-            
             let entities = self.entityManager.getEntitys(component: EnemyComponente.self)
-            
             let entityEnemyNode = entities[0].component(ofType: SpriteComponent.self)?.nodePhysic
             
             entities[0].component(ofType: EnemyComponente.self)?.state = StateEnemy.vigilancia
-            
             entities[0].component(ofType: EnemyComponente.self)?.vigiar(autor: entityEnemyNode!)
             
         } else if let _ = entityB.component(ofType: PlayerComponent.self), let _ = entityA.component(ofType: HotRegionComponent.self) {
-            
-            
             let entities = self.entityManager.getEntitys(component: EnemyComponente.self)
-            
             let entityEnemyNode = entities[0].component(ofType: SpriteComponent.self)?.nodePhysic
-            
+           
             entities[0].component(ofType: EnemyComponente.self)?.state = StateEnemy.vigilancia
-            
             entities[0].component(ofType: EnemyComponente.self)?.vigiar(autor: entityEnemyNode!)
-            
         }
+        
         
         if let _ = entityA.component(ofType: PlayerComponent.self), let _ = entityB.component(ofType: JumpComponent.self) {
-            
-            // decremento do jump do player
-//            print("desjump + player")
+        
             self.control?.incrementJump = 0
+            
         } else if let _ = entityB.component(ofType: PlayerComponent.self), let _ = entityA.component(ofType: JumpComponent.self) {
             
-            // decremento do jump do player
-//            print("desjump + player")
             self.control?.incrementJump = 0
+            
         }
         
-       
+        
+        //Parar o contato da InfoArea com o Player
+        if let _ = entityA.component(ofType: PlayerComponent.self), let _ = entityB.component(ofType: InfoComponent.self) {
+            
+            if (self.entityManager.contactObjects == true){
+                self.entityManager.contactObjects = false
+                radioSound.pauseSong()
+            }
+        } else if let _ = entityB.component(ofType: PlayerComponent.self), let _ = entityA.component(ofType: InfoComponent.self) {
+            
+            if (self.entityManager.contactObjects == true){
+                self.entityManager.contactObjects = false
+                radioSound.pauseSong()
+            }
+        }
+        
+        
         if let _ = entityA.component(ofType: PlayerComponent.self), let _ = entityB.component(ofType: SpeakableComponent.self) {
-            if (self.entityManager.contactObjects == true)
-            {
+            if (self.entityManager.contactObjects == true){
                 self.entityManager.contactObjects = false
                 radioSound.pauseSong()
             }
@@ -306,7 +321,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 radioSound.pauseSong()
             }
         }
-        
         
         
     }
