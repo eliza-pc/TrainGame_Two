@@ -20,7 +20,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     private var control: Control?
     var moveJoystickHiddenArea: TLAnalogJoystickHiddenArea? = nil
     var gameOver: Bool = false
-    let speedIncremento: CGFloat = 0.3
+    let speedIncremento: CGFloat = 0.6
     
     let moveJoystick = 🕹(withDiameter: 100)
     //let camera: SKCameraNode?
@@ -110,7 +110,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
 
 //        addEntities(arrayEntities: [personagemPrincipal, hotArea1, petala1, boxBig1, soulEnemy1, infoArea1, jumpArea1,jumpArea2,jumpArea3,soundBox])
-        addEntities(arrayEntities: [personagemPrincipal, hotArea1, petala1, boxBig1, soulEnemy1, jumpArea1,jumpArea2,jumpArea3,soundBox])
+        addEntities(arrayEntities: [personagemPrincipal, hotArea1, petala1, boxBig1,boxBig2, soulEnemy1,soulEnemy2,infoArea,jumpArea1,jumpArea2,jumpArea1,soundBox])
         view.isMultipleTouchEnabled = false
     }
     
