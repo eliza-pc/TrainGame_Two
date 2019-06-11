@@ -14,7 +14,7 @@ import GameplayKit
 
 class SoulEnemy: GKEntity{
     
-    init(nodeName: String, gameScene: GameScene, minX: CGFloat, maxX: CGFloat){
+    init(nodeName: String, gameScene: GameScene){
         super.init()
         
         let spriteComponent = SpriteComponent(gameScene: gameScene, nodeName: nodeName, textureNodeName: "SoulTextureNode")
@@ -26,7 +26,7 @@ class SoulEnemy: GKEntity{
         spriteComponent.nodePhysic.entity = self
         
         
-        let enemyComponent = EnemyComponente(minX: minX, maxX: maxX, nodePhysic: spriteComponent.nodePhysic, initialPoint: CGPoint(x: spriteComponent.nodePhysic.position.x, y: spriteComponent.nodePhysic.position.y), gameScene: gameScene)
+        let enemyComponent = EnemyComponente(minX: 1200, maxX: 1520, nodePhysic: spriteComponent.nodePhysic, initialPoint: CGPoint(x: spriteComponent.nodePhysic.position.x, y: spriteComponent.nodePhysic.position.y), gameScene: gameScene)
         
         addComponent(spriteComponent)
         addComponent(enemyComponent)
