@@ -49,6 +49,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let boxBig1 = BoxObstacle(nodeName: "PhysicBoxG-1", gameScene: self)
         let soulEnemy1 = SoulEnemy(nodeName: "SoulPhysicNode-1", gameScene: self)
         let hotArea1 = DangerArea(nodeName: "hotArea-1" ,gameScene: self)
+        let infoArea = InfoArea(nodeName: "infoArea-1", gameScene: self)
         let jumpArea1 = JumpArea(nodeName: "jumpArea-1", gameScene: self)
         let jumpArea2 = JumpArea(nodeName: "jumpArea-2", gameScene: self)
         let jumpArea3 = JumpArea(nodeName: "jumpArea-3", gameScene: self)
@@ -154,9 +155,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
         }
         
+        //Entra em contato com a caixinha de som
         if let _ = entityA.component(ofType: PlayerComponent.self), let _ = entityB.component(ofType: SpeakableComponent.self){
             
-//            print("Radinho1")
             self.entityManager.contactObjects = true
             entityB.component(ofType: BalloonComponent.self)!.isVisible()
             self.entityManager.setObjectInContact(entity: entityB)
@@ -165,7 +166,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
         } else if let _ = entityB.component(ofType: PlayerComponent.self), let _ = entityA.component(ofType: SpeakableComponent.self) {
            
-//             print("Radinho2")
             self.entityManager.contactObjects = true
             entityA.component(ofType: BalloonComponent.self)!.isVisible()
             self.entityManager.setObjectInContact(entity: entityA)
@@ -178,13 +178,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if let _ = entityA.component(ofType: PlayerComponent.self), let _ = entityB.component(ofType: HotRegionComponent.self) {
             
             let entities = self.entityManager.getEntitys(component: EnemyComponente.self)
-            
             entities[0].component(ofType: EnemyComponente.self)?.state = .ataque
             
         } else if let _ = entityB.component(ofType: PlayerComponent.self), let _ = entityA.component(ofType: HotRegionComponent.self) {
             
             let entities = self.entityManager.getEntitys(component: EnemyComponente.self)
-            
             entities[0].component(ofType: EnemyComponente.self)?.state = .ataque
             
         }
@@ -258,6 +256,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             }
         }
         
+        //Entra na Area do Inimigo
         if let _ = entityA.component(ofType: PlayerComponent.self), let _ = entityB.component(ofType: HotRegionComponent.self) {
             
             let entities = self.entityManager.getEntitys(component: EnemyComponente.self)
@@ -293,6 +292,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             self.control?.incrementJump = 0
         }
         
+       
         if let _ = entityA.component(ofType: PlayerComponent.self), let _ = entityB.component(ofType: SpeakableComponent.self) {
             if (self.entityManager.contactObjects == true)
             {
