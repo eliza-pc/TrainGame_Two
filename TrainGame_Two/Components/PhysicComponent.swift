@@ -17,6 +17,7 @@ class PhysicComponent: GKComponent {
     var nodePhysic: SKSpriteNode
     
     init(gameScene: GameScene, nodeName: String) {
+        print(gameScene.childNode(withName: nodeName) as? SKSpriteNode)
         nodePhysic = (gameScene.childNode(withName: nodeName) as? SKSpriteNode)!
         super.init()
     }
