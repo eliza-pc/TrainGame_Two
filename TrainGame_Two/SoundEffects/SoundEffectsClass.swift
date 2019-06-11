@@ -55,7 +55,6 @@ class SoundEffects {
                // audioPlayer!.setVolume(5, fadeDuration: 100)
                 //audioPlayer!.currentTime = 0.35
                 audioPlayer!.play()
-                
                 audioPlayer!.volume = 0.3
             }  catch {
                 print("Cannot play the file")
