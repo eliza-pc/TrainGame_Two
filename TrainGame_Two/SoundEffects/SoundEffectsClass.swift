@@ -86,7 +86,7 @@ class SoundEffects {
                 //audioPlayer!.setVolume(1, fadeDuration: 4)
                 //audioPlayer!.currentTime = 0.35
                 audioPlayer!.play()
-                audioPlayer!.volume = 0.006
+                audioPlayer!.volume = 0.012
                 
                 
                 print("radiosound")
