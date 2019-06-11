@@ -27,13 +27,13 @@ class SoundEffects {
         
         let aSound = NSURL(fileURLWithPath: Bundle.main.path(forResource: sound, ofType: "wav")!)
         
-        if sound == "jump"{
+        if sound == "step2-1"{
             
             do {
                 audioPlayer = try AVAudioPlayer(contentsOf:aSound as URL)
                 audioPlayer!.numberOfLoops = 0
                 audioPlayer!.prepareToPlay()
-                audioPlayer!.setVolume(300, fadeDuration: 4)
+                audioPlayer!.setVolume(60, fadeDuration: 4)
                 audioPlayer!.currentTime = 0.35
                 audioPlayer!.play()
                 
@@ -44,13 +44,13 @@ class SoundEffects {
             
         }
         
-        if sound == "walk4"{
+        if sound == "walk1"{
            
             do {
                 audioPlayer = try AVAudioPlayer(contentsOf:aSound as URL)
                 audioPlayer!.numberOfLoops = -1
                 audioPlayer!.prepareToPlay()
-                audioPlayer!.setVolume(10, fadeDuration: 4)
+                audioPlayer!.setVolume(100, fadeDuration: 100)
                 //audioPlayer!.currentTime = 0.35
                 audioPlayer!.play()
                 
