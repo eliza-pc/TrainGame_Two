@@ -33,11 +33,13 @@ class SoundEffects {
                 audioPlayer = try AVAudioPlayer(contentsOf:aSound as URL)
                 audioPlayer!.numberOfLoops = 0
                 audioPlayer!.prepareToPlay()
-                audioPlayer!.setVolume(60, fadeDuration: 4)
+               // audioPlayer!.setVolume(0.5, fadeDuration: 400)
                 audioPlayer!.currentTime = 0.35
                 audioPlayer!.play()
+                audioPlayer!.volume = 0.1
                 
-                print("JumpSound")
+                
+                print("Volume: ",audioPlayer!.volume )
             } catch {
                 print("Cannot play the file")
             }
@@ -50,10 +52,11 @@ class SoundEffects {
                 audioPlayer = try AVAudioPlayer(contentsOf:aSound as URL)
                 audioPlayer!.numberOfLoops = -1
                 audioPlayer!.prepareToPlay()
-                audioPlayer!.setVolume(100, fadeDuration: 100)
+               // audioPlayer!.setVolume(5, fadeDuration: 100)
                 //audioPlayer!.currentTime = 0.35
                 audioPlayer!.play()
                 
+                audioPlayer!.volume = 0.3
                 print("WalkSound")
             } catch {
                 print("Cannot play the file")
