@@ -344,24 +344,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func controllerScenesGame (keyScene: Int) {
         switch keyScene {
         case 1:
-            if let scene = GKScene(fileNamed: "GameScene") {
-                if let sceneNode = scene.rootNode as! GameScene? {
-                    // Copy gameplay related content over to the scene
-                    sceneNode.graphs = scene.graphs
-                    // Set the scale mode to scale to fit the window
-                    sceneNode.scaleMode = .aspectFill
-                    // Present the scene
-                    if let view = self.view {
-                        view.presentScene(sceneNode)
-                        
-                        view.ignoresSiblingOrder = true
-                        view.showsPhysics = false
-                        view.showsFPS = true
-                        view.showsNodeCount = true
-                    }
-                    
-                }
-            }
+            NotificationCenter.default.post(name: GameOver, object: nil)
         default:
            print("key don't identify")
         }

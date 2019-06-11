@@ -14,10 +14,12 @@ import GameplayKit
 
 //this variable will be use by observe
 let pausedExit = Notification.Name(rawValue: "pausedExit")
+let GameOver = Notification.Name(rawValue: "GameOver")
 
 class GameViewController: UIViewController {
     
     var gameScene: GameScene? = nil
+    let testerOrDebbuger: Bool = true
     
     @IBOutlet weak var roseProgress: UIImageView!
     
@@ -25,7 +27,24 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         shake()
-        
+        createScene()
+        createObserve()
+    }
+    
+    func createObserve(){
+        NotificationCenter.default.addObserver(self, selector: #selector(self.exitPaused), name: pausedExit, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.GameOverReturn), name: GameOver, object: nil)
+    }
+    
+    @objc func exitPaused(){
+        resumeGame()
+    }
+    
+    @objc func GameOverReturn(){
+        createScene()
+    }
+    
+    func createScene(){
         // Load 'GameScene.sks' as a GKScene. This provides gameplay related content
         // including entities and graphs.
         if let scene = GKScene(fileNamed: "GameScene") {
@@ -43,26 +62,15 @@ class GameViewController: UIViewController {
                 if let view = self.view as! SKView? {
                     view.presentScene(sceneNode)
                     
-                    view.ignoresSiblingOrder = true
-                    view.showsPhysics = true
-                    view.showsFPS = true
-                    view.showsNodeCount = true
+                    view.ignoresSiblingOrder = testerOrDebbuger
+                    view.showsPhysics = testerOrDebbuger
+                    view.showsFPS = testerOrDebbuger
+                    view.showsNodeCount = testerOrDebbuger
                 }
-                
-               createObserve()
                 
             }
         }
     }
-    
-    func createObserve(){
-        NotificationCenter.default.addObserver(self, selector: #selector(self.exitPaused), name: pausedExit, object: nil)
-    }
-    
-    @objc func exitPaused(){
-        resumeGame()
-    }
-    
     
     func shake() {
         
