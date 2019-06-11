@@ -11,3 +11,4 @@ import Foundation
 
 let jumpSound: SoundEffects = SoundEffects(soundName: "step2-1")
 let walkSound: SoundEffects = SoundEffects(soundName: "walk1")
+let radioSound: SoundEffects = SoundEffects(soundName: "radio2")
