@@ -20,7 +20,7 @@ class BackgroundTrainSound {
             audioPlayer = try AVAudioPlayer(contentsOf:aSound as URL)
             audioPlayer!.numberOfLoops = 0
             audioPlayer!.prepareToPlay()
-            audioPlayer!.setVolume(1.0, fadeDuration: 4)
+            audioPlayer!.setVolume(0.3, fadeDuration: 4)
             audioPlayer!.play()
         } catch {
             print("Cannot play the file")
