@@ -20,8 +20,6 @@ class Petala: GKEntity{
       
         let spriteComponent = SpriteComponent(gameScene: gameScene, nodeName: nodeName, textureNodeName: "texturePetal")
         
-       
-    
 //        // Quem sou eu?
 //        spriteComponent.nodePhysic.physicsBody?.categoryBitMask    = 0b0010
 //        // De quem eu recebo colisões?

@@ -15,11 +15,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     //#MARK: Variables
     var graphs = [String : GKGraph]()
     var entityManager: EntityManager!
-    
+    var incremento: CGFloat = 0
     private var lastUpdateTime : TimeInterval = 0
     private var control: Control?
     var moveJoystickHiddenArea: TLAnalogJoystickHiddenArea? = nil
     var gameOver: Bool = false
+    let speedIncremento: CGFloat = 0.6
     
     let moveJoystick = 🕹(withDiameter: 100)
     //let camera: SKCameraNode?
@@ -47,12 +48,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let personagemPrincipal = Player(nodeName: "player", gameScene: self)
         let petala1 = Petala(nodeName: "nodePetal-1", gameScene: self)
         let boxBig1 = BoxObstacle(nodeName: "PhysicBoxG-1", gameScene: self)
-        let soulEnemy1 = SoulEnemy(nodeName: "SoulPhysicNode-1", gameScene: self, minX: 1200, maxX: 1520)
+        let boxBig2 = BoxObstacle(nodeName: "PhysicsBoxG-2", gameScene: self)
+        let soulEnemy1 = SoulEnemy(nodeName: "SoulPhysicNode-1", gameScene: self,minX: 1200, maxX: 1520)
+        let soulEnemy2 = SoulEnemy(nodeName: "SoulPhysicNode-2", gameScene: self,minX: 640, maxX: 720)
         let hotArea1 = DangerArea(nodeName: "hotArea-1" ,gameScene: self)
         let infoArea = InfoArea(nodeName: "infoArea-1", gameScene: self)
         let jumpArea1 = JumpArea(nodeName: "jumpArea-1", gameScene: self)
         let jumpArea2 = JumpArea(nodeName: "jumpArea-2", gameScene: self)
-        let jumpArea3 = JumpArea(nodeName: "jumpArea-3", gameScene: self)
 //        let infoArea1 = InfoArea(nodeName: "infoArea-1", gameScene: self)
         let soundBox = SoundBox(nodeName: "NodeSoundBox-1", gameScene: self)
         
@@ -68,12 +70,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 
               
                 let pVelocity = joystick.velocity;
-                let speed = CGFloat(0.05)
+                let speed = CGFloat(0.09)
 
                 if self.control?.directionCommand == UserControl.jump {
                     
                     // MARK: Move for Physics
-                    spriteComponent.nodePhysic.position = CGPoint(x: spriteComponent.nodePhysic.position.x + (pVelocity.x * speed), y: spriteComponent.nodePhysic.position.y)
+                    spriteComponent.nodePhysic.position = CGPoint(x: spriteComponent.nodePhysic.position.x + (pVelocity.x * speed) + self.incremento, y: spriteComponent.nodePhysic.position.y)
 
                     
                 } else {
@@ -108,7 +110,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
 
 //        addEntities(arrayEntities: [personagemPrincipal, hotArea1, petala1, boxBig1, soulEnemy1, infoArea1, jumpArea1,jumpArea2,jumpArea3,soundBox])
-        addEntities(arrayEntities: [personagemPrincipal, hotArea1, petala1, boxBig1, soulEnemy1, jumpArea1,jumpArea2,jumpArea3,soundBox,infoArea])
+        addEntities(arrayEntities: [personagemPrincipal, hotArea1, petala1, boxBig1,boxBig2, soulEnemy1,soulEnemy2,infoArea,jumpArea1,jumpArea2,jumpArea1,soundBox])
         view.isMultipleTouchEnabled = false
     }
     
@@ -207,6 +209,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             entities[0].component(ofType: BalloonComponent.self)!.isVisible()
             self.entityManager.setObjectInContact(entity: entityB)
             radioSound.playSoundEffect()
+            entities[0].component(ofType: SoundComponent.self)?.soundVisible()
             self.control!.speakableActive = true
             
         } else if let _ = entityB.component(ofType: PlayerComponent.self), let _ = entityA.component(ofType: InfoComponent.self) {
@@ -216,6 +219,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             entities[0].component(ofType: BalloonComponent.self)!.isVisible()
             self.entityManager.setObjectInContact(entity: entityA)
             radioSound.playSoundEffect()
+            entities[0].component(ofType: SoundComponent.self)?.soundVisible()
             self.control!.speakableActive = true
             
         }
@@ -225,13 +229,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             // incremento do jump do player
 //            print("jump + player")
             self.control?.directionCommand =  UserControl.idle
-            self.control?.incrementJump = 20
+            self.control?.incrementJump = 50
+            self.incremento = speedIncremento
         } else if let _ = entityB.component(ofType: PlayerComponent.self), let _ = entityA.component(ofType: JumpComponent.self) {
             
             // incremento do jump do player
 //            print("jump + player")
             self.control?.directionCommand =  UserControl.idle
-            self.control?.incrementJump = 20
+            self.control?.incrementJump = 50
+            self.incremento = speedIncremento
         }
         
 

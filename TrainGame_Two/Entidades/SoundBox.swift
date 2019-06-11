@@ -25,7 +25,9 @@ class SoundBox: GKEntity{
         
         let balloonComponent = BalloonComponent(parentNode: spriteComponent.nodePhysic, balloonNodeName: "textureBalao")
         
-      
+        let soundAnimationComponent = SoundComponent(parentNode: spriteComponent.nodePhysic, nodeName: "soundEffect")
+        
+        addComponent(soundAnimationComponent)
         addComponent(balloonComponent)
         addComponent(spriteComponent)
         addComponent(SpeakableComponent())
