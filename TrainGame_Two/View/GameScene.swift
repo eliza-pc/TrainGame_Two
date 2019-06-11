@@ -48,14 +48,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let personagemPrincipal = Player(nodeName: "player", gameScene: self)
         let petala1 = Petala(nodeName: "nodePetal-1", gameScene: self)
         let boxBig1 = BoxObstacle(nodeName: "PhysicBoxG-1", gameScene: self)
-        let boxBig2 = BoxObstacle(nodeName: "PhysicsBoxG-2", gameScene: self)
+//        let boxBig2 = BoxObstacle(nodeName: "PhysicsBoxG-2", gameScene: self)
         let soulEnemy1 = SoulEnemy(nodeName: "SoulPhysicNode-1", gameScene: self,minX: 1200, maxX: 1520)
-        let soulEnemy2 = SoulEnemy(nodeName: "SoulPhysicNode-2", gameScene: self,minX: 640, maxX: 720)
+//        let soulEnemy2 = SoulEnemy(nodeName: "SoulPhysicNode-2", gameScene: self,minX: 640, maxX: 720)
         let hotArea1 = DangerArea(nodeName: "hotArea-1" ,gameScene: self)
-        let infoArea = InfoArea(nodeName: "infoArea-1", gameScene: self)
+//        let infoArea = InfoArea(nodeName: "infoArea-1", gameScene: self)
         let jumpArea1 = JumpArea(nodeName: "jumpArea-1", gameScene: self)
-        let jumpArea2 = JumpArea(nodeName: "jumpArea-2", gameScene: self)
-//        let infoArea1 = InfoArea(nodeName: "infoArea-1", gameScene: self)
+//        let jumpArea2 = JumpArea(nodeName: "jumpArea-2", gameScene: self)
+        let infoArea1 = InfoArea(nodeName: "infoArea-1", gameScene: self)
         let soundBox = SoundBox(nodeName: "NodeSoundBox-1", gameScene: self)
         
         if personagemPrincipal.component(ofType: PlayerComponent.self) != nil {
@@ -109,8 +109,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         
 
-//        addEntities(arrayEntities: [personagemPrincipal, hotArea1, petala1, boxBig1, soulEnemy1, infoArea1, jumpArea1,jumpArea2,jumpArea3,soundBox])
-        addEntities(arrayEntities: [personagemPrincipal, hotArea1, petala1, boxBig1,boxBig2, soulEnemy1,soulEnemy2,infoArea,jumpArea1,jumpArea2,jumpArea1,soundBox])
+        addEntities(arrayEntities: [personagemPrincipal, hotArea1, petala1, boxBig1, soulEnemy1, infoArea1, jumpArea1,soundBox])
+//        addEntities(arrayEntities: [personagemPrincipal, hotArea1, petala1, boxBig1,boxBig2, soulEnemy1,soulEnemy2,infoArea,jumpArea1,jumpArea2,jumpArea1,soundBox])
         view.isMultipleTouchEnabled = false
     }
     
@@ -164,6 +164,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             entityB.component(ofType: BalloonComponent.self)!.isVisible()
             self.entityManager.setObjectInContact(entity: entityB)
             radioSound.playSoundEffect()
+            entityB.component(ofType: SoundComponent.self)?.soundVisible()
             self.control!.speakableActive = true
 
         } else if let _ = entityB.component(ofType: PlayerComponent.self), let _ = entityA.component(ofType: SpeakableComponent.self) {
@@ -172,8 +173,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             entityA.component(ofType: BalloonComponent.self)!.isVisible()
             self.entityManager.setObjectInContact(entity: entityA)
             radioSound.playSoundEffect()
+            entityA.component(ofType: SoundComponent.self)?.soundVisible()
             self.control!.speakableActive = true
-
+            
         }
         
         
@@ -210,7 +212,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             self.entityManager.setObjectInContact(entity: entityB)
             radioSound.playSoundEffect()
             entities[0].component(ofType: SoundComponent.self)?.soundVisible()
-            self.control!.speakableActive = true
+//            self.control!.speakableActive = true
             
         } else if let _ = entityB.component(ofType: PlayerComponent.self), let _ = entityA.component(ofType: InfoComponent.self) {
             
@@ -220,7 +222,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             self.entityManager.setObjectInContact(entity: entityA)
             radioSound.playSoundEffect()
             entities[0].component(ofType: SoundComponent.self)?.soundVisible()
-            self.control!.speakableActive = true
+//            self.control!.speakableActive = true
             
         }
         

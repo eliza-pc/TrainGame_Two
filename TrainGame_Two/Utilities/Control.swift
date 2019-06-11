@@ -100,7 +100,7 @@ class Control {
                 countPhrases += 1
                 
                 if countPhrases < arrayEnigmas.count {
-                    
+                   
                     let entity = self.gameScene.entityManager.getObjectInContact()
                     entity?.component(ofType: BalloonComponent.self)?.changeBallon(index: countPhrases)
                     
