@@ -19,13 +19,14 @@ let GameOver = Notification.Name(rawValue: "GameOver")
 class GameViewController: UIViewController {
     
     var gameScene: GameScene? = nil
-    let testerOrDebbuger: Bool = true
+    let testerOrDebbuger: Bool = false
     
     @IBOutlet weak var roseProgress: UIImageView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        UIScreen.main.brightness = 0.4
         shake()
         createScene()
         createObserve()

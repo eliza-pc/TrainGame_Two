@@ -119,7 +119,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
      
     func didBegin(_ contact: SKPhysicsContact) {
-        print("Houve Contato😎")
+//        print("Houve Contato😎")
         
         control?.swipeActive =  false
         
@@ -136,7 +136,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
         }
         
-        print("Contato: \(entityA) com \(entityB)")
+//        print("Contato: \(entityA) com \(entityB)")
         
         if let _ = entityA.component(ofType: PlayerComponent.self), let _ = entityB.component(ofType: CollectableComponent.self) {
             
@@ -156,14 +156,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         if let _ = entityA.component(ofType: PlayerComponent.self), let _ = entityB.component(ofType: SpeakableComponent.self){
             
-            print("Radinho1")
+//            print("Radinho1")
             self.entityManager.contactObjects = true
             entityB.component(ofType: BalloonComponent.self)!.isVisible()
             self.entityManager.setObjectInContact(entity: entityB)
             
         } else if let _ = entityB.component(ofType: PlayerComponent.self), let _ = entityA.component(ofType: SpeakableComponent.self) {
            
-             print("Radinho2")
+//             print("Radinho2")
             self.entityManager.contactObjects = true
             entityA.component(ofType: BalloonComponent.self)!.isVisible()
             self.entityManager.setObjectInContact(entity: entityA)
@@ -188,35 +188,35 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if let _ = entityA.component(ofType: PlayerComponent.self), let _ = entityB.component(ofType: EnemyComponente.self) {
             
             // FAZ ALGO INIMIGO E PLAYER
-            print("inimigo e pppplayer")
+            print("inimigo e player")
             self.gameOver = true
         } else if let _ = entityB.component(ofType: PlayerComponent.self), let _ = entityA.component(ofType: EnemyComponente.self) {
             
             // FAZ ALGO INIMIGO E PLAYER
             self.gameOver = true
-            print("inimigo e pplayer")
+            print("inimigo e player")
         }
         
         if let _ = entityA.component(ofType: PlayerComponent.self), let _ = entityB.component(ofType: InfoComponent.self) {
             
             // FAZ ALGO INFO E PLAYER
-            print("information + player 1")
+//            print("information + player 1")
         } else if let _ = entityB.component(ofType: PlayerComponent.self), let _ = entityA.component(ofType: InfoComponent.self) {
             
             // FAZ ALGO INFO E PLAYER
-            print("information + player 2")
+//            print("information + player 2")
         }
         
         if let _ = entityA.component(ofType: PlayerComponent.self), let _ = entityB.component(ofType: JumpComponent.self) {
             
             // incremento do jump do player
-            print("jump + pppplayer")
+//            print("jump + player")
             self.control?.directionCommand =  UserControl.idle
             self.control?.incrementJump = 20
         } else if let _ = entityB.component(ofType: PlayerComponent.self), let _ = entityA.component(ofType: JumpComponent.self) {
             
             // incremento do jump do player
-            print("jump + pplayer")
+//            print("jump + player")
             self.control?.directionCommand =  UserControl.idle
             self.control?.incrementJump = 20
         }
@@ -238,9 +238,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             return
         }
         
-//        _ = SKAction.repeatForever(SKAction.shake(initialPosition: camera!.position, duration: 0.8, amplitudeX: 16, amplitudeY: 16))
 
-        print("DesContato: \(entityA) com \(entityB)")
+//        print("DesContato: \(entityA) com \(entityB)")
         if let _ = entityA.component(ofType: PlayerComponent.self), let _ = entityB.component(ofType: CollectableComponent.self) {
             if (self.entityManager.contactObjects == true)
             {
@@ -281,12 +280,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if let _ = entityA.component(ofType: PlayerComponent.self), let _ = entityB.component(ofType: JumpComponent.self) {
             
             // decremento do jump do player
-            print("desjump + pppplayer")
+//            print("desjump + player")
             self.control?.incrementJump = 0
         } else if let _ = entityB.component(ofType: PlayerComponent.self), let _ = entityA.component(ofType: JumpComponent.self) {
             
             // decremento do jump do player
-            print("desjump + pplayer")
+//            print("desjump + player")
             self.control?.incrementJump = 0
         }
         
@@ -335,7 +334,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.lastUpdateTime = currentTime
         
         if gameOver == true {
-            print("Game Over!")
+//            print("Game Over!")
             controllerScenesGame(keyScene: 1)
         }
     }

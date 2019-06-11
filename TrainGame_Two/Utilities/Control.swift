@@ -153,7 +153,6 @@ class Control {
         let entitys = gameScene.entityManager.getEntitys(component: PlayerComponent.self)
         let entity = entitys[0]
         guard let state = entity.component(ofType: StateMachineComponent.self) else{
-            print("idlo")
             return
         }
         state.stateMachine.enter(IdleState.self)
@@ -162,7 +161,6 @@ class Control {
         let entitys = gameScene.entityManager.getEntitys(component: PlayerComponent.self)
         let entity = entitys[0]
         guard let state = entity.component(ofType: StateMachineComponent.self) else{
-            print("walko")
             return
         }
         state.stateMachine.enter(WalkState.self)
@@ -171,7 +169,6 @@ class Control {
         let entitys = gameScene.entityManager.getEntitys(component: PlayerComponent.self)
         let entity = entitys[0]
         guard let state = entity.component(ofType: StateMachineComponent.self) else{
-            print("jumpo")
             return
         }
         state.stateMachine.enter(JumpState.self)

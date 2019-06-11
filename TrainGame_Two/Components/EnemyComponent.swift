@@ -44,6 +44,15 @@ class EnemyComponente: GKComponent{
         
     }
     
+    
+    func isVisibleWithBrigthess(lum: CGFloat, autor: SKSpriteNode){
+        if lum > 0.6 {
+            autor.alpha = lum
+        } else {
+            autor.alpha = 0
+        }
+    }
+    
     func ataque(autor: SKSpriteNode){
 
 //        print("xScale: \(autor.xScale)")

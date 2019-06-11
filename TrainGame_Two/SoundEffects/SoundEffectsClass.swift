@@ -54,7 +54,7 @@ class SoundEffects {
                 //audioPlayer!.currentTime = 0.35
                 audioPlayer!.play()
                 
-                print("WalkSound")
+//                print("WalkSound")
             } catch {
                 print("Cannot play the file")
             }
