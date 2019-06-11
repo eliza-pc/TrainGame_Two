@@ -47,7 +47,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let personagemPrincipal = Player(nodeName: "player", gameScene: self)
         let petala1 = Petala(nodeName: "nodePetal-1", gameScene: self)
         let boxBig1 = BoxObstacle(nodeName: "PhysicBoxG-1", gameScene: self)
-        let soulEnemy1 = SoulEnemy(nodeName: "SoulPhysicNode-1", gameScene: self)
+        let soulEnemy1 = SoulEnemy(nodeName: "SoulPhysicNode-1", gameScene: self, minX: 1200, maxX: 1520)
         let hotArea1 = DangerArea(nodeName: "hotArea-1" ,gameScene: self)
         let infoArea = InfoArea(nodeName: "infoArea-1", gameScene: self)
         let jumpArea1 = JumpArea(nodeName: "jumpArea-1", gameScene: self)
