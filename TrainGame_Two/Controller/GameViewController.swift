@@ -15,11 +15,15 @@ import GameplayKit
 //this variable will be use by observe
 let pausedExit = Notification.Name(rawValue: "pausedExit")
 let GameOver = Notification.Name(rawValue: "GameOver")
+let foundRose = Notification.Name(rawValue: "foundRose")
+let initSearchRose = Notification.Name(rawValue: "initSearchRose")
+
 
 class GameViewController: UIViewController {
     
     var gameScene: GameScene? = nil
     let testerOrDebbuger: Bool = false
+    var countRoses: Int = 0
     
     @IBOutlet weak var roseProgress: UIImageView!
     
@@ -34,16 +38,22 @@ class GameViewController: UIViewController {
     
     func createObserve(){
         NotificationCenter.default.addObserver(self, selector: #selector(self.exitPaused), name: pausedExit, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.GameOverReturn), name: GameOver, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.gameOverReturn), name: GameOver, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.initSearchRose), name: GameOver, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.foundNewRose), name: GameOver, object: nil)
     }
     
-    @objc func exitPaused(){
-        resumeGame()
-    }
+    @objc func exitPaused(){ resumeGame() }
     
-    @objc func GameOverReturn(){
-        createScene()
-    }
+    @objc func gameOverReturn(){ createScene() }
+    
+    @objc func initSearchRose(){ initRoseInGame() }
+    
+    @objc func foundNewRose(){ countRoseInGame() }
+    
+    func countRoseInGame(){ self.countRoses += 1 }
+    
+    func initRoseInGame(){ self.countRoses = 0 }
     
     func createScene(){
         // Load 'GameScene.sks' as a GKScene. This provides gameplay related content
