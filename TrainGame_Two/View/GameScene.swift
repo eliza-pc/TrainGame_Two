@@ -89,16 +89,27 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     if self.control?.directionCommand == UserControl.right {
                          spriteComponent.nodeTexture.xScale = abs(spriteComponent.nodeTexture.xScale) * 1.0
                         
-        //                print("2 - incremento: \(self.speedJump), velocidade: \(spriteComponent.nodePhysic.position.x + (pVelocity.x * speed))")
-                        // MARK: Move for Physics
-                        spriteComponent.nodePhysic.position = CGPoint(x: spriteComponent.nodePhysic.position.x + (pVelocity.x * speed) + self.speedJump, y: spriteComponent.nodePhysic.position.y)
+                        if self.moveJoystick.handle.position.x > 0 {
+                            spriteComponent.nodePhysic.position = CGPoint(x: spriteComponent.nodePhysic.position.x + (pVelocity.x * speed) + self.speedJump, y: spriteComponent.nodePhysic.position.y)
+                        } else {
+                            // MARK: Move for Physics
+                            spriteComponent.nodePhysic.position = CGPoint(x: spriteComponent.nodePhysic.position.x + (pVelocity.x * speed), y: spriteComponent.nodePhysic.position.y)
+                        }
+                        
                         
                     } else {
                         
                         spriteComponent.nodeTexture.xScale = abs(spriteComponent.nodeTexture.xScale) * -1.0
                         
-                        // MARK: Move for Physics
-                        spriteComponent.nodePhysic.position = CGPoint(x: spriteComponent.nodePhysic.position.x + (pVelocity.x * speed) - self.speedJump, y: spriteComponent.nodePhysic.position.y)
+                        if self.moveJoystick.handle.position.x > 0 {
+                            // MARK: Move for Physics
+                            spriteComponent.nodePhysic.position = CGPoint(x: spriteComponent.nodePhysic.position.x + (pVelocity.x * speed) - self.speedJump, y: spriteComponent.nodePhysic.position.y)
+                        } else {
+                            
+                            // MARK: Move for Physics
+                            spriteComponent.nodePhysic.position = CGPoint(x: spriteComponent.nodePhysic.position.x + (pVelocity.x * speed), y: spriteComponent.nodePhysic.position.y)
+                        }
+                
                     }
                 
                 }
@@ -123,6 +134,21 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         for entity in arrayEntities {
             entityManager.add(entity)
         }
+    }
+    
+    
+    func foundEntityWithNodeName(entities: [GKEntity], nodeName: String) -> GKEntity? {
+        
+        var entityFound: GKEntity? = nil
+        
+        for entity in entities {
+            
+            if entity.component(ofType: SpriteComponent.self)?.nodePhysic.name == nodeName {
+                entityFound = entity
+            }
+        }
+        
+        return entityFound
     }
     
      
@@ -187,13 +213,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if let _ = entityA.component(ofType: PlayerComponent.self), let _ = entityB.component(ofType: HotRegionComponent.self) {
             
             let entities = self.entityManager.getEntitys(component: EnemyComponente.self)
-            entities[0].component(ofType: EnemyComponente.self)?.state = .ataque
+            let entityEnem = self.foundEntityWithNodeName(entities: entities, nodeName: "SoulPhysicNode-1")
+            entityEnem?.component(ofType: EnemyComponente.self)?.state = .ataque
             
         } else if let _ = entityB.component(ofType: PlayerComponent.self), let _ = entityA.component(ofType: HotRegionComponent.self) {
             
             let entities = self.entityManager.getEntitys(component: EnemyComponente.self)
-            entities[0].component(ofType: EnemyComponente.self)?.state = .ataque
-            
+            let entityEnem = self.foundEntityWithNodeName(entities: entities, nodeName: "SoulPhysicNode-1")
+            entityEnem?.component(ofType: EnemyComponente.self)?.state = .ataque
         }
         
         if let _ = entityA.component(ofType: PlayerComponent.self), let _ = entityB.component(ofType: EnemyComponente.self) {
@@ -213,21 +240,26 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             let entities = self.entityManager.getEntitys(component: SpeakableComponent.self)
             self.entityManager.contactObjects = true
-            entities[0].component(ofType: BalloonComponent.self)!.isVisible()
-            self.entityManager.setObjectInContact(entity: entityB)
-            radioSound.playSoundEffect()
             
-            entities[0].component(ofType: SoundComponent.self)?.soundVisible()
+            let entitySound = self.foundEntityWithNodeName(entities: entities, nodeName: "NodeSoundBox-1")
+            
+            entitySound?.component(ofType: BalloonComponent.self)!.isVisible()
+            self.entityManager.setObjectInContact(entity: entitySound!)
+            radioSound.playSoundEffect()
+            entitySound?.component(ofType: SoundComponent.self)?.soundVisible()
             self.control!.speakableActive = true
             
         } else if let _ = entityB.component(ofType: PlayerComponent.self), let _ = entityA.component(ofType: InfoComponent.self) {
             
             let entities = self.entityManager.getEntitys(component: SpeakableComponent.self)
+            
             self.entityManager.contactObjects = true
-            entities[0].component(ofType: BalloonComponent.self)!.isVisible()
-            self.entityManager.setObjectInContact(entity: entityA)
+            
+            let entitySound = self.foundEntityWithNodeName(entities: entities, nodeName: "NodeSoundBox-1")
+            entitySound?.component(ofType: BalloonComponent.self)!.isVisible()
+            self.entityManager.setObjectInContact(entity: entitySound!)
             radioSound.playSoundEffect()
-            entities[0].component(ofType: SoundComponent.self)?.soundVisible()
+            entitySound?.component(ofType: SoundComponent.self)?.soundVisible()
             self.control!.speakableActive = true
             
         }
@@ -285,17 +317,20 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         //Sair da area de Perigo
         if let _ = entityA.component(ofType: PlayerComponent.self), let _ = entityB.component(ofType: HotRegionComponent.self) {
             let entities = self.entityManager.getEntitys(component: EnemyComponente.self)
-            let entityEnemyNode = entities[0].component(ofType: SpriteComponent.self)?.nodePhysic
+            let entityEnem = foundEntityWithNodeName(entities: entities, nodeName: "SoulPhysic-1")
+            let entityEnemyNode = entityEnem?.component(ofType: SpriteComponent.self)?.nodePhysic
             
-            entities[0].component(ofType: EnemyComponente.self)?.state = StateEnemy.vigilancia
-            entities[0].component(ofType: EnemyComponente.self)?.vigiar(autor: entityEnemyNode!)
+            entityEnem?.component(ofType: EnemyComponente.self)?.state = StateEnemy.vigilancia
+            entityEnem?.component(ofType: EnemyComponente.self)?.vigiar(autor: entityEnemyNode!)
             
         } else if let _ = entityB.component(ofType: PlayerComponent.self), let _ = entityA.component(ofType: HotRegionComponent.self) {
             let entities = self.entityManager.getEntitys(component: EnemyComponente.self)
-            let entityEnemyNode = entities[0].component(ofType: SpriteComponent.self)?.nodePhysic
+            let entityEnem = foundEntityWithNodeName(entities: entities, nodeName: "SoulPhysic-1")
+            
+            let entityEnemyNode = entityEnem?.component(ofType: SpriteComponent.self)?.nodePhysic
            
-            entities[0].component(ofType: EnemyComponente.self)?.state = StateEnemy.vigilancia
-            entities[0].component(ofType: EnemyComponente.self)?.vigiar(autor: entityEnemyNode!)
+            entityEnem?.component(ofType: EnemyComponente.self)?.state = StateEnemy.vigilancia
+            entityEnem?.component(ofType: EnemyComponente.self)?.vigiar(autor: entityEnemyNode!)
         }
         
         
@@ -319,7 +354,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             if (self.entityManager.contactObjects == true){
                 self.entityManager.contactObjects = false
                 let entities = self.entityManager.getEntitys(component: SoundComponent.self)
-                entities[0].component(ofType: SoundComponent.self)?.dontVisible()
+                let entitySound = foundEntityWithNodeName(entities: entities, nodeName: "NodeSoundBox-1")
+                entitySound?.component(ofType: SoundComponent.self)?.dontVisible()
                 
                 radioSound.pauseSong()
                 
@@ -329,7 +365,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             if (self.entityManager.contactObjects == true){
                 self.entityManager.contactObjects = false
                 let entities = self.entityManager.getEntitys(component: SoundComponent.self)
-                entities[0].component(ofType: SoundComponent.self)?.dontVisible()
+                let entitySound = foundEntityWithNodeName(entities: entities, nodeName: "NodeSoundBox-1")
+                entitySound?.component(ofType: SoundComponent.self)?.dontVisible()
                 radioSound.pauseSong()
             }
         }
