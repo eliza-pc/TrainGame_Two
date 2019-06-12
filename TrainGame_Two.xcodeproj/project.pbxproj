@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D1BF66C22B1853600EA09C3 /* CollectableEffectComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1BF66B22B1853600EA09C3 /* CollectableEffectComponent.swift */; };
 		1D97E8F222AEE2EA009C88BD /* ObstacleComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D97E8F122AEE2EA009C88BD /* ObstacleComponent.swift */; };
 		1DA672E322A018C40007B49B /* (null) in Sources */ = {isa = PBXBuildFile; };
 		1DA672E522A01D280007B49B /* PlayerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA672E422A01D280007B49B /* PlayerComponent.swift */; };
@@ -60,6 +61,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D1BF66B22B1853600EA09C3 /* CollectableEffectComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectableEffectComponent.swift; sourceTree = "<group>"; };
 		1D97E8F122AEE2EA009C88BD /* ObstacleComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObstacleComponent.swift; sourceTree = "<group>"; };
 		1DA672E422A01D280007B49B /* PlayerComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerComponent.swift; sourceTree = "<group>"; };
 		1DAEACA722B00A29000DFD7B /* SoundComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundComponent.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 				1DEA642822AE01C100A03632 /* InfoComponent.swift */,
 				1D97E8F122AEE2EA009C88BD /* ObstacleComponent.swift */,
 				1DAEACA722B00A29000DFD7B /* SoundComponent.swift */,
+				1D1BF66B22B1853600EA09C3 /* CollectableEffectComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 				1F41B63822AAB39700153C94 /* BackgroundTrainSound.swift in Sources */,
 				1DDEBC6D22A6A6A500262156 /* CollectableComponent.swift in Sources */,
 				1F5DF38A22A1631F000D04CF /* StateMachineComponent.swift in Sources */,
+				1D1BF66C22B1853600EA09C3 /* CollectableEffectComponent.swift in Sources */,
 				1DAEACA822B00A29000DFD7B /* SoundComponent.swift in Sources */,
 				1D97E8F222AEE2EA009C88BD /* ObstacleComponent.swift in Sources */,
 				1DEA642322AE013500A03632 /* InfoArea.swift in Sources */,

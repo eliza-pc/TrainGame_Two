@@ -34,10 +34,19 @@ class Petala: GKEntity{
 //        let balloonComponent = BalloonComponent(parentNode: spriteComponent.nodePhysic, balloonNodeName: "textureBalao")
 //        addComponent(balloonComponent)
         
+        let collectableAnimationComponent = CollectableEffectComponent(parentNode: spriteComponent.nodePhysic, nodeName: "textureAn")
         
+        let aument = SKAction.scale(to: 1.0, duration: 1.0)
+        let dim = SKAction.scale(to: 0.85, duration: 1.0)
+        
+        spriteComponent.nodeTexture.run(SKAction.repeatForever(SKAction.sequence([aument, dim])))
+        
+        addComponent(collectableAnimationComponent)
         addComponent(spriteComponent)
         addComponent(CollectableComponent())
         addComponent(DestroyOnContactComponent())
+        
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
