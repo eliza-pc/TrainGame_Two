@@ -29,19 +29,19 @@
                                     <action selector="inPausedGame:" destination="BV1-FR-VrT" eventType="touchUpInside" id="ZuA-YV-19a"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RoseProgress-0" translatesAutoresizingMaskIntoConstraints="NO" id="egj-CV-eDV">
-                                <rect key="frame" x="35" y="35" width="70" height="61"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Hud Petal" translatesAutoresizingMaskIntoConstraints="NO" id="egj-CV-eDV">
+                                <rect key="frame" x="15" y="15" width="103" height="129"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="61" id="Voy-Tk-V8n"/>
-                                    <constraint firstAttribute="width" constant="70" id="a7Q-Jz-Ri1"/>
+                                    <constraint firstAttribute="height" constant="129" id="9UR-q6-Aha"/>
+                                    <constraint firstAttribute="width" constant="103" id="NxG-Tj-4BQ"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="3pQ-9S-c44" firstAttribute="top" secondItem="4qk-I5-YsI" secondAttribute="top" constant="25" id="JGh-Hy-vob"/>
-                            <constraint firstItem="egj-CV-eDV" firstAttribute="top" secondItem="4qk-I5-YsI" secondAttribute="top" constant="35" id="d8u-4d-3hh"/>
-                            <constraint firstItem="egj-CV-eDV" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leading" constant="35" id="eHz-Jd-Gs7"/>
+                            <constraint firstItem="egj-CV-eDV" firstAttribute="top" secondItem="4qk-I5-YsI" secondAttribute="top" constant="15" id="d8u-4d-3hh"/>
+                            <constraint firstItem="egj-CV-eDV" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leading" constant="15" id="eHz-Jd-Gs7"/>
                             <constraint firstItem="4qk-I5-YsI" firstAttribute="trailing" secondItem="3pQ-9S-c44" secondAttribute="trailing" constant="25" id="kjR-Oc-sVh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
@@ -63,7 +63,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Menu" translatesAutoresizingMaskIntoConstraints="NO" id="hf7-WX-2lj">
-                                <rect key="frame" x="151" y="8" width="594" height="398"/>
+                                <rect key="frame" x="245" y="8" width="406" height="398"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Rd-eF-1EO">
                                 <rect key="frame" x="425" y="192" width="46" height="30"/>
@@ -91,8 +91,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Menu" width="594" height="353"/>
+        <image name="Hud Petal" width="119" height="240"/>
+        <image name="Menu" width="406" height="273"/>
         <image name="Pause" width="980" height="981"/>
-        <image name="RoseProgress-0" width="75" height="69"/>
     </resources>
 </document>

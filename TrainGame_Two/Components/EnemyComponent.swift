@@ -69,7 +69,7 @@ class EnemyComponente: GKComponent{
             autor.removeAction(forKey: "pontoInicial")
        
         }
-
+//        print("atacoooou")
         let location = self.alvo.position
         
         let dx = (location.x) - autor.position.x

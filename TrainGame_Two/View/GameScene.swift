@@ -51,7 +51,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let petala1 = Petala(nodeName: "nodePetal-1", gameScene: self)
         let boxBig1 = BoxObstacle(nodeName: "PhysicBoxG-1", gameScene: self)
 //        let boxBig2 = BoxObstacle(nodeName: "PhysicsBoxG-2", gameScene: self)
-        let soulEnemy1 = SoulEnemy(nodeName: "SoulPhysicNode-1", gameScene: self,minX: 480, maxX: 850)
+        let soulEnemy1 = SoulEnemy(nodeName: "SoulPhysicNode-1", gameScene: self,minX: 560, maxX: 800)
 //        let soulEnemy2 = SoulEnemy(nodeName: "SoulPhysicNode-2", gameScene: self,minX: 640, maxX: 720)
         let hotArea1 = DangerArea(nodeName: "hotArea-1" ,gameScene: self)
 //        let infoArea = InfoArea(nodeName: "infoArea-1", gameScene: self)
@@ -140,10 +140,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func foundEntityWithNodeName(entities: [GKEntity], nodeName: String) -> GKEntity? {
         
         var entityFound: GKEntity? = nil
-        
+        var count: Int = 0
         for entity in entities {
+            count = count + 1
+            
+            print("\(count) - NodeName: \(nodeName), nodePhysicBodyName: \(entity.component(ofType: SpriteComponent.self)?.nodePhysic.name) ")
             
             if entity.component(ofType: SpriteComponent.self)?.nodePhysic.name == nodeName {
+                
                 entityFound = entity
             }
         }
@@ -151,9 +155,73 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         return entityFound
     }
     
-     
+    
+    
+    override func sceneDidLoad() {
+        
+        self.lastUpdateTime = 0
+        // Instanciar os objetos
+        
+    }
+    
+    
+    override func update(_ currentTime: TimeInterval) {
+        // Called before each frame is rendered
+        
+        // Initialize _lastUpdateTime if it has not already been
+        if (self.lastUpdateTime == 0) {
+            self.lastUpdateTime = currentTime
+        }
+    
+        // Calculate time since last update
+        let dt = currentTime - self.lastUpdateTime
+        
+        
+        //get entity para update da control e moving component
+
+        control?.updatePressedButtons(control: self.control?.directionCommand, dt: dt)
+        
+        entityManager.update(dt: dt)
+        
+        self.lastUpdateTime = currentTime
+        
+        if gameOver == true {
+//            print("Game Over!")
+            controllerScenesGame(keyScene: 1)
+        }
+    }
+    
+    
+    func controllerScenesGame (keyScene: Int) {
+        switch keyScene {
+        case 1:
+            NotificationCenter.default.post(name: GameOver, object: nil)
+        default:
+           print("key don't identify")
+        }
+    }
+    
+    
+    func inPaused(switchPaused: Bool){
+        self.view?.isPaused = switchPaused
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+extension GameScene {
+    
     func didBegin(_ contact: SKPhysicsContact) {
-//        print("Houve Contato😎")
+        //        print("Houve Contato😎")
         
         control?.swipeActive =  false
         
@@ -162,7 +230,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             return
         }
-          
+        
         
         guard let entityA = nodeA.entity, let entityB = nodeB.entity else {
             control?.directionCommand =  UserControl.idle
@@ -170,7 +238,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
         }
         
-//        print("Contato: \(entityA) com \(entityB)")
+        //        print("Contato: \(entityA) com \(entityB)")
         
         if let _ = entityA.component(ofType: PlayerComponent.self), let _ = entityB.component(ofType: CollectableComponent.self) {
             
@@ -190,36 +258,37 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         //Entra em contato com a caixinha de som
         if let _ = entityA.component(ofType: PlayerComponent.self), let _ = entityB.component(ofType: SpeakableComponent.self){
-
+            
             self.entityManager.contactObjects = true
             entityB.component(ofType: BalloonComponent.self)!.isVisible()
             self.entityManager.setObjectInContact(entity: entityB)
             radioSound.playSoundEffect()
             entityB.component(ofType: SoundComponent.self)?.soundVisible()
-          //  self.control!.speakableActive = true
-
+            //  self.control!.speakableActive = true
+            
         } else if let _ = entityB.component(ofType: PlayerComponent.self), let _ = entityA.component(ofType: SpeakableComponent.self) {
-
+            
             self.entityManager.contactObjects = true
             entityA.component(ofType: BalloonComponent.self)!.isVisible()
             self.entityManager.setObjectInContact(entity: entityA)
             radioSound.playSoundEffect()
             entityA.component(ofType: SoundComponent.self)?.soundVisible()
-          //  self.control!.speakableActive = true
+            //  self.control!.speakableActive = true
             
         }
         
         
         if let _ = entityA.component(ofType: PlayerComponent.self), let _ = entityB.component(ofType: HotRegionComponent.self) {
-            
+            let nodeName: String = "SoulPhysicNode-1"
             let entities = self.entityManager.getEntitys(component: EnemyComponente.self)
-            let entityEnem = self.foundEntityWithNodeName(entities: entities, nodeName: "SoulPhysicNode-1")
+            let entityEnem = self.foundEntityWithNodeName(entities: entities, nodeName: nodeName)
             entityEnem?.component(ofType: EnemyComponente.self)?.state = .ataque
             
         } else if let _ = entityB.component(ofType: PlayerComponent.self), let _ = entityA.component(ofType: HotRegionComponent.self) {
             
+            let nodeName: String = "SoulPhysicNode-1"
             let entities = self.entityManager.getEntitys(component: EnemyComponente.self)
-            let entityEnem = self.foundEntityWithNodeName(entities: entities, nodeName: "SoulPhysicNode-1")
+            let entityEnem = self.foundEntityWithNodeName(entities: entities, nodeName: nodeName)
             entityEnem?.component(ofType: EnemyComponente.self)?.state = .ataque
         }
         
@@ -267,7 +336,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if let _ = entityA.component(ofType: PlayerComponent.self), let _ = entityB.component(ofType: JumpComponent.self) {
             
             // incremento do jump do player
-//            print("jump + player")
+            //            print("jump + player")
             self.control?.directionCommand =  UserControl.idle
             self.control?.incrementJump = 30
             self.speedJump = speedIncremento
@@ -276,14 +345,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         } else if let _ = entityB.component(ofType: PlayerComponent.self), let _ = entityA.component(ofType: JumpComponent.self) {
             
             // incremento do jump do player
-//            print("jump + player")
+            //            print("jump + player")
             self.control?.directionCommand =  UserControl.idle
             self.control?.incrementJump = 30
             self.speedJump = speedIncremento
             self.control?.isOntheBox = true
         }
         
-
+        
     }
     
     //#MARK: Função didEnd
@@ -317,25 +386,25 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         //Sair da area de Perigo
         if let _ = entityA.component(ofType: PlayerComponent.self), let _ = entityB.component(ofType: HotRegionComponent.self) {
             let entities = self.entityManager.getEntitys(component: EnemyComponente.self)
-            let entityEnem = foundEntityWithNodeName(entities: entities, nodeName: "SoulPhysic-1")
+            let entityEnem = foundEntityWithNodeName(entities: entities, nodeName: "SoulPhysicNode-1")
             let entityEnemyNode = entityEnem?.component(ofType: SpriteComponent.self)?.nodePhysic
-            
+           
             entityEnem?.component(ofType: EnemyComponente.self)?.state = StateEnemy.vigilancia
             entityEnem?.component(ofType: EnemyComponente.self)?.vigiar(autor: entityEnemyNode!)
             
         } else if let _ = entityB.component(ofType: PlayerComponent.self), let _ = entityA.component(ofType: HotRegionComponent.self) {
             let entities = self.entityManager.getEntitys(component: EnemyComponente.self)
-            let entityEnem = foundEntityWithNodeName(entities: entities, nodeName: "SoulPhysic-1")
+            let entityEnem = foundEntityWithNodeName(entities: entities, nodeName: "SoulPhysicNode-1")
             
             let entityEnemyNode = entityEnem?.component(ofType: SpriteComponent.self)?.nodePhysic
-           
+          
             entityEnem?.component(ofType: EnemyComponente.self)?.state = StateEnemy.vigilancia
             entityEnem?.component(ofType: EnemyComponente.self)?.vigiar(autor: entityEnemyNode!)
         }
         
         
         if let _ = entityA.component(ofType: PlayerComponent.self), let _ = entityB.component(ofType: JumpComponent.self) {
-        
+            
             self.control?.incrementJump = 0
             self.control?.isOntheBox = false
             self.speedJump = 0
@@ -389,54 +458,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         
     }
-    
-    override func sceneDidLoad() {
-        
-        self.lastUpdateTime = 0
-        // Instanciar os objetos
-        
-    }
-    
-    
-    override func update(_ currentTime: TimeInterval) {
-        // Called before each frame is rendered
-        
-        // Initialize _lastUpdateTime if it has not already been
-        if (self.lastUpdateTime == 0) {
-            self.lastUpdateTime = currentTime
-        }
-    
-        // Calculate time since last update
-        let dt = currentTime - self.lastUpdateTime
-        
-        
-        //get entity para update da control e moving component
 
-        control?.updatePressedButtons(control: self.control?.directionCommand, dt: dt)
-        
-        entityManager.update(dt: dt)
-        
-        self.lastUpdateTime = currentTime
-        
-        if gameOver == true {
-//            print("Game Over!")
-            controllerScenesGame(keyScene: 1)
-        }
-    }
-    
-    
-    func controllerScenesGame (keyScene: Int) {
-        switch keyScene {
-        case 1:
-            NotificationCenter.default.post(name: GameOver, object: nil)
-        default:
-           print("key don't identify")
-        }
-    }
-    
-    
-    func inPaused(switchPaused: Bool){
-        self.view?.isPaused = switchPaused
-    }
     
 }
