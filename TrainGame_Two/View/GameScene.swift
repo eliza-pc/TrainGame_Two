@@ -49,8 +49,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         let personagemPrincipal = Player(nodeName: "player", gameScene: self)
         let petala1 = Petala(nodeName: "nodePetal-1", gameScene: self)
-        let boxBig1 = BoxObstacle(nodeName: "PhysicBoxG-1", gameScene: self)
-//        let boxBig2 = BoxObstacle(nodeName: "PhysicsBoxG-2", gameScene: self)
+
         let soulEnemy1 = SoulEnemy(nodeName: "SoulPhysicNode-1", gameScene: self,minX: 560, maxX: 800)
 //        let soulEnemy2 = SoulEnemy(nodeName: "SoulPhysicNode-2", gameScene: self,minX: 640, maxX: 720)
         let hotArea1 = DangerArea(nodeName: "hotArea-1" ,gameScene: self)
@@ -59,6 +58,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let infoArea1 = InfoArea(nodeName: "infoArea-1", gameScene: self)
         let soundBox = SoundBox(nodeName: "NodeSoundBox-1", gameScene: self)
         let soundBox2 = SoundBox(nodeName: "NodeSoundBox-2", gameScene: self)
+        let hotArea2 = DangerArea(nodeName: "hotArea-2" ,gameScene: self)
         
         if personagemPrincipal.component(ofType: PlayerComponent.self) != nil {
             
@@ -125,8 +125,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         
 
-        addEntities(arrayEntities: [personagemPrincipal, hotArea1, petala1, boxBig1, soulEnemy1, infoArea1, jumpArea1,soundBox, soundBox2])
-//        addEntities(arrayEntities: [personagemPrincipal, hotArea1, petala1, boxBig1,boxBig2, soulEnemy1,soulEnemy2,infoArea,jumpArea1,jumpArea2,jumpArea1,soundBox])
+        addEntities(arrayEntities: [personagemPrincipal, hotArea1,hotArea2, petala1, soulEnemy1, infoArea1, jumpArea1,soundBox, soundBox2])
+
         view.isMultipleTouchEnabled = false
     }
     
@@ -288,8 +288,10 @@ extension GameScene {
                 let entities = self.entityManager.getEntitys(component: EnemyComponente.self)
                 let entityEnem = self.foundEntityWithNodeName(entities: entities, nodeName: "SoulPhysicNode-1")
                 entityEnem?.component(ofType: EnemyComponente.self)?.state = .ataque
+            case "hotArea-2":
+                print("logica - 2")
             default:
-                print("Node Don't have identify: \(nodeB.name)")
+                print("Node Don't have identify: \(String(describing: nodeB.name))")
             }
  
             
@@ -302,8 +304,10 @@ extension GameScene {
                 let entities = self.entityManager.getEntitys(component: EnemyComponente.self)
                 let entityEnem = self.foundEntityWithNodeName(entities: entities, nodeName: "SoulPhysicNode-1")
                 entityEnem?.component(ofType: EnemyComponente.self)?.state = .ataque
+            case "hotArea-2":
+                print("logica - 2")
             default:
-                print("Node Don't have identify: \(nodeA.name)")
+                print("Node Don't have identify: \(String(describing: nodeA.name))")
             }
             
         }
@@ -414,7 +418,7 @@ extension GameScene {
             case "hotArea-2":
                 print("logica - 2")
             default:
-                print("node Don't identify: \(nodeB.name)")
+                print("node Don't identify: \(String(describing: nodeB.name))")
             }
             
             
@@ -434,7 +438,7 @@ extension GameScene {
             case "hotArea-2":
                 print("logica - 2")
             default:
-                print("node Don't identify: \(nodeA.name)")
+                print("node Don't identify: \(String(describing: nodeA.name))")
             }
             
         }
