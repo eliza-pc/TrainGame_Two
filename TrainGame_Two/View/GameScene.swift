@@ -214,9 +214,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             let entities = self.entityManager.getEntitys(component: SpeakableComponent.self)
             self.entityManager.contactObjects = true
             entities[0].component(ofType: BalloonComponent.self)!.isVisible()
-            self.entityManager.setObjectInContact(entity: entityB)
+            self.entityManager.setObjectInContact(entity: entities[0])
             radioSound.playSoundEffect()
-            
             entities[0].component(ofType: SoundComponent.self)?.soundVisible()
             self.control!.speakableActive = true
             
@@ -225,7 +224,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             let entities = self.entityManager.getEntitys(component: SpeakableComponent.self)
             self.entityManager.contactObjects = true
             entities[0].component(ofType: BalloonComponent.self)!.isVisible()
-            self.entityManager.setObjectInContact(entity: entityA)
+            self.entityManager.setObjectInContact(entity: entities[0])
             radioSound.playSoundEffect()
             entities[0].component(ofType: SoundComponent.self)?.soundVisible()
             self.control!.speakableActive = true
