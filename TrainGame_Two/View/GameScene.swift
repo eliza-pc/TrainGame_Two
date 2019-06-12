@@ -49,7 +49,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         let personagemPrincipal = Player(nodeName: "player", gameScene: self)
         let petala1 = Petala(nodeName: "nodePetal-1", gameScene: self)
-
+        let petala2 = Petala(nodeName: "nodePetal-2", gameScene: self)
         let soulEnemy1 = SoulEnemy(nodeName: "SoulPhysicNode-1", gameScene: self,minX: 560, maxX: 800)
         let soulEnemy2 = SoulEnemy(nodeName: "SoulPhysicNode-2", gameScene: self,minX: 1360, maxX: 1610)
         let hotArea1 = DangerArea(nodeName: "hotArea-1" ,gameScene: self)
@@ -64,6 +64,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         let hotArea3 = DangerArea(nodeName: "hotArea-3", gameScene: self)
         let soulEnemy3 = SoulEnemy(nodeName: "SoulPhysicNode-3", gameScene: self, minX: 1860, maxX: 2050)
+        
+        let soulEnemy4 = SoulEnemy(nodeName: "SoulPhysicNode-4", gameScene: self, minX: 2400, maxX: 2560)
         
         if personagemPrincipal.component(ofType: PlayerComponent.self) != nil {
             
@@ -130,7 +132,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         
 
-        addEntities(arrayEntities: [personagemPrincipal, hotArea1,hotArea2, petala1, soulEnemy1, soulEnemy2, soulEnemy3, infoArea1, jumpArea1,soundBox, soundBox2, jumpArea2, jumpArea3, jumpArea4, hotArea3])
+        addEntities(arrayEntities: [personagemPrincipal, hotArea1,hotArea2, petala1, petala2, soulEnemy1, soulEnemy2, soulEnemy3, soulEnemy4, infoArea1, jumpArea1,soundBox, soundBox2, jumpArea2, jumpArea3, jumpArea4, hotArea3])
 
         view.isMultipleTouchEnabled = false
     }
@@ -247,12 +249,16 @@ extension GameScene {
         
         if let _ = entityA.component(ofType: PlayerComponent.self), let _ = entityB.component(ofType: CollectableComponent.self) {
             
+            //MARK: 1.1
+            
             self.entityManager.contactObjects = true
 //            entityB.component(ofType: BalloonComponent.self)!.isVisible()
             self.control?.collectableActive = true
             self.entityManager.setObjectInContact(entity: entityB)
             
         } else if  let _ = entityB.component(ofType: PlayerComponent.self), let _ = entityA.component(ofType: CollectableComponent.self) {
+            
+            //MARK: 1.2
             
             self.entityManager.contactObjects = true
 //            entityB.component(ofType: BalloonComponent.self)!.isVisible()
@@ -303,6 +309,11 @@ extension GameScene {
                 let entities = self.entityManager.getEntitys(component: EnemyComponente.self)
                 let entityEnem = self.foundEntityWithNodeName(entities: entities, nodeName: "SoulPhysicNode-3")
                 entityEnem?.component(ofType: EnemyComponente.self)?.state = .ataque
+            case "hotArea-4":
+                print("logica - 4")
+                let entities = self.entityManager.getEntitys(component: EnemyComponente.self)
+                let entityEnem = self.foundEntityWithNodeName(entities: entities, nodeName: "SoulPhysicNode-4")
+                entityEnem?.component(ofType: EnemyComponente.self)?.state = .ataque
             default:
                 print("Node Don't have identify: \(String(describing: nodeB.name))")
             }
@@ -326,6 +337,11 @@ extension GameScene {
                 print("logica - 3")
                 let entities = self.entityManager.getEntitys(component: EnemyComponente.self)
                 let entityEnem = self.foundEntityWithNodeName(entities: entities, nodeName: "SoulPhysicNode-3")
+                entityEnem?.component(ofType: EnemyComponente.self)?.state = .ataque
+            case "hotArea-4":
+                print("logica - 4")
+                let entities = self.entityManager.getEntitys(component: EnemyComponente.self)
+                let entityEnem = self.foundEntityWithNodeName(entities: entities, nodeName: "SoulPhysicNode-4")
                 entityEnem?.component(ofType: EnemyComponente.self)?.state = .ataque
             default:
                 print("Node Don't have identify: \(String(describing: nodeA.name))")
@@ -452,6 +468,14 @@ extension GameScene {
                 
                 entityEnem?.component(ofType: EnemyComponente.self)?.state = StateEnemy.vigilancia
                 entityEnem?.component(ofType: EnemyComponente.self)?.vigiar(autor: entityEnemyNode!)
+            case "hotArea-4":
+                print("logica - 4")
+                let entities = self.entityManager.getEntitys(component: EnemyComponente.self)
+                let entityEnem = foundEntityWithNodeName(entities: entities, nodeName: "SoulPhysicNode-4")
+                let entityEnemyNode = entityEnem?.component(ofType: SpriteComponent.self)?.nodePhysic
+                
+                entityEnem?.component(ofType: EnemyComponente.self)?.state = StateEnemy.vigilancia
+                entityEnem?.component(ofType: EnemyComponente.self)?.vigiar(autor: entityEnemyNode!)
             default:
                 print("node Don't identify: \(String(describing: nodeB.name))")
             }
@@ -482,6 +506,14 @@ extension GameScene {
                 print("logica - 3")
                 let entities = self.entityManager.getEntitys(component: EnemyComponente.self)
                 let entityEnem = foundEntityWithNodeName(entities: entities, nodeName: "SoulPhysicNode-3")
+                let entityEnemyNode = entityEnem?.component(ofType: SpriteComponent.self)?.nodePhysic
+                
+                entityEnem?.component(ofType: EnemyComponente.self)?.state = StateEnemy.vigilancia
+                entityEnem?.component(ofType: EnemyComponente.self)?.vigiar(autor: entityEnemyNode!)
+            case "hotArea-4":
+                print("logica - 4")
+                let entities = self.entityManager.getEntitys(component: EnemyComponente.self)
+                let entityEnem = foundEntityWithNodeName(entities: entities, nodeName: "SoulPhysicNode-4")
                 let entityEnemyNode = entityEnem?.component(ofType: SpriteComponent.self)?.nodePhysic
                 
                 entityEnem?.component(ofType: EnemyComponente.self)?.state = StateEnemy.vigilancia
