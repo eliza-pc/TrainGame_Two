@@ -54,11 +54,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let soulEnemy1 = SoulEnemy(nodeName: "SoulPhysicNode-1", gameScene: self,minX: 560, maxX: 800)
 //        let soulEnemy2 = SoulEnemy(nodeName: "SoulPhysicNode-2", gameScene: self,minX: 640, maxX: 720)
         let hotArea1 = DangerArea(nodeName: "hotArea-1" ,gameScene: self)
-//        let infoArea = InfoArea(nodeName: "infoArea-1", gameScene: self)
         let jumpArea1 = JumpArea(nodeName: "jumpArea-1", gameScene: self)
 //        let jumpArea2 = JumpArea(nodeName: "jumpArea-2", gameScene: self)
         let infoArea1 = InfoArea(nodeName: "infoArea-1", gameScene: self)
         let soundBox = SoundBox(nodeName: "NodeSoundBox-1", gameScene: self)
+        let soundBox2 = SoundBox(nodeName: "NodeSoundBox-2", gameScene: self)
         
         if personagemPrincipal.component(ofType: PlayerComponent.self) != nil {
             
@@ -125,7 +125,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         
 
-        addEntities(arrayEntities: [personagemPrincipal, hotArea1, petala1, boxBig1, soulEnemy1, infoArea1, jumpArea1,soundBox])
+        addEntities(arrayEntities: [personagemPrincipal, hotArea1, petala1, boxBig1, soulEnemy1, infoArea1, jumpArea1,soundBox, soundBox2])
 //        addEntities(arrayEntities: [personagemPrincipal, hotArea1, petala1, boxBig1,boxBig2, soulEnemy1,soulEnemy2,infoArea,jumpArea1,jumpArea2,jumpArea1,soundBox])
         view.isMultipleTouchEnabled = false
     }
@@ -243,14 +243,14 @@ extension GameScene {
         if let _ = entityA.component(ofType: PlayerComponent.self), let _ = entityB.component(ofType: CollectableComponent.self) {
             
             self.entityManager.contactObjects = true
-            entityB.component(ofType: BalloonComponent.self)!.isVisible()
+//            entityB.component(ofType: BalloonComponent.self)!.isVisible()
             self.control?.collectableActive = true
             self.entityManager.setObjectInContact(entity: entityB)
             
         } else if  let _ = entityB.component(ofType: PlayerComponent.self), let _ = entityA.component(ofType: CollectableComponent.self) {
             
             self.entityManager.contactObjects = true
-            entityA.component(ofType: BalloonComponent.self)!.isVisible()
+//            entityB.component(ofType: BalloonComponent.self)!.isVisible()
             self.control?.collectableActive = true
             self.entityManager.setObjectInContact(entity: entityA)
             

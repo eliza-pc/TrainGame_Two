@@ -103,7 +103,7 @@ class Control {
                 if countPhrases < arrayEnigmas.count, let entity = self.gameScene.entityManager.getObjectInContact(){
                     if (entity.component(ofType: SpeakableComponent.self) != nil), entity.component(ofType: SpriteComponent.self)?.nodePhysic.name == "NodeSoundBox-1" {
                         entity.component(ofType: BalloonComponent.self)?.changeBallon(index: countPhrases)
-                    } else if (entity.component(ofType: SpeakableComponent.self) != nil) {
+                    } else if (entity.component(ofType: SpeakableComponent.self) != nil), entity.component(ofType: SpriteComponent.self)?.nodePhysic.name == "NodeSoundBox-2" {
                         countPhrases = 2
                         entity.component(ofType: BalloonComponent.self)?.changeBallon(index: countPhrases)
                     }
