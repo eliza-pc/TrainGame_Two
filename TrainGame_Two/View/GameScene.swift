@@ -51,7 +51,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let petala1 = Petala(nodeName: "nodePetal-1", gameScene: self)
         let boxBig1 = BoxObstacle(nodeName: "PhysicBoxG-1", gameScene: self)
 //        let boxBig2 = BoxObstacle(nodeName: "PhysicsBoxG-2", gameScene: self)
-        let soulEnemy1 = SoulEnemy(nodeName: "SoulPhysicNode-1", gameScene: self,minX: 1200, maxX: 1520)
+        let soulEnemy1 = SoulEnemy(nodeName: "SoulPhysicNode-1", gameScene: self,minX: 480, maxX: 850)
 //        let soulEnemy2 = SoulEnemy(nodeName: "SoulPhysicNode-2", gameScene: self,minX: 640, maxX: 720)
         let hotArea1 = DangerArea(nodeName: "hotArea-1" ,gameScene: self)
 //        let infoArea = InfoArea(nodeName: "infoArea-1", gameScene: self)
@@ -76,7 +76,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 
                 if self.control?.directionCommand == UserControl.jump {
                     
-                    print("1 - incremento: \(self.speedJump), velocidade: \(spriteComponent.nodePhysic.position.x + (pVelocity.x * speed) + self.speedJump)")
+              
                     // MARK: Move for Physics
                     spriteComponent.nodePhysic.position = CGPoint(x: spriteComponent.nodePhysic.position.x + (pVelocity.x * speed) + self.speedJump, y: spriteComponent.nodePhysic.position.y)
 
@@ -89,7 +89,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     if self.control?.directionCommand == UserControl.right {
                          spriteComponent.nodeTexture.xScale = abs(spriteComponent.nodeTexture.xScale) * 1.0
                         
-                        print("1 - incremento: \(self.speedJump), velocidade: \(spriteComponent.nodePhysic.position.x + (pVelocity.x * speed))")
+        //                print("2 - incremento: \(self.speedJump), velocidade: \(spriteComponent.nodePhysic.position.x + (pVelocity.x * speed))")
                         // MARK: Move for Physics
                         spriteComponent.nodePhysic.position = CGPoint(x: spriteComponent.nodePhysic.position.x + (pVelocity.x * speed) + self.speedJump, y: spriteComponent.nodePhysic.position.y)
                         

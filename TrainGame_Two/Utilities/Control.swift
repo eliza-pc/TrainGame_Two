@@ -130,7 +130,6 @@ class Control {
         let entitys = gameScene.entityManager.getEntitys(component: PlayerComponent.self)
         self.entityNode = entitys[0].component(ofType: SpriteComponent.self)?.nodePhysic
         entityNode?.run(SKAction.moveTo(y: CGFloat(8 + incrementJump), duration: 0.35))
-        
     }
     
     func updatePressedButtons(control: UserControl?, dt: Double) {
