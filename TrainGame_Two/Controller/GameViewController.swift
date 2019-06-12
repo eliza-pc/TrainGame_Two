@@ -17,6 +17,8 @@ let pausedExit = Notification.Name(rawValue: "pausedExit")
 let GameOver = Notification.Name(rawValue: "GameOver")
 let foundRose = Notification.Name(rawValue: "foundRose")
 let initSearchRose = Notification.Name(rawValue: "initSearchRose")
+let saiuApp = Notification.Name(rawValue: "saiuApp")
+let entrouAgain = Notification.Name(rawValue: "entrouAgain")
 
 
 class GameViewController: UIViewController {
@@ -41,6 +43,10 @@ class GameViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(self.gameOverReturn), name: GameOver, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.initSearchRose), name: GameOver, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.foundNewRose), name: GameOver, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.Buscando), name: saiuApp, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.initGameAgain), name: entrouAgain, object: nil)
     }
     
     @objc func exitPaused(){ resumeGame() }
@@ -50,6 +56,14 @@ class GameViewController: UIViewController {
     @objc func initSearchRose(){ initRoseInGame() }
     
     @objc func foundNewRose(){ countRoseInGame() }
+    
+    @objc func Buscando(){ pausedScreenGame() }
+    
+    @objc func initGameAgain() {
+        pausedScreenGame()
+        callPauseViewController()
+        
+    }
     
     func countRoseInGame(){ self.countRoses += 1 }
     
@@ -123,8 +137,16 @@ class GameViewController: UIViewController {
     }
     
     @IBAction func inPausedGame(_ sender: Any) {
+        pausedScreenGame()
+        callPauseViewController()
+    }
+    
+    func pausedScreenGame(){
         view.layer.removeAnimation(forKey: "Shake")
         self.gameScene?.inPaused(switchPaused: true)
+    }
+    
+    func callPauseViewController(){
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "PauseViewController") as! PauseViewController
         vc.view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
         self.addChild(vc)
