@@ -117,6 +117,7 @@ class Control {
         if gesture is UILongPressGestureRecognizer {
             if collectableActive == true {
                 if let removeObject = self.gameScene.entityManager.getObjectInContact() {
+                    NotificationCenter.default.post(name: achouPetala, object: nil)
                     self.gameScene.entityManager.remove(removeObject)
                     self.collectableActive = false
                     self.feedbackGenerator?.notificationOccurred(.success)

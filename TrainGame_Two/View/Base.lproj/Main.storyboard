@@ -36,9 +36,25 @@
                                     <constraint firstAttribute="width" constant="103" id="NxG-Tj-4BQ"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HG7-Wf-D2O">
+                                <rect key="frame" x="55" y="106" width="23" height="25"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="0/2">
+                                        <attributes>
+                                            <color key="NSColor" red="0.97684560178440782" green="1" blue="0.91790793963820205" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="17" name="HustleHardcore"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="HG7-Wf-D2O" firstAttribute="centerX" secondItem="egj-CV-eDV" secondAttribute="centerX" id="3s0-tg-PqA"/>
+                            <constraint firstItem="HG7-Wf-D2O" firstAttribute="top" secondItem="4qk-I5-YsI" secondAttribute="top" constant="106" id="H0R-61-Mhc"/>
                             <constraint firstItem="3pQ-9S-c44" firstAttribute="top" secondItem="4qk-I5-YsI" secondAttribute="top" constant="25" id="JGh-Hy-vob"/>
                             <constraint firstItem="egj-CV-eDV" firstAttribute="top" secondItem="4qk-I5-YsI" secondAttribute="top" constant="15" id="d8u-4d-3hh"/>
                             <constraint firstItem="egj-CV-eDV" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leading" constant="15" id="eHz-Jd-Gs7"/>
@@ -47,6 +63,7 @@
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
                     </view>
                     <connections>
+                        <outlet property="countPental" destination="HG7-Wf-D2O" id="17N-WG-eX3"/>
                         <outlet property="roseProgress" destination="egj-CV-eDV" id="1QH-8v-1e5"/>
                     </connections>
                 </viewController>

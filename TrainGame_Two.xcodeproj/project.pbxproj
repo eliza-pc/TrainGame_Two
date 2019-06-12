@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1D1BF66C22B1853600EA09C3 /* CollectableEffectComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1BF66B22B1853600EA09C3 /* CollectableEffectComponent.swift */; };
+		1D1BF66F22B19F1900EA09C3 /* Free Hustle Hardcore.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D1BF66E22B19F1900EA09C3 /* Free Hustle Hardcore.ttf */; };
 		1D97E8F222AEE2EA009C88BD /* ObstacleComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D97E8F122AEE2EA009C88BD /* ObstacleComponent.swift */; };
 		1DA672E322A018C40007B49B /* (null) in Sources */ = {isa = PBXBuildFile; };
 		1DA672E522A01D280007B49B /* PlayerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA672E422A01D280007B49B /* PlayerComponent.swift */; };
@@ -62,6 +63,7 @@
 
 /* Begin PBXFileReference section */
 		1D1BF66B22B1853600EA09C3 /* CollectableEffectComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectableEffectComponent.swift; sourceTree = "<group>"; };
+		1D1BF66E22B19F1900EA09C3 /* Free Hustle Hardcore.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Free Hustle Hardcore.ttf"; sourceTree = "<group>"; };
 		1D97E8F122AEE2EA009C88BD /* ObstacleComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObstacleComponent.swift; sourceTree = "<group>"; };
 		1DA672E422A01D280007B49B /* PlayerComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerComponent.swift; sourceTree = "<group>"; };
 		1DAEACA722B00A29000DFD7B /* SoundComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundComponent.swift; sourceTree = "<group>"; };
@@ -125,6 +127,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D1BF66D22B19EFB00EA09C3 /* Design_Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1D1BF66E22B19F1900EA09C3 /* Free Hustle Hardcore.ttf */,
+			);
+			path = Design_Resources;
+			sourceTree = "<group>";
+		};
 		1F0E2E83229EDD8A003E546D /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -171,6 +181,7 @@
 		1FF45041229C2434009B7DF7 /* TrainGame_Two */ = {
 			isa = PBXGroup;
 			children = (
+				1D1BF66D22B19EFB00EA09C3 /* Design_Resources */,
 				1FD727C522A9523C0085172F /* SoundEffects */,
 				1F0E2E83229EDD8A003E546D /* Extension */,
 				1FF45064229C2809009B7DF7 /* Utilities */,
@@ -319,6 +330,7 @@
 				1F41B63A22AAB50100153C94 /* train.wav in Resources */,
 				1FF4504E229C2434009B7DF7 /* Main.storyboard in Resources */,
 				1FF45045229C2434009B7DF7 /* GameScene.sks in Resources */,
+				1D1BF66F22B19F1900EA09C3 /* Free Hustle Hardcore.ttf in Resources */,
 				1F29DE3922AABC3D003C7225 /* walk1.wav in Resources */,
 				1FF45050229C2435009B7DF7 /* Assets.xcassets in Resources */,
 				1FF45053229C2435009B7DF7 /* LaunchScreen.storyboard in Resources */,

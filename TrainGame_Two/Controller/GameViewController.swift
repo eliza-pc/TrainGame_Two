@@ -19,6 +19,7 @@ let foundRose = Notification.Name(rawValue: "foundRose")
 let initSearchRose = Notification.Name(rawValue: "initSearchRose")
 let saiuApp = Notification.Name(rawValue: "saiuApp")
 let entrouAgain = Notification.Name(rawValue: "entrouAgain")
+let achouPetala = Notification.Name(rawValue: "achouPetala")
 var stayInPause: Bool = false
 
 class GameViewController: UIViewController {
@@ -30,14 +31,24 @@ class GameViewController: UIViewController {
     @IBOutlet weak var roseProgress: UIImageView!
     
     
+    @IBOutlet weak var countPental: UILabel!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        countPental.text = "\(countRoses)/2"
         UIScreen.main.brightness = 0.4
         shake()
         createScene()
         createObserve()
     }
     
+    func addPental(){
+        self.countRoses += 1
+        countPental.text = "\(countRoses)/2"
+    }
+
     func createObserve(){
         NotificationCenter.default.addObserver(self, selector: #selector(self.exitPaused), name: pausedExit, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.gameOverReturn), name: GameOver, object: nil)
@@ -47,7 +58,11 @@ class GameViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(self.Buscando), name: saiuApp, object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.initGameAgain), name: entrouAgain, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.addPentalGame), name: achouPetala, object: nil)
     }
+    
+    @objc func addPentalGame(){ addPental() }
     
     @objc func exitPaused(){ resumeGame() }
     
