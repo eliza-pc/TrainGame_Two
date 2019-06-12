@@ -47,6 +47,9 @@ class GameViewController: UIViewController {
     func addPental(){
         self.countRoses += 1
         countPental.text = "\(countRoses)/2"
+        if countRoses > 1 {
+            roseProgress.image = UIImage.init(named: "Hud Rose")
+        }
     }
 
     func createObserve(){

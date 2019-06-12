@@ -26,8 +26,6 @@ class Player: GKEntity{
         
         spriteComponent.nodePhysic.entity = self
         
-        spriteComponent.nodePhysic.position.x = 1720
-        
         addComponent(PlayerComponent())
         addComponent(spriteComponent)
         addComponent(CameraComponent.init(parentNode: gameScene))

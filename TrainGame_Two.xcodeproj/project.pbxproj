@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1D1BF66C22B1853600EA09C3 /* CollectableEffectComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1BF66B22B1853600EA09C3 /* CollectableEffectComponent.swift */; };
 		1D1BF66F22B19F1900EA09C3 /* Free Hustle Hardcore.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D1BF66E22B19F1900EA09C3 /* Free Hustle Hardcore.ttf */; };
+		1D1BF67122B1A29400EA09C3 /* CheckPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1BF67022B1A29400EA09C3 /* CheckPoint.swift */; };
+		1D1BF67522B1A4E700EA09C3 /* CheckPointComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1BF67422B1A4E700EA09C3 /* CheckPointComponent.swift */; };
 		1D97E8F222AEE2EA009C88BD /* ObstacleComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D97E8F122AEE2EA009C88BD /* ObstacleComponent.swift */; };
 		1DA672E322A018C40007B49B /* (null) in Sources */ = {isa = PBXBuildFile; };
 		1DA672E522A01D280007B49B /* PlayerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA672E422A01D280007B49B /* PlayerComponent.swift */; };
@@ -64,6 +66,8 @@
 /* Begin PBXFileReference section */
 		1D1BF66B22B1853600EA09C3 /* CollectableEffectComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectableEffectComponent.swift; sourceTree = "<group>"; };
 		1D1BF66E22B19F1900EA09C3 /* Free Hustle Hardcore.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Free Hustle Hardcore.ttf"; sourceTree = "<group>"; };
+		1D1BF67022B1A29400EA09C3 /* CheckPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckPoint.swift; sourceTree = "<group>"; };
+		1D1BF67422B1A4E700EA09C3 /* CheckPointComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckPointComponent.swift; sourceTree = "<group>"; };
 		1D97E8F122AEE2EA009C88BD /* ObstacleComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObstacleComponent.swift; sourceTree = "<group>"; };
 		1DA672E422A01D280007B49B /* PlayerComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerComponent.swift; sourceTree = "<group>"; };
 		1DAEACA722B00A29000DFD7B /* SoundComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundComponent.swift; sourceTree = "<group>"; };
@@ -207,6 +211,7 @@
 				5E1282EA22A94DD9000784FB /* DangerArea.swift */,
 				1DEA642222AE013500A03632 /* InfoArea.swift */,
 				1DEA642422AE017900A03632 /* JumpArea.swift */,
+				1D1BF67022B1A29400EA09C3 /* CheckPoint.swift */,
 			);
 			path = Entidades;
 			sourceTree = "<group>";
@@ -231,6 +236,7 @@
 				1D97E8F122AEE2EA009C88BD /* ObstacleComponent.swift */,
 				1DAEACA722B00A29000DFD7B /* SoundComponent.swift */,
 				1D1BF66B22B1853600EA09C3 /* CollectableEffectComponent.swift */,
+				1D1BF67422B1A4E700EA09C3 /* CheckPointComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -362,6 +368,7 @@
 				1FF45063229C27B6009B7DF7 /* EntityManager.swift in Sources */,
 				1DC4EB0922A8153000245A79 /* BoxObstacles.swift in Sources */,
 				1F6FFEE522ACB3EC002789F6 /* SpeakableComponent.swift in Sources */,
+				1D1BF67122B1A29400EA09C3 /* CheckPoint.swift in Sources */,
 				1FF4505F229C278E009B7DF7 /* SpriteComponent.swift in Sources */,
 				5E88671322A6B61F0008D4B0 /* HotRegionComponent.swift in Sources */,
 				1DEA642922AE01C100A03632 /* InfoComponent.swift in Sources */,
@@ -377,6 +384,7 @@
 				1FF4506A229C2D34009B7DF7 /* CameraComponent.swift in Sources */,
 				1FD727C422A93F240085172F /* SoundBox.swift in Sources */,
 				1F41B63822AAB39700153C94 /* BackgroundTrainSound.swift in Sources */,
+				1D1BF67522B1A4E700EA09C3 /* CheckPointComponent.swift in Sources */,
 				1DDEBC6D22A6A6A500262156 /* CollectableComponent.swift in Sources */,
 				1F5DF38A22A1631F000D04CF /* StateMachineComponent.swift in Sources */,
 				1D1BF66C22B1853600EA09C3 /* CollectableEffectComponent.swift in Sources */,

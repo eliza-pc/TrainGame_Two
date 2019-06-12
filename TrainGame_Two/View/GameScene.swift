@@ -10,6 +10,8 @@
 import SpriteKit
 import GameplayKit
 
+var positionCheckPoint_X: CGFloat = -240
+
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
     //#MARK: Variables
@@ -65,7 +67,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let hotArea3 = DangerArea(nodeName: "hotArea-3", gameScene: self)
         let soulEnemy3 = SoulEnemy(nodeName: "SoulPhysicNode-3", gameScene: self, minX: 1860, maxX: 2050)
         
+        let checkPoint1 = CheckPoint(nodeName: "checkPoint-1", gameScene: self)
+        let checkPoint2 = CheckPoint(nodeName: "checkPoint-2", gameScene: self)
+        
         let soulEnemy4 = SoulEnemy(nodeName: "SoulPhysicNode-4", gameScene: self, minX: 2400, maxX: 2560)
+        
+//        print("INICIOU: \(positionCheckPoint_X)")
+        
+        personagemPrincipal.component(ofType: SpriteComponent.self)?.nodePhysic.position.x = positionCheckPoint_X
         
         if personagemPrincipal.component(ofType: PlayerComponent.self) != nil {
             
@@ -132,7 +141,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         
 
-        addEntities(arrayEntities: [personagemPrincipal, hotArea1,hotArea2, petala1, petala2, soulEnemy1, soulEnemy2, soulEnemy3, soulEnemy4, infoArea1, jumpArea1,soundBox, soundBox2, jumpArea2, jumpArea3, jumpArea4, hotArea3])
+        addEntities(arrayEntities: [personagemPrincipal, hotArea1,hotArea2, petala1, petala2, soulEnemy1, soulEnemy2, soulEnemy3, soulEnemy4, infoArea1, jumpArea1,soundBox, soundBox2, jumpArea2, jumpArea3, jumpArea4, hotArea3, checkPoint1, checkPoint2])
 
         view.isMultipleTouchEnabled = false
     }
@@ -247,6 +256,24 @@ extension GameScene {
         
         //        print("Contato: \(entityA) com \(entityB)")
         
+        if let _ = entityA.component(ofType: PlayerComponent.self), let _ = entityB.component(ofType: CheckPointComponent.self) {
+            
+            //MARK: 3.1
+ //           print("pegou: \(nodeB.position.x)")
+            positionCheckPoint_X = nodeB.position.x
+            
+        } else if  let _ = entityB.component(ofType: PlayerComponent.self), let _ = entityA.component(ofType: CheckPointComponent.self) {
+            
+            //MARK: 3.2
+  //          print("pegou: \(nodeA.position.x)")
+            positionCheckPoint_X = nodeA.position.x
+            
+        }
+        
+        
+        
+        //        print("Contato: \(entityA) com \(entityB)")
+        
         if let _ = entityA.component(ofType: PlayerComponent.self), let _ = entityB.component(ofType: CollectableComponent.self) {
             
             //MARK: 1.1
@@ -300,17 +327,17 @@ extension GameScene {
                 let entityEnem = self.foundEntityWithNodeName(entities: entities, nodeName: "SoulPhysicNode-1")
                 entityEnem?.component(ofType: EnemyComponente.self)?.state = .ataque
             case "hotArea-2":
-                print("logica - 2")
+//                print("logica - 2")
                 let entities = self.entityManager.getEntitys(component: EnemyComponente.self)
                 let entityEnem = self.foundEntityWithNodeName(entities: entities, nodeName: "SoulPhysicNode-2")
                 entityEnem?.component(ofType: EnemyComponente.self)?.state = .ataque
             case "hotArea-3":
-                print("logica - 3")
+ //               print("logica - 3")
                 let entities = self.entityManager.getEntitys(component: EnemyComponente.self)
                 let entityEnem = self.foundEntityWithNodeName(entities: entities, nodeName: "SoulPhysicNode-3")
                 entityEnem?.component(ofType: EnemyComponente.self)?.state = .ataque
             case "hotArea-4":
-                print("logica - 4")
+ //               print("logica - 4")
                 let entities = self.entityManager.getEntitys(component: EnemyComponente.self)
                 let entityEnem = self.foundEntityWithNodeName(entities: entities, nodeName: "SoulPhysicNode-4")
                 entityEnem?.component(ofType: EnemyComponente.self)?.state = .ataque
@@ -329,17 +356,17 @@ extension GameScene {
                 let entityEnem = self.foundEntityWithNodeName(entities: entities, nodeName: "SoulPhysicNode-1")
                 entityEnem?.component(ofType: EnemyComponente.self)?.state = .ataque
             case "hotArea-2":
-                print("logica - 2")
+//                print("logica - 2")
                 let entities = self.entityManager.getEntitys(component: EnemyComponente.self)
                 let entityEnem = self.foundEntityWithNodeName(entities: entities, nodeName: "SoulPhysicNode-2")
                 entityEnem?.component(ofType: EnemyComponente.self)?.state = .ataque
             case "hotArea-3":
-                print("logica - 3")
+ //               print("logica - 3")
                 let entities = self.entityManager.getEntitys(component: EnemyComponente.self)
                 let entityEnem = self.foundEntityWithNodeName(entities: entities, nodeName: "SoulPhysicNode-3")
                 entityEnem?.component(ofType: EnemyComponente.self)?.state = .ataque
             case "hotArea-4":
-                print("logica - 4")
+//                print("logica - 4")
                 let entities = self.entityManager.getEntitys(component: EnemyComponente.self)
                 let entityEnem = self.foundEntityWithNodeName(entities: entities, nodeName: "SoulPhysicNode-4")
                 entityEnem?.component(ofType: EnemyComponente.self)?.state = .ataque
@@ -495,7 +522,7 @@ extension GameScene {
                 entityEnem?.component(ofType: EnemyComponente.self)?.state = StateEnemy.vigilancia
                 entityEnem?.component(ofType: EnemyComponente.self)?.vigiar(autor: entityEnemyNode!)
             case "hotArea-2":
-                print("logica - 2")
+//                print("logica - 2")
                 let entities = self.entityManager.getEntitys(component: EnemyComponente.self)
                 let entityEnem = foundEntityWithNodeName(entities: entities, nodeName: "SoulPhysicNode-2")
                 let entityEnemyNode = entityEnem?.component(ofType: SpriteComponent.self)?.nodePhysic
@@ -503,7 +530,7 @@ extension GameScene {
                 entityEnem?.component(ofType: EnemyComponente.self)?.state = StateEnemy.vigilancia
                 entityEnem?.component(ofType: EnemyComponente.self)?.vigiar(autor: entityEnemyNode!)
             case "hotArea-3":
-                print("logica - 3")
+//                print("logica - 3")
                 let entities = self.entityManager.getEntitys(component: EnemyComponente.self)
                 let entityEnem = foundEntityWithNodeName(entities: entities, nodeName: "SoulPhysicNode-3")
                 let entityEnemyNode = entityEnem?.component(ofType: SpriteComponent.self)?.nodePhysic
@@ -511,7 +538,7 @@ extension GameScene {
                 entityEnem?.component(ofType: EnemyComponente.self)?.state = StateEnemy.vigilancia
                 entityEnem?.component(ofType: EnemyComponente.self)?.vigiar(autor: entityEnemyNode!)
             case "hotArea-4":
-                print("logica - 4")
+ //               print("logica - 4")
                 let entities = self.entityManager.getEntitys(component: EnemyComponente.self)
                 let entityEnem = foundEntityWithNodeName(entities: entities, nodeName: "SoulPhysicNode-4")
                 let entityEnemyNode = entityEnem?.component(ofType: SpriteComponent.self)?.nodePhysic
