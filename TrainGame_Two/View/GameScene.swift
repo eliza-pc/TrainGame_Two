@@ -170,7 +170,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             self.entityManager.setObjectInContact(entity: entityB)
             radioSound.playSoundEffect()
             entityB.component(ofType: SoundComponent.self)?.soundVisible()
-            self.control!.speakableActive = true
+          //  self.control!.speakableActive = true
 
         } else if let _ = entityB.component(ofType: PlayerComponent.self), let _ = entityA.component(ofType: SpeakableComponent.self) {
 
@@ -179,7 +179,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             self.entityManager.setObjectInContact(entity: entityA)
             radioSound.playSoundEffect()
             entityA.component(ofType: SoundComponent.self)?.soundVisible()
-            self.control!.speakableActive = true
+          //  self.control!.speakableActive = true
             
         }
         
@@ -216,8 +216,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             entities[0].component(ofType: BalloonComponent.self)!.isVisible()
             self.entityManager.setObjectInContact(entity: entityB)
             radioSound.playSoundEffect()
+            
             entities[0].component(ofType: SoundComponent.self)?.soundVisible()
-//            self.control!.speakableActive = true
+            self.control!.speakableActive = true
             
         } else if let _ = entityB.component(ofType: PlayerComponent.self), let _ = entityA.component(ofType: InfoComponent.self) {
             
@@ -227,7 +228,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             self.entityManager.setObjectInContact(entity: entityA)
             radioSound.playSoundEffect()
             entities[0].component(ofType: SoundComponent.self)?.soundVisible()
-//            self.control!.speakableActive = true
+            self.control!.speakableActive = true
             
         }
         
