@@ -47,7 +47,8 @@ class EnemyComponente: GKComponent{
     
     func isVisibleWithBrigthess(lum: CGFloat, autor: SKSpriteNode){
         if lum > 0.6 {
-            autor.alpha = lum
+            //autor.alpha = lum
+            autor.run(SKAction.fadeAlpha(to: lum-0.2, duration: 0.3))
         } else {
             autor.alpha = 0
         }
