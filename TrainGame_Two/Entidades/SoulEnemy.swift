@@ -28,6 +28,7 @@ class SoulEnemy: GKEntity{
         
         let enemyComponent = EnemyComponente(minX: minX, maxX: maxX, nodePhysic: spriteComponent.nodePhysic, initialPoint: CGPoint(x: spriteComponent.nodePhysic.position.x, y: spriteComponent.nodePhysic.position.y), gameScene: gameScene)
         
+        
         addComponent(spriteComponent)
         addComponent(enemyComponent)
         addComponent(DestroyOnContactComponent())

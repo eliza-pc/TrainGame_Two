@@ -116,10 +116,10 @@ class Control {
         
         if gesture is UILongPressGestureRecognizer {
             if collectableActive == true {
-                self.feedbackGenerator?.notificationOccurred(.success)
                 if let removeObject = self.gameScene.entityManager.getObjectInContact() {
                     self.gameScene.entityManager.remove(removeObject)
                     self.collectableActive = false
+                    self.feedbackGenerator?.notificationOccurred(.success)
                 }
             }
             //            else if pushBox == true { }
