@@ -62,7 +62,6 @@ class GameViewController: UIViewController {
     @objc func initGameAgain() {
         pausedScreenGame()
         callPauseViewController()
-        
     }
     
     func countRoseInGame(){ self.countRoses += 1 }
