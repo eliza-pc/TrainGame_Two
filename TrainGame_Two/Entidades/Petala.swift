@@ -29,11 +29,12 @@ class Petala: GKEntity{
         
        
         spriteComponent.nodePhysic.entity = self
-        let balloonComponent = BalloonComponent(parentNode: spriteComponent.nodePhysic, balloonNodeName: "textureBalao")
         
-    
         
-        addComponent(balloonComponent)
+//        let balloonComponent = BalloonComponent(parentNode: spriteComponent.nodePhysic, balloonNodeName: "textureBalao")
+//        addComponent(balloonComponent)
+        
+        
         addComponent(spriteComponent)
         addComponent(CollectableComponent())
         addComponent(DestroyOnContactComponent())

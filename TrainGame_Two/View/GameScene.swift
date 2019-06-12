@@ -144,7 +144,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         for entity in entities {
             count = count + 1
             
-            print("\(count) - NodeName: \(nodeName), nodePhysicBodyName: \(entity.component(ofType: SpriteComponent.self)?.nodePhysic.name) ")
+//            print("\(count) - NodeName: \(nodeName), nodePhysicBodyName: \(entity.component(ofType: SpriteComponent.self)?.nodePhysic.name) ")
             
             if entity.component(ofType: SpriteComponent.self)?.nodePhysic.name == nodeName {
                 

@@ -11,7 +11,7 @@
 import SpriteKit
 import GameplayKit
 
-let arrayEnigmas: [SKTexture] = [SKTexture.init(imageNamed: "Ballon"),SKTexture.init(imageNamed: "Ballon2"),SKTexture.init(imageNamed: "Ballon3")]
+let arrayEnigmas: [SKTexture] = [SKTexture.init(imageNamed: "Ballon"),SKTexture.init(imageNamed: "Ballon3"),SKTexture.init(imageNamed: "Ballon2")]
 
 
 class BalloonComponent: GKComponent {
@@ -38,11 +38,13 @@ class BalloonComponent: GKComponent {
     func changeBallon(index: Int) {
         switch index {
         case 1:
+            self.balloon.size = arrayEnigmas[index].size()
             self.balloon.texture = arrayEnigmas[index]
         case 2:
+            self.balloon.size = arrayEnigmas[index].size()
             self.balloon.texture = arrayEnigmas[index]
         default:
-            "don't have index"
+            print("don't have index")
         }
         
     }

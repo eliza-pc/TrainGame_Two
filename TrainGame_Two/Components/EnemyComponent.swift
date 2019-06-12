@@ -50,7 +50,7 @@ class EnemyComponente: GKComponent{
             //autor.alpha = lum
             autor.run(SKAction.fadeAlpha(to: lum-0.2, duration: 0.3))
         } else {
-            autor.alpha = 0
+            autor.run(SKAction.fadeAlpha(to: 0, duration: 0.3))
         }
     }
     
