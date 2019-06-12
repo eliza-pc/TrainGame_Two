@@ -55,6 +55,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let hotArea1 = DangerArea(nodeName: "hotArea-1" ,gameScene: self)
         let jumpArea1 = JumpArea(nodeName: "jumpArea-1", gameScene: self)
         let jumpArea2 = JumpArea(nodeName: "jumpArea-2", gameScene: self)
+        let jumpArea3 = JumpArea(nodeName: "jumpArea-3", gameScene: self)
+        let jumpArea4 = JumpArea(nodeName: "jumpArea-4", gameScene: self)
         let infoArea1 = InfoArea(nodeName: "infoArea-1", gameScene: self)
         let soundBox = SoundBox(nodeName: "NodeSoundBox-1", gameScene: self)
         let soundBox2 = SoundBox(nodeName: "NodeSoundBox-2", gameScene: self)
@@ -128,7 +130,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         
 
-        addEntities(arrayEntities: [personagemPrincipal, hotArea1,hotArea2, petala1, soulEnemy1, soulEnemy2, soulEnemy3, infoArea1, jumpArea1,soundBox, soundBox2, jumpArea2, hotArea3])
+        addEntities(arrayEntities: [personagemPrincipal, hotArea1,hotArea2, petala1, soulEnemy1, soulEnemy2, soulEnemy3, infoArea1, jumpArea1,soundBox, soundBox2, jumpArea2, jumpArea3, jumpArea4, hotArea3])
 
         view.isMultipleTouchEnabled = false
     }
