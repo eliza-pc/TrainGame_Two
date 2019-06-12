@@ -19,7 +19,7 @@ let foundRose = Notification.Name(rawValue: "foundRose")
 let initSearchRose = Notification.Name(rawValue: "initSearchRose")
 let saiuApp = Notification.Name(rawValue: "saiuApp")
 let entrouAgain = Notification.Name(rawValue: "entrouAgain")
-
+var stayInPause: Bool = false
 
 class GameViewController: UIViewController {
     
@@ -131,6 +131,7 @@ class GameViewController: UIViewController {
     
     
     func resumeGame(){
+        stayInPause = false
         shake()
         self.gameScene?.inPaused(switchPaused: false)
     }
@@ -146,6 +147,7 @@ class GameViewController: UIViewController {
     }
     
     func callPauseViewController(){
+        stayInPause = true
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "PauseViewController") as! PauseViewController
         vc.view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
         self.addChild(vc)
