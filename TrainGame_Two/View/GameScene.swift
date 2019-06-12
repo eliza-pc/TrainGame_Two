@@ -239,6 +239,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             self.control?.directionCommand =  UserControl.idle
             self.control?.incrementJump = 30
             self.speedJump = speedIncremento
+            self.control?.isOntheBox = true
             
         } else if let _ = entityB.component(ofType: PlayerComponent.self), let _ = entityA.component(ofType: JumpComponent.self) {
             
@@ -247,6 +248,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             self.control?.directionCommand =  UserControl.idle
             self.control?.incrementJump = 30
             self.speedJump = speedIncremento
+            self.control?.isOntheBox = true
         }
         
 
@@ -300,11 +302,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if let _ = entityA.component(ofType: PlayerComponent.self), let _ = entityB.component(ofType: JumpComponent.self) {
         
             self.control?.incrementJump = 0
+            self.control?.isOntheBox = false
             self.speedJump = 0
             
         } else if let _ = entityB.component(ofType: PlayerComponent.self), let _ = entityA.component(ofType: JumpComponent.self) {
             
             self.control?.incrementJump = 0
+            self.control?.isOntheBox = false
             self.speedJump = 0
         }
         

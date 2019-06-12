@@ -32,8 +32,9 @@ class Control {
     var speakableActive: Bool = false
     var incrementJump: Int = 0
     var pushBox: Bool = false
-    
+    var isOntheBox = false
     var countPhrases: Int = 0
+    
     
     var feedbackGenerator: UINotificationFeedbackGenerator? = UINotificationFeedbackGenerator()
     
@@ -129,7 +130,18 @@ class Control {
         //Mark: Control Entities
         let entitys = gameScene.entityManager.getEntitys(component: PlayerComponent.self)
         self.entityNode = entitys[0].component(ofType: SpriteComponent.self)?.nodePhysic
-        entityNode?.run(SKAction.moveTo(y: CGFloat(8 + incrementJump), duration: 0.35))
+        entityNode?.run(SKAction.moveTo(y: CGFloat(8 + incrementJump), duration: 0.4))
+        
+        let textureNode = entityNode?.childNode(withName: "texturePlayer")
+        
+       // print(entityNode?.physicsBody)
+        if textureNode!.xScale > 0, isOntheBox == true{
+            entityNode?.run(SKAction.applyImpulse(CGVector(dx: 50.0, dy: 0), duration: 0.2))
+            print("+impulso")
+        } else if textureNode!.xScale < 0, isOntheBox == true {
+            entityNode?.run(SKAction.applyImpulse(CGVector(dx: -50.0, dy: 0), duration: 0.2))
+            print("-impulso")
+        }
     }
     
     func updatePressedButtons(control: UserControl?, dt: Double) {
