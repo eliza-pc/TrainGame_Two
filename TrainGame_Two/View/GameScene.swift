@@ -89,16 +89,27 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     if self.control?.directionCommand == UserControl.right {
                          spriteComponent.nodeTexture.xScale = abs(spriteComponent.nodeTexture.xScale) * 1.0
                         
-        //                print("2 - incremento: \(self.speedJump), velocidade: \(spriteComponent.nodePhysic.position.x + (pVelocity.x * speed))")
-                        // MARK: Move for Physics
-                        spriteComponent.nodePhysic.position = CGPoint(x: spriteComponent.nodePhysic.position.x + (pVelocity.x * speed) + self.speedJump, y: spriteComponent.nodePhysic.position.y)
+                        if self.moveJoystick.handle.position.x > 0 {
+                            spriteComponent.nodePhysic.position = CGPoint(x: spriteComponent.nodePhysic.position.x + (pVelocity.x * speed) + self.speedJump, y: spriteComponent.nodePhysic.position.y)
+                        } else {
+                            // MARK: Move for Physics
+                            spriteComponent.nodePhysic.position = CGPoint(x: spriteComponent.nodePhysic.position.x + (pVelocity.x * speed), y: spriteComponent.nodePhysic.position.y)
+                        }
+                        
                         
                     } else {
                         
                         spriteComponent.nodeTexture.xScale = abs(spriteComponent.nodeTexture.xScale) * -1.0
                         
-                        // MARK: Move for Physics
-                        spriteComponent.nodePhysic.position = CGPoint(x: spriteComponent.nodePhysic.position.x + (pVelocity.x * speed) - self.speedJump, y: spriteComponent.nodePhysic.position.y)
+                        if self.moveJoystick.handle.position.x > 0 {
+                            // MARK: Move for Physics
+                            spriteComponent.nodePhysic.position = CGPoint(x: spriteComponent.nodePhysic.position.x + (pVelocity.x * speed) - self.speedJump, y: spriteComponent.nodePhysic.position.y)
+                        } else {
+                            
+                            // MARK: Move for Physics
+                            spriteComponent.nodePhysic.position = CGPoint(x: spriteComponent.nodePhysic.position.x + (pVelocity.x * speed), y: spriteComponent.nodePhysic.position.y)
+                        }
+                
                     }
                 
                 }
