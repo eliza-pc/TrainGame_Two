@@ -279,17 +279,33 @@ extension GameScene {
         
         
         if let _ = entityA.component(ofType: PlayerComponent.self), let _ = entityB.component(ofType: HotRegionComponent.self) {
-            let nodeName: String = "SoulPhysicNode-1"
-            let entities = self.entityManager.getEntitys(component: EnemyComponente.self)
-            let entityEnem = self.foundEntityWithNodeName(entities: entities, nodeName: nodeName)
-            entityEnem?.component(ofType: EnemyComponente.self)?.state = .ataque
+            
+            // MARK: 1
+            
+            
+            switch nodeB.name {
+            case "hotArea-1":
+                let entities = self.entityManager.getEntitys(component: EnemyComponente.self)
+                let entityEnem = self.foundEntityWithNodeName(entities: entities, nodeName: "SoulPhysicNode-1")
+                entityEnem?.component(ofType: EnemyComponente.self)?.state = .ataque
+            default:
+                print("Node Don't have identify: \(nodeB.name)")
+            }
+ 
             
         } else if let _ = entityB.component(ofType: PlayerComponent.self), let _ = entityA.component(ofType: HotRegionComponent.self) {
             
-            let nodeName: String = "SoulPhysicNode-1"
-            let entities = self.entityManager.getEntitys(component: EnemyComponente.self)
-            let entityEnem = self.foundEntityWithNodeName(entities: entities, nodeName: nodeName)
-            entityEnem?.component(ofType: EnemyComponente.self)?.state = .ataque
+            // MARK: 2
+            
+            switch nodeA.name {
+            case "hotArea-1":
+                let entities = self.entityManager.getEntitys(component: EnemyComponente.self)
+                let entityEnem = self.foundEntityWithNodeName(entities: entities, nodeName: "SoulPhysicNode-1")
+                entityEnem?.component(ofType: EnemyComponente.self)?.state = .ataque
+            default:
+                print("Node Don't have identify: \(nodeA.name)")
+            }
+            
         }
         
         if let _ = entityA.component(ofType: PlayerComponent.self), let _ = entityB.component(ofType: EnemyComponente.self) {
@@ -385,21 +401,42 @@ extension GameScene {
         
         //Sair da area de Perigo
         if let _ = entityA.component(ofType: PlayerComponent.self), let _ = entityB.component(ofType: HotRegionComponent.self) {
-            let entities = self.entityManager.getEntitys(component: EnemyComponente.self)
-            let entityEnem = foundEntityWithNodeName(entities: entities, nodeName: "SoulPhysicNode-1")
-            let entityEnemyNode = entityEnem?.component(ofType: SpriteComponent.self)?.nodePhysic
-           
-            entityEnem?.component(ofType: EnemyComponente.self)?.state = StateEnemy.vigilancia
-            entityEnem?.component(ofType: EnemyComponente.self)?.vigiar(autor: entityEnemyNode!)
+            
+            // MARK: 3
+            switch nodeB.name {
+            case "hotArea-1":
+                let entities = self.entityManager.getEntitys(component: EnemyComponente.self)
+                let entityEnem = foundEntityWithNodeName(entities: entities, nodeName: "SoulPhysicNode-1")
+                let entityEnemyNode = entityEnem?.component(ofType: SpriteComponent.self)?.nodePhysic
+                
+                entityEnem?.component(ofType: EnemyComponente.self)?.state = StateEnemy.vigilancia
+                entityEnem?.component(ofType: EnemyComponente.self)?.vigiar(autor: entityEnemyNode!)
+            case "hotArea-2":
+                print("logica - 2")
+            default:
+                print("node Don't identify: \(nodeB.name)")
+            }
+            
             
         } else if let _ = entityB.component(ofType: PlayerComponent.self), let _ = entityA.component(ofType: HotRegionComponent.self) {
-            let entities = self.entityManager.getEntitys(component: EnemyComponente.self)
-            let entityEnem = foundEntityWithNodeName(entities: entities, nodeName: "SoulPhysicNode-1")
             
-            let entityEnemyNode = entityEnem?.component(ofType: SpriteComponent.self)?.nodePhysic
-          
-            entityEnem?.component(ofType: EnemyComponente.self)?.state = StateEnemy.vigilancia
-            entityEnem?.component(ofType: EnemyComponente.self)?.vigiar(autor: entityEnemyNode!)
+            // MARK: 4
+            
+            switch nodeA.name {
+            case "hotArea-1":
+                let entities = self.entityManager.getEntitys(component: EnemyComponente.self)
+                let entityEnem = foundEntityWithNodeName(entities: entities, nodeName: "SoulPhysicNode-1")
+                
+                let entityEnemyNode = entityEnem?.component(ofType: SpriteComponent.self)?.nodePhysic
+                
+                entityEnem?.component(ofType: EnemyComponente.self)?.state = StateEnemy.vigilancia
+                entityEnem?.component(ofType: EnemyComponente.self)?.vigiar(autor: entityEnemyNode!)
+            case "hotArea-2":
+                print("logica - 2")
+            default:
+                print("node Don't identify: \(nodeA.name)")
+            }
+            
         }
         
         
