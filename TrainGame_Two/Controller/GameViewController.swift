@@ -24,6 +24,7 @@ let winGame = Notification.Name(rawValue: "winGame")
 //gameOverWin()
 
 var stayInPause: Bool = false
+var controladorSaiuDoJogo: Bool = false
 var countRoses: Int = 0
 
 class GameViewController: UIViewController {

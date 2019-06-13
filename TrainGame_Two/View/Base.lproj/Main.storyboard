@@ -162,6 +162,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Wc5-5i-uHJ"/>
                     </view>
+                    <connections>
+                        <outlet property="phraseLabel" destination="cLs-Vd-34W" id="F4Y-qO-VV8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u0L-eg-Dtn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
