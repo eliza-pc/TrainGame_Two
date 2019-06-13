@@ -21,12 +21,13 @@ let saiuApp = Notification.Name(rawValue: "saiuApp")
 let entrouAgain = Notification.Name(rawValue: "entrouAgain")
 let achouPetala = Notification.Name(rawValue: "achouPetala")
 var stayInPause: Bool = false
+var countRoses: Int = 0
 
 class GameViewController: UIViewController {
     
     var gameScene: GameScene? = nil
     let testerOrDebbuger: Bool = false
-    var countRoses: Int = 0
+    
     
     @IBOutlet weak var roseProgress: UIImageView!
     
@@ -45,19 +46,17 @@ class GameViewController: UIViewController {
     }
     
     func addPental(){
-        self.countRoses += 1
+        countRoses += 1
         countPental.text = "\(countRoses)/2"
-        if countRoses > 1 {
-            roseProgress.image = UIImage.init(named: "Hud Rose")
+        if countRoses >= 2  {
+            roseProgress.image = UIImage.init(named: "HudRose")
         }
     }
 
     func createObserve(){
         NotificationCenter.default.addObserver(self, selector: #selector(self.exitPaused), name: pausedExit, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.gameOverReturn), name: GameOver, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.initSearchRose), name: GameOver, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.foundNewRose), name: GameOver, object: nil)
-        
+  
         NotificationCenter.default.addObserver(self, selector: #selector(self.Buscando), name: saiuApp, object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.initGameAgain), name: entrouAgain, object: nil)
@@ -71,10 +70,6 @@ class GameViewController: UIViewController {
     
     @objc func gameOverReturn(){ createScene() }
     
-    @objc func initSearchRose(){ initRoseInGame() }
-    
-    @objc func foundNewRose(){ countRoseInGame() }
-    
     @objc func Buscando(){ pausedScreenGame() }
     
     @objc func initGameAgain() {
@@ -82,9 +77,6 @@ class GameViewController: UIViewController {
         callPauseViewController()
     }
     
-    func countRoseInGame(){ self.countRoses += 1 }
-    
-    func initRoseInGame(){ self.countRoses = 0 }
     
     func createScene(){
         // Load 'GameScene.sks' as a GKScene. This provides gameplay related content

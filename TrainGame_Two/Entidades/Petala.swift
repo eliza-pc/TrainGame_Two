@@ -19,14 +19,6 @@ class Petala: GKEntity{
         super.init()
       
         let spriteComponent = SpriteComponent(gameScene: gameScene, nodeName: nodeName, textureNodeName: "texturePetal")
-        
-//        // Quem sou eu?
-//        spriteComponent.nodePhysic.physicsBody?.categoryBitMask    = 0b0010
-//        // De quem eu recebo colisões?
-//        spriteComponent.nodePhysic.physicsBody?.collisionBitMask   = 0b0000
-//        // De quem eu recebo contato?
-//        spriteComponent.nodePhysic.physicsBody?.contactTestBitMask = 0b0001
-        
        
         spriteComponent.nodePhysic.entity = self
         
@@ -41,6 +33,7 @@ class Petala: GKEntity{
         
         spriteComponent.nodeTexture.run(SKAction.repeatForever(SKAction.sequence([aument, dim])))
         
+        spriteComponent.nodePhysic.alpha = 1
         addComponent(collectableAnimationComponent)
         addComponent(spriteComponent)
         addComponent(CollectableComponent())

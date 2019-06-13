@@ -25,7 +25,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var gameOver: Bool = false
     let speedIncremento: CGFloat = 0.8
     var speedJump: CGFloat = 0
-    
+    let countPentalNumbers = countRoses
     let moveJoystick = 🕹(withDiameter: 100)
     //let camera: SKCameraNode?
   
@@ -50,8 +50,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         entityManager = EntityManager(scene: self)
         
         let personagemPrincipal = Player(nodeName: "player", gameScene: self)
-        let petala1 = Petala(nodeName: "nodePetal-1", gameScene: self)
-        let petala2 = Petala(nodeName: "nodePetal-2", gameScene: self)
+        
         let soulEnemy1 = SoulEnemy(nodeName: "SoulPhysicNode-1", gameScene: self,minX: 560, maxX: 800)
         let soulEnemy2 = SoulEnemy(nodeName: "SoulPhysicNode-2", gameScene: self,minX: 1360, maxX: 1610)
         let hotArea1 = DangerArea(nodeName: "hotArea-1" ,gameScene: self)
@@ -140,8 +139,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             }
         }
         
-
-        addEntities(arrayEntities: [personagemPrincipal, hotArea1,hotArea2, petala1, petala2, soulEnemy1, soulEnemy2, soulEnemy3, soulEnemy4, infoArea1, jumpArea1,soundBox, soundBox2, jumpArea2, jumpArea3, jumpArea4, hotArea3, checkPoint1, checkPoint2])
+        if countPentalNumbers == 0 {
+            let petala1 = Petala(nodeName: "nodePetal-1", gameScene: self)
+            let petala2 = Petala(nodeName: "nodePetal-2", gameScene: self)
+            addEntities(arrayEntities: [personagemPrincipal, hotArea1,hotArea2, petala1, petala2, soulEnemy1, soulEnemy2, soulEnemy3, soulEnemy4, infoArea1, jumpArea1,soundBox, soundBox2, jumpArea2, jumpArea3, jumpArea4, hotArea3, checkPoint1, checkPoint2])
+        } else if countPentalNumbers == 1 {
+            let petala2 = Petala(nodeName: "nodePetal-2", gameScene: self)
+            addEntities(arrayEntities: [personagemPrincipal, hotArea1,hotArea2, petala2, soulEnemy1, soulEnemy2, soulEnemy3, soulEnemy4, infoArea1, jumpArea1,soundBox, soundBox2, jumpArea2, jumpArea3, jumpArea4, hotArea3, checkPoint1, checkPoint2])
+        } else {
+            addEntities(arrayEntities: [personagemPrincipal, hotArea1,hotArea2, soulEnemy1, soulEnemy2, soulEnemy3, soulEnemy4, infoArea1, jumpArea1,soundBox, soundBox2, jumpArea2, jumpArea3, jumpArea4, hotArea3, checkPoint1, checkPoint2])
+        }
 
         view.isMultipleTouchEnabled = false
     }
