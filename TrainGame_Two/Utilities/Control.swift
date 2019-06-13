@@ -140,10 +140,10 @@ class Control {
        // print(entityNode?.physicsBody)
         if textureNode!.xScale > 0, isOntheBox == true{
             entityNode?.run(SKAction.applyImpulse(CGVector(dx: 50.0, dy: 0), duration: 0.2))
-            print("+impulso")
+//            print("+impulso")
         } else if textureNode!.xScale < 0, isOntheBox == true {
             entityNode?.run(SKAction.applyImpulse(CGVector(dx: -50.0, dy: 0), duration: 0.2))
-            print("-impulso")
+ //          print("-impulso")
         }
     }
     
