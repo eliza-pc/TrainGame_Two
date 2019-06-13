@@ -89,7 +89,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 
               
                 let pVelocity = joystick.velocity;
-                let speed = CGFloat(0.05)
+                let speed = CGFloat(0.07)
 
                 if self.control?.directionCommand == UserControl.jump {
                     
