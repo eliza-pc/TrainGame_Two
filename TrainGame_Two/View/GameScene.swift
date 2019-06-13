@@ -259,9 +259,10 @@ extension GameScene {
         
         guard let entityA = nodeA.entity, let entityB = nodeB.entity else {
             control?.directionCommand =  UserControl.idle
-            
+      
             if nodeA.name == "WinArea" ||  nodeB.name == "WinArea" {
-                if countPentalNumbers >= 2 {
+                if countRoses >= 2 {
+                    
                     NotificationCenter.default.post(name: winGame, object: nil)
                 }
             }
