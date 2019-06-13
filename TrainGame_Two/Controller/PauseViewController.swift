@@ -23,10 +23,7 @@ class PauseViewController: UIViewController {
             phraseLabel.text = "Game Over"
         } else {
             if controladorSaiuDoJogo == true {
-                
-                print("Setar label com frase")
-                
-                
+            
                 let font1 = UIFont(name: "Hustle Hardcore", size: 21)
                 phraseLabel.font = font1
                 phraseLabel.text = "Welcome back! I hope that now you can see all the dangerous that surround you."
@@ -53,7 +50,7 @@ class PauseViewController: UIViewController {
             self.view.removeFromSuperview()
             
         } else {
-            print("chegou aqui")
+           
             controladorSaiuDoJogo = false
             
             NotificationCenter.default.post(name: pausedExit, object: nil)
