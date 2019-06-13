@@ -11,6 +11,7 @@
 		1D1BF66F22B19F1900EA09C3 /* Free Hustle Hardcore.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1D1BF66E22B19F1900EA09C3 /* Free Hustle Hardcore.ttf */; };
 		1D1BF67122B1A29400EA09C3 /* CheckPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1BF67022B1A29400EA09C3 /* CheckPoint.swift */; };
 		1D1BF67522B1A4E700EA09C3 /* CheckPointComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1BF67422B1A4E700EA09C3 /* CheckPointComponent.swift */; };
+		1D1BF67722B29B1F00EA09C3 /* ToBeContinueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D1BF67622B29B1F00EA09C3 /* ToBeContinueViewController.swift */; };
 		1D97E8F222AEE2EA009C88BD /* ObstacleComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D97E8F122AEE2EA009C88BD /* ObstacleComponent.swift */; };
 		1DA672E322A018C40007B49B /* (null) in Sources */ = {isa = PBXBuildFile; };
 		1DA672E522A01D280007B49B /* PlayerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA672E422A01D280007B49B /* PlayerComponent.swift */; };
@@ -68,6 +69,7 @@
 		1D1BF66E22B19F1900EA09C3 /* Free Hustle Hardcore.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Free Hustle Hardcore.ttf"; sourceTree = "<group>"; };
 		1D1BF67022B1A29400EA09C3 /* CheckPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckPoint.swift; sourceTree = "<group>"; };
 		1D1BF67422B1A4E700EA09C3 /* CheckPointComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckPointComponent.swift; sourceTree = "<group>"; };
+		1D1BF67622B29B1F00EA09C3 /* ToBeContinueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToBeContinueViewController.swift; sourceTree = "<group>"; };
 		1D97E8F122AEE2EA009C88BD /* ObstacleComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObstacleComponent.swift; sourceTree = "<group>"; };
 		1DA672E422A01D280007B49B /* PlayerComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerComponent.swift; sourceTree = "<group>"; };
 		1DAEACA722B00A29000DFD7B /* SoundComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundComponent.swift; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 				1FF45042229C2434009B7DF7 /* AppDelegate.swift */,
 				1FF4504A229C2434009B7DF7 /* GameViewController.swift */,
 				1DEA642A22AE07F500A03632 /* PauseViewController.swift */,
+				1D1BF67622B29B1F00EA09C3 /* ToBeContinueViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 			files = (
 				1FA72A7822AAA42C00339D72 /* BackgroundMusicClass.swift in Sources */,
 				5E88671022A6ABBF0008D4B0 /* SoulEnemy.swift in Sources */,
+				1D1BF67722B29B1F00EA09C3 /* ToBeContinueViewController.swift in Sources */,
 				1DD53DF122A9541900823FF9 /* PhysicComponent.swift in Sources */,
 				1FA72A7A22AAA4D200339D72 /* SoundEffectsClass.swift in Sources */,
 				1DDEBC6B22A6A4C300262156 /* Petala.swift in Sources */,
