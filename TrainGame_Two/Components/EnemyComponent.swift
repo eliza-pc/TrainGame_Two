@@ -23,7 +23,7 @@ class EnemyComponente: GKComponent{
     let rightLimit: CGFloat
     let initialPosition: CGPoint
     let alvo: SKSpriteNode
-    let enemySpeed: CGFloat = 1
+    let enemySpeed: CGFloat = 1.7
     
     init(minX: CGFloat, maxX: CGFloat, nodePhysic: SKSpriteNode, initialPoint: CGPoint, gameScene: GameScene) {
         self.leftLimit = minX
