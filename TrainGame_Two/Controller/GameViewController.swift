@@ -71,11 +71,15 @@ class GameViewController: UIViewController {
     
     @objc func gameOverReturn(){ createScene() }
     
-    @objc func Buscando(){ pausedScreenGame() }
+    @objc func Buscando(){
+        pausedScreenGame()
+        radioSound.pauseSong()
+    }
     
     @objc func initGameAgain() {
         pausedScreenGame()
         callPauseViewController()
+        
     }
     
     
@@ -150,6 +154,7 @@ class GameViewController: UIViewController {
     @IBAction func inPausedGame(_ sender: Any) {
         pausedScreenGame()
         callPauseViewController()
+         radioSound.pauseSong()
     }
     
     func pausedScreenGame(){

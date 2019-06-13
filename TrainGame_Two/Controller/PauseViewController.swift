@@ -22,7 +22,7 @@ class PauseViewController: UIViewController {
             print("Setar label com frase")
             
             phraseLabel.text = "Welcome back! I hope that now you can see all the dangerous that surround you."
-            phraseLabel.font.withSize(24)
+            phraseLabel.font.withSize(10)
             
             
         }else{
