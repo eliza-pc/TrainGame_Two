@@ -24,7 +24,7 @@ class BalloonComponent: GKComponent {
         self.balloon.size = arrayEnigmas[0].size()
         self.balloon.position = CGPoint(x: -20, y: 60)
         
-        self.balloon.texture = arrayEnigmas[0]
+    //    self.balloon.texture = arrayEnigmas[0]
         self.balloon.alpha = 0
         
         super.init()

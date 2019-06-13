@@ -82,18 +82,18 @@
             <objects>
                 <viewController id="7GR-Du-K1l" customClass="ToBeControllerViewController" customModule="TrainGame_Two" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tAo-bc-bjJ">
-                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TobeContinue" translatesAutoresizingMaskIntoConstraints="NO" id="HAM-jY-FoY">
-                                <rect key="frame" x="151" y="30.5" width="594" height="353"/>
+                                <rect key="frame" x="36.5" y="11" width="594" height="353"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="594" id="9bs-fE-juB"/>
                                     <constraint firstAttribute="height" constant="353" id="QLW-OP-iQ2"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m5U-vW-2mg">
-                                <rect key="frame" x="275" y="161.5" width="346" height="91.5"/>
+                                <rect key="frame" x="160.5" y="142" width="346" height="91.5"/>
                                 <attributedString key="attributedText">
                                     <fragment content="To Be Continue...">
                                         <attributes>
@@ -131,12 +131,6 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Menu" translatesAutoresizingMaskIntoConstraints="NO" id="hf7-WX-2lj">
                                 <rect key="frame" x="130.5" y="8" width="406" height="359"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pause" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cLs-Vd-34W">
-                                <rect key="frame" x="260.5" y="127" width="146" height="103"/>
-                                <fontDescription key="fontDescription" name="HustleHardcore" family="Hustle Hardcore" pointSize="72"/>
-                                <color key="textColor" red="0.56543850900000003" green="0.27369597550000002" blue="0.5220656991" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Rd-eF-1EO">
                                 <rect key="frame" x="304" y="199" width="59" height="42"/>
                                 <fontDescription key="fontDescription" name="HustleHardcore" family="Hustle Hardcore" pointSize="21"/>
@@ -147,18 +141,25 @@
                                     <action selector="continueGame:" destination="je7-ug-zmB" eventType="touchUpInside" id="kom-LX-mbM"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pause" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cLs-Vd-34W">
+                                <rect key="frame" x="180" y="127" width="307" height="89"/>
+                                <fontDescription key="fontDescription" name="HustleHardcore" family="Hustle Hardcore" pointSize="72"/>
+                                <color key="textColor" red="0.56543850900000003" green="0.27369597550000002" blue="0.5220656991" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Wc5-5i-uHJ" firstAttribute="bottom" secondItem="cLs-Vd-34W" secondAttribute="bottom" constant="159" id="0lg-v3-9jM"/>
                             <constraint firstItem="hf7-WX-2lj" firstAttribute="centerX" secondItem="oKa-eS-Bt4" secondAttribute="centerX" id="1gm-XS-J9D"/>
                             <constraint firstItem="hf7-WX-2lj" firstAttribute="centerY" secondItem="oKa-eS-Bt4" secondAttribute="centerY" id="7y5-Jf-U8q"/>
-                            <constraint firstItem="3Rd-eF-1EO" firstAttribute="trailing" secondItem="cLs-Vd-34W" secondAttribute="trailing" constant="-43.5" id="8wa-OL-3p3"/>
                             <constraint firstItem="hf7-WX-2lj" firstAttribute="top" secondItem="Wc5-5i-uHJ" secondAttribute="top" constant="8" id="909-Eq-orL"/>
-                            <constraint firstItem="3Rd-eF-1EO" firstAttribute="leading" secondItem="cLs-Vd-34W" secondAttribute="leading" constant="43.5" id="KqF-QE-pjJ"/>
-                            <constraint firstItem="hf7-WX-2lj" firstAttribute="top" secondItem="cLs-Vd-34W" secondAttribute="bottom" constant="-222" id="Ojg-YQ-bb4"/>
-                            <constraint firstItem="cLs-Vd-34W" firstAttribute="centerX" secondItem="hf7-WX-2lj" secondAttribute="centerX" id="RkS-Ti-fuC"/>
+                            <constraint firstItem="cLs-Vd-34W" firstAttribute="centerX" secondItem="3Rd-eF-1EO" secondAttribute="centerX" id="RR8-Ez-nUH"/>
+                            <constraint firstItem="cLs-Vd-34W" firstAttribute="top" secondItem="Wc5-5i-uHJ" secondAttribute="top" constant="127" id="cpq-Yr-cs7"/>
+                            <constraint firstItem="cLs-Vd-34W" firstAttribute="leading" secondItem="Wc5-5i-uHJ" secondAttribute="leading" constant="180" id="fAz-Cd-5Is"/>
                             <constraint firstAttribute="bottom" secondItem="hf7-WX-2lj" secondAttribute="bottom" constant="8" id="nFP-0v-hEp"/>
-                            <constraint firstItem="3Rd-eF-1EO" firstAttribute="firstBaseline" secondItem="cLs-Vd-34W" secondAttribute="baseline" constant="28.5" id="qHJ-ce-AiD"/>
+                            <constraint firstItem="cLs-Vd-34W" firstAttribute="centerX" secondItem="hf7-WX-2lj" secondAttribute="centerX" id="pLM-Cr-QuY"/>
+                            <constraint firstItem="3Rd-eF-1EO" firstAttribute="top" secondItem="Wc5-5i-uHJ" secondAttribute="top" constant="199" id="pvB-aC-hdJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Wc5-5i-uHJ"/>
                     </view>
@@ -168,7 +169,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u0L-eg-Dtn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="879" y="48"/>
+            <point key="canvasLocation" x="878.41079460269873" y="47.200000000000003"/>
         </scene>
     </scenes>
     <resources>

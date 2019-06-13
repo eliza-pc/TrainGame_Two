@@ -21,14 +21,17 @@ class PauseViewController: UIViewController {
             
             print("Setar label com frase")
             
+            
+            let font1 = UIFont(name: "Hustle Hardcore", size: 21)
+            phraseLabel.font = font1
             phraseLabel.text = "Welcome back! I hope that now you can see all the dangerous that surround you."
-            phraseLabel.font.withSize(24)
             
+        } else {
             
-        }else{
-            
+            let font2 = UIFont(name: "Hustle Hardcore", size: 72)
+            phraseLabel.font = font2
             phraseLabel.text = "Pause"
-            phraseLabel.font.withSize(72)
+            
             
         }
         
