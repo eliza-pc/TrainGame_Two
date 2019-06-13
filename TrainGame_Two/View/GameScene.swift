@@ -10,9 +10,9 @@
 import SpriteKit
 import GameplayKit
 
-//var positionCheckPoint_X: CGFloat = -240
+var positionCheckPoint_X: CGFloat = -240
 
-var positionCheckPoint_X: CGFloat = 2560
+//var positionCheckPoint_X: CGFloat = 2560
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
@@ -261,8 +261,9 @@ extension GameScene {
             control?.directionCommand =  UserControl.idle
             
             if nodeA.name == "WinArea" ||  nodeB.name == "WinArea" {
-                
-                NotificationCenter.default.post(name: winGame, object: nil)
+                if countPentalNumbers >= 2 {
+                    NotificationCenter.default.post(name: winGame, object: nil)
+                }
             }
             
             return
