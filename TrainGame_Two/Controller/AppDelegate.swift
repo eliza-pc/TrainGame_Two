@@ -28,6 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NotificationCenter.default.post(name: saiuApp, object: nil)
         controladorSaiuDoJogo = true
         sharedSolution = true
+        print("chamou aquiii")
+        
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
@@ -43,7 +45,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
         
         if sharedSolution == true {
+            print("ëntrou aqui: \(stayInPause)")
             if stayInPause != true {
+                print("chegou aqui = 121")
                 NotificationCenter.default.post(name: entrouAgain, object: nil)
             }
         }

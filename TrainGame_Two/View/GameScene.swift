@@ -220,7 +220,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func controllerScenesGame (keyScene: Int) {
         switch keyScene {
         case 1:
+            gameOverMorreu = true
             NotificationCenter.default.post(name: GameOver, object: nil)
+            
         default:
            print("key don't identify")
         }

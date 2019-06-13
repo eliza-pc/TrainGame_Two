@@ -22,6 +22,8 @@ let entrouAgain = Notification.Name(rawValue: "entrouAgain")
 let achouPetala = Notification.Name(rawValue: "achouPetala")
 let winGame = Notification.Name(rawValue: "winGame")
 //gameOverWin()
+var gameOverMorreu: Bool = false
+
 
 var stayInPause: Bool = false
 var controladorSaiuDoJogo: Bool = false
@@ -72,15 +74,23 @@ class GameViewController: UIViewController {
     
     @objc func addPentalGame(){ addPental() }
     
-    @objc func exitPaused(){ resumeGame() }
+    @objc func exitPaused(){ resumeGame()}
     
-    @objc func gameOverReturn(){ createScene() }
+    @objc func gameOverReturn() {
+//        createScene()
+        callGameOverScreen()
+    }
     
     @objc func Buscando(){ pausedScreenGame() }
     
     @objc func WinGame(){ gameOverWin() }
     
     @objc func initGameAgain() {
+        pausedScreenGame()
+        callPauseViewController()
+    }
+    
+    func callGameOverScreen(){
         pausedScreenGame()
         callPauseViewController()
     }
@@ -150,8 +160,13 @@ class GameViewController: UIViewController {
     
     func resumeGame(){
         stayInPause = false
-        shake()
-        self.gameScene?.inPaused(switchPaused: false)
+        if gameOverMorreu == true {
+            createScene()
+            gameOverMorreu = false
+        } else {
+            shake()
+            self.gameScene?.inPaused(switchPaused: false)
+        }
     }
     
     @IBAction func inPausedGame(_ sender: Any) {

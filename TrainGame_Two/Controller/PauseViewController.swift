@@ -17,35 +17,49 @@ class PauseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if controladorSaiuDoJogo == true {
-            
-            print("Setar label com frase")
-            
-            
-            let font1 = UIFont(name: "Hustle Hardcore", size: 21)
-            phraseLabel.font = font1
-            phraseLabel.text = "Welcome back! I hope that now you can see all the dangerous that surround you."
-            
-        } else {
-            
+        if  gameOverMorreu == true {
             let font2 = UIFont(name: "Hustle Hardcore", size: 72)
             phraseLabel.font = font2
-            phraseLabel.text = "Pause"
-            
-            
+            phraseLabel.text = "Game Over"
+        } else {
+            if controladorSaiuDoJogo == true {
+                
+                print("Setar label com frase")
+                
+                
+                let font1 = UIFont(name: "Hustle Hardcore", size: 21)
+                phraseLabel.font = font1
+                phraseLabel.text = "Welcome back! I hope that now you can see all the dangerous that surround you."
+                
+            } else {
+                
+                let font2 = UIFont(name: "Hustle Hardcore", size: 72)
+                phraseLabel.font = font2
+                phraseLabel.text = "Pause"
+                
+                
+            }
         }
-        
+    
     }
     
     
     @IBAction func continueGame(_ sender: Any) {
         
-        controladorSaiuDoJogo = false
-        
-        NotificationCenter.default.post(name: pausedExit, object: nil)
-        self.removeFromParent()
-        self.view.removeFromSuperview()
-        
+        if  gameOverMorreu == true {
+           
+            NotificationCenter.default.post(name: pausedExit, object: nil)
+            self.removeFromParent()
+            self.view.removeFromSuperview()
+            
+        } else {
+            print("chegou aqui")
+            controladorSaiuDoJogo = false
+            
+            NotificationCenter.default.post(name: pausedExit, object: nil)
+            self.removeFromParent()
+            self.view.removeFromSuperview()
+        }
     }
     
 }
