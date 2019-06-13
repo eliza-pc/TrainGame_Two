@@ -20,6 +20,9 @@ let initSearchRose = Notification.Name(rawValue: "initSearchRose")
 let saiuApp = Notification.Name(rawValue: "saiuApp")
 let entrouAgain = Notification.Name(rawValue: "entrouAgain")
 let achouPetala = Notification.Name(rawValue: "achouPetala")
+let winGame = Notification.Name(rawValue: "winGame")
+//gameOverWin()
+
 var stayInPause: Bool = false
 var countRoses: Int = 0
 
@@ -62,6 +65,8 @@ class GameViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(self.initGameAgain), name: entrouAgain, object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.addPentalGame), name: achouPetala, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.WinGame), name: winGame, object: nil)
     }
     
     @objc func addPentalGame(){ addPental() }
@@ -71,6 +76,8 @@ class GameViewController: UIViewController {
     @objc func gameOverReturn(){ createScene() }
     
     @objc func Buscando(){ pausedScreenGame() }
+    
+    @objc func WinGame(){ gameOverWin() }
     
     @objc func initGameAgain() {
         pausedScreenGame()
@@ -149,6 +156,7 @@ class GameViewController: UIViewController {
     @IBAction func inPausedGame(_ sender: Any) {
         pausedScreenGame()
         callPauseViewController()
+        
     }
     
     func pausedScreenGame(){
@@ -162,6 +170,12 @@ class GameViewController: UIViewController {
         vc.view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
         self.addChild(vc)
         self.view.addSubview(vc.view)
+    }
+    
+    func gameOverWin(){
+        self.removeFromParent()
+        //WinSegue
+        performSegue(withIdentifier: "WinSegue", sender: nil)
     }
     
 
