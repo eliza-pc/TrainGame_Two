@@ -81,12 +81,12 @@ class SoundEffects {
             do {
                 
                 audioPlayer = try AVAudioPlayer(contentsOf:aSound as URL)
-                audioPlayer!.numberOfLoops = -1
+                audioPlayer!.numberOfLoops = 1
                 audioPlayer!.prepareToPlay()
                 //audioPlayer!.setVolume(1, fadeDuration: 4)
                 //audioPlayer!.currentTime = 0.35
                 audioPlayer!.play()
-                audioPlayer!.volume = 0.1
+                audioPlayer!.volume = 0.015
                 
                 
 //                print("radiosound")

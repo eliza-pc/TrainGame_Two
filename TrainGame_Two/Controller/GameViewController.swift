@@ -81,13 +81,17 @@ class GameViewController: UIViewController {
         callGameOverScreen()
     }
     
-    @objc func Buscando(){ pausedScreenGame() }
+    @objc func Buscando(){
+        pausedScreenGame()
+        radioSound.pauseSong()
+    }
     
     @objc func WinGame(){ gameOverWin() }
     
     @objc func initGameAgain() {
         pausedScreenGame()
         callPauseViewController()
+        
     }
     
     func callGameOverScreen(){
@@ -172,7 +176,7 @@ class GameViewController: UIViewController {
     @IBAction func inPausedGame(_ sender: Any) {
         pausedScreenGame()
         callPauseViewController()
-        
+        radioSound.pauseSong()
     }
     
     func pausedScreenGame(){
