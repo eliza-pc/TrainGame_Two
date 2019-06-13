@@ -24,10 +24,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3pQ-9S-c44">
-                                <rect key="frame" x="607" y="25" width="35" height="35"/>
+                                <rect key="frame" x="594" y="25" width="48" height="48"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="35" id="4RH-Us-Ivs"/>
-                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="35" id="AfF-EO-Xw4"/>
+                                    <constraint firstAttribute="width" constant="48" id="4RH-Us-Ivs"/>
+                                    <constraint firstAttribute="height" constant="48" id="AfF-EO-Xw4"/>
                                 </constraints>
                                 <state key="normal" image="Pause"/>
                                 <connections>
@@ -42,7 +42,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HG7-Wf-D2O">
-                                <rect key="frame" x="55" y="106" width="23" height="25"/>
+                                <rect key="frame" x="54" y="106" width="25" height="20"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <attributedString key="attributedText">
                                     <fragment content="0/2">
@@ -74,7 +74,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="67.633928571428569" y="47.826086956521742"/>
+            <point key="canvasLocation" x="67.016491754122939" y="47.200000000000003"/>
         </scene>
         <!--Pause View Controller-->
         <scene sceneID="hyD-bZ-5ER">
@@ -128,8 +128,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="HudPetal" width="119" height="240"/>
+        <image name="HudPetal" width="120" height="244"/>
         <image name="Menu" width="406" height="273"/>
-        <image name="Pause" width="980" height="981"/>
+        <image name="Pause" width="103" height="129"/>
     </resources>
 </document>
