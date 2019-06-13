@@ -12,17 +12,37 @@ import UIKit
 
 class PauseViewController: UIViewController {
     
+    @IBOutlet weak var phraseLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if controladorSaiuDoJogo == true {
+            
+            print("Setar label com frase")
+            
+            phraseLabel.text = "Welcome back! I hope that now you can see all the dangerous that surround you."
+            phraseLabel.font.withSize(24)
+            
+            
+        }else{
+            
+            phraseLabel.text = "Pause"
+            phraseLabel.font.withSize(72)
+            
+        }
         
     }
     
     
     @IBAction func continueGame(_ sender: Any) {
+        
+        controladorSaiuDoJogo = false
+        
         NotificationCenter.default.post(name: pausedExit, object: nil)
         self.removeFromParent()
         self.view.removeFromSuperview()
+        
     }
     
 }

@@ -21,6 +21,7 @@ let saiuApp = Notification.Name(rawValue: "saiuApp")
 let entrouAgain = Notification.Name(rawValue: "entrouAgain")
 let achouPetala = Notification.Name(rawValue: "achouPetala")
 var stayInPause: Bool = false
+var controladorSaiuDoJogo: Bool = false
 var countRoses: Int = 0
 
 class GameViewController: UIViewController {
