@@ -12,10 +12,6 @@ O jogo foi desenvolvido utilizando a Linguagem [Swift](https://swift.org) e os s
 * [Foundation](https://developer.apple.com/documentation/foundation) - Utilizado para suportar as extensões do projeto
 
 
-## Estado da Arte
-
-
-
 
 
 ## Colaboradores
