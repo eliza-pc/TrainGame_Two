@@ -27,6 +27,6 @@ let luminosidade: CGFloat = UIScreen.main.brightness
 * **Eliza Carvalho** - *iOS Developer* - [Github](https://github.com/eliza-pc)
 * **Robson James** - *iOS Developer* - [Github](https://github.com/James-1997)
 * **Lucidio Souza** - *iOS Developer* - [Github](https://github.com/LucidioABS)
-* **André Aphonso** - *Designer* 
+* **André Aphonso** - *Designer* - [Portifólio](https://lilr4j.carbonmade.com)
 
 
