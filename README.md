@@ -6,7 +6,7 @@ Lotus Rail é um jogo que surgiu a partir da paixão dos seus 4 desenvolvedores:
 
 O jogo foi desenvolvido utilizando a Linguagem [Swift](https://swift.org) e os seguintes frameworks:
 
-* [GameplayKit](https://developer.apple.com/documentation/gameplaykit) - Utilizado para formar a lógica de desenvolvimento(Entides e Componentes) 
+* [GameplayKit](https://developer.apple.com/documentation/gameplaykit) - Utilizado para formar a lógica de desenvolvimento([Entides e Componentes](https://developer.apple.com/library/archive/documentation/General/Conceptual/GameplayKit_Guide/EntityComponent.html)) 
 * [SpriteKit](https://developer.apple.com/spritekit/) - Utilizado para suportar a textura das imagens, as animaçoes e etc. 
 * [AVFoundation](https://developer.apple.com/av-foundation/) - Utilizado para auxiliar no Sound Design implementado no jogo
 * [Foundation](https://developer.apple.com/documentation/foundation) - Utilizado para suportar as extensões do projeto
